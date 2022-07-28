@@ -3,6 +3,17 @@ project:
 
 website:
   title: "Daniel Sánchez"
+  description: "Daniel Sánchez Personal Website"
+  page-footer:
+    left:
+      - icon: github
+        href: https://github.com/dsanchezp18
+      - icon: twitter
+        href: https://twitter.com/dsanchezp1826
+      - icon: linkedin
+        href: https://www.linkedin.com/in/dsanchezp18/
+    right: 
+      - text: Proudly built with Quarto from RStudio.
   navbar:
     right:
       - href: index.qmd
@@ -12,6 +23,8 @@ website:
 format:
   html:
     theme: cyborg
+    mainfont: "Perpetua"
+    fontsize: x-large
     css: styles.css
     toc: true
 
