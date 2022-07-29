@@ -12,6 +12,10 @@ website:
         href: https://twitter.com/dsanchezp1826
       - icon: linkedin
         href: https://www.linkedin.com/in/dsanchezp18/
+      - icon: envelope
+        href: mailto:dsanchezp998@gmail.com
+      - text: RPubs
+        href: https://rpubs.com/dsanchezp998
     right: 
       - text: Proudly built with Quarto from RStudio.
   navbar:
@@ -23,8 +27,7 @@ website:
 format:
   html:
     theme: cyborg
-    mainfont: "Perpetua"
-    fontsize: x-large
+    mainfont: "Lato"
     css: styles.css
     toc: true
 

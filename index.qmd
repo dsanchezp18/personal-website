@@ -4,4 +4,6 @@ title: "Home"
 
 Hi! Welcome to my personal website. I am Daniel Sánchez and I am currently an incoming Economics MA student at Simon Fraser University. 
 
+# My Tweets
 
+<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/dsanchezp1826?ref_src=twsrc%5Etfw">Tweets by dsanchezp1826</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
