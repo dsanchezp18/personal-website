@@ -2,5 +2,13 @@
 title: "About"
 ---
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. 
+```{r}
+#| include: false
+library(fontawesome)
+```
+
+
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by [@Ego_Ipse](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since.
+
+## Education `r fa('graduation-cap')`
 

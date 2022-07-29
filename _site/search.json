@@ -11,13 +11,20 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022."
+    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by @Ego_Ipse, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since."
   },
   {
     "objectID": "research.html",
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "I’m interested in economics causal inference, the economics of corruption, financial economics as well as labor and education economics. However, I can pursue any research question that I find interesting."
+    "text": "Peer-reviewed publications"
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About",
+    "section": "Education ",
+    "text": "Education"
   }
 ]
