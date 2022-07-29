@@ -4,13 +4,20 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "My Tweets\nTweets by dsanchezp1826"
+    "text": "Here you will find some more information about myself and the projects I’m working on. You can find some more about here and some more about my research here.\n\nMy Tweets\nTweets by dsanchezp1826"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "1 + 1\n\n[1] 2"
+    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "I’m interested in economics causal inference, the economics of corruption, financial economics as well as labor and education economics. However, I can pursue any research question that I find interesting."
   }
 ]
