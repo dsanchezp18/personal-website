@@ -25,6 +25,7 @@ website:
       - about.qmd
       - research.qmd
       - teaching.qmd
+      - resources.qmd
 
 format:
   html:

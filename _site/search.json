@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
+    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching, which is why I started a Resources subpage in this website which may help a beginner get into R. I plan to expand this into new fields in the future.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
   },
   {
     "objectID": "research.html",
@@ -53,7 +53,7 @@
     "href": "about.html#teaching-experience",
     "title": "About",
     "section": "Teaching Experience ",
-    "text": "Teaching Experience \n\nIncoming Teaching Assistant (Simon Fraser University)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, April 2021 (ECEL Research Group)"
+    "text": "Teaching Experience \n\nIncoming Teaching Assistant (Simon Fraser University)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
   },
   {
     "objectID": "about.html#professional-experience",
@@ -67,6 +67,6 @@
     "href": "about.html#professionalresearch-experience",
     "title": "About",
     "section": "Professional/Research Experience ",
-    "text": "Professional/Research Experience"
+    "text": "Professional/Research Experience \n\nData Analyst, May 2022- Present (Milmoh, S.L.)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFinance Intern, May - Jul. 2018 (Produbanco)"
   }
 ]
