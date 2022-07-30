@@ -7,8 +7,14 @@ title: "About"
 library(fontawesome)
 ```
 
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I'm also passionate about teaching.
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by [@Ego_Ipse](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since.
+Apart from my work and research, I love literature, memes, playing videogames and trying new foods. I'm particularly fond of Ernesto Sábato's books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I'm not sure about my favorite food- maybe it's poutine, but check back later.
 
 ## Education `r fa('graduation-cap')`
 
+- Master of Arts in Economics, expected Aug. 2023 (Simon Fraser University)
+
+- Bachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)
+
+- Bachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)

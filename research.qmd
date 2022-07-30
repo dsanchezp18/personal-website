@@ -2,7 +2,7 @@
 title: "Research"
 ---
 
-I'm interested in economics causal inference, the economics of corruption, financial economics as well as labor and education economics. However, any research question that I find interesting is worth pursuing for me. 
+I'm interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub] and [RPubs] sites
 
 # Peer-reviewed publications
 

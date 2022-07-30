@@ -11,7 +11,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by @Ego_Ipse, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since."
+    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. As put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
   },
   {
     "objectID": "research.html",
@@ -25,6 +25,27 @@
     "href": "about.html#education",
     "title": "About",
     "section": "Education ",
-    "text": "Education"
+    "text": "Education \n\nMaster of Arts in Economics, expected Aug. 2023 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "ECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
+  },
+  {
+    "objectID": "teaching.html#instructor---ecel-research-group",
+    "href": "teaching.html#instructor---ecel-research-group",
+    "title": "Teaching",
+    "section": "Instructor - ECEL Research Group",
+    "text": "Instructor - ECEL Research Group\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub+"
+  },
+  {
+    "objectID": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "title": "Teaching",
+    "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
+    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub+"
   }
 ]
