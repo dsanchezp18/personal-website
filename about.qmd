@@ -19,3 +19,15 @@ Apart from my work and research, I love literature, memes, playing videogames an
 
 - Bachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)
 
+## Teaching Experience `r fa('school')`
+
+- Incoming Teaching Assistant (Simon Fraser University)
+
+- Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
+
+- Course Instructor LaTeX, April 2021 (ECEL Research Group)
+
+## Professional/Research Experience `r fa('laptop-code')`
+
+- 
+
