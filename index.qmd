@@ -4,7 +4,7 @@ title: "Home"
 
 Hi! Welcome to my personal website. I am Daniel Sánchez and I am currently an incoming Economics MA student at Simon Fraser University. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). 
 
-Here you will find some more information about myself and the projects I'm working on. You can find some more about [here](about.qmd) and some more about my research [here](research.qmd).
+In this webpage, you will find some more information about myself and the projects I'm working on.
 
 # My Tweets
 
