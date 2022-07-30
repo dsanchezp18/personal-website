@@ -18,7 +18,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Peer-reviewed publications"
+    "text": "Working papers and publications"
   },
   {
     "objectID": "about.html#education",
@@ -46,7 +46,7 @@
     "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
     "title": "Teaching",
     "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
-    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub+"
+    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub"
   },
   {
     "objectID": "about.html#teaching-experience",
@@ -68,5 +68,12 @@
     "title": "About",
     "section": "Professional/Research Experience ",
     "text": "Professional/Research Experience \n\nData Analyst, May 2022- Present (Milmoh, S.L.)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFinance Intern, May - Jul. 2018 (Produbanco)"
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Resources",
+    "section": "",
+    "text": "Learning R\nR through RStudio, one of my longtime friends. Here you will find a list of resources which I believe can help you get started on your adventures with this marvelous software. It should be noted that I am including these resources with a practical rather than technical approach, which might be a little biased toward econometrics, so it is possible that people on other fields find other resources more helpful.\n\nBook: R for Data Science by Hadley Wickham and Garrett Grolemund\n\nProbably the best introduction to the sofware that exists today. It has been endlessly recommended by all sorts of experts on R, and it is probably because it is a clear and practical guide on how to use R for all sorts of stuff (although the title says specifically data science I strongly believe this intro is fit for anybody who wants to use R). It will teach you what R is, what it isn’t and what it does best. It is a crash course on five major functions that the language has which are Wrangle, Program, Explore, Model and Communicate. However, because it is an introductory textbook, you’ll feel that it only scratches the surface on these three things. In my opinion the “wrangle” part is pretty comprehensive, but if you need more, you’ll have to go to other resources, specially for the “Communicate” part. The only difficulty you might find with this book is installing the software, but the next resource will help you with that.\n\nVideo series: Getting Started with R-Series I (and probably the rest of the channel) by Mike Marin & Ladan Hamadani\n\nA great tutorial series and overall a great YouTube channel, probably best for those that prefer learning by watching than by reading. Also, I believe that at least for installing a distribution of R and the RStudio IDE it is better to watch videos of other people doing so than reading it. The installation of the software might be one of the complications that R has compared to other software. The tutorial is done on a Mac, but as of right now I have not found that the installation process for a Windows computer is terribly different.\n\nWebsite: R Tutorials: Basics by Simon Ejdemyr.\n\nA collection of written tutorials online. It might overlap with the resources that I am including here, however, this set of tutorials are a bit more technical and focus a bit more on Base R rather than the Tidyverse. Good to compliment your knowledge, and I know some of you out there prefer Base R to the Tidyverse.\n\nBook: Using R for Introductory Statistics by John Verzani\n\nA popular book which very clearly introduces R and simple statistics knowledge. I’ve seen it recommended consistently as a good guide if you feel you’ve understood R4DS but still feel unclear how to continue. Some good alternatives could be Exploratory Data Analysis with R, R in a Nutshell or the R Cookbook.\n\nWebsite: Usando los datos del Barómetro de las Américas by the Latin American Public Opinion Project\n\nIf you’re here from my GitHub repository and want to start using R to analyze the AmericasBarometer data, this is the tutorial for you. It will give you a very general overview of R and will teach you to do the more specific stuff needed to analyze the AmericasBarometer data. One of the most important things that this tutorial includes is the use of survey design objects of the survey package to produce survey-weighted results. Keep in mind it is written in Spanish, so if you can’t read Spanish and need help, don’t hesitate to contact me.\n\nBook: Hands-On Programming with R by Garrett Grolemund\n\nUnlike R4DS, this book is an intro to programming in R, “powerful R tools for solving data problems”, rather than doing the data analysis. Suffice to say this book will teach you about objects, functions, loops, and other programming concepts which are also seen in other programming languages. A great complement for R4DS, but maybe not as essential for beginners or people focused to use R for data analysis only."
   }
 ]

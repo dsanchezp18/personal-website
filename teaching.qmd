@@ -11,4 +11,4 @@ title: "Teaching"
 ## Instructor - ECEL Research Group (Quito, Ecuador)
 
 - Introductory LaTeX: Preparing high level documents- April 2021
-  - Course materials available on [GitHub](https://github.com/dsanchezp18/ecel-latex)+
+  - Course materials available on [GitHub](https://github.com/dsanchezp18/ecel-latex)
