@@ -15,6 +15,25 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -103,6 +122,7 @@ ul.task-list{list-style: none;}
    
   <ul>
   <li><a href="#learning-r" id="toc-learning-r" class="nav-link active" data-scroll-target="#learning-r">Learning R</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -130,16 +150,14 @@ ul.task-list{list-style: none;}
 <h1>Learning R</h1>
 <p>R through RStudio, one of my longtime friends. Here you will find a list of resources which I believe can help you get started on your adventures with this marvelous software. It should be noted that I am including these resources with a practical rather than technical approach, which might be a little biased toward econometrics, so it is possible that people on other fields find other resources more helpful.</p>
 <ul>
-<li><strong>Book</strong>: <a href="https://r4ds.had.co.nz/">R for Data Science</a> by Hadley Wickham and Garrett Grolemund</li>
+<li><strong>Book</strong>: <a href="https://r4ds.had.co.nz/">R for Data Science</a> (R4DS) by Hadley Wickham and Garrett Grolemund</li>
 </ul>
 <p>Probably the best introduction to the sofware that exists today. It has been endlessly recommended by all sorts of experts on R, and it is probably because it is a clear and practical guide on how to use R for all sorts of stuff (although the title says specifically data science I strongly believe this intro is fit for <em>anybody</em> who wants to use R). It will teach you what R is, what it isn’t and what it does best. It is a crash course on five major functions that the language has which are Wrangle, Program, Explore, Model and Communicate. However, because it is an introductory textbook, you’ll feel that it only scratches the surface on these three things. In my opinion the “wrangle” part is pretty comprehensive, but if you need more, you’ll have to go to other resources, specially for the “Communicate” part. The only difficulty you might find with this book is installing the software, but the next resource will help you with that.</p>
 <ul>
 <li><strong>Video series</strong>: <a href="https://www.youtube.com/playlist?list=PLqzoL9-eJTNARFXxgwbqGo56NtbJnB37A">Getting Started with R-Series I</a> (and probably the rest of the channel) by Mike Marin &amp; Ladan Hamadani</li>
 </ul>
 <p>A great tutorial series and overall a great <a href="https://www.youtube.com/c/marinstatlectures/featured">YouTube channel</a>, probably best for those that prefer learning by watching than by reading. Also, I believe that at least for installing a distribution of R and the RStudio IDE it is better to watch videos of other people doing so than reading it. The installation of the software might be one of the complications that R has compared to other software. The tutorial is done on a Mac, but as of right now I have not found that the installation process for a Windows computer is terribly different.</p>
-<ul>
-<li><strong>Website</strong>: <a href="https://sejdemyr.github.io/r-tutorials/basics/">R Tutorials: Basics</a> by Simon Ejdemyr.</li>
-</ul>
+<p>-<strong>Website</strong>: <a href="https://sejdemyr.github.io/r-tutorials/basics/">R Tutorials: Basics</a> by Simon Ejdemyr.</p>
 <p>A collection of written tutorials online. It might overlap with the resources that I am including here, however, this set of tutorials are a bit more technical and focus a bit more on Base R rather than the Tidyverse. Good to compliment your knowledge, and I know some of you out there prefer Base R to the Tidyverse.</p>
 <ul>
 <li><strong>Book</strong>: <a href="https://www.routledge.com/Using-R-for-Introductory-Statistics/Verzani/p/book/9781466590731">Using R for Introductory Statistics</a> by John Verzani</li>
@@ -148,16 +166,192 @@ ul.task-list{list-style: none;}
 <ul>
 <li><strong>Website</strong>: <a href="https://lapop-central.github.io/BarometroR_Web/index.html">Usando los datos del Barómetro de las Américas</a> by the Latin American Public Opinion Project</li>
 </ul>
-<p>If you’re here from my <a href="https://github.com/dsanchezp18/hbc-v2">GitHub</a> repository and want to start using R to analyze the AmericasBarometer data, this is the tutorial for you. It will give you a very general overview of R and will teach you to do the more specific stuff needed to analyze the AmericasBarometer data. One of the most important things that this tutorial includes is the use of survey design objects of the survey package to produce survey-weighted results. Keep in mind it is written in Spanish, so if you can’t read Spanish and need help, don’t hesitate to contact me.</p>
+<p>If you’re here from my <a href="https://github.com/dsanchezp18/hbc-v2">GitHub</a> repository and want to start using R to analyze the AmericasBarometer data, this is the tutorial for you. It will give you a very general overview of R and will teach you to do the more specific stuff needed to analyze the AmericasBarometer data. One of the most important things that this tutorial includes is the use of survey design objects of the survey package to produce survey-weighted results. Keep in mind it is written in Spanish, so if you can’t read Spanish and need help, don’t hesitate to contact me. Thomas Lumley’s <a href="Complex%20Surveys:%20A%20Guide%20to%20Analysis%20Using%20R">Complex Surveys: A Guide to Analysis Using R</a> is the only book I’ve found which discusses the use of survey data on R, but I found the book fairly advanced, so I think this resource is the best thing there is as far as I know.</p>
 <ul>
 <li><strong>Book</strong>: <a href="https://rstudio-education.github.io/hopr/">Hands-On Programming with R</a> by Garrett Grolemund</li>
 </ul>
 <p>Unlike R4DS, this book is an intro to programming in R, “powerful R tools for solving data problems”, rather than doing the data analysis. Suffice to say this book will teach you about objects, functions, loops, and other programming concepts which are also seen in other programming languages. A great complement for R4DS, but maybe not as essential for beginners or people focused to use R for data analysis only.</p>
+<ul>
+<li><strong>Book</strong>: <a href="https://rstudio-education.github.io/hopr/">Using R for Introductory Econometrics</a> (URfIE) by Florian Heiss.</li>
+</ul>
+<p>This is another amazing free book which walks you through the required R concepts, workflows, packages to master all examples and exercises in <a href="https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048">Introductory Econometrics: A Modern Approach</a> by Jeffrey Wooldridge, but it also can serve as a standalone introduction to the R language and its applications for econometrics. It will serve as one of the most powerful weapons on an Economics student’s arsenal while in school, considering that I’ve often heard that in econometrics courses the software applications are often neglected. This book is considerably better for beginners compared to other classic books on regression and econometrics like <a href="https://us.sagepub.com/en-us/nam/an-r-companion-to-applied-regression/book246125">An R Companion to Applied Regression</a> and <a href="https://link.springer.com/book/10.1007/978-0-387-77318-6">Applied Econometrics with R</a>. It also has a sister textbook, <a href="http://www.upfie.net/">Using Python for Introductory Econometrics</a> for those interested in applying Python to econometrics as well.</p>
+<ul>
+<li><strong>Book</strong>: <a href="https://r-graphics.org/">R Graphics Cookbook</a> by Winston Chang</li>
+</ul>
+<p>A short but sweet introduction on how to produce almost any type of graph imaginable in R using the famous <em>ggplot2</em> package. It also includes short introductions to R, the pipe operator <code>%&gt;%</code> and how to graph using base R. It is very useful as a quick desktop reference, however, it won’t actually teach you too much about the logic behind <em>ggplot2</em>, the grammar of graphics. For this, I’ll recommend the original <a href="https://link.springer.com/book/10.1007/0-387-28695-0">piece</a> by Leland Wilkinson and the <a href="https://ggplot2-book.org/">book</a> that introduces the <em>ggplot2</em> package.</p>
+<ul>
+<li><strong>Book</strong>: <a href="https://www.routledge.com/Dynamic-Documents-with-R-and-knitr/Xie/p/book/9781498716963">Dynamic Documents with R and knitr</a> by Yihui Xie</li>
+</ul>
+<p>At a certain point you’ll want to stop spitting code at the script window and start communicating the results of your analysis to other people, at least to your professor or TA for your homework assignments. While URfIE and Dr.&nbsp;Ejdmyr’s tutorials give you good advice on how to export results to your report or paper, the best way to communicate results is to be able to mix prose and code to produce dynamic documents on RStudio itself. Some of this is explained in R4DS and also in URfIE, but this book delves much, much deeper in all of this. This prose-code workflow is explained with marvelous detail in this book. It will introduce RMarkdown, but most importantly, it will introduce knitr/sweave and <code>.Rnw</code> files in the R context. The latter are files which incorporate LaTeX and R, something which is very powerful and almost indispensable when producing complex documents. Until this day, I have not found a better exposition of the LaTeX and R integration.</p>
+<ul>
+<li><strong>Book</strong>: <a href="https://bookdown.org/yihui/rmarkdown/">R Markdown: The Definitive Guide</a> by Yihui Xie, J.J. Allaire and Garret Grolemund</li>
+</ul>
+<p>Although LaTeX is more powerful than RMarkdown, it does have a steeper learning curve. Besides, RMarkdown allows you to do a lot of interesting stuff, like publishing webpages using <em>blogdown</em>, Quarto, publishing to RPubs, outputting to Microsoft Word and PowerPoint<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> among others. This book discusses the use of RMarkdown document generation from beginning to end. A more practical approach, similar to Chang’s book on <em>ggplot2</em> can be found on <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">RMarkdown Cookbook</a>.</p>
+<p>However, in my personal opinion RMarkdown still makes it too difficult to format long, complex documents with strict formatting guidelines. RMarkdown might not give you enough power to do complex stuff, although I have heard that the <em>thesisdown</em> and <em>bookdown</em> packages may give you more power to do this while keeping RMarkdown syntax. I think that if you’ve reached the point where RMarkdown feels too simple for you, you will be better off in the long run learning LaTeX and compiling your documents using <code>.Rnw</code> files as described in the Dynamic Docs books, however, do as you like, <em>de gustibus non est disputandum</em>.</p>
+<ul>
+<li><strong>Website</strong>: <a href="http://jef.works/R-style-guide/">R Style Guide</a> by Jean Fan, et al</li>
+</ul>
+<p>In order to produce research that can be easily reproduced, code that is written clearly and in an ordered manner is necessary. This might be trickier than it sounds, but this resource carefully and concisely presents some coding style guidelines to ensure that the R code you write can be understood by other people. The authors also provide us with other style guides, even one by Hadley Wickham.</p>
+<ul>
+<li><strong>Book (or website?)</strong> <a href="https://happygitwithr.com/index.html">Happy Git and Github for the useR</a> by Jenny Bryan</li>
+</ul>
+<p>A crystal-clear introduction to project version control with Git and GitHub. Version control, although a simple premise, has a somewhat difficult implementation with R and in general with anything that is not Microsoft Word or Google Docs. This book offers a very clear introduction to this with a practical approach aimed at complete beginners.</p>
+<ul>
+<li><strong>Document(s)</strong>: Cheatsheets</li>
+</ul>
+<p>Many people might not have time to look at a book, video tutorial or even their own previous work when trying to do some task in R. This is what Cheatsheets are for: quick reference guides which work best when you already know the concepts and just need a refresher. A good one is Tom Short’s <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">R Reference Card</a> but there are tons of Cheatsheets out there. RStudio provides you with quick access to some of these by clicking Help -&gt; Cheat Sheets.</p>
+<ul>
+<li><strong>Document(s)</strong>: Manuals</li>
+</ul>
+<p>This wouldn’t be a complete resource list if I didn’t include the actual manuals which can be found here. However, I do believe these are quite technical, even when considering the complete beginner’s manual/book <a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">R for Beginners</a> by Emmanuel Paradis. Complete beginners might find them difficult to understand, but I’ve realized that when facing difficult issues with no apparent solution it is good to carefully read the documentation, or to ask on Stack Overflow. The most recommended ones are <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.pdf">R Installation and Administration</a> and <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">An Introduction to R</a>. These are the manuals for the R language, but chances are that if you’re stuck, is because you’re stuck on the usage of a package, so you must consult that package’s documentation, which can be found on <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">CRAN</a>.</p>
+<ul>
+<li><strong>Website/Book</strong>: <a href="https://www.bigbookofr.com/">The Book of R</a></li>
+</ul>
+<p>An absolutely amazing compilation of applied R books that come into contact and are selected by the author. If you’re looking for a book that especifically discusses a specialized topic you need to work on and you’ve already learned the basics of the language, look it up on the Big Book. There’s even a book on <a href="https://kbroman.org/miner_book/?s=09">R Programming with Minecraft</a>. You can help the author include more books by filling out his Google Forms <a href="https://docs.google.com/forms/d/e/1FAIpQLScLSaVzr8dh1dOE2M338QAhfvKfDkydB7QZGMrVWI-VudhQbA/viewform">survey</a>.</p>
+<p>There are some field-specific books/websites which I think are interesting that haven’t been included to the Big Book yet, which I’ll include below. These might be included in the future, as I will ask Oscar to add them.</p>
+<ul>
+<li><a href="https://theeffectbook.net/">The Effect: An Introduction to Research Design and Causality</a>, an amazing book which includes code on R, Stata and Python- the next step from URfIE.</li>
+<li><a href="https://bookdown.org/ripberjt/labbook/">Lab Guide to Quantitative Research Methods in Political Science, Public Policy &amp; Public Administration</a></li>
+<li><a href="https://evalf21.classes.andrewheiss.com/">Program Evaluation for Public Service</a><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li><a href="https://stat545.com/">stat545.com</a><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></li>
+<li><a href="https://www.amazon.com/Through-Excel-Spreadsheet-Interface-Statistics/dp/1441900519#:~:text=Data%20can%20be%20transferred%20between,back%20into%20Excel%20worksheet%20ranges.">R Through Excel</a></li>
+<li><a href="https://link.springer.com/book/10.1007/978-3-319-03164-4">Text Analysis with R for Students of Literature</a></li>
+<li><a href="https://www.elsevier.com/books/financial-macro-and-micro-econometrics-using-r/vinod/978-0-12-820250-0">Financial, Macro and Micro Econometrics Using R</a></li>
+<li><a href="https://link.springer.com/book/10.1007/978-981-15-2035-8">Quantitative Economics with R</a></li>
+</ul>
+<p>Below I will include some resources that I haven’t exactly read, but I’ve repeatedly heard that they are important for improving your R skills after picking up the basics:</p>
+<ul>
+<li><p><a href="https://www.amazon.com/Art-Programming-Statistical-Software-Design/dp/1593273843">The Art of R Programming</a></p></li>
+<li><p><a href="https://adv-r.hadley.nz/">Advanced R</a></p></li>
+<li><p><a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">R Inferno</a></p></li>
+<li><p><a href="https://r-pkgs.org/">R Packages</a></p></li>
+</ul>
+</section>
+<section id="references" class="level1">
+
+
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Adler.2012" class="csl-entry" role="doc-biblioentry">
+Adler, Joseph. 2012. <em><span class="nocase">R in a nutshell</span></em>. Second edition. Sebastopol, CA: O’Reilly.
+</div>
+<div id="ref-Baruffa.7302022" class="csl-entry" role="doc-biblioentry">
+Baruffa, Oscar. 2022. <span>“<span class="nocase">Big Book of R</span>.”</span> <a href="https://www.bigbookofr.com/">https://www.bigbookofr.com/</a>.
+</div>
+<div id="ref-BrookeAndersonKarlBromanGergelyDarocziMarioInchiosaDavidSmithandAliZaidi.2020" class="csl-entry" role="doc-biblioentry">
+Brooke Anderson, Karl Broman Gergely Daróczi Mario Inchiosa David Smith and Ali Zaidi. 2020. <span>“<span class="nocase">R Programming with Minecraft</span>.”</span> <a href="https://kbroman.org/miner_book/?s=09">https://kbroman.org/miner_book/?s=09</a>.
+</div>
+<div id="ref-.d" class="csl-entry" role="doc-biblioentry">
+Burns, Patrick. 2011. <span>“<span>The R Inferno</span>.”</span> <a href="https://www.burns-stat.com/pages/Tutor/R_inferno.pdf">https://www.burns-stat.com/pages/Tutor/R_inferno.pdf</a>.
+</div>
+<div id="ref-Chang.2018" class="csl-entry" role="doc-biblioentry">
+Chang, Winston. 2018. <em><span class="nocase">R graphics cookbook: Practical recipes for visualizing data</span></em>. Second edition. Sebastopol, CA: O’Reilly.
+</div>
+<div id="ref-Fox.2011" class="csl-entry" role="doc-biblioentry">
+Fox, John, and Sanford Weisberg. 2011. <em><span class="nocase">An R companion to applied regression</span></em>. 2nd edition. Los Angeles: <span>SAGE Publications</span>.
+</div>
+<div id="ref-Grolemund.2014" class="csl-entry" role="doc-biblioentry">
+Grolemund, Garrett. 2014. <em><span class="nocase">Hands-on programming with R</span></em>. First edition. Sebastepol, CA: O’Reilly.
+</div>
+<div id="ref-Heiberger.2009" class="csl-entry" role="doc-biblioentry">
+Heiberger, Richard M., and Erich Neuwirth. 2009. <em><span class="nocase">R through Excel: A spreadsheet interface for statistics, data analysis, and graphics / by Richard M. Heiberger, Erich Neuwirth</span></em>. <span>Use R!</span> Dordrecht; London: Springer.
+</div>
+<div id="ref-Heiss.2020" class="csl-entry" role="doc-biblioentry">
+Heiss, Florian. 2020. <em><span class="nocase">Using R for introductory econometrics</span></em>. 2nd edition. [s.l.]: <span>Independently Published</span>.
+</div>
+<div id="ref-Heiss.2020b" class="csl-entry" role="doc-biblioentry">
+Heiss, Florian, and Daniel T. Brunner. 2020. <em><span class="nocase">Using Python for introductory econometrics</span></em>. 1st edition. Dusseldorf, Germany; Orlando, FL: <span>[Florian Heiss, Daniel Brunner]</span>; <span>[Manufactured by CreateSpace]</span>.
+</div>
+<div id="ref-HuntingtonKlein.2021" class="csl-entry" role="doc-biblioentry">
+Huntington-Klein, Nick. 2021. <em><span class="nocase">The Effect: An introduction to research design and causality</span></em>. 1st ed. Boca Raton: <span>Chapman <span>&amp;</span> Hall/CRC</span>.
+</div>
+<div id="ref-.3252019" class="csl-entry" role="doc-biblioentry">
+Jean Fal et al. 3/25/2019. <span>“<span>R Style Guide</span>.”</span> <a href="http://jef.works/R-style-guide/">http://jef.works/R-style-guide/</a>.
+</div>
+<div id="ref-JennyBryanetal.2022" class="csl-entry" role="doc-biblioentry">
+Jenny Bryan et al. 2022. <span>“<span>Stat545</span>.”</span> <a href="https://stat545.com/">https://stat545.com/</a>.
+</div>
+<div id="ref-Jockers.2014" class="csl-entry" role="doc-biblioentry">
+Jockers, Matthew L. 2014. <em><span class="nocase">Text Analysis with R for Students of Literature</span></em>. 1st ed. 2014. <span class="nocase">Quantitative Methods in the Humanities and Social Sciences</span>. Cham: <span>Springer International Publishing</span>; <span>Imprint: Springer</span>. <a href="https://doi.org/10.1007/978-3-319-03164-4">https://doi.org/10.1007/978-3-319-03164-4</a>.
+</div>
+<div id="ref-JosephRipbergerCodyAdamsAlexDavisandJosieDavis.7212022" class="csl-entry" role="doc-biblioentry">
+Joseph Ripberger, Cody Adams Alex Davis and Josie Davis. n.d. <span>“<span class="nocase">Lab Guide to Quantitative Research Methods in Political Science, Public Policy <span>&amp;</span> Public Administration</span>.”</span> <a href="https://bookdown.org/ripberjt/labbook/">https://bookdown.org/ripberjt/labbook/</a>.
+</div>
+<div id="ref-Kleiber.2008" class="csl-entry" role="doc-biblioentry">
+Kleiber, Christian, and Achim Zeileis. 2008. <em><span class="nocase">Applied Econometrics with R</span></em>. New York: Springer.
+</div>
+<div id="ref-Long.2019" class="csl-entry" role="doc-biblioentry">
+Long, J. D., and Paul Teetor. 2019. <em><span class="nocase">R cookbook: Proven recipes for data analysis, statistics, and graphics / J. D. Long and Paul Teetor</span></em>. Second edition. Beijing: O’Reilly.
+</div>
+<div id="ref-Lumley.2010" class="csl-entry" role="doc-biblioentry">
+Lumley, Thomas. 2010. <em><span class="nocase">Complex surveys: A guide to analysis using R / Thomas Lumley</span></em>. <span class="nocase">Wiley series in survey methodology</span>. Oxford: Wiley-Blackwell.
+</div>
+<div id="ref-.7302022" class="csl-entry" role="doc-biblioentry">
+Marin, Mike, and Ladani Hamada. 2018. <span>“<span class="nocase">Getting Started with R-Series 1 | R Statistical Software Tutorial Videos | MarinStatsLectures - YouTube</span>.”</span> <a href="https://www.youtube.com/playlist?list=PLqzoL9-eJTNARFXxgwbqGo56NtbJnB37A">https://www.youtube.com/playlist?list=PLqzoL9-eJTNARFXxgwbqGo56NtbJnB37A</a>.
+</div>
+<div id="ref-Marvin.1914" class="csl-entry" role="doc-biblioentry">
+Marvin, Frederic Rowland. 1914. <em><span class="nocase">Poems and translations</span></em>. Boston: <span>Sherman French <span>&amp;</span> company</span>.
+</div>
+<div id="ref-Matloff.2011" class="csl-entry" role="doc-biblioentry">
+Matloff, Norman S. 2011. <em><span class="nocase">The art of R programming: Tour of statistical software design</span></em>. San Francisco: <span>No Starch Press</span>.
+</div>
+<div id="ref-." class="csl-entry" role="doc-biblioentry">
+Paradis, Emmanuel. 2005. <span>“<span class="nocase">R for Beginners</span>.”</span> <span>Institut des Sciences de l’Evolution</span>. <a href="https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf">https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf</a>.
+</div>
+<div id="ref-Peng.2016" class="csl-entry" role="doc-biblioentry">
+Peng, Roger D. 2016. <em><span class="nocase">Exploratory data analysis with R</span></em>. [United States]: LeanPub.
+</div>
+<div id="ref-.b" class="csl-entry" role="doc-biblioentry">
+R Core Team. 2022. <span>“<span class="nocase">R Installation and Administration</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-admin.pdf">https://cran.r-project.org/doc/manuals/r-release/R-admin.pdf</a>.
+</div>
+<div id="ref-Short.2004" class="csl-entry" role="doc-biblioentry">
+Short, Tom. 2004. <span>“<span>R Reference Card</span>.”</span> <a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">https://cran.r-project.org/doc/contrib/Short-refcard.pdf</a>.
+</div>
+<div id="ref-.6292022" class="csl-entry" role="doc-biblioentry">
+The Latin American Public Opinion Project. 2021. <span>“<span class="nocase">Usando los datos del Bar<span class="nocase">ó</span>metro de las Am<span class="nocase">é</span>ricas</span>.”</span> <a href="https://lapop-central.github.io/BarometroR_Web/index.html">https://lapop-central.github.io/BarometroR_Web/index.html</a>.
+</div>
+<div id="ref-.c" class="csl-entry" role="doc-biblioentry">
+Venables, W. N., D. M. Smiths, and R Core Team. 2022. <span>“<span class="nocase">An Introduction to R</span>.”</span> <a href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf</a>.
+</div>
+<div id="ref-Vinod.2020" class="csl-entry" role="doc-biblioentry">
+Vinod, Hrishikesh D., and C. Radhakrishna Rao, eds. 2020. <em><span class="nocase">Financial, macro and micro econometrics using R</span></em>. Vol. volume 42. <span class="nocase">Handbook of statistics, 0169-7161</span>. Amsterdam: <span>North Holland</span>. <a href="http://www.sciencedirect.com/   BLDSS">http://www.sciencedirect.com/ BLDSS</a>.
+</div>
+<div id="ref-Wickham.2009" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley. 2009. <em><span class="nocase">ggplot2: Elegant graphics for data analysis</span></em>. <span>Use R!</span> New York; London: Springer.
+</div>
+<div id="ref-Wickham.2015" class="csl-entry" role="doc-biblioentry">
+———. 2015a. <em><span>Advanced R</span></em>. <span class="nocase">The R series</span>. Boca Raton, FL: <span>CRC Press</span>. <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a>.
+</div>
+<div id="ref-Wickham.2015b" class="csl-entry" role="doc-biblioentry">
+———. 2015b. <em><span class="nocase">R packages</span></em>. First Edition. Beijing: O’Reilly. <a href="https://r-pkgs.org/">https://r-pkgs.org/</a>.
+</div>
+<div id="ref-Wickham.2017" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, and Garrett Grolemund. 2017. <em><span class="nocase">R for Data Science: Import, tidy, transform, visualize, and model data</span></em>. 1st ed. Beijing: O’Reilly. <a href="https://r4ds.had.co.nz/">https://r4ds.had.co.nz/</a>.
+</div>
+<div id="ref-Wilkinson.2005" class="csl-entry" role="doc-biblioentry">
+Wilkinson, Leland, and Graham Wills. 2005. <em><span class="nocase">The grammar of graphics</span></em>. 2nd ed. <span class="nocase">Statistics and computing</span>. New York: Springer.
+</div>
+<div id="ref-Xie.2017?" class="csl-entry" role="doc-biblioentry">
+Xie, Yihui. 2017. <em><span class="nocase">Dynamic documents with R and knitr</span></em>. Second edition. <span class="nocase">The R series</span>. Boca Raton, FL: <span>CRC Press</span>.
+</div>
+<div id="ref-Xie.2018" class="csl-entry" role="doc-biblioentry">
+Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em><span>R Markdown: The Definitive Guide</span></em>. 1st ed. <span class="nocase">Chapman <span>&amp;</span> Hall/CRC the R series</span>. Boca Raton: <span>CRC Press Taylor and Francis Group</span>.
+</div>
+<div id="ref-Xie.2020" class="csl-entry" role="doc-biblioentry">
+Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. <em><span class="nocase">R Markdown cookbook</span></em>. 1st ed. <span class="nocase">Chapman <span>&amp;</span> Hall/CRC the R series</span>. Boca Raton: <span>Chapman <span>&amp;</span> Hall/CRC</span>.
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>This is specially useful considering how widespread the use of MS Office is in both industry and academia. However, I still feel that RMarkdown is a bit clumsy when outputting to MS Office. I know that using <em>bookdown</em> and <em>officedown</em> may solve many issues that are found with RMarkdown when outputting to MS Word, but I’m not sure how as of now. I hope to include this material in the future.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p> Not really a book or a standalone website, but the course material for a course Dr.&nbsp;Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr.&nbsp;Heiss’ material is g-o-l-d.&nbsp;See his page <a href="https://www.andrewheiss.com/">here</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>The same as the previous footnote, but this is the course material for Jenny Bryan’s course on statistics at the University of British Columbia. <a href="https://happygitwithr.com/index.html">Happy Git</a> is also part of that course.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const icon = "";

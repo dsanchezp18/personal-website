@@ -2,6 +2,10 @@
 title: "Teaching"
 ---
 
+As a mentor, I believe in two main principles: transparency and practicality. Transparency can be seen by both academic honesty but also through the practice of reproducible research, which is something I try to do by publishing my code and teaching materials publicly when possible. I also aim to foster the practicality and accesibility of my teaching by uploading my course materials to this site and to my [GitHub](https://github.com/dsanchezp18) profile when possible. 
+
+Below, I've listed my teaching experience and course materials if they are available. 
+
 ## Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)
 
 - ECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level

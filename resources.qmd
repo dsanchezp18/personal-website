@@ -1,5 +1,7 @@
 ---
 title: "Resources"
+bibliography: references_personal_website_resources.bib
+nocite: '@*'
 ---
 
 Here I have compiled a list or a commented bibliography, if you will, of resources that I have found useful along the course of my academic studies. By no means I am an expert on these topics but I do believe that these will help some people out. All efforts that I've dedicated to this page are dedicated to the memory of my grandfather, Jorge Pazmiño. Do not hesitate to contact me for suggestions and comments about these.
@@ -8,7 +10,7 @@ Here I have compiled a list or a commented bibliography, if you will, of resourc
 
 R through RStudio, one of my longtime friends. Here you will find a list of resources which I believe can help you get started on your adventures with this marvelous software. It should be noted that I am including these resources with a practical rather than technical approach, which might be a little biased toward econometrics, so it is possible that people on other fields find other resources more helpful.
 
--   **Book**: [R for Data Science](https://r4ds.had.co.nz/) by Hadley Wickham and Garrett Grolemund
+- **Book**: [R for Data Science](https://r4ds.had.co.nz/) (R4DS) by Hadley Wickham and Garrett Grolemund 
 
 Probably the best introduction to the sofware that exists today. It has been endlessly recommended by all sorts of experts on R, and it is probably because it is a clear and practical guide on how to use R for all sorts of stuff (although the title says specifically data science I strongly believe this intro is fit for *anybody* who wants to use R). It will teach you what R is, what it isn't and what it does best. It is a crash course on five major functions that the language has which are Wrangle, Program, Explore, Model and Communicate. However, because it is an introductory textbook, you'll feel that it only scratches the surface on these three things. In my opinion the "wrangle" part is pretty comprehensive, but if you need more, you'll have to go to other resources, specially for the "Communicate" part. The only difficulty you might find with this book is installing the software, but the next resource will help you with that.
 
@@ -16,7 +18,7 @@ Probably the best introduction to the sofware that exists today. It has been end
 
 A great tutorial series and overall a great [YouTube channel](https://www.youtube.com/c/marinstatlectures/featured), probably best for those that prefer learning by watching than by reading. Also, I believe that at least for installing a distribution of R and the RStudio IDE it is better to watch videos of other people doing so than reading it. The installation of the software might be one of the complications that R has compared to other software. The tutorial is done on a Mac, but as of right now I have not found that the installation process for a Windows computer is terribly different.
 
-- **Website**: [R Tutorials: Basics](https://sejdemyr.github.io/r-tutorials/basics/) by Simon Ejdemyr.
+-**Website**: [R Tutorials: Basics](https://sejdemyr.github.io/r-tutorials/basics/) by Simon Ejdemyr.
 
 A collection of written tutorials online. It might overlap with the resources that I am including here, however, this set of tutorials are a bit more technical and focus a bit more on Base R rather than the Tidyverse. Good to compliment your knowledge, and I know some of you out there prefer Base R to the Tidyverse.
 
@@ -26,8 +28,71 @@ A popular book which very clearly introduces R and simple statistics knowledge. 
 
 -   **Website**: [Usando los datos del Barómetro de las Américas](https://lapop-central.github.io/BarometroR_Web/index.html) by the Latin American Public Opinion Project
 
-If you're here from my [GitHub](https://github.com/dsanchezp18/hbc-v2) repository and want to start using R to analyze the AmericasBarometer data, this is the tutorial for you. It will give you a very general overview of R and will teach you to do the more specific stuff needed to analyze the AmericasBarometer data. One of the most important things that this tutorial includes is the use of survey design objects of the survey package to produce survey-weighted results. Keep in mind it is written in Spanish, so if you can't read Spanish and need help, don't hesitate to contact me.
+If you're here from my [GitHub](https://github.com/dsanchezp18/hbc-v2) repository and want to start using R to analyze the AmericasBarometer data, this is the tutorial for you. It will give you a very general overview of R and will teach you to do the more specific stuff needed to analyze the AmericasBarometer data. One of the most important things that this tutorial includes is the use of survey design objects of the survey package to produce survey-weighted results. Keep in mind it is written in Spanish, so if you can't read Spanish and need help, don't hesitate to contact me. Thomas Lumley's [Complex Surveys: A Guide to Analysis Using R](Complex Surveys: A Guide to Analysis Using R) is the only book I've found which discusses the use of survey data on R, but I found the book fairly advanced, so I think this resource is the best thing there is as far as I know. 
 
 - **Book**: [Hands-On Programming with R](https://rstudio-education.github.io/hopr/) by Garrett Grolemund
 
 Unlike R4DS, this book is an intro to programming in R, "powerful R tools for solving data problems", rather than doing the data analysis. Suffice to say this book will teach you about objects, functions, loops, and other programming concepts which are also seen in other programming languages. A great complement for R4DS, but maybe not as essential for beginners or people focused to use R for data analysis only. 
+
+- **Book**: [Using R for Introductory Econometrics](https://rstudio-education.github.io/hopr/) (URfIE) by Florian Heiss.
+
+This is another amazing free book which walks you through the required R concepts, workflows, packages to master all examples and exercises in [Introductory Econometrics: A Modern Approach](https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048) by Jeffrey Wooldridge, but it also can serve as a standalone introduction to the R language and its applications for econometrics. It will serve as one of the most powerful weapons on an Economics student's arsenal while in school, considering that I've often heard that in econometrics courses the software applications are often neglected. This book is considerably better for beginners compared to other classic books on regression and econometrics like [An R Companion to Applied Regression](https://us.sagepub.com/en-us/nam/an-r-companion-to-applied-regression/book246125) and [Applied Econometrics with R](https://link.springer.com/book/10.1007/978-0-387-77318-6). It also has a sister textbook, [Using Python for Introductory Econometrics](http://www.upfie.net/) for those interested in applying Python to econometrics as well.
+
+- **Book**: [R Graphics Cookbook](https://r-graphics.org/) by Winston Chang
+
+A short but sweet introduction on how to produce almost any type of graph imaginable in R using the famous *ggplot2* package. It also includes short introductions to R, the pipe operator `%>%` and how to graph using base R. It is very useful as a quick desktop reference, however, it won't actually teach you too much about the logic behind *ggplot2*, the grammar of graphics. For this, I'll recommend the original [piece](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson and the [book](https://ggplot2-book.org/) that introduces the *ggplot2* package. 
+
+- **Book**: [Dynamic Documents with R and knitr](https://www.routledge.com/Dynamic-Documents-with-R-and-knitr/Xie/p/book/9781498716963) by Yihui Xie 
+
+At a certain point you'll want to stop spitting code at the script window and start communicating the results of your analysis to other people, at least to your professor or TA for your homework assignments. While URfIE and Dr. Ejdmyr's tutorials give you good advice on how to export results to your report or paper, the best way to communicate results is to be able to mix prose and code to produce dynamic documents on RStudio itself. Some of this is explained in R4DS and also in URfIE, but this book delves much, much deeper in all of this. This prose-code workflow is explained with marvelous detail in this book. It will introduce RMarkdown, but most importantly, it will introduce knitr/sweave and `.Rnw` files in the R context. The latter are files which incorporate LaTeX and R, something which is very powerful and almost indispensable when producing complex documents. Until this day, I have not found a better exposition of the LaTeX and R integration.
+
+- **Book**: [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/) by Yihui Xie, J.J. Allaire and Garret Grolemund
+
+Although LaTeX is more powerful than RMarkdown, it does have a steeper learning curve. Besides, RMarkdown allows you to do a lot of interesting stuff, like publishing webpages using *blogdown*, Quarto, publishing to RPubs, outputting to Microsoft Word and PowerPoint^[This is specially useful considering how widespread the use of MS Office is in both industry and academia. However, I still feel that RMarkdown is a bit clumsy when outputting to MS Office. I know that using *bookdown* and *officedown* may solve many issues that are found with RMarkdown when outputting to MS Word, but I'm not sure how as of now. I hope to include this material in the future.] among others. This book discusses the use of RMarkdown document generation from beginning to end. A more practical approach, similar to Chang's book on *ggplot2* can be found on [RMarkdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/). 
+
+However, in my personal opinion RMarkdown still makes it too difficult to format long, complex documents with strict formatting guidelines. RMarkdown might not give you enough power to do complex stuff, although I have heard that the *thesisdown* and *bookdown* packages may give you more power to do this while keeping RMarkdown syntax. I think that if you've reached the point where RMarkdown feels too simple for you, you will be better off in the long run learning LaTeX and compiling your documents using `.Rnw` files as described in the Dynamic Docs books, however, do as you like, *de gustibus non est disputandum*. 
+
+-   **Website**: [R Style Guide](http://jef.works/R-style-guide/) by Jean Fan, et al
+
+In order to produce research that can be easily reproduced, code that is written clearly and in an ordered manner is necessary. This might be trickier than it sounds, but this resource carefully and concisely presents some coding style guidelines to ensure that the R code you write can be understood by other people. The authors also provide us with other style guides, even one by Hadley Wickham.
+
+- **Book (or website?)** [Happy Git and Github for the useR](https://happygitwithr.com/index.html) by Jenny Bryan
+
+A crystal-clear introduction to project version control with Git and GitHub. Version control, although a simple premise, has a somewhat difficult implementation with R and in general with anything that is not Microsoft Word or Google Docs. This book offers a very clear introduction to this with a practical approach aimed at complete beginners.
+
+- **Document(s)**: Cheatsheets
+
+Many people might not have time to look at a book, video tutorial or even their own previous work when trying to do some task in R. This is what Cheatsheets are for: quick reference guides which work best when you already know the concepts and just need a refresher. A good one is Tom Short's [R Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf) but there are tons of Cheatsheets out there. RStudio provides you with quick access to some of these by clicking Help -> Cheat Sheets.
+
+- **Document(s)**: Manuals
+
+This wouldn't be a complete resource list if I didn't include the actual manuals which can be found here. However, I do believe these are quite technical, even when considering the complete beginner's manual/book [R for Beginners](https://cran.r-project.org/doc/contrib/Paradis-rdebuts_en.pdf) by Emmanuel Paradis. Complete beginners might find them difficult to understand, but I've realized that when facing difficult issues with no apparent solution it is good to carefully read the documentation, or to ask on Stack Overflow. The most recommended ones are [R Installation and Administration](https://cran.r-project.org/doc/manuals/r-release/R-admin.pdf) and [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf). These are the manuals for the R language, but chances are that if you're stuck, is because you're stuck on the usage of a package, so you must consult that package's documentation, which can be found on [CRAN](https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf). 
+
+- **Website/Book**: [The Book of R](https://www.bigbookofr.com/)
+
+An absolutely amazing compilation of applied R books that come into contact and are selected by the author. If you're looking for a book that especifically discusses a specialized topic you need to work on and you've already learned the basics of the language, look it up on the Big Book. There's even a book on [R Programming with Minecraft](https://kbroman.org/miner_book/?s=09). You can help the author include more books by filling out his Google Forms [survey](https://docs.google.com/forms/d/e/1FAIpQLScLSaVzr8dh1dOE2M338QAhfvKfDkydB7QZGMrVWI-VudhQbA/viewform). 
+
+There are some field-specific books/websites which I think are interesting that haven't been included to the Big Book yet, which I'll include below. These might be included in the future, as I will ask Oscar to add them.
+
+- [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/), an amazing book which includes code on R, Stata and Python- the next step from URfIE. 
+- [Lab Guide to Quantitative Research Methods in Political Science, Public Policy & Public Administration](https://bookdown.org/ripberjt/labbook/)
+- [Program Evaluation for Public Service](https://evalf21.classes.andrewheiss.com/)^[ Not really a book or a standalone website, but the course material for a course Dr. Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr. Heiss' material is g-o-l-d. See his page [here](https://www.andrewheiss.com/).]
+- [stat545.com](https://stat545.com/)^[The same as the previous footnote, but this is the course material for Jenny Bryan's course on statistics at the University of British Columbia. [Happy Git](https://happygitwithr.com/index.html) is also part of that course.]
+- [R Through Excel](https://www.amazon.com/Through-Excel-Spreadsheet-Interface-Statistics/dp/1441900519#:~:text=Data%20can%20be%20transferred%20between,back%20into%20Excel%20worksheet%20ranges.)
+- [Text Analysis with R for Students of Literature](https://link.springer.com/book/10.1007/978-3-319-03164-4)
+- [Financial, Macro and Micro Econometrics Using R](https://www.elsevier.com/books/financial-macro-and-micro-econometrics-using-r/vinod/978-0-12-820250-0)
+- [Quantitative Economics with R](https://link.springer.com/book/10.1007/978-981-15-2035-8)
+
+Below I will include some resources that I haven't exactly read, but I've repeatedly heard that they are important for improving your R skills after picking up the basics:
+
+- [The Art of R Programming](https://www.amazon.com/Art-Programming-Statistical-Software-Design/dp/1593273843)
+
+- [Advanced R](https://adv-r.hadley.nz/)
+
+- [R Inferno](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
+
+- [R Packages](https://r-pkgs.org/)
+
+# References
+
+
