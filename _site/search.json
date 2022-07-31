@@ -18,7 +18,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "Working papers and publications"
+    "text": "I’m interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with the other exceptional academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
   },
   {
     "objectID": "about.html#education",
@@ -82,5 +82,19 @@
     "title": "Teaching",
     "section": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)",
     "text": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)\n\nECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
+  },
+  {
+    "objectID": "research.html#immunizing-the-economy-a-causal-discussion-on-vaccines-and-economic-recovery",
+    "href": "research.html#immunizing-the-economy-a-causal-discussion-on-vaccines-and-economic-recovery",
+    "title": "Research",
+    "section": "Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery",
+    "text": "Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs."
+  },
+  {
+    "objectID": "research.html#honesty-by-convenience-corruption-tolerance-in-ecuador",
+    "href": "research.html#honesty-by-convenience-corruption-tolerance-in-ecuador",
+    "title": "Research",
+    "section": "Honesty by Convenience: Corruption Tolerance in Ecuador",
+    "text": "Honesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021)\n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Submitted to the Philosophy, Politics and Economics Review.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all1 of the paper’s prose and R code. Spanish version coming in the future."
   }
 ]
