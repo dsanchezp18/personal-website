@@ -96,5 +96,26 @@
     "title": "Research",
     "section": "Honesty by Convenience: Corruption Tolerance in Ecuador",
     "text": "Honesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021)\n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Submitted to the Philosophy, Politics and Economics Review.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all1 of the paper’s prose and R code. Spanish version coming in the future."
+  },
+  {
+    "objectID": "posts_home.html",
+    "href": "posts_home.html",
+    "title": "Posts",
+    "section": "",
+    "text": "news\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJul 30, 2022\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJul 27, 2022\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
   }
 ]

@@ -4,6 +4,9 @@ project:
 website:
   title: "Daniel Sánchez"
   description: "Daniel Sánchez Personal Website"
+  twitter-card: 
+    creator: "@dsanchezp1826"
+    card-style: summary
   page-footer:
     left:
       - icon: github
@@ -26,6 +29,7 @@ website:
       - research.qmd
       - teaching.qmd
       - resources.qmd
+      - posts_home.qmd
 
 format:
   html:
