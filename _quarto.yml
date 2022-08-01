@@ -3,6 +3,7 @@ project:
 
 website:
   title: "Daniel Sánchez"
+  site-url: "https://daniel-ec.netlify.app/"
   description: "Daniel Sánchez Personal Website"
   twitter-card: 
     creator: "@dsanchezp1826"

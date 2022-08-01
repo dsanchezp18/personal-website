@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://daniel-ec.netlify.app/about.html</loc>
+    <lastmod>2022-08-01T17:02:44.204Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/index.html</loc>
+    <lastmod>2022-08-01T17:02:44.650Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/posts/post-with-code/index.html</loc>
+    <lastmod>2022-08-01T17:02:45.371Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/posts/welcome/index.html</loc>
+    <lastmod>2022-08-01T17:02:45.801Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/posts_home.html</loc>
+    <lastmod>2022-08-01T17:02:46.219Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/research.html</loc>
+    <lastmod>2022-08-01T17:02:46.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/resources.html</loc>
+    <lastmod>2022-08-01T17:26:58.245Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/teaching.html</loc>
+    <lastmod>2022-08-01T17:02:47.840Z</lastmod>
+  </url>
+</urlset>

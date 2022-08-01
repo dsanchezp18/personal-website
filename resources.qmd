@@ -38,6 +38,14 @@ Unlike R4DS, this book is an intro to programming in R, "powerful R tools for so
 
 This is another amazing free book which walks you through the required R concepts, workflows, packages to master all examples and exercises in [Introductory Econometrics: A Modern Approach](https://www.amazon.com/Introductory-Econometrics-Modern-Approach-Economics/dp/1111531048) by Jeffrey Wooldridge, but it also can serve as a standalone introduction to the R language and its applications for econometrics. It will serve as one of the most powerful weapons on an Economics student's arsenal while in school, considering that I've often heard that in econometrics courses the software applications are often neglected. This book is considerably better for beginners compared to other classic books on regression and econometrics like [An R Companion to Applied Regression](https://us.sagepub.com/en-us/nam/an-r-companion-to-applied-regression/book246125) and [Applied Econometrics with R](https://link.springer.com/book/10.1007/978-0-387-77318-6). It also has a sister textbook, [Using Python for Introductory Econometrics](http://www.upfie.net/) for those interested in applying Python to econometrics as well.
 
+- **Book**: [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/) by Nick Huntington-Klein
+
+A great book which serves as an introduction to the concepts of causality and research design, which includes code on R, Stata and Python. This is the next step from URfIE for students of econometrics, as it is simple enough to not require complicated mathematics but it comprehensive enough to cover advanced econometric topics. It is very accesible and a pathway into more difficult econometrics books like [Causal Inference: The Mixtape](https://mixtape.scunning.com/), [Mastering 'Metrics](https://www.masteringmetrics.com/) or [Mostly Harmless Econometrics](https://www.mostlyharmlesseconometrics.com/). An alternative/complement to The Effect is [Introduction to Econometrics with R](https://www.econometrics-with-r.org/) by Hanck et al.
+
+-   **Website**: [The Library of Statistical Techniques](http://jef.works/R-style-guide/) (LOST) by Nick Huntington-Klein et al
+
+A "Rosetta Stone" for statistical software. Think of it as a dictionary for statistical or data wrangling methods where you have definitions, explanations, but most importantly, you have code implementations for different statistical software, including but not limited to R, Python and Stata. Considering contributing to LOST if you can, there are still many things that are waiting to be done.
+
 - **Book**: [R Graphics Cookbook](https://r-graphics.org/) by Winston Chang
 
 A short but sweet introduction on how to produce almost any type of graph imaginable in R using the famous *ggplot2* package. It also includes short introductions to R, the pipe operator `%>%` and how to graph using base R. It is very useful as a quick desktop reference, however, it won't actually teach you too much about the logic behind *ggplot2*, the grammar of graphics. For this, I'll recommend the original [piece](https://link.springer.com/book/10.1007/0-387-28695-0) by Leland Wilkinson and the [book](https://ggplot2-book.org/) that introduces the *ggplot2* package. 
@@ -74,7 +82,6 @@ An absolutely amazing compilation of applied R books that come into contact and 
 
 There are some field-specific books/websites which I think are interesting that haven't been included to the Big Book yet, which I'll include below. These might be included in the future, as I will ask Oscar to add them.
 
-- [The Effect: An Introduction to Research Design and Causality](https://theeffectbook.net/), an amazing book which includes code on R, Stata and Python- the next step from URfIE. 
 - [Lab Guide to Quantitative Research Methods in Political Science, Public Policy & Public Administration](https://bookdown.org/ripberjt/labbook/)
 - [Program Evaluation for Public Service](https://evalf21.classes.andrewheiss.com/)^[ Not really a book or a standalone website, but the course material for a course Dr. Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr. Heiss' material is g-o-l-d. See his page [here](https://www.andrewheiss.com/).]
 - [stat545.com](https://stat545.com/)^[The same as the previous footnote, but this is the course material for Jenny Bryan's course on statistics at the University of British Columbia. [Happy Git](https://happygitwithr.com/index.html) is also part of that course.]
@@ -92,6 +99,14 @@ Below I will include some resources that I haven't exactly read, but I've repeat
 - [R Inferno](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf)
 
 - [R Packages](https://r-pkgs.org/)
+
+# Some extra advice
+
+Working with R throughout my life as a student and for my personal project, I've met with endless issues. I've been able to solve most of them by googling my question and reading other people's Stack Overflow's questions, or reading books. However, there have been complicated problems which have had rather difficult solutions. In this section I'd like to give some unsolicited advice for you to not run into these problems or how to solve them efficiently if you do. 
+
+## On building descriptive statistic and regression tables
+
+
 
 # References
 
