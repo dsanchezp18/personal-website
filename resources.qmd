@@ -106,7 +106,7 @@ Working with R throughout my life as a student and for my personal project, I've
 
 ## On building descriptive statistic and regression tables
 
-
+The *stargazer* package is one of the most time-efficient ways of constructing summary tables in R. You only need to install and load the package into your file, then use the `stargazer()` function with a data frame or model object. With data, it can print a fairly decent descriptive statistics table. There are additional ways to customize the function's output (remember you can use `?` before the function's call to see the function's documentation on RStudio's Help pane). It can print side-by-side regressions tables by feeding a list of regressions to the functions too. The package
 
 # References
 
