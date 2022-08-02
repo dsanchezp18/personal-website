@@ -1,0 +1,142 @@
+---
+title: "Una perspectiva cuantitativa sobre las protestas en Ecuador"
+author: "Daniel Sánchez"
+date: "2022-08-01"
+description: As my first post, I republish my contribution to [El Quantificador](https://elquantificador.org/), LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.
+categories: [spanish, politics, ecuador, protests, data viz]
+csl: ../../econometrics.csl
+image: protests.jpg
+bibliography: refs-article-protests.bib
+knitr:
+  opts_chunk: 
+    message: false
+    echo: false
+    warning: false
+    include: false
+---
+
+```{r}
+#| label: setup
+
+# cargar librerias
+
+library(survey)
+library(tidyverse)
+library(patchwork)
+library(openxlsx)
+library(ggthemes)
+
+# Cargar mis datos
+
+load('lapop-dataset.Rdata')
+
+# Definimos colores en HEX para los gráficos
+
+quant_blue<-'#09A4CC'
+quant_grey<-'#5C7C94'
+quant_orange<-'#F8754D'
+quant_red<-'#F44D54'
+
+# Objetos de tema extra
+
+theme_daniel<-
+  theme(panel.grid = element_blank(),
+        axis.text.y = element_blank(),
+        plot.caption = element_text(hjust = 0, face = 'italic'),
+        legend.background = element_blank(),
+        axis.ticks = element_blank())
+
+# Creamos el objeto de diseño muestral para utilizar en los cálculos
+
+lapop_des<-svydesign(ids = ~ upm,
+                     strata = ~ estratopri, 
+                     weights = ~ weight1500, 
+                     nest = TRUE,
+                     na.action = 'na.exclude',
+                     data = df)
+
+```
+
+:::{.callout-note}
+Este post fue originalmente publicado en [El Quantificador](https://elquantificador.org/), el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica. 
+:::
+
+*El Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.*
+
+## La participación en protestas
+
+```{r}
+#| label: data-wrangling-grafo-1
+#| include: true
+#| fig-align: center
+
+## 1. Participación en protestas
+
+# Debemos construir una sola variable en la base de datos que denote 1 si es que se participó en protest, 0 de otra forma
+
+# De 2010 a 2019 se tiene prot3
+
+# De 2006 a 2008 se tiene dos preguntas diferentes. 2004 no tiene pregunta sobre participación en protesta
+
+# En el script de manipulación, he unificado las variables prot1, prot2 y prot3 en una sola (prot3)
+
+# Por ende, tabulamos esa variable a lo largo del tiempo 
+
+prot_time<-
+  svyby(~ protest,
+        ~ year,
+        design = lapop_des,
+        svymean,
+        na.rm = T,
+        keep.names = F)
+
+# Creamos una base de datos "tidy" para esto
+
+prot_df<-
+  prot_time %>%
+  filter(protest > 0) %>% 
+  as.data.frame()
+
+# Gráfico 1: Participación en Protestas:
+
+# Guardar en un objeto el caption largo:
+
+caption_grafo1<-
+  'Fuente: El Barómetro de las Américas por el Proyecto de Opinión Pública de América Latina (LAPOP), www.LapopSurveys.org. Las barras representan intervalos de confianza del 95% con errores ajustados por diseño muestral multietapa estratificado. Las líneas punteadas representan protestas de importancia en el país. Las encuestas fueron realizadas de enero a marzo de cada año, excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las cifras representan el porcentaje de personas que han protestado en los últimos 12 meses sobre el total de personas en edad de votar (mayores a 16).'
+
+# Ahora si nuestro gráfico
+
+ggplot(prot_df, aes(x = year, y = protest))+
+  geom_col(fill = quant_blue,
+           color = 'black', 
+           width = 0.7)+
+  geom_vline(xintercept = 0.5, linetype = 'dotted', color = quant_red, size = 1.25)+
+  geom_vline(xintercept = 3.45, linetype = 'dotted', color = quant_red, size = 1.25)+
+  geom_vline(xintercept = 5.55, linetype = 'dotted', color = quant_red, size = 1.25)+
+  geom_vline(xintercept = 7.5, linetype = 'dotted', color = quant_red, size = 1.25)+
+  geom_errorbar(aes(ymin = protest - 1.96*se,
+                    ymax = protest + 1.96*se),
+                width = 0.3)+
+  geom_text(aes(label = round(protest, 4)*100),
+                size = 4,
+                vjust = 3.8)+
+  labs(x = '',
+       y = '% de personas mayores a 16 que han protestado',
+       title = 'Participación en protestas del Ecuador 2006-2019',
+       subtitle = '¿En los últimos 12 meses ha participado en una manifestación o protesta pública?',
+       caption = str_wrap(caption_grafo1, 107))+
+  theme_hc(style = 'darkunica')+
+  theme_daniel
+
+```
+A mediados de junio 2022, la Confederación de Nacionalidades Indígenas del Ecuador (CONAIE) convocó a una movilización masiva en el país con el fin de que el presidente Guillermo Lasso incluya dentro de su plan de gobierno diez pedidos de índole económica y social [@Pazmino.2022]. Después de 18 días de manifestaciones, el paro terminó tras un acuerdo entre el gobierno nacional y la CONAIE [@GK.2022]. Las manifestaciones dejan al Ecuador con nueve muertos, millones de dólares en daños y pérdidas económicas así como varios heridos y aprehendidos por la policía [@Maria.2022; @Montalvo.2022; @Comercio.2022].
+
+Dada la importancia de las movilizaciones en el contexto político, social y económico del país, es imperante reflexionar sobre una reflexión objetiva sobre las protestas y el contexto que las rodea desde un punto de vista cuantitativo, el cual pueda aportar a la discusión post-paro
+
+El Ecuador parece haber perdido la relativa estabilidad política que tuvo durante los diez años de gobierno de Rafael Correa, especialmente considerando la protesta histórica de octubre 2019, también liderada por la CONAIE contra el gobierno del entonces presidente Lenín Moreno [@LAPOPReport.2022]. Sin embargo, en nuestro país los períodos de estabilidad han sido la excepción y no la norma. Históricamente Ecuador ha tenido un golpe de estado cada 6 años y un 50% de éstos fueron exitosos derrocando al gobierno de turno [@Loaiza.2022].
+
+La encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP). LAPOP ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.
+
+El gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses ---probablemente por la "Rebelión de los Forajidos" que derrocó al Presidente Lucio Gutiérrez---. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [@CONAIE.2015; @BBC.2015]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [@Melendez.2017]
+
+# Referencias

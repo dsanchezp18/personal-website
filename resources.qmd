@@ -2,6 +2,7 @@
 title: "Resources"
 bibliography: references_personal_website_resources.bib
 nocite: '@*'
+csl: econometrics.csl
 ---
 
 Here I have compiled a list or a commented bibliography, if you will, of resources that I have found useful along the course of my academic studies. By no means I am an expert on these topics but I do believe that these will help some people out. All efforts that I've dedicated to this page are dedicated to the memory of my grandfather, Jorge Pazmiño. Do not hesitate to contact me for suggestions and comments about these.
@@ -112,6 +113,15 @@ However, this package is not the ultimate solution for building regression table
 
 *modelsummary* is the ultimate alternative to *stargazer*. I used this package extensively in my undergraduate capstone project and found it to be amazing. It can support virtually all R model objects and allows endless customizations for your tables. One amazing feature is that you can pass arguments to the `modelsummary` function which work with the `kable` package, which are particularly useful for complex tables. One example is the `longtable = T` argument, which isn't a built-in argument of *modelsummary*, but it is an argument for the *kable* package.  Also, this package works perfectly with `.Rnw` and `.Rmd` files. *modelsummary* is very, very recommended and will probably save you time in the long run if you start using this one instead of stargazer when you start to create tables from R output. If you want guidance on how to use the package, you can check out all the [vignettes](https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html) made by the package author and the way that I used the package in my papers, all available in my [GitHub](https://github.com/dsanchezp18) profile.
 
+## Survey data and binary-outcome models
+
+During the data analysis for my capstone project, I worked extensively with survey data and eventually got to running binary-outcome models, namely logit and probit models, with the data. In the literature that used the datasets I was using, it was standard practice to run survey-weighted models to get complex sample-adjusted standard errors and adjusted coefficients. I had no trouble doing this using the *survey* package in R, however, I ran into trouble when I wanted to calculate average partial effects- it was impossible to do so with both the `margins()` or the `marginaleffects()` functions (both have their package named after themselves.).
+
+After much asking around and reading documentation, I found two solutions. The first one is complex and clunky, and not so effective, but it works. The whole thing is described in this [Stack Overflow question](https://stackoverflow.com/questions/68869935/reporting-average-marginal-effects-of-a-survey-weighted-logit-model-with-r/68873977#68873977) that I made when I became desperate one time at 3 am. 
+
+The second solution is the one that definitely solved the issue and I discovered it only recently. It is possible to calculate average partial effects of the models that had given me issues in the past when I *changed the data type of certain variables*. Since I had imported my data from Stata files (`.dat` files) using the *haven* package, when I ran `class()` on certain variables I found that it had `double` as the data type. I found that changing the data type to `integer` or `numeric` using the `as.*` functions solved the issue, now, running `marginaleffects()` on the model objects with the updated variables caused no issues. A certainly strange problem; I might write about it on the [Posts](posts_home.qmd) section and/or contribute to [LOST](https://lost-stats.github.io/) with this info.
+
 # References
+
 
 
