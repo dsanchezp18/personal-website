@@ -137,13 +137,11 @@ ggplot(prot_df, aes(x = year, y = protest))+
 ```
 A mediados de junio 2022, la Confederación de Nacionalidades Indígenas del Ecuador (CONAIE) convocó a una movilización masiva en el país con el fin de que el presidente Guillermo Lasso incluya dentro de su plan de gobierno diez pedidos de índole económica y social [@Pazmino.2022]. Después de 18 días de manifestaciones, el paro terminó tras un acuerdo entre el gobierno nacional y la CONAIE [@GK.2022]. Las manifestaciones dejan al Ecuador con nueve muertos, millones de dólares en daños y pérdidas económicas así como varios heridos y aprehendidos por la policía [@Maria.2022; @Montalvo.2022; @Comercio.2022].
 
-Dada la importancia de las movilizaciones en el contexto político, social y económico del país, es imperante reflexionar sobre una reflexión objetiva sobre las protestas y el contexto que las rodea desde un punto de vista cuantitativo, el cual pueda aportar a la discusión post-paro
-
 El Ecuador parece haber perdido la relativa estabilidad política que tuvo durante los diez años de gobierno de Rafael Correa, especialmente considerando la protesta histórica de octubre 2019, también liderada por la CONAIE contra el gobierno del entonces presidente Lenín Moreno [@LAPOPReport.2022]. Sin embargo, en nuestro país los períodos de estabilidad han sido la excepción y no la norma. Históricamente Ecuador ha tenido un golpe de estado cada 6 años y un 50% de éstos fueron exitosos derrocando al gobierno de turno [@Loaiza.2022].
 
-La encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP). LAPOP ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.
+La encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP) ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.
 
-El gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses ---probablemente por la "Rebelión de los Forajidos" que derrocó al Presidente Lucio Gutiérrez---. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [@CONAIE.2015; @BBC.2015]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [@Melendez.2017]
+El gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses ---probablemente por la "Rebelión de los Forajidos" que derrocó al Presidente Lucio Gutiérrez---. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [@CONAIE.2015; @BBC.2015]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [@Melendez.2017].
 
 # Características de los protestantes
 
@@ -545,7 +543,7 @@ ggplot(political_graph_df,
                   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme(legend.position = c(0.55,0.17),
+  theme(legend.position = c(0.55,0.145),
         axis.ticks.x = element_blank(),
         text = element_text(size = 9))
 
@@ -613,6 +611,9 @@ Las protestas de junio 2022 finalizan con concesiones de ambas partes, las cuale
 
 [^5]: Imagen original de [\@ecuacultural](https://www.instagram.com/ecuacultural).
 
-*Esta nota fue sido orgullosamente concebida desde R mediante RStudio. Visita el repositorio de [GitHub](https://github.com/dsanchezp18/protests-article) para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactar al equipo de [El Quantificador](https://elquantificador.org/) con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos.*
+:::{.callout-note}
+# Nota
+Este post fue orgullosamente concebido con Quarto y R mediante RStudio, originalmente publicado en [El Quantificador](https://elquantificador.org/) del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visita el repositorio de [GitHub](https://github.com/dsanchezp18/protests-article) para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactarme a mí o al equipo de [El Quantificador](https://elquantificador.org/contactanos/) con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos. 
+:::
 
 # Referencias

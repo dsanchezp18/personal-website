@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 128cf525-c10f-46ab-af33-b06133e0df47
+      url: 'https://quiet-swan-670097.netlify.app'
