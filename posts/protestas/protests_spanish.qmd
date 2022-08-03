@@ -58,10 +58,16 @@ lapop_des<-svydesign(ids = ~ upm,
 ```
 
 :::{.callout-note}
+# Nota
 Este post fue originalmente publicado en [El Quantificador](https://elquantificador.org/), el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica. 
 :::
 
 *El Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.*
+
+:::{.callout-tip}
+# Reproducibilidad
+Todo el código de R utilizado para este post esta incluido en el código fuente de esta página web, el cual puedes encontrarlo en mi perfil de [GitHub](https://github.com/dsanchezp18). Sin embargo, para poder llegar a la base de datos limpia, recomiendo que revises la nota al final del artículo.
+:::
 
 ## La participación en protestas
 
@@ -138,5 +144,475 @@ El Ecuador parece haber perdido la relativa estabilidad política que tuvo duran
 La encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP). LAPOP ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.
 
 El gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses ---probablemente por la "Rebelión de los Forajidos" que derrocó al Presidente Lucio Gutiérrez---. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [@CONAIE.2015; @BBC.2015]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [@Melendez.2017]
+
+# Características de los protestantes
+
+```{r}
+#| label: protestantes-carac
+
+# Realizamos tabulaciones cruzadas para observar características de los protestantes
+
+# Base de solo protestantes
+
+df_prot<-
+  df %>% 
+  filter(protest == 1)
+
+# Diseño de encuesta
+
+lapop_prot_des<-
+  svydesign(ids = ~ upm, 
+            strata = ~ estratopri, 
+            weights = ~ weight1500, 
+            nest = TRUE,
+            na.action = 'na.exclude',
+            data = df_prot)
+
+# Edad promedio de protestante y no protestante
+
+edad_protestante_promedio<-
+  svyby(~ age,
+        ~ protest,
+        design = lapop_des,
+        svymean,
+        na.rm = T)
+
+# Edad promedio de protestantes a lo largo del tiempo
+
+edad_protestante_promedio_time<-
+  svyby(~ age,
+        ~ year,
+        design = lapop_prot_des,
+        svymean,
+        na.rm = T)
+
+# Distribución de género
+
+genero_prot<-
+    svyby(~ gndr,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Distribución de género a lo largo del tiempo
+
+genero_prot_time<-
+    svyby(~ gndr,
+          ~ year,
+          design = lapop_prot_des,
+          svymean,
+          na.rm = T)
+
+# Años de educación promedio 
+
+educacion_prot<-
+    svyby(~ ed,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Años de educación promedio a lo largo del tiempo
+
+educacion_prot_time<-
+    svyby(~ ed,
+          ~ year,
+          design = lapop_prot_des,
+          svymean,
+          na.rm = T)
+
+# Situacion económica prot y no prot
+
+econ_sit_prot<-
+    svyby(~ econ_sit,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Situación económica de los protestantes
+
+econ_sit_prot_time<-
+      svyby(~ econ_sit,
+            ~ year,
+            design = lapop_prot_des,
+            svymean,
+            na.rm = T)
+
+# Situación económica total
+
+econ_sit_time<-
+      svyby(~ econ_sit,
+            ~ year,
+            design = lapop_des,
+            svymean,
+            na.rm = T)
+
+# Por tasa de desempleo
+
+ocup_prot<-
+      svyby(~ unem_total,
+            ~ protest,
+            design = lapop_des,
+            svymean,
+            na.rm = T)
+
+# Por tasa de desempleo para protestantes a lo largo del tiempo
+
+unem_time_prot<-
+      svyby(~ unem_total,
+            ~ year,
+            design = lapop_prot_des,
+            svymean,
+            na.rm = T)
+
+# Desempleo en general
+
+unem_time<-
+      svyby(~ unem_total,
+            ~ year,
+            design = lapop_des,
+            svymean,
+            na.rm = T)
+
+# Para trabajar con identificación racial, creamos indicador de  indígenas
+
+# Indígenas
+
+df$indg<-ifelse(df$etid == 3,1,0)
+
+# Actualizamos el diseño muestral y la base de datos de protestantes
+
+lapop_des<-svydesign(ids = ~ upm, 
+                     strata = ~ estratopri, 
+                     weights = ~ weight1500, 
+                     nest = TRUE,
+                     na.action = 'na.exclude',
+                     data = df)
+df_prot<-
+  df %>% 
+  filter(protest == 1)
+
+lapop_prot_des<-
+  svydesign(ids = ~ upm, 
+            strata = ~ estratopri, 
+            weights = ~ weight1500, 
+            nest = TRUE,
+            na.action = 'na.exclude',
+            data = df_prot)
+
+# Indígenas por protest
+
+indg_prot<-
+    svyby(~ indg,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Blancos por protest
+
+indg_prot1<-
+    svyby(~ white,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Indígenas a lo largo del tiempo
+
+indg_prot_time<-
+    svyby(~ indg,
+          ~ year,
+          design = lapop_prot_des,
+          svymean,
+          na.rm = T)
+
+# Distribución racial de la muestra
+
+race_time<-
+  svyby(~ as.factor(etid),
+        ~ year,
+        design = lapop_des,
+        svymean,
+        na.rm = T)
+
+# Por approval rating
+
+pres_aprov_prot<-
+    svyby(~ pres_aprov_dic,
+          ~ protest,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Por ideología política (derecha-izquierda)
+
+pol_prot<-
+  svyby(~ plscr_na,
+        ~ protest,
+        design = lapop_des,
+        svymean,
+        na.rm = T)
+
+```
+
+¿Qué caracteriza a los manifestantes ecuatorianos? A lo largo del tiempo éstos han sido mayoritariamente hombres, excepto en el 2014 y 2019, en donde no existen diferencias estadísticamente significativas entre hombres y mujeres. Es más probable que quienes protesten estén identificados con algún grupo político [^1] y no aprueben la gestión del presidente. Aunque los protestantes, en general, son más jóvenes y más educados que quienes no protestan, la diferencia es casi negligible- contrario a lo que se pensaría-.
+
+[^1]: Un `r round(pol_prot %>% filter(protest == 1) %>% select(plscr_na)*100)`% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (`r round(pol_prot %>% filter(protest == 0) %>% select(plscr_na)*100)`%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son "la izquierda" y "la derecha", denotados por una escala del 1 al 10.
+
+¿Son quienes salen a las calles más pobres que quienes no protestan? No. De hecho, apenas el `r round(econ_sit_prot %>% filter(protest == 1) %>% select(econ_sitWorse)*100)`% de quienes protestan consideran que su situación económica es peor que la de hace 12 meses. Este porcentaje es solo levemente mayor al porcentaje de no protestantes que consideran que su situación ha empeorado. De igual manera, la tasa histórica de desempleo [^2] de los protestantes no es estadísticamente diferente a la tasa de desempleo global de la muestra -salvo en 2014, donde sí existe una diferencia de diez puntos porcentuales-.
+
+[^2]: A diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el [INEC](https://www.ecuadorencifras.gob.ec/enemdu-2021/) mensualmente.
+
+Un detalle clave sobre los protestantes es su composición racial y los datos de la encuesta permiten saber que *no* existen diferencias estadísticamente significativas entre los porcentajes históricos de protestantes y no protestantes indígenas. De hecho, el porcentaje que representan los indígenas sobre el total de manifestantes es cercano a solamente el
+`r round(indg_prot %>% filter(protest == 1) %>% select(indg)*100)`% histórico desde 2006 a 2019. Esta baja cifra puede estar subestimada dado que no se realizan demasiadas encuestas en cantones rurales, donde la población indígena se concentra. Sin embargo, tiene sentido pensar que la cifra real no debería desviarse tanto de la que se presenta aquí: al ser los indígenas una minoría de la población del país^[Para 2020, los indígenas constituían alrededor de un 6% de la población nacional [@Ortiz.2020].], es probable que también constituyen una minoría dentro de quienes participan en protestas. Por otro lado, sí existe una diferencia estadísticamente significativa en participacion en protestas respecto al porcentaje de gente que se autoidentifica como blanca, al ser menos probable que ellos protesten. 
+
+# Participación en protestas vs. apoyo al derecho de protesta
+
+```{r}
+#| label: data-wrangle-protestas-grafo-2
+#| include: true
+#| fig-align: center
+# Tabulamos la variable de apoyo a las protestas en general
+
+# La variable toma valores de 1 al 10, siendo 10 que más apoyan las protestas en general. Escogemos a quienes responden 1-5
+# como la gente que desaprueba el derecho a la protesta.
+
+df$prot_desap<-ifelse(df$e5 > 5, 1, 0)
+
+# Lo mismo con la variable de apoyo a las protestas de quienes hablan en contra del gobierno
+
+df$prot_desap_op<-ifelse(df$d2 > 5, 1, 0)
+
+# Actualizamos base de datos de protestantes y diseños muestrales
+
+lapop_des<-
+  svydesign(ids = ~ upm, 
+            strata = ~ estratopri, 
+            weights = ~ weight1500, 
+            nest = TRUE,
+            na.action = 'na.exclude',
+            data = df)
+
+df_prot<-
+  df %>% 
+  filter(protest == 1)
+
+lapop_prot_des<-
+  svydesign(ids = ~ upm, 
+            strata = ~ estratopri, 
+            weights = ~ weight1500, 
+            nest = TRUE,
+            na.action = 'na.exclude',
+            data = df_prot)
+
+# Hacemos la tabulación a nivel de año
+
+desap_time<-
+    svyby(~ prot_desap,
+          ~ year,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+desap_op_time<-
+    svyby(~ prot_desap_op,
+          ~ year,
+          design = lapop_des,
+          svymean,
+          na.rm = T)
+
+# Juntar todo
+
+desap_time_df<-
+  desap_time %>%
+  mutate(legend = 'Aprueba las protestas en general') %>% 
+  bind_rows(desap_op_time %>% 
+            rename(prot_desap = prot_desap_op) %>% 
+            mutate(legend = 'Aprueba las protestas de grupos de oposición al gobierno' ))
+
+rownames(desap_time_df)<-NULL
+
+# Tabulaciones
+
+# Job Approval Rating
+
+japrov_time<-svyby(~ pres_aprov_dic, 
+                   ~ year, 
+                   design = lapop_des,
+                   svymean, 
+                   na.rm = T)
+
+# Confidence in the president
+
+pconf_time<-svyby(~ pres_conf_dic, 
+                  ~ year, 
+                  design = lapop_des,
+                  svymean, 
+                  na.rm = T)
+
+# Manejo de datos
+
+political_graph_df<-
+  pconf_time %>%
+  select(year, 
+         pres_conf_dicYes, 
+         se.pres_conf_dicYes) %>% 
+  rename(perc = pres_conf_dicYes, 
+         se = se.pres_conf_dicYes) %>% 
+  mutate(legend = 'Confía en el Presidente') %>% 
+  filter(year != 2004, 
+         year != 2006)
+
+# The same but for the job approval rating variable
+
+japrov_df_g<-
+  japrov_time %>%
+  select(year, 
+         pres_aprov_dicYes, 
+         se.pres_aprov_dicYes) %>% 
+  rename(perc = pres_aprov_dicYes,
+         se = se.pres_aprov_dicYes) %>% 
+  mutate(legend = 'Aprueba el trabajo del Presidente')
+
+
+# Now unite all of these in the same dataframe to plot it. 
+
+political_graph_df<-
+  bind_rows(political_graph_df,
+            japrov_df_g)
+
+rownames(political_graph_df)<-NULL
+
+# Grafico 1: actitudes
+
+protestas_graph<-
+ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = legend))+
+  geom_line()+
+  geom_line(aes(x = year, y = prot_desap - 1.96*se), color = quant_grey, linetype = 'dotted')+
+  geom_line(aes(x = year, y = prot_desap + 1.96*se), color = quant_grey, linetype = 'dotted')+
+  geom_point()+
+  scale_color_manual(values = c('#964B00', quant_red),
+                     breaks = c('Aprueba las protestas en general', 'Aprueba las protestas de grupos de oposición al gobierno'))+
+  labs(x = '',
+       y = '% de personas que aprueban protestas',
+       title = 'Actitudes hacia protestas',
+       subtitle = '% que aprueba la protesta pacífica',
+       color = '')+
+  theme_daniel+
+  scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+                     labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
+  theme_hc(style = 'darkunica')+
+  theme(legend.position = c(0.5,0.17),
+        axis.ticks.x = element_blank(),
+        text = element_text(size = 9.5))
+
+# Grafico 2: actitudes politicas
+
+pol_graph<-
+ggplot(political_graph_df,
+                  aes(x = year, y = perc, color = legend, group = legend))+
+                  geom_line(size = 0.8)+
+                  scale_color_manual(values = c('#61346B','#BF69C2'),
+                                     breaks = c('Confía en el Presidente','Aprueba el trabajo del Presidente'))+
+                  geom_point(size = 2.15)+
+                  geom_line(aes(x = year, 
+                                y = perc - 1.96*se),
+                            size = 0.7,
+                            color = 'grey50', 
+                            linetype = 'dotted')+
+                  geom_line(aes(x = year, 
+                                y = perc + 1.96*se),
+                            size = 0.7,
+                            color = 'grey50', 
+                            linetype = 'dotted')+
+                  geom_vline(xintercept = 7.5, color = quant_grey, linetype = 'dotted')+
+                  annotate('label', x = 5, y = 0.5, label = 'Gob. de Correa', size = 2.25, fill = '#696969')+
+                  geom_vline(xintercept = 2.5, color = quant_grey, linetype = 'dotted')+
+                  annotate('label', x = 1.48, y = 0.45, label = 'Gob. de\nGutiérrez-Palacio', size = 2.25, fill = '#696969')+
+                  annotate('label', x = 8.05, y = 0.5, label = 'Gob. de\nMoreno', size = 2.25, fill = '#696969')+
+                  theme_daniel+
+                  labs(x = '',
+                       y = '% de aprobación',
+                       color = '',
+                       title = 'Actitudes hacia el gobierno',
+                       subtitle = '% que aprueba o confia en el Presidente de la República')+
+                  theme(legend.position = c(0.5,0.12),
+                        axis.ticks.x = element_blank(),
+                        text = element_text(size = 5.5))+
+                  scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+                     labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
+  theme_hc(style = 'darkunica')+
+  theme(legend.position = c(0.55,0.17),
+        axis.ticks.x = element_blank(),
+        text = element_text(size = 9))
+
+# Caption largo
+
+caption_grafo2<-
+  'Nota: Datos del Barómetro de las Américas. Las barras representan intervalos de confianza al 95% con errores ajustados por diseño muestral multietapa y estratificado. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las líneas punteadas en gris representan los límites inferiores y superiores del intervalo de confianza al 95%. El porcentaje que aprueba las protestas se calcula para quienes responden números mayores a 4 (del 1 al 10). El porcentaje que confía en el Presidente se calcula para quienes responden números mayores a 4 (del 1 al 7) mientras que la aprobación se calcula para quienes responden números mayores a 3 (del 1 al 5). Los porcentajes son sobre el total de personas en edad de votar (mayores a 16) del Ecuador.'
+
+# Ahora si se presenta ambos gráficos
+
+protestas_graph + pol_graph +
+  plot_layout(ncol = 2) +
+  plot_annotation(title = 'Actitudes políticas de los ecuatorianos en edad de votar 2006-2019',
+                  caption = str_wrap(caption_grafo2, 110),
+  theme = theme(plot.caption = element_text(hjust = 0, face = 'italic'),
+                plot.title = element_text(hjust = 0.5, color = 'white'))+ theme_hc(style = 'darkunica'))
+```
+
+Viene al caso considerar una diferencia clave que pudo haber sido fácil de confundir últimamente, especialmente mientras las protestas tomaban lugar: **la participación en protestas no es lo mismo que la aprobación a las mismas**. El Barómetro de las Américas de LAPOP nos permite construir una serie de tiempo para monitorear el apoyo histórico a las protestas de los ecuatorianos, como se ve a continuación.
+
+Los datos nos muestran que, previo a la protesta del 2019, el derecho a protestar tanto en general como de grupos de oposición ha sido aprobado por la mayoría de la población en edad de votar, salvo en el 2012 y en el 2014. En un principio, más ecuatorianos apoyan las protestas en general que las protestas de los grupos en contra del gobierno actual[^3]. Sin embargo, la relación se invierte para 2016, cerca del fin del gobierno de Correa, en donde era más probable que una persona apruebe las protestas contra el actual gobierno que las protestas en general.
+
+[^3]: La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que "siempre hablan mal de la forma de gobierno actual y del sistema de gobierno" [@Donoso.2018].
+
+Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no... ¿no son válidas?
+
+::: {#tbl-panel layout-ncol=2}
+
+| Ha participado en una protesta 	| Aprueba 	| No aprueba	|
+|--------------------------------	|-----	|-----	|
+| Sí                             	| 74% 	| 26% 	|
+| No                             	| 57% 	| 43% 	|
+
+: Protestar en general
+
+| Ha participado en una protesta 	| Aprueba 	| No aprueba	|
+|--------------------------------	|-----	|-----	|
+| Sí                             	| 62% 	| 38% 	|
+| No                             	| 55% 	| 45% 	|
+
+: Protestar en oposición al gobierno
+
+Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas
+:::
+
+La tabla anterior nos muestra el porcentaje histórico de dos tipos de aprobación a las protestas clasificado por la participación en protestas. Como se esperaría, un protestante es más propenso a aprobar el derecho de protestar que alguien que no ha protestado. Sin embargo, también se esperaría que quienes participan en protestas aprueben ampliamente el derecho a protestar en cualquier ámbito, pero existe un 26% de ellos que *no* lo han aprobado históricamente. Respecto al apoyo a las protestas de los grupos de oposición al gobierno, los porcentajes son peores: históricamente un 38% de protestantes no aprueba ese derecho. Este es un fenómeno extraño y preocupante que merece ser observado más a fondo en el futuro, con datos actualizados.
+
+# Algunas implicaciones
+
+El análisis realizado se puede resumir en los siguientes puntos:
+
+-   Los protestantes tienden a aprobar el derecho a protestar (aunque no tanto), identificarse con algún ala política (derecha, izquierda o centro) y a desaprobar el trabajo del presidente. Es menos probable encontrar manifestantes mujeres y blancos.
+
+-   No existen diferencias significativas entre protestantes y no protestantes en cuanto a edad, años de escolaridad, la probabilidad de ser indígena, estar desempleado y tener una peor situación económica.
+
+-   Se encuentra una clara divergencia entre la participación en protestas y la aprobación de las mismas, siendo siempre el porcentaje de aprobación mucho mayor al de participación.
+
+-   Inquietantemente, la aprobación a las protestas se mueve en contra del apoyo al presidente de turno. Mientras más popular el gobierno, menos respetado el derecho a la protesta.
+
+Es necesario entender lo que implican las protestas, tanto para quienes las lideran y las enfrentan como para los ciudadanos comunes y corrientes. En mi opinión, es incluso más importante que el ecuatoriano promedio las comprenda, puesto que son ellos los que suelen estar en primera línea de las manifestaciones a diferencia de aquellos políticos, dirigentes y autoridades que las protagonizan. No es justificable la violencia del estado hacia la protesta social, así como la minimización de los problemas que aquejan a las comunidades índigenas[^4], pero la violencia por parte de protestantes tampoco puede justificarse. Informar nuestra discusión sobre la coyuntura del país con hechos, libres de ideología y subjetividad, es extremadamente imperante para encaminarnos hacia una mejor nación, evitando la violencia y polarización social así como protegiendo el derecho a la protesta pacífica, clave para el buen funcionamiento de una democracia [@Donoso.2018].
+
+[^4]: Véase, por ejemplo, [@Dell.2010].
+
+Las protestas de junio 2022 finalizan con concesiones de ambas partes, las cuales desafortunadamente solo giran alrededor del precio de la gasolina, postergando hacia el mediano plazo la resolución de los otros problemas como la obtención de precios justos para los productores agrícolas y el manejo de la crisis de inseguridad. La historia amenaza con repetirse en esta mesa de diálogo, recordando que en el 2019 las protestas finalizaron por una estabilización del precio de la gasolina aunque los actores involucrados fueron incapaces de llegar a un acuerdo [@LAPOPReport.2022]. Nuestro país no puede aguantar más violencia entre protestantes y autoridades cada dos años; los agentes sociales deben esforzarse para que el Ecuador sea justamente eso: un país, y no un [licuador](https://www.instagram.com/p/CIbaLjPh5LW/?utm_source=ig_web_copy_link)[^5] al que le entregas algo íntegro y te lo devuelve triturado. Debemos exigir al resto y exigirnos a nosotros mismos la fuerza para construir un país de paz y prosperidad, pero también un país de cambio pacífico y efectivo cuando lo apremie.
+
+[^5]: Imagen original de [\@ecuacultural](https://www.instagram.com/ecuacultural).
+
+*Esta nota fue sido orgullosamente concebida desde R mediante RStudio. Visita el repositorio de [GitHub](https://github.com/dsanchezp18/protests-article) para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactar al equipo de [El Quantificador](https://elquantificador.org/) con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos.*
 
 # Referencias
