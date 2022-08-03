@@ -1,1 +1,1 @@
-Sitemap: https://quiet-swan-670097.netlify.app/sitemap.xml
+Sitemap: https://daniel-ec.netlify.app/sitemap.xml
