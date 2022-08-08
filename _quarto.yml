@@ -21,7 +21,7 @@ website:
       - text: RPubs
         href: https://rpubs.com/dsanchezp998
     right: 
-      - text: Proudly built with Quarto from RStudio.
+      - text: Proudly built with Quarto through RStudio.
   navbar:
     right:
       - href: index.qmd
@@ -35,7 +35,6 @@ website:
 format:
   html:
     theme: cyborg
-    mainfont: "Lato"
     css: styles.css
     toc: true
 
