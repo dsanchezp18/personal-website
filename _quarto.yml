@@ -5,9 +5,12 @@ website:
   title: "Daniel Sánchez"
   site-url: "https://daniel-ec.netlify.app/"
   description: "Daniel Sánchez Personal Website"
+  favicon: icon.png
   twitter-card: 
-    creator: "@dsanchezp1826"
+    creator: "@daniel_ec18"
+    image: icon.png
     card-style: summary
+  open-graph: true
   page-footer:
     left:
       - icon: github
@@ -26,7 +29,8 @@ website:
     right:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
       - research.qmd
       - teaching.qmd
       - resources.qmd
