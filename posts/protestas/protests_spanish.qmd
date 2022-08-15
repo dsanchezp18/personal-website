@@ -1,7 +1,7 @@
 ---
 title: "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador"
 author: "Daniel Sánchez"
-date: "2022-08-03"
+date: "2022-08-15"
 description: As my first post, I republish my contribution to El Quantificador, LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.
 categories: [spanish, politics, ecuador, protests, data viz]
 csl: ../../econometrics.csl
