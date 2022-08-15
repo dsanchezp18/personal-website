@@ -4,7 +4,7 @@ website:
   title: " "
   site-url: "https://daniel-ec.netlify.app/"
   description: "Daniel Sánchez Personal Website"
-  favicon: icon.png
+  favicon: icon.jpeg
   twitter-card: 
     creator: "@daniel_ec18"
     image: icon.jpeg
