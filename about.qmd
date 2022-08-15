@@ -14,6 +14,9 @@ about:
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/dsanchezp18/
+    - icon: file-user
+      text: CV
+      href: daniel_sanchez_cv.pdf
 ---
 :::{#about-heading}
 
