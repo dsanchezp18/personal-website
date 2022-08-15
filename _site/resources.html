@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Daniel Sánchez - Resources</title>
+<title>- Resources</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,17 +75,14 @@ div.csl-indent {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Daniel Sánchez - Resources">
+<meta property="og:title" content="- Resources">
 <meta property="og:description" content="Here I have compiled a list or a commented bibliography, if you will, of resources that I have found useful along the course of my academic studies.">
-<meta property="og:site-name" content="Daniel Sánchez">
-<meta name="twitter:title" content="Daniel Sánchez - Resources">
+<meta property="og:site-name" content=" ">
+<meta name="twitter:title" content="- Resources">
 <meta name="twitter:description" content="Here I have compiled a list or a commented bibliography, if you will, of resources that I have found useful along the course of my academic studies.">
-<meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.png">
+<meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image-height" content="389">
-<meta name="twitter:image-width" content="673">
 </head>
 
 <body class="nav-fixed">
@@ -165,8 +162,8 @@ div.csl-indent {
 </header>
 
 <p>Here I have compiled a list or a commented bibliography, if you will, of resources that I have found useful along the course of my academic studies. By no means I am an expert on these topics but I do believe that these will help some people out. All efforts that I’ve dedicated to this page are dedicated to the memory of my grandfather, Jorge Pazmiño. Do not hesitate to contact me for suggestions and comments about these.</p>
-<section id="learning-r" class="level1">
-<h1>Learning R</h1>
+<section id="learning-r" class="level2">
+<h2 class="anchored" data-anchor-id="learning-r">Learning R</h2>
 <p>R through RStudio, one of my longtime friends. Here you will find a list of resources which I believe can help you get started on your adventures with this marvelous software. It should be noted that I am including these resources with a practical rather than technical approach, which might be a little biased toward econometrics, so it is possible that people on other fields find other resources more helpful.</p>
 <ul>
 <li><strong>Book</strong>: <a href="https://r4ds.had.co.nz/">R for Data Science</a> (R4DS) by Hadley Wickham and Garrett Grolemund</li>
@@ -253,23 +250,23 @@ div.csl-indent {
 <li><p><a href="https://r-pkgs.org/">R Packages</a></p></li>
 </ul>
 </section>
-<section id="some-extra-advice" class="level1">
-<h1>Some extra advice</h1>
+<section id="some-extra-advice" class="level2">
+<h2 class="anchored" data-anchor-id="some-extra-advice">Some extra advice</h2>
 <p>Working with R throughout my life as a student and for my personal project, I’ve met with endless issues. I’ve been able to solve most of them by googling my question and reading other people’s Stack Overflow’s questions, or reading books. However, there have been complicated problems which have had rather difficult solutions. In this section I’d like to give some unsolicited advice for you to not run into these problems or how to solve them efficiently if you do.</p>
-<section id="on-building-descriptive-statistic-and-regression-tables" class="level2">
-<h2 class="anchored" data-anchor-id="on-building-descriptive-statistic-and-regression-tables">On building descriptive statistic and regression tables</h2>
+<section id="on-building-descriptive-statistic-and-regression-tables" class="level3">
+<h3 class="anchored" data-anchor-id="on-building-descriptive-statistic-and-regression-tables">On building descriptive statistic and regression tables</h3>
 <p>The <em>stargazer</em> package is one of the most time-efficient ways of constructing summary tables in R. You only need to install and load the package into your file, then use the <code>stargazer()</code> function with a data frame or model object. With data, it can print a fairly decent descriptive statistics table. There are additional ways to customize the function’s output (remember you can use <code>?</code> before the function’s call to see the function’s documentation on RStudio’s Help pane). It can print side-by-side regressions tables by feeding a list of regressions to the functions too. The package can output the tables to LaTeX, html or text. The <code>stargazer()</code> function is also compatible with many different types of model objects.</p>
 <p>However, this package is not the ultimate solution for building regression tables. It quickly becomes clumsy when trying to add special types of standard errors to your estimated model coefficients, when you’re trying to add new goodness-of-fit statistics, etc. I’ve also found out that it does not work too well when used with <code>.Rnw</code> and <code>.Rmd</code> files. Below, I will talk about the great package <a href="https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html"><em>modelsummary</em></a>, however, I still believe that <em>stargazer</em> is a good alternative when you’re starting out, for quickly visualizing models and descriptive statistics for your data.</p>
 <p><em>modelsummary</em> is the ultimate alternative to <em>stargazer</em>. I used this package extensively in my undergraduate capstone project and found it to be amazing. It can support virtually all R model objects and allows endless customizations for your tables. One amazing feature is that you can pass arguments to the <code>modelsummary</code> function which work with the <code>kable</code> package, which are particularly useful for complex tables. One example is the <code>longtable = T</code> argument, which isn’t a built-in argument of <em>modelsummary</em>, but it is an argument for the <em>kable</em> package. Also, this package works perfectly with <code>.Rnw</code> and <code>.Rmd</code> files. <em>modelsummary</em> is very, very recommended and will probably save you time in the long run if you start using this one instead of stargazer when you start to create tables from R output. If you want guidance on how to use the package, you can check out all the <a href="https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html">vignettes</a> made by the package author and the way that I used the package in my papers, all available in my <a href="https://github.com/dsanchezp18">GitHub</a> profile.</p>
 </section>
-<section id="survey-data-and-binary-outcome-models" class="level2">
-<h2 class="anchored" data-anchor-id="survey-data-and-binary-outcome-models">Survey data and binary-outcome models</h2>
+<section id="survey-data-and-binary-outcome-models" class="level3">
+<h3 class="anchored" data-anchor-id="survey-data-and-binary-outcome-models">Survey data and binary-outcome models</h3>
 <p>During the data analysis for my capstone project, I worked extensively with survey data and eventually got to running binary-outcome models, namely logit and probit models, with the data. In the literature that used the datasets I was using, it was standard practice to run survey-weighted models to get complex sample-adjusted standard errors and adjusted coefficients. I had no trouble doing this using the <em>survey</em> package in R, however, I ran into trouble when I wanted to calculate average partial effects- it was impossible to do so with both the <code>margins()</code> or the <code>marginaleffects()</code> functions (both have their package named after themselves.).</p>
 <p>After much asking around and reading documentation, I found two solutions. The first one is complex and clunky, and not so effective, but it works. The whole thing is described in this <a href="https://stackoverflow.com/questions/68869935/reporting-average-marginal-effects-of-a-survey-weighted-logit-model-with-r/68873977#68873977">Stack Overflow question</a> that I made when I became desperate one time at 3 am.</p>
 <p>The second solution is the one that definitely solved the issue and I discovered it only recently. It is possible to calculate average partial effects of the models that had given me issues in the past when I <em>changed the data type of certain variables</em>. Since I had imported my data from Stata files (<code>.dat</code> files) using the <em>haven</em> package, when I ran <code>class()</code> on certain variables I found that it had <code>double</code> as the data type. I found that changing the data type to <code>integer</code> or <code>numeric</code> using the <code>as.*</code> functions solved the issue, now, running <code>marginaleffects()</code> on the model objects with the updated variables caused no issues. A certainly strange problem; I might write about it on the <a href="./posts_home.html">Posts</a> section and/or contribute to <a href="https://lost-stats.github.io/">LOST</a> with this info.</p>
 </section>
 </section>
-<section id="references" class="level1">
+<section id="references" class="level2">
 
 
 

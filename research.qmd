@@ -4,15 +4,15 @@ title: "Research"
 
 I'm interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub](https://github.com/dsanchezp18) and [RPubs](https://github.com/dsanchezp18) sites. Further, along with the other exceptional academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I've done with LIDE can be seen below or also at the organization's blog, [El Quantificador](https://elquantificador.org/). 
 
-# Working papers and publications
+## Working papers and publications
 
-## [Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103)
+### [Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103)
 
 - Sánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82. 
 
 - Source code posted in a [GitHub repository](https://github.com/dsanchezp18/covidvax-econrecovery-paper) and an RMarkdown notebook posted which was also posted in [RPubs](https://rpubs.com/dsanchezp998/covidvax). 
 
-## Honesty by Convenience: Corruption Tolerance in Ecuador
+### Honesty by Convenience: Corruption Tolerance in Ecuador
 
 *Dedicated to the memory of Jorge Pazmiño (1941-2021)*
 

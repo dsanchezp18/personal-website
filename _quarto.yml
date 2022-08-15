@@ -1,14 +1,13 @@
 project:
   type: website
-
 website:
-  title: "Daniel Sánchez"
+  title: " "
   site-url: "https://daniel-ec.netlify.app/"
   description: "Daniel Sánchez Personal Website"
   favicon: icon.png
   twitter-card: 
     creator: "@daniel_ec18"
-    image: icon.png
+    image: icon.jpeg
     card-style: summary
   open-graph: true
   page-footer:
@@ -26,6 +25,7 @@ website:
     right: 
       - text: Proudly built with Quarto through RStudio.
   navbar:
+    title: Daniel Sánchez
     right:
       - href: index.qmd
         text: Home
@@ -35,11 +35,11 @@ website:
       - teaching.qmd
       - resources.qmd
       - posts_home.qmd
-
 format:
   html:
-    theme: cyborg
-    css: styles.css
+    theme: 
+      - cyborg
+      - custom.scss
     toc: true
 
 editor: source

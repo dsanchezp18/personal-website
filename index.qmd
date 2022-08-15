@@ -2,11 +2,13 @@
 title: "Home"
 ---
 
-Hi! Welcome to my personal website. I am Daniel Sánchez and I am currently an incoming Economics MA student at Simon Fraser University. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE).
+Hello there! Welcome to my personal website. I am Daniel Sánchez and I am currently an incoming Economics MA student at Simon Fraser University. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE).
 
-In this webpage, you will find some more information about myself and the projects I'm working on.
+In this webpage, you will find some more information about myself and the projects I'm working on. You can find my CV in the [About](about.qmd) page. I sometimes write about stuff in the [Posts](posts_home.qmd) page.
 
-# My Tweets
+![Photo: Vancouver Harbour Centre from Gastown. By yours truly.](icon.jpeg){fig-align="center" width="536"}
+
+## My Tweets
 
 <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/daniel_ec18?ref_src=twsrc%5Etfw">Tweets by dsanchezp1826</a>
 

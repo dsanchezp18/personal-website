@@ -2,7 +2,7 @@
 title: "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador"
 author: "Daniel Sánchez"
 date: "2022-08-03"
-description: As my first post, I republish my contribution to [El Quantificador](https://elquantificador.org/), LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.
+description: As my first post, I republish my contribution to El Quantificador, LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.
 categories: [spanish, politics, ecuador, protests, data viz]
 csl: ../../econometrics.csl
 image: logo_quanti.png
@@ -18,13 +18,14 @@ knitr:
 ```{r}
 #| label: setup
 
-# cargar librerias
+# Cargar librerias
 
 library(survey)
 library(tidyverse)
 library(patchwork)
 library(openxlsx)
 library(ggthemes)
+library(showtext)
 
 # Cargar mis datos
 
@@ -44,7 +45,8 @@ theme_daniel<-
         axis.text.y = element_blank(),
         plot.caption = element_text(hjust = 0, face = 'italic'),
         legend.background = element_blank(),
-        axis.ticks = element_blank())
+        axis.ticks = element_blank(),
+        text = element_text(family = 'Questrial', size = 25))
 
 # Creamos el objeto de diseño muestral para utilizar en los cálculos
 
@@ -55,11 +57,16 @@ lapop_des<-svydesign(ids = ~ upm,
                      na.action = 'na.exclude',
                      data = df)
 
+# Add a custom font
+
+font_add_google("Questrial", family = "Questrial")
+showtext_auto()
+
 ```
 
 :::{.callout-note}
 # Nota
-Este post fue originalmente publicado en [El Quantificador](https://elquantificador.org/), el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica. 
+Este [post]() fue originalmente publicado en [El Quantificador](https://elquantificador.org/), el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica. 
 :::
 
 *El Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.*
@@ -108,7 +115,7 @@ prot_df<-
 # Guardar en un objeto el caption largo:
 
 caption_grafo1<-
-  'Fuente: El Barómetro de las Américas por el Proyecto de Opinión Pública de América Latina (LAPOP), www.LapopSurveys.org. Las barras representan intervalos de confianza del 95% con errores ajustados por diseño muestral multietapa estratificado. Las líneas punteadas representan protestas de importancia en el país. Las encuestas fueron realizadas de enero a marzo de cada año, excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las cifras representan el porcentaje de personas que han protestado en los últimos 12 meses sobre el total de personas en edad de votar (mayores a 16).'
+  'Fuente: El Barómetro de las Américas por el Proyecto de Opinión Pública de América Latina (LAPOP), www.LapopSurveys.org. Las barras representan intervalos de confianza del 95% con errores ajustados por diseño muestral multietapa estratificado. Las líneas punteadas representan protestas de importancia en el país. Las encuestas fueron realizadas de enero a marzo de cada año, excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las cifras representan el porcentaje de personas que han protestado en los últimos 12 meses sobre el total de personas en edad de votar.'
 
 # Ahora si nuestro gráfico
 
@@ -124,10 +131,10 @@ ggplot(prot_df, aes(x = year, y = protest))+
                     ymax = protest + 1.96*se),
                 width = 0.3)+
   geom_text(aes(label = round(protest, 4)*100),
-                size = 4,
-                vjust = 3.8)+
+                size = 6.5,
+                vjust = 4)+
   labs(x = '',
-       y = '% de personas mayores a 16 que han protestado',
+       y = '% de manifestantes',
        title = 'Participación en protestas del Ecuador 2006-2019',
        subtitle = '¿En los últimos 12 meses ha participado en una manifestación o protesta pública?',
        caption = str_wrap(caption_grafo1, 107))+
@@ -143,7 +150,7 @@ La encuesta del Barómetro de las Américas (AB) del Latin American Public Opini
 
 El gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses ---probablemente por la "Rebelión de los Forajidos" que derrocó al Presidente Lucio Gutiérrez---. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [@CONAIE.2015; @BBC.2015]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [@Melendez.2017].
 
-# Características de los protestantes
+## Características de los protestantes
 
 ```{r}
 #| label: protestantes-carac
@@ -367,7 +374,7 @@ pol_prot<-
 Un detalle clave sobre los protestantes es su composición racial y los datos de la encuesta permiten saber que *no* existen diferencias estadísticamente significativas entre los porcentajes históricos de protestantes y no protestantes indígenas. De hecho, el porcentaje que representan los indígenas sobre el total de manifestantes es cercano a solamente el
 `r round(indg_prot %>% filter(protest == 1) %>% select(indg)*100)`% histórico desde 2006 a 2019. Esta baja cifra puede estar subestimada dado que no se realizan demasiadas encuestas en cantones rurales, donde la población indígena se concentra. Sin embargo, tiene sentido pensar que la cifra real no debería desviarse tanto de la que se presenta aquí: al ser los indígenas una minoría de la población del país^[Para 2020, los indígenas constituían alrededor de un 6% de la población nacional [@Ortiz.2020].], es probable que también constituyen una minoría dentro de quienes participan en protestas. Por otro lado, sí existe una diferencia estadísticamente significativa en participacion en protestas respecto al porcentaje de gente que se autoidentifica como blanca, al ser menos probable que ellos protesten. 
 
-# Participación en protestas vs. apoyo al derecho de protesta
+## Participación en protestas vs. apoyo al derecho de protesta
 
 ```{r}
 #| label: data-wrangle-protestas-grafo-2
@@ -429,7 +436,7 @@ desap_time_df<-
   mutate(legend = 'Aprueba las protestas en general') %>% 
   bind_rows(desap_op_time %>% 
             rename(prot_desap = prot_desap_op) %>% 
-            mutate(legend = 'Aprueba las protestas de grupos de oposición al gobierno' ))
+            mutate(legend = 'Aprueba las protestas contra el gobierno'))
 
 rownames(desap_time_df)<-NULL
 
@@ -484,32 +491,49 @@ political_graph_df<-
 
 rownames(political_graph_df)<-NULL
 
+# Caption largo
+
+caption_grafo2<-
+  'Nota: Datos del Barómetro de las Américas. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. El porcentaje que aprueba las protestas se calcula para quienes responden números mayores a 4 (del 1 al 10). Los porcentajes son sobre el total de personas en edad de votar.'
+
 # Grafico 1: actitudes
 
-protestas_graph<-
 ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = legend))+
   geom_line()+
   geom_line(aes(x = year, y = prot_desap - 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_line(aes(x = year, y = prot_desap + 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_point()+
   scale_color_manual(values = c('#964B00', quant_red),
-                     breaks = c('Aprueba las protestas en general', 'Aprueba las protestas de grupos de oposición al gobierno'))+
+                     breaks = c('Aprueba las protestas en general', 'Aprueba las protestas contra el gobierno'))+
   labs(x = '',
-       y = '% de personas que aprueban protestas',
-       title = 'Actitudes hacia protestas',
+       y = '% de aprobación',
+       title = 'Actitudes hacia las protestas',
        subtitle = '% que aprueba la protesta pacífica',
-       color = '')+
+       color = '',
+       caption = str_wrap(caption_grafo2, 103))+
   theme_daniel+
   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme(legend.position = c(0.5,0.17),
-        axis.ticks.x = element_blank(),
-        text = element_text(size = 9.5))
+  theme_daniel
+```
 
-# Grafico 2: actitudes politicas
 
-pol_graph<-
+Viene al caso considerar una diferencia clave que pudo haber sido fácil de confundir últimamente, especialmente mientras las protestas tomaban lugar: **la participación en protestas no es lo mismo que la aprobación a las mismas**. El Barómetro de las Américas de LAPOP nos permite construir una serie de tiempo para monitorear el apoyo histórico a las protestas de los ecuatorianos, como se ve a continuación.
+
+Los datos nos muestran que, previo a la protesta del 2019, el derecho a protestar tanto en general como de grupos de oposición ha sido aprobado por la mayoría de la población en edad de votar, salvo en el 2012 y en el 2014. En un principio, más ecuatorianos apoyan las protestas en general que las protestas de los grupos en contra del gobierno actual[^3]. Sin embargo, la relación se invierte para 2016, cerca del fin del gobierno de Correa, en donde era más probable que una persona apruebe las protestas contra el actual gobierno que las protestas en general.
+
+[^3]: La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que "siempre hablan mal de la forma de gobierno actual y del sistema de gobierno" [@Donoso.2018].
+
+```{r}
+#| label: data-wrangle-protestas-grafo-2.1
+#| include: true
+#| fig-align: center
+# Grafico 2.1: actitudes politicas
+
+caption_grafo21<-
+  'Nota: Datos del Barómetro de las Américas. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las líneas punteadas en gris representan los límites inferiores y superiores del intervalo de confianza al 95%. El porcentaje que confía en el Presidente se calcula para quienes responden números mayores a 4 (del 1 al 7) mientras que la aprobación se calcula para quienes responden números mayores a 3 (del 1 al 5). Los porcentajes son sobre el total de personas en edad de votar.'
+
 ggplot(political_graph_df,
                   aes(x = year, y = perc, color = legend, group = legend))+
                   geom_line(size = 0.8)+
@@ -527,46 +551,25 @@ ggplot(political_graph_df,
                             color = 'grey50', 
                             linetype = 'dotted')+
                   geom_vline(xintercept = 7.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 5, y = 0.5, label = 'Gob. de Correa', size = 2.25, fill = '#696969')+
+                  annotate('label', x = 5, y = 0.5, label = 'Gob. de Correa', size = 5, fill = '#696969')+
                   geom_vline(xintercept = 2.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 1.48, y = 0.45, label = 'Gob. de\nGutiérrez-Palacio', size = 2.25, fill = '#696969')+
-                  annotate('label', x = 8.05, y = 0.5, label = 'Gob. de\nMoreno', size = 2.25, fill = '#696969')+
+                  annotate('label', x = 1.48, y = 0.45, label = 'Gob. de\nGutiérrez-Palacio', size = 5, fill = '#696969')+
+                  annotate('label', x = 8.05, y = 0.5, label = 'Gob. de\nMoreno', size = 5, fill = '#696969')+
                   theme_daniel+
                   labs(x = '',
                        y = '% de aprobación',
                        color = '',
                        title = 'Actitudes hacia el gobierno',
-                       subtitle = '% que aprueba o confia en el Presidente de la República')+
+                       subtitle = '% que aprueba o confia en el Presidente de la República',
+                       caption = str_wrap(caption_grafo21,100))+
                   theme(legend.position = c(0.5,0.12),
                         axis.ticks.x = element_blank(),
                         text = element_text(size = 5.5))+
                   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme(legend.position = c(0.55,0.145),
-        axis.ticks.x = element_blank(),
-        text = element_text(size = 9))
-
-# Caption largo
-
-caption_grafo2<-
-  'Nota: Datos del Barómetro de las Américas. Las barras representan intervalos de confianza al 95% con errores ajustados por diseño muestral multietapa y estratificado. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. Las líneas punteadas en gris representan los límites inferiores y superiores del intervalo de confianza al 95%. El porcentaje que aprueba las protestas se calcula para quienes responden números mayores a 4 (del 1 al 10). El porcentaje que confía en el Presidente se calcula para quienes responden números mayores a 4 (del 1 al 7) mientras que la aprobación se calcula para quienes responden números mayores a 3 (del 1 al 5). Los porcentajes son sobre el total de personas en edad de votar (mayores a 16) del Ecuador.'
-
-# Ahora si se presenta ambos gráficos
-
-protestas_graph + pol_graph +
-  plot_layout(ncol = 2) +
-  plot_annotation(title = 'Actitudes políticas de los ecuatorianos en edad de votar 2006-2019',
-                  caption = str_wrap(caption_grafo2, 110),
-  theme = theme(plot.caption = element_text(hjust = 0, face = 'italic'),
-                plot.title = element_text(hjust = 0.5, color = 'white'))+ theme_hc(style = 'darkunica'))
+  theme_daniel
 ```
-
-Viene al caso considerar una diferencia clave que pudo haber sido fácil de confundir últimamente, especialmente mientras las protestas tomaban lugar: **la participación en protestas no es lo mismo que la aprobación a las mismas**. El Barómetro de las Américas de LAPOP nos permite construir una serie de tiempo para monitorear el apoyo histórico a las protestas de los ecuatorianos, como se ve a continuación.
-
-Los datos nos muestran que, previo a la protesta del 2019, el derecho a protestar tanto en general como de grupos de oposición ha sido aprobado por la mayoría de la población en edad de votar, salvo en el 2012 y en el 2014. En un principio, más ecuatorianos apoyan las protestas en general que las protestas de los grupos en contra del gobierno actual[^3]. Sin embargo, la relación se invierte para 2016, cerca del fin del gobierno de Correa, en donde era más probable que una persona apruebe las protestas contra el actual gobierno que las protestas en general.
-
-[^3]: La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que "siempre hablan mal de la forma de gobierno actual y del sistema de gobierno" [@Donoso.2018].
 
 Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no... ¿no son válidas?
 
@@ -591,7 +594,7 @@ Aprobación al derecho a protestar por participación de los últimos 12 meses e
 
 La tabla anterior nos muestra el porcentaje histórico de dos tipos de aprobación a las protestas clasificado por la participación en protestas. Como se esperaría, un protestante es más propenso a aprobar el derecho de protestar que alguien que no ha protestado. Sin embargo, también se esperaría que quienes participan en protestas aprueben ampliamente el derecho a protestar en cualquier ámbito, pero existe un 26% de ellos que *no* lo han aprobado históricamente. Respecto al apoyo a las protestas de los grupos de oposición al gobierno, los porcentajes son peores: históricamente un 38% de protestantes no aprueba ese derecho. Este es un fenómeno extraño y preocupante que merece ser observado más a fondo en el futuro, con datos actualizados.
 
-# Algunas implicaciones
+## Algunas implicaciones
 
 El análisis realizado se puede resumir en los siguientes puntos:
 
@@ -616,4 +619,4 @@ Las protestas de junio 2022 finalizan con concesiones de ambas partes, las cuale
 Este post fue orgullosamente concebido con Quarto y R mediante RStudio, originalmente publicado en [El Quantificador](https://elquantificador.org/) del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visita el repositorio de [GitHub](https://github.com/dsanchezp18/protests-article) para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactarme a mí o al equipo de [El Quantificador](https://elquantificador.org/contactanos/) con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos. 
 :::
 
-# Referencias
+## Referencias
