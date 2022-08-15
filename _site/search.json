@@ -4,7 +4,7 @@
     "href": "about.html",
     "title": "Daniel Sánchez",
     "section": "",
-    "text": "Twitter\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     CV\n  \n\n  \n  \nI was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. I also work as a Data Analyst at Milmoh, S.L. and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian NGO whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching, which is why I started a Resources subpage in this website which may help a beginner get into R. I plan to expand this into new fields in the future.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
+    "text": "Twitter\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     RPubs\n  \n  \n    \n     IDEAS\n  \n  \n    \n     CV\n  \n  \n    \n     Short CV\n  \n\n  \n  \n\n\nI was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees: I received my Bachelor of Arts in Economics in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian NGO whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since. Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching, which is why I started a Resources subpage in this website which may help a beginner get into R. I plan to expand this into new fields in the future.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
   },
   {
     "objectID": "about.html#education",
@@ -40,6 +40,13 @@
     "title": "Home",
     "section": "My Tweets",
     "text": "My Tweets\nTweets by dsanchezp1826"
+  },
+  {
+    "objectID": "media.html",
+    "href": "media.html",
+    "title": "Media",
+    "section": "",
+    "text": "Radio: The ISSPOL Scandal\nSeptember 2020\n\nIn this radio feature, I speak with some of my USFQ School of Economics professors at a local radio station program about a recent corruption scandal in the country and the specific implications of a journal article’s empirical findings about corruption."
   },
   {
     "objectID": "posts/protestas/protests_spanish.html",

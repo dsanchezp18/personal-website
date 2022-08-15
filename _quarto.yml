@@ -34,6 +34,7 @@ website:
       - research.qmd
       - teaching.qmd
       - resources.qmd
+      - media.qmd
       - posts_home.qmd
 format:
   html:
