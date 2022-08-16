@@ -1,4 +1,4 @@
 # Daniel Sánchez' Personal Website
 
-This is my personal website's redux using Quarto. Currently under development. 
+This is my personal website's redux using Quarto.
 
