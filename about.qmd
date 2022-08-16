@@ -1,5 +1,5 @@
 ---
-title: "Daniel Sánchez"
+title: "Daniel Sánchez Pazmiño"
 about:
   id: about-heading
   template: trestles
@@ -38,7 +38,7 @@ library(fontawesome)
 
 ## Bio
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees: I received my Bachelor of Arts in Economics in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian NGO whose aim is to produce and diffuse research which can help create and promote effective public policy.
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees: I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian NGO whose aim is to produce and diffuse research which can help create and promote effective public policy.
 
 [^1]: In English, Research Laboratory for the Development of Ecuador.
 
