@@ -38,7 +38,7 @@ library(fontawesome)
 
 ## Bio
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees: I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. I will be attending Simon Fraser University in Burnaby, Canada for my MA studies in Fall 2022. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian NGO whose aim is to produce and diffuse research which can help create and promote effective public policy.
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
 
 [^1]: In English, Research Laboratory for the Development of Ecuador.
 
@@ -65,10 +65,19 @@ Apart from my work and research, I love literature, memes, playing videogames an
 
 -   Course Instructor LaTeX, Apr. 2021 (ECEL Research Group)
 
-## Professional/Research Experience `r fa('laptop-code')`
+## Professional Experience `r fa('suitcase')`
 
 -   Data Analyst, May 2022- Present (Milmoh, S.L.)
 
+-   Finance Intern, May - Jul. 2018 (Produbanco)
+
+-   Accounting Intern, May - Jul 2017 (Baker Tilly Ecuador)
+
+
+## Research Experience/Affiliations `r fa('laptop-code')`
+
+-   Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)
+
 -   Research Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)
 
--   Finance Intern, May - Jul. 2018 (Produbanco)
+-   Full Member, Jan. - Nov. 2021 (ECEL Research Group)
