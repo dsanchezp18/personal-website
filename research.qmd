@@ -2,7 +2,7 @@
 title: "Research"
 ---
 
-I'm interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub](https://github.com/dsanchezp18) and [RPubs](https://github.com/dsanchezp18) sites. Further, along with the other exceptional academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I've done with LIDE can be seen below or also at the organization's blog, [El Quantificador](https://elquantificador.org/). 
+I'm interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub](https://github.com/dsanchezp18) and [RPubs](https://github.com/dsanchezp18) sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I've done with LIDE can be seen below or also at the organization's blog, [El Quantificador](https://elquantificador.org/). 
 
 ## Working papers and publications
 
@@ -18,6 +18,7 @@ I'm interested in causal inference, the economics of corruption, financial econo
 
 - Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Submitted to the [Philosophy, Politics and Economics Review](https://pressbooks.lib.vt.edu/pper/front-matter/introduction/). 
 
-- Working paper available [here](files/research/hbc-v2.pdf). Initial version submitted to USFQ capstone project's DSpace available [here](https://repositorio.usfq.edu.ec/handle/23000/11202). As of July 2022, a [GitHub repository](https://github.com/dsanchezp18/hbc-v2) includes source code to reproduce all^[Except one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.] of the paper's prose and R code. Spanish version coming in the future.
+- [Presented](files/research/hbc-pres.pdf) a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.
 
+- Working paper available [here](files/research/hbc-v2.pdf). Initial version submitted to USFQ capstone project's DSpace available [here](https://repositorio.usfq.edu.ec/handle/23000/11202). As of July 2022, a [GitHub repository](https://github.com/dsanchezp18/hbc-v2) includes source code to reproduce all^[Except one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.] of the paper's prose and R code. Spanish version coming in the future.
 
