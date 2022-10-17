@@ -8,7 +8,8 @@ title: "Media"
 
 - A quantitative-oriented, general interest article posted on LIDE’s blog-type
 website, El Quantificador. Title in English: *A quantitative perspective on the
-Ecuadorian protests*.
+Ecuadorian protests. *ISSN 2953-6456*.
+
 
 - The article analyzes survey data from the AmericasBarometer using R on the attitudes of Ecuadorians towards protests. The source code was made available as a [GitHub](https://github.com/dsanchezp18/protests-article) repository.
 
