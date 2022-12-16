@@ -10,7 +10,7 @@ In this webpage, you will find [short](files/cv/daniel_sanchez_cv_shorter.pdf) a
 
 ## My Tweets
 
-<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/daniel_ec18?ref_src=twsrc%5Etfw">Tweets by dsanchezp1826</a>
+<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/daniel_ec18?ref_src=twsrc%5Etfw">Tweets by daniel_ec18</a>
 
 ```{=html}
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
