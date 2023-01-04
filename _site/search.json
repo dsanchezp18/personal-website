@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts in Economics student at Simon Fraser University in Burnaby, BC, Canada. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page."
+    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am an Economics Master of Arts student at Simon Fraser University in Burnaby, BC, Canada. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page."
   },
   {
     "objectID": "index.html#my-tweets",
@@ -102,7 +102,7 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "I’m interested in causal inference, the economics of corruption, financial economics as well as in labor and education economics. However, any research question that I find interesting is worth pursuing for me. I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
+    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
   },
   {
     "objectID": "research.html#working-papers-and-publications",
