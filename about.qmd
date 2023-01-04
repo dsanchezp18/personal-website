@@ -38,7 +38,7 @@ library(fontawesome)
 
 ## Bio
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my Economics MA. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
 
 As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since. 
 
