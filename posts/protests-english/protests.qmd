@@ -2,10 +2,10 @@
 title: "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador"
 author: "Daniel Sánchez"
 date: "2023-01-09"
-description: Took me long, but I'm republishing my contribution to El Quantificador in its translated version from the original in Spanish. Proudly aided by ChatGPT.
+description: Took me long, but I'm republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation. 
 categories: [english, politics, ecuador, protests, data viz]
 csl: ../../econometrics.csl
-image: logo_quanti.png
+image: protests.jpg
 bibliography: refs-article-protests.bib
 knitr:
   opts_chunk: 
