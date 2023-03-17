@@ -82,8 +82,6 @@ The code used for this post is included in the source code of this website, whic
 
 ## Protest Participation
 
-## La participación en protestas
-
 ```{r}
 #| label: data-wrangling-grafo-1
 #| include: true

@@ -39,7 +39,7 @@
     "href": "index.html",
     "title": "Home",
     "section": "",
-    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am an Economics Master of Arts student at Simon Fraser University in Burnaby, BC, Canada. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page."
+    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also a Data Analyst at Milmoh and a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page."
   },
   {
     "objectID": "index.html#my-tweets",
@@ -53,7 +53,7 @@
     "href": "media.html",
     "title": "Media",
     "section": "",
-    "text": "Radio: The ISSPOL Scandal\nSeptember 2020\n\nIn this radio feature, I speak with some of my USFQ School of Economics professors at a local radio station program about a recent corruption scandal in the country and the specific implications of a journal article’s empirical findings about corruption."
+    "text": "Blog Post: Una perspectiva cuantitativa sobre las protestas en Ecuador\nISSN 2953-6456\nJuly 2022\n\nA quantitative-oriented, general interest article posted on LIDE’s blog-type website, El Quantificador. Title in English: A quantitative perspective on the Ecuadorian protests.\nThe article analyzes survey data from the AmericasBarometer using R on the attitudes of Ecuadorians towards protests. The source code was made available as a GitHub repository.\n\n\n\nRadio: The ISSPOL Scandal\nSeptember 2020\n\nIn this radio feature, I speak with some of my USFQ School of Economics professors at a local radio station program about a recent corruption scandal in the country and the specific implications of a journal article’s empirical findings about corruption."
   },
   {
     "objectID": "posts/protestas/protests_spanish.html",

@@ -2,16 +2,24 @@
 title: "Media"
 ---
 
+# [Blog Post: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador](https://elquantificador.org/post/valores/2023-03-07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/) with [Alejandra Marchán](https://sites.google.com/view/amarchan98/home)
+
+*ISSN 2953-6456*
+
+*March 2023*
+
+- A quantitative-oriented, general interest article posted on [LIDE’s](https://laboratoriolide.org/) blog-type
+website, [El Quantificador](https://elquantificador.org). Title in English: *Three problems for the quantitative analysis of femicides in Ecuador.*
+
+- The article analyzes administrative data sourced from the Ecuadorian government using R and finds three important problems which impede a clear diagnosis of gender violence in the country. The source code was made available as a [GitHub](https://github.com/amarchan1998/Femicidios) repository.
+
 # [Blog Post: Una perspectiva cuantitativa sobre las protestas en Ecuador](https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/)
 
 *ISSN 2953-6456*
 
 *July 2022*
 
-- A quantitative-oriented, general interest article posted on LIDE’s blog-type
-website, El Quantificador. Title in English: *A quantitative perspective on the
-Ecuadorian protests.*
-
+- A quantitative-oriented, general interest article posted on [LIDE’s](https://laboratoriolide.org/) blog-type website, [El Quantificador](https://elquantificador.org). Title in English: *A quantitative perspective on the Ecuadorian protests.*
 
 - The article analyzes survey data from the AmericasBarometer using R on the attitudes of Ecuadorians towards protests. The source code was made available as a [GitHub](https://github.com/dsanchezp18/protests-article) repository.
 
