@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.0.37">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -79,13 +84,13 @@ div.csl-indent {
 
 
 <meta property="og:title" content="Daniel - Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador">
-<meta property="og:description" content="As my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
+<meta property="og:description" content="As my first post, I republish my contribution to El Quantificador, LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
 <meta property="og:image" content="https://daniel-ec.netlify.app/posts\protestas\logo_quanti.png">
 <meta property="og:site-name" content="Daniel">
 <meta property="og:image:height" content="595">
 <meta property="og:image:width" content="597">
 <meta name="twitter:title" content="Daniel - Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador">
-<meta name="twitter:description" content="As my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
+<meta name="twitter:description" content="As my first post, I republish my contribution to El Quantificador, LIDE\'s blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
 <meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
@@ -97,34 +102,43 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <a class="navbar-brand" href="../../index.html">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Daniel Sánchez</span>
-  </a>
+    </a>
+  </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">Home</a>
+    <a class="nav-link" href="../../index.html">
+ <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">About</a>
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html">Research</a>
+    <a class="nav-link" href="../../research.html">
+ <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html">Teaching</a>
+    <a class="nav-link" href="../../teaching.html">
+ <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html">Resources</a>
+    <a class="nav-link" href="../../resources.html">
+ <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../media.html">Media</a>
+    <a class="nav-link" href="../../media.html">
+ <span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_home.html">Posts</a>
+    <a class="nav-link" href="../../posts_home.html">
+ <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -168,6 +182,7 @@ div.csl-indent {
         <p class="date">August 3, 2022</p>
       </div>
     </div>
+    
       
     </div>
     
@@ -176,7 +191,7 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -268,7 +283,7 @@ Reproducibilidad
 <p>Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no… ¿no son válidas?</p>
 <div id="tbl-panel" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
-<p>Table 1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas</p>
+<p>Table&nbsp;1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="tbl-panel-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-panel" style="flex-basis: 50.0%;justify-content: center;">
@@ -396,15 +411,15 @@ Nota
 <div id="ref-Dell.2010" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline">Dell, M. <span class="nocase">The Persistent Effects of Peru’s Mining Mita</span>. <em><span>Econometrica</span></em> <strong>2010</strong>, <em>78</em>, 1863–1903, doi:<a href="https://doi.org/10.3982/ECTA8121">10.3982/ECTA8121</a>.</div>
 </div>
-</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1" role="doc-endnote"><p>Un 17% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (23%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>A diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el <a href="https://www.ecuadorencifras.gob.ec/enemdu-2021/">INEC</a> mensualmente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3" role="doc-endnote"><p>Para 2020, los indígenas constituían alrededor de un 6% de la población nacional <span class="citation" data-cites="Ortiz.2020">[<a href="#ref-Ortiz.2020" role="doc-biblioref">11</a>]</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4" role="doc-endnote"><p>La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5" role="doc-endnote"><p>Véase, por ejemplo, <span class="citation" data-cites="Dell.2010">[<a href="#ref-Dell.2010" role="doc-biblioref">13</a>]</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6" role="doc-endnote"><p>Imagen original de <a href="https://www.instagram.com/ecuacultural">@ecuacultural</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Un 17% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (23%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>A diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el <a href="https://www.ecuadorencifras.gob.ec/enemdu-2021/">INEC</a> mensualmente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Para 2020, los indígenas constituían alrededor de un 6% de la población nacional <span class="citation" data-cites="Ortiz.2020">[<a href="#ref-Ortiz.2020" role="doc-biblioref">11</a>]</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Véase, por ejemplo, <span class="citation" data-cites="Dell.2010">[<a href="#ref-Dell.2010" role="doc-biblioref">13</a>]</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Imagen original de <a href="https://www.instagram.com/ecuacultural">@ecuacultural</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -448,7 +463,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -476,31 +508,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      let href = ref.getAttribute('href');
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

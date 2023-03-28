@@ -8,7 +8,7 @@ I believe that research should be as reproducible as possible, so I try to alway
 
 ## Working papers and publications
 
-### [Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103)^[If for some reason the publisher's website is down, you can find the PDF [here](files/research/immunizing-the-econ.pdf)]
+### [Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery](files/research/immunizing-the-econ.pdf)^[The publisher's [website](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103) is often down, so I include a link to the exact same version uploaded to this webpage.]
 
 - Sánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82. 
 
