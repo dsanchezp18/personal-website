@@ -14,11 +14,11 @@ I believe that research should be as reproducible as possible, so I try to alway
 
 - Source code posted in a [GitHub repository](https://github.com/dsanchezp18/covidvax-econrecovery-paper) and an RMarkdown notebook posted which was also posted in [RPubs](https://rpubs.com/dsanchezp998/covidvax).
 
-### Honesty by Convenience: Corruption Tolerance in Ecuador
+### [Honesty by Convenience: Corruption Tolerance in Ecuador](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
 
 *Dedicated to the memory of Jorge Pazmiño (1941-2021)*
 
-- Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Accepted for publication at the [Philosophy, Politics and Economics Review](https://pressbooks.lib.vt.edu/pper/front-matter/introduction/). 
+- Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the [Philosophy, Politics and Economics Review](https://pressbooks.lib.vt.edu/pper). 
 
 - [Presented](files/research/hbc-pres.pdf) a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.
 
