@@ -29,7 +29,7 @@ library(showtext)
 
 # Cargar mis datos
 
-load('lapop-dataset.Rdata')
+df <- read.csv('protests_data.csv')
 
 # Definimos colores en HEX para los gráficos
 
@@ -455,6 +455,10 @@ japrov_time<-svyby(~ pres_aprov_dic,
                    na.rm = T)
 
 # Confidence in the president
+
+# Convirtiendo a factores
+
+lapop_des$variables$pres_conf_dic <- as.factor(lapop_des$variables$pres_conf_dic)
 
 pconf_time<-svyby(~ pres_conf_dic, 
                   ~ year, 

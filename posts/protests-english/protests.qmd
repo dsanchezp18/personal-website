@@ -29,7 +29,9 @@ library(showtext)
 
 # Cargar mis datos
 
-load('lapop-dataset.Rdata')
+# load('lapop-dataset.Rdata') This dataset fked up so I will use a csv version instead
+
+df <- read.csv('protests_data.csv')
 
 # Definimos colores en HEX para los gráficos
 
@@ -50,12 +52,12 @@ theme_daniel<-
 
 # Creamos el objeto de diseño muestral para utilizar en los cálculos
 
-lapop_des<-svydesign(ids = ~ upm,
-                     strata = ~ estratopri, 
-                     weights = ~ weight1500, 
-                     nest = TRUE,
-                     na.action = 'na.exclude',
-                     data = df)
+lapop_des<- svydesign(ids = ~ upm,
+                 strata = ~ estratopri, 
+                 weights = ~ weight1500, 
+                 nest = TRUE,
+                 na.action = 'na.exclude',
+                 data = df)
 
 # Add a custom font
 
@@ -87,7 +89,7 @@ The code used for this post is included in the source code of this website, whic
 #| include: true
 #| fig-align: center
 
-prot_time<-
+prot_time <-
   svyby(~ protest,
         ~ year,
         design = lapop_des,
@@ -137,7 +139,6 @@ Ecuador seems to have lost the relative political stability it had during Rafael
 The Barometer of the Americas (AB) survey by the Latin American Public Opinion Project (LAPOP) has conducted several public opinion polls in Ecuador since 2004, including a series of questions on protests since 2006. The last time these questions were asked was at the beginning of 2019, which allows us to observe public opinion just before the October 2019 protest, where CONAIE and other organizations also called for mobilizations against then-President Lenín Moreno.
 
 The above chart shows that in 2006, around 21.57% of respondents reported attending a protest in the last 12 months ---likely due to the "Rebellion of the Outlaws" that overthrew President Lucio Gutierrez---. From that year on, the percentage of participation gradually decreases in the country, culminating at the beginning of 2019 with 7.66%. In the summer of 2015, there were significant mobilizations called by CONAIE and opposition politicians against the government of Rafael Correa [@CONAIE.2015; @BBC.2015]. However, the demonstrations seem to have not mobilized as many people, even though they coincided with the lowest popularity of the then-president's regime [@Melendez.2017].
-
 
 ## Characteristics of protesters
 
@@ -392,6 +393,8 @@ japrov_time<-svyby(~ pres_aprov_dic,
                    na.rm = T)
 
 # Confidence in the president
+
+lapop_des$variables$pres_conf_dic <- as.factor(lapop_des$variables$pres_conf_dic)
 
 pconf_time<-svyby(~ pres_conf_dic, 
                   ~ year, 
