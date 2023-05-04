@@ -25,13 +25,12 @@ library(tidyverse)
 library(patchwork)
 library(openxlsx)
 library(ggthemes)
+library(haven)
 library(showtext)
 
 # Cargar mis datos
 
-# load('lapop-dataset.Rdata') This dataset fked up so I will use a csv version instead
-
-df <- read.csv('protests_data.csv')
+load('lapop_full_data.Rdata')
 
 # Definimos colores en HEX para los gráficos
 

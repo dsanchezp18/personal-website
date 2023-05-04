@@ -23,13 +23,14 @@ knitr:
 library(survey)
 library(tidyverse)
 library(patchwork)
+library(haven)
 library(openxlsx)
 library(ggthemes)
 library(showtext)
 
 # Cargar mis datos
 
-df <- read.csv('protests_data.csv')
+load('lapop_full_data.Rdata')
 
 # Definimos colores en HEX para los gráficos
 
