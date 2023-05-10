@@ -61,7 +61,7 @@ Apart from my work and research, I love literature, memes, playing videogames an
 
 ## Teaching Experience `r fa('school')`
 
--   Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)
+-   Teaching Assistant, Sept. 2022 - April 2023 (Simon Fraser University)
 
 -   Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
 
@@ -69,7 +69,7 @@ Apart from my work and research, I love literature, memes, playing videogames an
 
 ## Professional Experience `r fa('suitcase')`
 
--   Data Analyst, May 2022- Present (Milmoh, S.L.)
+-   Data Analyst, May 2022 - April 2023 (Milmoh, S.L.)
 
 -   Finance Intern, May - Jul. 2018 (Produbanco)
 
