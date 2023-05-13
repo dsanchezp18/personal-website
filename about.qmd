@@ -59,17 +59,9 @@ Apart from my work and research, I love literature, memes, playing videogames an
 
 -   Bachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)
 
-## Teaching Experience `r fa('school')`
-
--   Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)
-
--   Teaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)
-
--   Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
-
--   Course Instructor LaTeX, Apr. 2021 (ECEL Research Group)
-
 ## Professional Experience `r fa('suitcase')`
+
+-  Corporate Finance Consultant, March 2022 - Present (LVM Consulting)
 
 -   Data Analyst, May 2022 - April 2023 (Milmoh, S.L.)
 
@@ -84,3 +76,14 @@ Apart from my work and research, I love literature, memes, playing videogames an
 -   Research Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)
 
 -   Full Member, Jan. - Nov. 2021 (ECEL Research Group)
+
+
+## Teaching Experience `r fa('school')`
+
+-   Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)
+
+-   Teaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)
+
+-   Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
+
+-   Course Instructor LaTeX, Apr. 2021 (ECEL Research Group)
