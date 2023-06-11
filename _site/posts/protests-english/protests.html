@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -20,14 +20,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -41,8 +42,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -84,12 +84,12 @@ div.csl-indent {
 
 
 <meta property="og:title" content="Daniel - Repost from El Quantificador: A quantitative perspective of the protests on Ecuador">
-<meta property="og:description" content="Took me long, but I'm republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.">
-<meta property="og:image" content="https://daniel-ec.netlify.app/posts\protests-english\protests.jpg">
+<meta property="og:description" content="Took me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.">
+<meta property="og:image" content="https://daniel-ec.netlify.app/posts/protests-english/protests.jpg">
 <meta property="og:site-name" content="Daniel">
 <meta name="twitter:title" content="Daniel - Repost from El Quantificador: A quantitative perspective of the protests on Ecuador">
-<meta name="twitter:description" content="Took me long, but I'm republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.">
-<meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.jpeg">
+<meta name="twitter:description" content="Took me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.">
+<meta name="twitter:image" content="https://daniel-ec.netlify.app/posts/protests-english/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
 </head>
@@ -105,41 +105,43 @@ div.csl-indent {
     <span class="navbar-title">Daniel Sánchez</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html">
+    <a class="nav-link" href="../../research.html" rel="" target="">
  <span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html">
+    <a class="nav-link" href="../../teaching.html" rel="" target="">
  <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html">
+    <a class="nav-link" href="../../resources.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../media.html">
+    <a class="nav-link" href="../../media.html" rel="" target="">
  <span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_home.html">
+    <a class="nav-link" href="../../posts_home.html" rel="" target="">
  <span class="menu-text">Posts</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -206,12 +208,12 @@ div.csl-indent {
 
 
 
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -222,12 +224,12 @@ Note
 <p><em>Ecuador ended the first half of 2022 with 18 days of protests, making it the longest national protests (Paro Nacional) in recent decades. Given the growing political, social and economic crisis as well as the lack of guarantees for a peaceful resolution, it is important to understand how Ecuadorians behave during protests. An analysis of the AmericasBarometer public opinion survey reveals that those who participate in protests are more likely to be men, to respect the right to protest in general, to disapprove of the President’s management and to identify with a political group. Notably, the survey results suggest that those who self-identify as indigenous, whose economic situation has worsened, and who are unemployed are not more likely to participate in protests. It is also discovered that respect for the right to protest moves against support for the current President, revealing a worrying situation: the Ecuadorian might only respect this right when the protests align with their political interests.</em></p>
 <p><em>July 2022- January 2023 Issue</em></p>
 <p><em>ISSN 2953-6456</em></p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Reproducibility
 </div>
 </div>
@@ -349,12 +351,12 @@ Reproducibility
 </ul>
 <p>It is necessary to understand what the protests imply, both for those who lead and face them and for ordinary citizens. In my opinion, it is even more important for the average Ecuadorian to understand them, since they are the ones who are usually in the front line of the demonstrations, as opposed to the politicians, leaders and authorities who lead them. State violence towards social protest is not justifiable, as well as the minimization of the problems that afflict indigenous communities<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, but violence by protesters cannot be justified either. Informing our discussion about the conjuncture of the country with facts, free of ideology and subjectivity, is extremely imperative to move towards a better nation, avoiding violence and social polarization as well as protecting the right to peaceful protest, key to the proper functioning of a democracy <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.</p>
 <p>The June 2022 protests end with concessions from both sides, which unfortunately only revolve around the price of gasoline, postponing to the medium term the resolution of the other problems such as obtaining fair prices for agricultural producers and the management of the insecurity crisis. History threatens to repeat itself at this dialogue table, remembering that in 2019 the protests ended by a stabilization of the price of gasoline although the actors involved were unable to reach an agreement <span class="citation" data-cites="LAPOPReport.2022">[<a href="#ref-LAPOPReport.2022" role="doc-biblioref">6</a>]</span>. Our country cannot put up with more violence between protesters and authorities every two years; social actors must strive for Ecuador to be just that: a country, and not a <a href="https://www.instagram.com/p/CIbaLjPh5LW/?utm_source=ig_web_copy_link">blender</a>[^5] to which you give something whole and it gives it back to you crushed. We must demand from the rest and demand from ourselves the strength to build a country of peace and prosperity, but also a country of peaceful and effective change when it is needed.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -368,44 +370,44 @@ Note
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
-<div id="ref-Pazmino.2022" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-Pazmino.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Pazmiño, L.B. <a href="https://gk.city/2022/06/12/paro-13-junio-indigenas-bananeros-exigencias/"><span class="nocase">Esto sabemos del paro del 13 de junio</span></a>. <em><span>GK</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-GK.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-GK.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">GK <a href="https://gk.city/2022/06/30/termina-el-paro-nacional-en-ecuador/"><span class="nocase">El paro nacional termin<span class="nocase">ó</span></span></a>. <em><span>GK</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Maria.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Maria.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">María, J.; Janetsky, M. <a href="https://www.nytimes.com/es/2022/06/24/espanol/ecuador-protestas.html"><span class="nocase">¿Por qu<span class="nocase">é</span> hay protestas en Ecuador?</span></a> <em><span>The New York Times</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Montalvo.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Montalvo.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">4. </div><div class="csl-right-inline">Montalvo, D. <a href="https://www.larepublica.ec/blog/2022/06/18/danos-por-protestas-le-costaron-a-quito-25-000-esta-semana/"><span class="nocase">Da<span class="nocase">ñ</span>os por protestas le costaron a Quito <span>$</span>25.000 esta semana</span></a>. <em><span>La Rep<span>ú</span>blica EC</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Comercio.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Comercio.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">5. </div><div class="csl-right-inline">Redacción El Comercio <a href="https://www.elcomercio.com/actualidad/protestas-causan-problemas.html"><span class="nocase">Las protestas causan 4 problemas</span></a>. <em><span>El Comercio</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-LAPOPReport.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-LAPOPReport.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline"><em><a href="https://www.vanderbilt.edu/lapop/ecuador/ABECU2021-Country-Report-Spa-Final-220411.pdf"><span class="nocase">Cultura pol<span class="nocase">í</span>tica de la democracia en Ecuador y en las Am<span class="nocase">é</span>ricas 2021: Tom<span class="nocase">á</span>ndole el pulso a la democracia</span></a></em>; Moscoso Moreno, A., Moncagatta, P., Donoso, J.C., Larrea, S., Montalvo, J.D., Eds.; 2022;</div>
 </div>
-<div id="ref-Loaiza.2022" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Loaiza.2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Loaiza, Y. <a href="https://www.infobae.com/america/historia-america/2022/06/25/un-golpe-cada-6-anos-la-tragica-historia-de-derrocamientos-y-convulsion-social-del-ecuador/"><span class="nocase">Un golpe cada 6 a<span class="nocase">ñ</span>os: la tr<span class="nocase">á</span>gica historia de derrocamientos y convulsi<span class="nocase">ó</span>n social del Ecuador</span></a>. <em>infobae</em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-CONAIE.2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-CONAIE.2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">8. </div><div class="csl-right-inline">CONAIE <a href="https://conaie.org/2015/06/30/1044-2/"><span class="nocase">Organizaciones Shuar y Achuar de Morona protestan en V<span class="nocase">í</span>a Macas- Puyo -</span></a> 2015.</div>
 </div>
-<div id="ref-BBC.2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-BBC.2015" class="csl-entry" role="listitem">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">BBC Mundo <a href="https://www.bbc.com/mundo/noticias/2015/06/150625_ecuador_marchas_correa_ep"><span class="nocase">Ecuador: en Quito y Guayaquil marchan nuevamente contra Rafael Correa</span></a>. <em><span>BBC News Mundo</span></em> <strong>2015</strong>.</div>
 </div>
-<div id="ref-Melendez.2017" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Melendez.2017" class="csl-entry" role="listitem">
 <div class="csl-left-margin">10. </div><div class="csl-right-inline">Meléndez, C.; Moncagatta, P. <span class="nocase">Ecuador: Una d<span class="nocase">é</span>cada de corre<span class="nocase">í</span>smo</span>. <em><span>Revista de Ciencia Pol<span>í</span>tica de Santiago</span></em> <strong>2017</strong>, <em>37</em>, 413–448, doi:<a href="https://doi.org/10.4067/s0718-090x2017000200413">10.4067/s0718-090x2017000200413</a>.</div>
 </div>
-<div id="ref-Ortiz.2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Ortiz.2020" class="csl-entry" role="listitem">
 <div class="csl-left-margin">11. </div><div class="csl-right-inline">Ortiz, P. <a href="https://www.iwgia.org/es/ecuador/3741-mi-2020-ecuador.html"><span class="nocase">El Mundo Ind<span class="nocase">í</span>gena 2020: Ecuador - IWGIA - International Work Group for Indigenous Affairs</span></a> 2020.</div>
 </div>
-<div id="ref-Donoso.2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Donoso.2018" class="csl-entry" role="listitem">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline"><a href="https://www.vanderbilt.edu/lapop/ecuador/AB2016-17_Ecuador_Country_Report_V3_12.20.18_W_01.15.19.pdf"><span class="nocase">Cultura pol<span class="nocase">í</span>tica de la democracia en Ecuador y en las Am<span class="nocase">é</span>ricas, 2016/17: Un estudio comparado sobre democracia y gobernabilidad</span></a> 2018.</div>
 </div>
-<div id="ref-Dell.2010" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Dell.2010" class="csl-entry" role="listitem">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline">Dell, M. <span class="nocase">The Persistent Effects of Peru’s Mining Mita</span>. <em><span>Econometrica</span></em> <strong>2010</strong>, <em>78</em>, 1863–1903, doi:<a href="https://doi.org/10.3982/ECTA8121">10.3982/ECTA8121</a>.</div>
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
@@ -445,9 +447,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -512,6 +528,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -585,6 +687,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

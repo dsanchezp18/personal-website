@@ -38,18 +38,17 @@ library(fontawesome)
 
 ## Bio
 
-I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my Economics MA. I also work as a Data Analyst at Milmoh, S.L., and I participate as a Research Associate at [Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)](https://laboratoriolide.org/)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
+I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics. I participate as a Research Associate at [Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)](https://laboratoriolide.org/)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
 
 As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since. 
 
-[^1]: In English, Research Laboratory for the Development of Ecuador.
+[^1]: In English, Ecuadorian Research Development Laboratory.
 
 :::
 
 Although I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I'm also passionate about teaching, which is why I started a [Resources](resources.qmd) subpage in this website which may help a beginner get into R. I plan to expand this into new fields in the future.
 
 Apart from my work and research, I love literature, memes, playing videogames and trying new foods. I'm particularly fond of Ernesto Sábato's books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I'm not sure about my favorite food- maybe it's poutine, but check back later.
-
 
 ## Education `r fa('graduation-cap')`
 
@@ -86,3 +85,14 @@ Apart from my work and research, I love literature, memes, playing videogames an
 -   Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
 
 -   Course Instructor LaTeX, Apr. 2021 (ECEL Research Group)
+
+## Other training 
+
+- Data Scientist with R - June 2023 (DataCamp)
+- Data Visualization with R - June 2023 (DataCamp)
+- SFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)
+- Statistics Fundamentals with R - July 2022 (DataCamp)
+- Data Analyst with R - June 2022 (DataCamp)
+- Power BI Fundamentals - June 2022 (DataCamp)
+- Tableau Fundamentals - June 2022 (DataCamp)
+- Intermediate SQL - May 2022 (DataCamp)
