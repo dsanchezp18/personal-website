@@ -14,6 +14,14 @@ library(tidyr)
 library(lubridate)
 library(fixest)
 library(broom)
+library(geniusr)
+library(tidytext)
+library(wordcloud)
+library(stringr)
+
+# Run credentials.R
+
+source('posts/epica/credentials.R')
 
 # Get scrobbles data from Last.fm -----------------------------------------
 
@@ -30,7 +38,6 @@ epica_tracks <-
 # Check for duplicates
 
 # Get artist data from Spotify's API --------------------------------------
-
 
 # There is no albums mapping in this dataset, so I will get artists mapping from spotifyR
 
@@ -318,3 +325,210 @@ df_for_plot %>%
   geom_hline(yintercept = 0, linetype = 2, color = "red") +
   theme_bw() 
 
+# Text analysis data preparation -----------------------------------------------------------
+
+# Perform text analysis with lyrics for The Phantom Agony.
+
+# Load lyrics using geniusr package
+
+# Get the genius Epica id 
+
+epica_id <-
+  search_artist('epica') %>% 
+  select(artist_id) %>% 
+  as.vector()
+
+# Look for cry for the moon to get the phantom agony's id
+
+cry_for_the_moon_id <-
+  search_song('cry for the moon') %>% 
+  slice(1) %>% 
+  select(song_id) %>% 
+  as.vector()
+
+# Get data for cry for the moon
+
+cry_for_the_moon_df <-
+  get_song_df(cry_for_the_moon_id)
+
+# Get the album id for The Phantom Agony
+
+the_phantom_agony_id <-
+  cry_for_the_moon_df %>% 
+  select(album_id) %>% 
+  as.vector()
+
+# Get all songs in the album and their ids
+
+the_phantom_agony_songs  <- 
+  get_album_tracklist_id(the_phantom_agony_id) %>% 
+  inner_join(get_artist_songs_df(epica_id) %>% select(song_name, song_id), 
+             by = c('song_title' = 'song_name'))
+
+track_ids <-
+  the_phantom_agony_songs$song_id
+
+# Extract lyrics for all tracks and combine into a single dataframe
+
+all_lyrics <-
+  lapply(track_ids, get_lyrics_id) %>% 
+  bind_rows() %>%
+  slice(-1:-2)
+
+# Actual text analysis ----------------------------------------------------
+
+# Tokenize the lyrics and antijoin with stop words
+
+phantom_agony_words <-
+  all_lyrics %>% 
+  unnest_tokens(output = word,
+                input = line) %>% 
+  anti_join(stop_words, by = 'word')
+
+# A word count graph
+
+phantom_agony_word_count <-
+  phantom_agony_words %>% 
+  count(word)
+
+phantom_agony_word_count %>% 
+  top_n(15) %>% 
+  ggplot(aes(reorder(word, n), n)) +
+  geom_col(fill = '#742014') +
+  coord_flip() +
+  geom_text(aes(label = n), hjust = -0.5) +
+  theme_minimal() + 
+  labs(title = "Most common words in Epica's The Phantom Agony")
+
+# A wordcloud
+
+png(filename = 'posts/epica/wordcloud1.png',
+    width = 12,
+    height = 8,
+    units = 'in',
+    res = 1200)
+
+
+wordcloud(words = phantom_agony_word_count$word,
+          freq = phantom_agony_word_count$n,
+          max.words = 50,
+          random.order = F,
+          colors = brewer.pal(8, "Oranges"))
+
+dev.off()
+
+# For all -----------------------------------------------------------------
+
+# Get all album id's, first creating a vector of search terms to search for all albums
+
+epica_album_search_terms <-
+  epica_albums$name
+
+# Get all album tracks with their id
+
+all_epica_tracks <-
+  lapply(epica_album_search_terms, get_album_tracklist_search, artist = 'Epica') %>% 
+  bind_rows() %>% 
+  inner_join(get_artist_songs_df(epica_id) %>% select(song_id, song_name),
+             by = c('song_title' = 'song_name'))
+  
+# Get all song dataframes to get albums
+
+song_dfs <-
+  lapply(all_epica_tracks$song_id, get_song_df) %>% 
+  bind_rows() %>% 
+  select(song_id, song_name, album_name, album_id) %>% 
+  mutate(album_name = str_trim(album_name) %>% noquote())
+
+# Get all epica lyrics
+
+all_epica_lyrics <-
+  lapply(song_dfs$song_id, get_lyrics_id) %>% 
+  bind_rows()
+
+# Tokenize 
+
+all_epica_words <-
+  all_epica_lyrics %>% 
+  unnest_tokens(input = line,
+                output = word) %>% 
+  inner_join(song_dfs %>% select(song_id, album_name), 
+             by = 'song_id') %>% 
+  anti_join(stop_words, by = 'word')
+
+# Word count
+
+all_epica_word_count <-
+  all_epica_words %>% 
+  count(word) %>% 
+  arrange(desc(n))
+
+# Graph 
+
+all_epica_word_count %>% 
+  top_n(15) %>% 
+  ggplot(aes(reorder(word, n), n)) + 
+  geom_col(fill = '#742014') +
+  coord_flip() +
+  geom_text(aes(label = n), hjust = -0.5) +
+  theme_minimal() + 
+  labs(title = "Most common words in Epica's Discography")
+
+# Make it phantom agony vs. all of the other albums
+
+df_comparison <-
+  all_epica_word_count %>% 
+    top_n(15) %>%
+    arrange(desc(n)) %>%
+    mutate(rank = row_number()) %>% 
+    left_join(
+      phantom_agony_word_count %>% select(word, phantom_count = n),
+      by = 'word'
+    ) %>% 
+    gather(type,
+           count,
+           n, phantom_count) %>% 
+    mutate(type = if_else(type == 'phantom_count', 'The Phantom Agony Only', 'All Epica Discography'))
+  
+df_comparison %>% 
+  ggplot(aes(reorder(word, rank, decreasing = T), count, fill = type)) +
+  geom_col(position = 'stack') +
+  coord_flip() +
+  geom_text(aes(label = count), hjust = -0.5) +
+  theme_minimal() + 
+  theme(legend.position = 'top') + 
+  labs(title = "Most common words in Epica's Discography") 
+
+# Do it with all of the discography
+
+all_epica_words %>% 
+  group_by(word, album_name) %>% 
+  summarise(count = n()) %>% 
+  filter(word %in% df_comparison$word ) %>% 
+  ggplot(aes(reorder(word, count), count, fill = as.character(album_name))) +
+  geom_col(position = 'stack') +
+  coord_flip() +
+  theme_minimal() + 
+  theme(legend.position = 'top') + 
+  labs(title = "Most common words in Epica's Discography") 
+
+# A wordcloud
+
+png(filename = 'posts/epica/wordcloud2.png',
+    width = 12,
+    height = 8,
+    units = 'in',
+    res = 1200)
+
+
+wordcloud(words = all_epica_word_count$word,
+          freq = all_epica_word_count$n,
+          max.words = 50,
+          random.order = F,
+          colors = brewer.pal(8, "Oranges"))
+
+dev.off()
+
+
+
+  
