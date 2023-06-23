@@ -2,6 +2,7 @@
   {
     "listing": "/posts_home.html",
     "items": [
+      "/posts/epica/epica.html",
       "/posts/protests-english/protests.html",
       "/posts/protestas/protests_spanish.html"
     ]

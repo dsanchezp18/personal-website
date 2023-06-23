@@ -1,0 +1,157 @@
+---
+title: "Twenty years of Epica: The Empirics of *The Phantom Agony*"
+author: "Daniel Sánchez"
+date: "2023-06-17"
+description: I access the Genius, Last.fm and Spotify APIs with R to analyse the data behind Epica's first album, *The Phantom Agony*. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar).
+categories: [english, music, text analysis, data viz, epica, metal]
+csl: ../../econometrics.csl
+image: cover.png
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    echo: true
+    include: true
+bibliography: references.bib
+format:
+  html:
+    code-fold: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+
+# Load libraries
+
+library(dplyr)
+library(ggplot2)
+library(lastfmR) # Use remotes::install_github("ppatrzyk/lastfmR") to install the lastfmR package
+library(spotifyr)
+library(tidyr)
+library(lubridate)
+library(fixest)
+library(broom)
+library(geniusr)
+library(tidytext)
+library(wordcloud)
+library(stringr)
+library(here)
+library(ggthemes)
+library(ggdark)
+library(showtext)
+
+# Add aesthetics
+
+font_add_google("Questrial", family = "Questrial")
+showtext_auto()
+
+theme_daniel<-
+  theme_hc(style = 'darkunica',
+           base_size = 30,
+           base_family = 'Questrial') +
+  theme(axis.line.y = element_line(colour = 'white'),
+        axis.line.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        plot.caption = element_text(hjust = 0, face = 'italic'),
+        plot.title.position = 'plot',
+        plot.caption.position = 'plot',
+        legend.background = element_blank(),
+        legend.position = 'plot',
+        axis.ticks = element_blank())
+
+# Execute my credentials (unstaged in the repository for privacy reasons)
+
+source('credentials.R')
+
+```
+
+
+On June 5th, 2003, dutch-based symphonic metal band [Epica](https://www.epica.nl/home) released their first full-length album, [*The Phantom Agony*](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw), the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, [*Omega*](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA), an EP in 2022, [*The Alchemy Project*](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w), and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory and activeness make the band a great case study about heavy/death/symphonic metal music in general and *how the genre has adapted to the modern stream-based music industry*. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.
+
+## What makes Epica different?
+
+Epica is *unique*. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make it stand out in the genre. The band combines gutural growls from death metal with soprano vocals and choir and string orchestras. This notable musical style was born in *The Phantom Agony*, after dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch signer Simone Simons.
+
+To look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others [@duman2022]. The Spotify API can be accessed with R through the [*spotifyr*](https://www.rcharlie.com/spotifyr/) package, but it needs users to create a [Spotify Developer account](https://developer.spotify.com/) and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this [tutorial](https://msmith7161.github.io/what-is-speechiness/). 
+
+Once having acquired the credentials, set them up as system environment variables through a call to `Sys.setenv(SPOTIFY_CLIENT_ID = 'something')` and `Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something')`. Having these as system variables make the code less clunky and faster. Further, since we're going to access data from Epica, it's useful to set up the Spotify identificator for the band, which can be found in the Spotify [artist's link](https://open.spotify.com/artist/5HA5aLY3jJV7eimXWkRBBp?si=7BH2xg27Q9-gjo7UC25-FA), after the `artist/` and before the interrogation sign `?`. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for *ggplot2* graphics, but trust me, it's worth it. Below, I acquire track-level audio metrics and then group at the album level^[I only consider Epica's eight full-length releases: *The Phantom Agony (2003)*, *Consign To Oblivion (2005)*, *The Divine Conspiracy (2007)*, *Design Your Universe (2009)*, *Requiem for the Indifferent (2012)*, *The Quantum Enigma (2014)*, *The Holographic Principle (2016)*, *Omega (2021)* and their two EPs, *The Solace System (2017)* and *The Alchemy Project (2022)*. I leave out the *Attack on Titan* cover album (which does not make *Crimson Bow and Arrow* any less epic), singles and live albums.] by taking averages of all metrics. 
+
+```{r}
+#| label: albums-tracks-spotify
+#| fig-width: 10
+#| fig-height: 8
+
+# Setup the access token
+
+access_token <- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_ID'),
+                                         client_secret = Sys.getenv('SPOTIFY_CLIENT_SECRET'))
+
+
+# Define an album/EPs vector, a year vector, to use later as well as the artist id
+
+epica_spotify_id <- '5HA5aLY3jJV7eimXWkRBBp'
+
+epica_releases_year <- 
+  data.frame(
+    release_spotify = c("The Phantom Agony (Expanded Edition)", "Consign To Oblivion (Expanded Edition)", 
+                        "The Divine Conspiracy", "Design Your Universe", "Requiem for the Indifferent", 
+                        "The Quantum Enigma", "The Holographic Principle","The Solace System", 
+                        "Omega", "The Alchemy Project"),
+    release_name =  c("The Phantom Agony", "Consign To Oblivion", "The Divine Conspiracy", "Design Your Universe", 
+                      "Requiem for the Indifferent", "The Quantum Enigma", "The Holographic Principle",
+                      "The Solace System", "Omega", "The Alchemy Project"),
+    release_year = c(2003, 2005, 2007, 2009, 2012, 2014, 2016, 2017, 2021, 2022)
+)
+
+# Get metrics at the track level and filter for the selection of releases I chose
+
+epica_track_metrics <-
+  get_artist_audio_features(epica_spotify_id, include_groups = c('album', 'single')) %>%
+  select(track_name,
+         album_name,
+         album_id,
+         energy,
+         loudness,
+         speechiness,
+         acousticness,
+         instrumentalness,
+         liveness,
+         valence,
+         tempo) %>% 
+  filter(album_name %in% epica_releases_year$release_spotify) 
+
+# Group at the album level, reshape to long form, then plot
+
+epica_album_metrics <-
+  epica_track_metrics %>% 
+  group_by(album_name) %>% 
+  summarise_if(is.numeric, mean) %>% 
+  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %>% 
+  arrange(desc(release_year)) %>% 
+  select(-album_name) %>% 
+  mutate(loudness = abs(loudness),
+         release_name_year = paste(release_name,' ', '(', release_year, ')', sep = '')) %>% 
+  relocate(release_name, release_name_year, release_year) %>% 
+  gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)
+
+epica_album_metrics %>%
+  filter(metric %in% c('energy', 'valence', 'instrumentalness', 'speechiness')) %>% 
+  ggplot(aes(reorder(release_name_year, release_year), value, fill = metric)) +
+  geom_col(width = 1, position = position_dodge(width = 0.8)) +
+  coord_flip() +
+  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence')) + 
+  labs(title = "Spotify Audio Metrics for Epica's Discography 2003 - 2022",
+     y = '',
+     x = 'Releases (LP/EP)',
+     caption = 'Data obtained from the Spotify API through the spotifyr package',
+     fill = 'Audio Metric') + 
+  theme_daniel +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_text(colour = 'gray')) 
+```
+
+
+
+

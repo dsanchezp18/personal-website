@@ -2,38 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://daniel-ec.netlify.app/about.html</loc>
-    <lastmod>2023-06-11T04:20:05.957Z</lastmod>
+    <lastmod>2023-06-18T07:09:26.022Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/index.html</loc>
-    <lastmod>2023-06-11T04:20:06.399Z</lastmod>
+    <lastmod>2023-06-18T07:09:26.559Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/media.html</loc>
-    <lastmod>2023-06-11T04:20:06.839Z</lastmod>
+    <lastmod>2023-06-18T07:09:46.592Z</lastmod>
+  </url>
+  <url>
+    <loc>https://daniel-ec.netlify.app/posts/epica/epica.html</loc>
+    <lastmod>2023-06-23T00:20:23.152Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/posts/protestas/protests_spanish.html</loc>
-    <lastmod>2023-06-11T04:20:08.363Z</lastmod>
+    <lastmod>2023-06-18T07:09:29.954Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/posts/protests-english/protests.html</loc>
-    <lastmod>2023-06-11T04:20:09.805Z</lastmod>
+    <lastmod>2023-06-18T20:19:27.454Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/posts_home.html</loc>
-    <lastmod>2023-06-11T04:20:19.482Z</lastmod>
+    <lastmod>2023-06-23T00:20:18.299Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/research.html</loc>
-    <lastmod>2023-06-11T04:20:10.833Z</lastmod>
+    <lastmod>2023-06-18T07:09:32.944Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/resources.html</loc>
-    <lastmod>2023-06-11T04:20:12.784Z</lastmod>
+    <lastmod>2023-06-18T07:09:35.528Z</lastmod>
   </url>
   <url>
     <loc>https://daniel-ec.netlify.app/teaching.html</loc>
-    <lastmod>2023-06-11T04:20:13.236Z</lastmod>
+    <lastmod>2023-06-18T07:09:36.057Z</lastmod>
   </url>
 </urlset>

@@ -35,11 +35,9 @@ epica_artist_info <-
 epica_tracks <-
   lastfmR::get_tracks('Epica')
 
-# Check for duplicates
+# There is no albums mapping in this dataset, so I will get artists mapping from spotifyR
 
 # Get artist data from Spotify's API --------------------------------------
-
-# There is no albums mapping in this dataset, so I will get artists mapping from spotifyR
 
 # Execute my credentials (unstaged in the repository for privacy reasons)
 
@@ -52,7 +50,7 @@ access_token <- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_
 
 # Get stuff from Epica: at the album level.
 
-epica_id <- '5HA5aLY3jJV7eimXWkRBBp'
+epica_id <- '5HA5aLY3jJV7eimXWkRBBp' #
 
 epica_albums <-
   get_artist_albums(epica_id, 
@@ -152,7 +150,7 @@ alchemy_project_tracks <-
 # Since the solace system is an EP and not an album per se, I had to pull out the data for it differently:
 
 solace_system_tracks <-
-  get_album_tracks('280MqsLfyF7Tc9VOe2tm1X') %>% 
+  get_album_tracks('280MqsLfyF7Tc9VOe2tm1X') %>%
   transmute(id, name, track_number, 
             album = 'The Solace System', 
             year = 2017,
@@ -446,6 +444,9 @@ all_epica_lyrics <-
   lapply(song_dfs$song_id, get_lyrics_id) %>% 
   bind_rows()
 
+write.csv(all_epica_lyrics, 
+          'epica_lyrics_full.csv')
+
 # Tokenize 
 
 all_epica_words <-
@@ -519,7 +520,6 @@ png(filename = 'posts/epica/wordcloud2.png',
     height = 8,
     units = 'in',
     res = 1200)
-
 
 wordcloud(words = all_epica_word_count$word,
           freq = all_epica_word_count$n,
