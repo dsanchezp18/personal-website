@@ -48,7 +48,7 @@ showtext_auto()
 
 theme_daniel<-
   theme_hc(style = 'darkunica',
-           base_size = 30,
+           base_size = 25,
            base_family = 'Questrial') +
   theme(axis.line.y = element_line(colour = 'white'),
         axis.line.x = element_blank(),
@@ -132,15 +132,12 @@ epica_album_metrics <-
   relocate(release_name, release_name_year, release_year) %>% 
   gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)
 
-positions = c('energy', 'instrumentalness', 'speechiness', 'valence')
-
 epica_album_metrics %>%
   filter(metric %in% c('energy', 'valence', 'instrumentalness', 'speechiness')) %>% 
   ggplot(aes(reorder(release_name_year, release_year), value, fill = metric)) +
   geom_col(width = 0.7, position = position_dodge(width = 0.7)) +
   coord_flip() +
-  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence'),
-                      levels = positions) + 
+  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence')) + 
   labs(title = "Spotify Audio Metrics for Epica's Discography 2003 - 2022",
      y = '',
      x = 'Releases (LP/EP)',
@@ -151,7 +148,7 @@ epica_album_metrics %>%
         axis.text.y = element_text(colour = 'gray'),
         legend.text = element_text(size = 12),
         legend.title = element_text(size = 12),
-        legend.position = c(-0.05, -0.05),
+        legend.position = 'top',
         legend.direction = 'horizontal') 
 ```
 

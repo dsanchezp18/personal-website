@@ -1,0 +1,138 @@
+---
+title: "Curriculum Vitae"
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(fontawesome)
+```
+
+# Daniel Sánchez Pazmiño
+
+::: {.grid}
+
+::: {.g-col-6}
+
+`r fa('house')` Burnaby, BC, Canada
+
+`r fa('scroll')` Master of Arts in Economics (c)
+
+`r fa('suitcase')` Data Analytics & Causal Inference
+
+:::
+  
+::: {.g-col-6}
+
+
+
+`r fa('envelope')` dsanchezp998@gmail.com
+
+`r fa('language')` English & Spanish
+
+`r fa('terminal')` R, Python & SQL
+
+:::
+  
+:::  
+
+:::{.callout-tip}
+# Summary
+Experienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight with clear and effective communication.
+:::
+
+## Education `r fa('graduation-cap')`
+
+-   Simon Fraser University, Master of Arts in Economics (August 2022 - April 2024)
+
+GPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.
+
+-  Universidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)
+
+GPA 3.81/4.00, *magna cum laude*.
+
+-   Bachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)
+
+GPA 3.82/4.00, *magna cum laude*. Capstone Project: [*Honesty by Convenience: Corruption Tolerance in Ecuador](research.qmd). Awarded best Fall 2021 capstone project. 
+
+## Industry Experience `r fa('laptop-code')`
+
+### Junior Economist, Natural Resources Canada
+
+`r fa('calendar')` June 2023 -  Present
+
+- Co-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).
+
+- Creation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.
+
+- Developed presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.
+
+### Corporate Finance Consultant, LVM Consulting
+
+`r fa('calendar')` March 2022 - June 2022
+
+- Assisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.
+
+- Supported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.
+
+- Developed business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.
+
+### Data Analyst, Milmoh S.L.
+
+`r fa('calendar')` May 2022 - April 2023
+
+- Wrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.
+
+- Managed and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.
+
+- Developed reports, code documentation and presented monthly results to clients, including key business insights.
+
+### Finance Intern, Produbanco
+
+`r fa('calendar')` May - July 2018
+
+- Supported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.
+
+- Created dashboards of the Bank's financial performance at the aggregate and branch level
+
+- Developed periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.
+
+### Accounting Intern, Baker Tilly Ecuador
+
+`r fa('calendar')` May - July 2017
+
+- Participated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm.
+Aided in the reporting of the clients’ financial information to numerous public entities.
+
+- Attended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.
+
+- Translated financial documents from English to Spanish and Spanish to English.
+
+## Research Experience & Affiliations `r fa('book-open')`
+
+-   Research Associate, June 2022 - Present ([Laboratorio de Investigación para el Desarrollo del Ecuador](https://laboratoriolide.org/))
+
+-   Research Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)
+
+-   Full Member, Jan. - Nov. 2021 (ECEL Research Group)
+
+## [Teaching Experience](teaching.qmd) `r fa('chalkboard-user')`
+
+-   Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)
+
+-   Teaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)
+
+-   Teaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)
+
+-   Course Instructor LaTeX, Apr. 2021 (ECEL Research Group)
+
+## Other training 
+
+- Data Scientist with R - June 2023 (DataCamp)
+- Data Visualization with R - June 2023 (DataCamp)
+- SFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)
+- Statistics Fundamentals with R - July 2022 (DataCamp)
+- Data Analyst with R - June 2022 (DataCamp)
+- Power BI Fundamentals - June 2022 (DataCamp)
+- Tableau Fundamentals - June 2022 (DataCamp)
+- Intermediate SQL - May 2022 (DataCamp)

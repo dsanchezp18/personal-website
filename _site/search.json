@@ -1,129 +1,52 @@
 [
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Daniel Sánchez Pazmiño",
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
     "section": "",
-    "text": "Twitter\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     RPubs\n  \n  \n    \n     IDEAS\n  \n  \n    \n     CV\n  \n  \n    \n     Short CV\n  \n\n  \n  \n\n\nI was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics. I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since.\nAlthough I love R, what originally got me into computing and technology was LaTeX, which is weird, I know, but it helped me pick up R and other software without much difficulty later on. I’m also passionate about teaching, which is why I started a Resources subpage in this website which may help a beginner get into R. I plan to expand this into new fields in the future.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
+    "text": "As a mentor, I believe in two main principles: transparency and practicality. Transparency can be seen by both academic honesty but also through the practice of reproducible research, which is something I try to do by publishing my code and teaching materials publicly when possible. I also aim to foster the practicality and accessibility of my teaching by uploading my course materials to this site and to my GitHub profile when possible.\nBelow, I’ve listed my teaching experience and course materials if they were available to upload publicly."
   },
   {
-    "objectID": "about.html#bio",
-    "href": "about.html#bio",
-    "title": "Daniel Sánchez Pazmiño",
+    "objectID": "teaching.html#teaching-assistant---simon-fraser-university",
+    "href": "teaching.html#teaching-assistant---simon-fraser-university",
+    "title": "Teaching",
+    "section": "Teaching Assistant - Simon Fraser University",
+    "text": "Teaching Assistant - Simon Fraser University\n\nECON103 Principles of Microeconomics: Summer 2023 - Undergraduate level\nECON355W Economic Development: Spring 2023 - Undergraduate level\nECON310 Money & Banking: Fall 2022 - Undergraduate level"
+  },
+  {
+    "objectID": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
+    "href": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
+    "title": "Teaching",
+    "section": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)",
+    "text": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)\n\nECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
+  },
+  {
+    "objectID": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "title": "Teaching",
+    "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
+    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
     "section": "",
-    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics. I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since."
+    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Education ",
-    "text": "Education \n\nMaster of Arts in Economics, expected Aug. 2023 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
+    "objectID": "research.html#working-papers-and-publications",
+    "href": "research.html#working-papers-and-publications",
+    "title": "Research",
+    "section": "Working papers and publications",
+    "text": "Working papers and publications\n\nImmunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery1\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs.\n\n\n\nHonesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021)\n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the Philosophy, Politics and Economics Review.\nPresented a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all2 of the paper’s prose and R code. Spanish version coming in the future."
   },
   {
-    "objectID": "about.html#professional-experience",
-    "href": "about.html#professional-experience",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Professional Experience ",
-    "text": "Professional Experience \n\nCorporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
-  },
-  {
-    "objectID": "about.html#research-experienceaffiliations",
-    "href": "about.html#research-experienceaffiliations",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Research Experience/Affiliations ",
-    "text": "Research Experience/Affiliations \n\nResearch Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "about.html#teaching-experience",
-    "href": "about.html#teaching-experience",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Teaching Experience ",
-    "text": "Teaching Experience \n\nTeaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "about.html#other-training",
-    "href": "about.html#other-training",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Other training",
-    "text": "Other training\n\nData Scientist with R - June 2023 (DataCamp)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
-  },
-  {
-    "objectID": "about.html#footnotes",
-    "href": "about.html#footnotes",
-    "title": "Daniel Sánchez Pazmiño",
+    "objectID": "research.html#footnotes",
+    "href": "research.html#footnotes",
+    "title": "Research",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nIn English, Ecuadorian Research Development Laboratory.↩︎"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page.\n\n\n\nPhoto: Vancouver Harbour Centre from Gastown. By yours truly."
-  },
-  {
-    "objectID": "media.html",
-    "href": "media.html",
-    "title": "Media",
-    "section": "",
-    "text": "Blog Post: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador with Alejandra Marchán\nISSN 2953-6456\nMarch 2023\n\nA quantitative-oriented, general interest article posted on LIDE’s blog-type website, El Quantificador. Title in English: Three problems for the quantitative analysis of femicides in Ecuador.\nThe article analyzes administrative data sourced from the Ecuadorian government using R and finds three important problems which impede a clear diagnosis of gender violence in the country. The source code was made available as a GitHub repository.\n\n\n\nBlog Post: Una perspectiva cuantitativa sobre las protestas en Ecuador\nISSN 2953-6456\nJuly 2022\n\nA quantitative-oriented, general interest article posted on LIDE’s blog-type website, El Quantificador. Title in English: A quantitative perspective on the Ecuadorian protests.\nThe article analyzes survey data from the AmericasBarometer using R on the attitudes of Ecuadorians towards protests. The source code was made available as a GitHub repository.\n\n\n\nRadio: The ISSPOL Scandal\nSeptember 2020\n\nIn this radio feature, I speak with some of my USFQ School of Economics professors at a local radio station program about a recent corruption scandal in the country and the specific implications of a journal article’s empirical findings about corruption."
-  },
-  {
-    "objectID": "posts/epica/epica.html",
-    "href": "posts/epica/epica.html",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "",
-    "text": "On June 5th, 2003, dutch-based symphonic metal band Epica released their first full-length album, The Phantom Agony, the first of eight albums on the band’s successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, Omega, an EP in 2022, The Alchemy Project, and were headliners of Metallica’s M72 2023 World Tour concerts in Europe. Epica’s lengthy trajectory and activeness make the band a great case study about heavy/death/symphonic metal music in general and how the genre has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica’s discography, with an emphasis on The Phantom Agony."
-  },
-  {
-    "objectID": "posts/epica/epica.html#what-makes-epica-epic",
-    "href": "posts/epica/epica.html#what-makes-epica-epic",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "What makes Epica epic?",
-    "text": "What makes Epica epic?"
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html",
-    "href": "posts/protestas/protests_spanish.html",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "",
-    "text": "Nota\n\n\n\nEste post fue originalmente publicado en El Quantificador, el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica.\nEl Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.\nEdición Julio 2022- Enero 2023\nISSN 2953-6456"
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html#la-participación-en-protestas",
-    "href": "posts/protestas/protests_spanish.html#la-participación-en-protestas",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "La participación en protestas",
-    "text": "La participación en protestas\n\n\n\n\n\n\n\n\n\nA mediados de junio 2022, la Confederación de Nacionalidades Indígenas del Ecuador (CONAIE) convocó a una movilización masiva en el país con el fin de que el presidente Guillermo Lasso incluya dentro de su plan de gobierno diez pedidos de índole económica y social [1]. Después de 18 días de manifestaciones, el paro terminó tras un acuerdo entre el gobierno nacional y la CONAIE [2]. Las manifestaciones dejan al Ecuador con nueve muertos, millones de dólares en daños y pérdidas económicas así como varios heridos y aprehendidos por la policía [3–5].\nEl Ecuador parece haber perdido la relativa estabilidad política que tuvo durante los diez años de gobierno de Rafael Correa, especialmente considerando la protesta histórica de octubre 2019, también liderada por la CONAIE contra el gobierno del entonces presidente Lenín Moreno [6]. Sin embargo, en nuestro país los períodos de estabilidad han sido la excepción y no la norma. Históricamente Ecuador ha tenido un golpe de estado cada 6 años y un 50% de éstos fueron exitosos derrocando al gobierno de turno [7].\nLa encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP) ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.\nEl gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses —probablemente por la “Rebelión de los Forajidos” que derrocó al Presidente Lucio Gutiérrez—. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [8,9]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [10]."
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html#características-de-los-protestantes",
-    "href": "posts/protestas/protests_spanish.html#características-de-los-protestantes",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "Características de los protestantes",
-    "text": "Características de los protestantes\n¿Qué caracteriza a los manifestantes ecuatorianos? A lo largo del tiempo éstos han sido mayoritariamente hombres, excepto en el 2014 y 2019, en donde no existen diferencias estadísticamente significativas entre hombres y mujeres. Es más probable que quienes protesten estén identificados con algún grupo político 1 y no aprueben la gestión del presidente. Aunque los protestantes, en general, son más jóvenes y más educados que quienes no protestan, la diferencia es casi negligible- contrario a lo que se pensaría-.\n¿Son quienes salen a las calles más pobres que quienes no protestan? No. De hecho, apenas el 38% de quienes protestan consideran que su situación económica es peor que la de hace 12 meses. Este porcentaje es solo levemente mayor al porcentaje de no protestantes que consideran que su situación ha empeorado. De igual manera, la tasa histórica de desempleo 2 de los protestantes no es estadísticamente diferente a la tasa de desempleo global de la muestra -salvo en 2014, donde sí existe una diferencia de diez puntos porcentuales-.\nUn detalle clave sobre los protestantes es su composición racial y los datos de la encuesta permiten saber que no existen diferencias estadísticamente significativas entre los porcentajes históricos de protestantes y no protestantes indígenas. De hecho, el porcentaje que representan los indígenas sobre el total de manifestantes es cercano a solamente el 6% histórico desde 2006 a 2019. Esta baja cifra puede estar subestimada dado que no se realizan demasiadas encuestas en cantones rurales, donde la población indígena se concentra. Sin embargo, tiene sentido pensar que la cifra real no debería desviarse tanto de la que se presenta aquí: al ser los indígenas una minoría de la población del país3, es probable que también constituyen una minoría dentro de quienes participan en protestas. Por otro lado, sí existe una diferencia estadísticamente significativa en participacion en protestas respecto al porcentaje de gente que se autoidentifica como blanca, al ser menos probable que ellos protesten."
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html#participación-en-protestas-vs.-apoyo-al-derecho-de-protesta",
-    "href": "posts/protestas/protests_spanish.html#participación-en-protestas-vs.-apoyo-al-derecho-de-protesta",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "Participación en protestas vs. apoyo al derecho de protesta",
-    "text": "Participación en protestas vs. apoyo al derecho de protesta\n\n\n\n\n\n\n\n\n\nViene al caso considerar una diferencia clave que pudo haber sido fácil de confundir últimamente, especialmente mientras las protestas tomaban lugar: la participación en protestas no es lo mismo que la aprobación a las mismas. El Barómetro de las Américas de LAPOP nos permite construir una serie de tiempo para monitorear el apoyo histórico a las protestas de los ecuatorianos, como se ve a continuación.\nLos datos nos muestran que, previo a la protesta del 2019, el derecho a protestar tanto en general como de grupos de oposición ha sido aprobado por la mayoría de la población en edad de votar, salvo en el 2012 y en el 2014. En un principio, más ecuatorianos apoyan las protestas en general que las protestas de los grupos en contra del gobierno actual4. Sin embargo, la relación se invierte para 2016, cerca del fin del gobierno de Correa, en donde era más probable que una persona apruebe las protestas contra el actual gobierno que las protestas en general.\n\n\n\n\n\n\n\n\n\nUn hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no… ¿no son válidas?\n\n\nTable 1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas\n\n\n\n\n(a) Protestar en general\n\n\nHa participado en una protesta\nAprueba\nNo aprueba\n\n\n\n\nSí\n74%\n26%\n\n\nNo\n57%\n43%\n\n\n\n\n\n\n(b) Protestar en oposición al gobierno\n\n\nHa participado en una protesta\nAprueba\nNo aprueba\n\n\n\n\nSí\n62%\n38%\n\n\nNo\n55%\n45%\n\n\n\n\n\n\nLa tabla anterior nos muestra el porcentaje histórico de dos tipos de aprobación a las protestas clasificado por la participación en protestas. Como se esperaría, un protestante es más propenso a aprobar el derecho de protestar que alguien que no ha protestado. Sin embargo, también se esperaría que quienes participan en protestas aprueben ampliamente el derecho a protestar en cualquier ámbito, pero existe un 26% de ellos que no lo han aprobado históricamente. Respecto al apoyo a las protestas de los grupos de oposición al gobierno, los porcentajes son peores: históricamente un 38% de protestantes no aprueba ese derecho. Este es un fenómeno extraño y preocupante que merece ser observado más a fondo en el futuro, con datos actualizados."
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html#algunas-implicaciones",
-    "href": "posts/protestas/protests_spanish.html#algunas-implicaciones",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "Algunas implicaciones",
-    "text": "Algunas implicaciones\nEl análisis realizado se puede resumir en los siguientes puntos:\n\nLos protestantes tienden a aprobar el derecho a protestar (aunque no tanto), identificarse con algún ala política (derecha, izquierda o centro) y a desaprobar el trabajo del presidente. Es menos probable encontrar manifestantes mujeres y blancos.\nNo existen diferencias significativas entre protestantes y no protestantes en cuanto a edad, años de escolaridad, la probabilidad de ser indígena, estar desempleado y tener una peor situación económica.\nSe encuentra una clara divergencia entre la participación en protestas y la aprobación de las mismas, siendo siempre el porcentaje de aprobación mucho mayor al de participación.\nInquietantemente, la aprobación a las protestas se mueve en contra del apoyo al presidente de turno. Mientras más popular el gobierno, menos respetado el derecho a la protesta.\n\nEs necesario entender lo que implican las protestas, tanto para quienes las lideran y las enfrentan como para los ciudadanos comunes y corrientes. En mi opinión, es incluso más importante que el ecuatoriano promedio las comprenda, puesto que son ellos los que suelen estar en primera línea de las manifestaciones a diferencia de aquellos políticos, dirigentes y autoridades que las protagonizan. No es justificable la violencia del estado hacia la protesta social, así como la minimización de los problemas que aquejan a las comunidades índigenas5, pero la violencia por parte de protestantes tampoco puede justificarse. Informar nuestra discusión sobre la coyuntura del país con hechos, libres de ideología y subjetividad, es extremadamente imperante para encaminarnos hacia una mejor nación, evitando la violencia y polarización social así como protegiendo el derecho a la protesta pacífica, clave para el buen funcionamiento de una democracia [12].\nLas protestas de junio 2022 finalizan con concesiones de ambas partes, las cuales desafortunadamente solo giran alrededor del precio de la gasolina, postergando hacia el mediano plazo la resolución de los otros problemas como la obtención de precios justos para los productores agrícolas y el manejo de la crisis de inseguridad. La historia amenaza con repetirse en esta mesa de diálogo, recordando que en el 2019 las protestas finalizaron por una estabilización del precio de la gasolina aunque los actores involucrados fueron incapaces de llegar a un acuerdo [6]. Nuestro país no puede aguantar más violencia entre protestantes y autoridades cada dos años; los agentes sociales deben esforzarse para que el Ecuador sea justamente eso: un país, y no un licuador6 al que le entregas algo íntegro y te lo devuelve triturado. Debemos exigir al resto y exigirnos a nosotros mismos la fuerza para construir un país de paz y prosperidad, pero también un país de cambio pacífico y efectivo cuando lo apremie.\n\n\n\n\n\n\nNota\n\n\n\nEste post fue orgullosamente concebido con Quarto y R mediante RStudio, originalmente publicado en El Quantificador del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visita el repositorio de GitHub para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactarme a mí o al equipo de El Quantificador con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos."
-  },
-  {
-    "objectID": "posts/protestas/protests_spanish.html#footnotes",
-    "href": "posts/protestas/protests_spanish.html#footnotes",
-    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nUn 12% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (18%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.↩︎\nA diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el INEC mensualmente.↩︎\nPara 2020, los indígenas constituían alrededor de un 6% de la población nacional [11].↩︎\nLa pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” [12].↩︎\nVéase, por ejemplo, [13].↩︎\nImagen original de @ecuacultural.↩︎"
+    "text": "Footnotes\n\n\nThe publisher’s website is often down, so I include a link to the exact same version uploaded to this webpage.↩︎\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎"
   },
   {
     "objectID": "posts/protests-english/protests.html",
@@ -168,32 +91,144 @@
     "text": "Footnotes\n\n\n12% of people who protest report not having a political identification, while a higher percentage of non-protesters (18%) report the same. Political groups to choose from in this question are “the left” and “the right”, denoted by a scale of 1 to 10.”↩︎\nUnlike the normal unemployment rate, calculated based on the total economically active population, this unemployment rate is calculated based on the total number of people of voting age, so we must be careful when comparing it to the rates reported monthly by INEC.↩︎\nFor 2020, indigenous people constituted around 6% of the national population [11].↩︎\nThe original question in the survey asks about the degree of approval for the possibility of people who “always speak badly of the current form of government and the government system” [12].↩︎\nSee, for example, [13].↩︎"
   },
   {
+    "objectID": "posts/epica/epica.html",
+    "href": "posts/epica/epica.html",
+    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
+    "section": "",
+    "text": "On June 5th, 2003, dutch-based symphonic metal band Epica released their first full-length album, The Phantom Agony, the first of eight albums on the band’s successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, Omega, an EP in 2022, The Alchemy Project, and were headliners of Metallica’s M72 2023 World Tour concerts in Europe. Epica’s lengthy trajectory and activeness make the band a great case study about heavy/death/symphonic metal music in general and how the genre has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica’s discography, with an emphasis on The Phantom Agony."
+  },
+  {
+    "objectID": "posts/epica/epica.html#what-makes-epica-different",
+    "href": "posts/epica/epica.html#what-makes-epica-different",
+    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
+    "section": "What makes Epica different?",
+    "text": "What makes Epica different?\nEpica is unique. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make it stand out in the genre. The band combines gutural growls from death metal with soprano vocals and choir and string orchestras. This notable musical style was born in The Phantom Agony, after dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch signer Simone Simons.\nTo look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others [1]. The Spotify API can be accessed with R through the spotifyr package, but it needs users to create a Spotify Developer account and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this tutorial.\nOnce having acquired the credentials, set them up as system environment variables through a call to Sys.setenv(SPOTIFY_CLIENT_ID = 'something') and Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something'). Having these as system variables make the code less clunky and faster. Further, since we’re going to access data from Epica, it’s useful to set up the Spotify identificator for the band, which can be found in the Spotify artist’s link, after the artist/ and before the interrogation sign ?. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for ggplot2 graphics, but trust me, it’s worth it. Below, I acquire track-level audio metrics and then group at the album level1 by taking averages of all metrics.\n\n\nCode\n# Setup the access token\n\naccess_token &lt;- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_ID'),\n                                         client_secret = Sys.getenv('SPOTIFY_CLIENT_SECRET'))\n\n\n# Define an album/EPs vector, a year vector, to use later as well as the artist id\n\nepica_spotify_id &lt;- '5HA5aLY3jJV7eimXWkRBBp'\n\nepica_releases_year &lt;- \n  data.frame(\n    release_spotify = c(\"The Phantom Agony (Expanded Edition)\", \"Consign To Oblivion (Expanded Edition)\", \n                        \"The Divine Conspiracy\", \"Design Your Universe\", \"Requiem for the Indifferent\", \n                        \"The Quantum Enigma\", \"The Holographic Principle\",\"The Solace System\", \n                        \"Omega\", \"The Alchemy Project\"),\n    release_name =  c(\"The Phantom Agony\", \"Consign To Oblivion\", \"The Divine Conspiracy\", \"Design Your Universe\", \n                      \"Requiem for the Indifferent\", \"The Quantum Enigma\", \"The Holographic Principle\",\n                      \"The Solace System\", \"Omega\", \"The Alchemy Project\"),\n    release_year = c(2003, 2005, 2007, 2009, 2012, 2014, 2016, 2017, 2021, 2022)\n)\n\n# Get metrics at the track level and filter for the selection of releases I chose\n\nepica_track_metrics &lt;-\n  get_artist_audio_features(epica_spotify_id, include_groups = c('album', 'single')) %&gt;%\n  select(track_name,\n         album_name,\n         album_id,\n         energy,\n         loudness,\n         speechiness,\n         acousticness,\n         instrumentalness,\n         liveness,\n         valence,\n         tempo) %&gt;% \n  filter(album_name %in% epica_releases_year$release_spotify) \n\n# Group at the album level, reshape to long form, then plot\n\nepica_album_metrics &lt;-\n  epica_track_metrics %&gt;% \n  group_by(album_name) %&gt;% \n  summarise_if(is.numeric, mean) %&gt;% \n  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %&gt;% \n  arrange(desc(release_year)) %&gt;% \n  select(-album_name) %&gt;% \n  mutate(loudness = abs(loudness),\n         release_name_year = paste(release_name,' ', '(', release_year, ')', sep = '')) %&gt;% \n  relocate(release_name, release_name_year, release_year) %&gt;% \n  gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)\n\nepica_album_metrics %&gt;%\n  filter(metric %in% c('energy', 'valence', 'instrumentalness', 'speechiness')) %&gt;% \n  ggplot(aes(reorder(release_name_year, release_year), value, fill = metric)) +\n  geom_col(width = 0.7, position = position_dodge(width = 0.7)) +\n  coord_flip() +\n  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence')) + \n  labs(title = \"Spotify Audio Metrics for Epica's Discography 2003 - 2022\",\n     y = '',\n     x = 'Releases (LP/EP)',\n     caption = 'Data obtained from the Spotify API through the spotifyr package',\n     fill = 'Audio Metric') +\n  theme_daniel +\n  theme(axis.text.x = element_blank(),\n        axis.text.y = element_text(colour = 'gray'),\n        legend.text = element_text(size = 12),\n        legend.title = element_text(size = 12),\n        legend.position = 'top',\n        legend.direction = 'horizontal')"
+  },
+  {
+    "objectID": "posts/epica/epica.html#footnotes",
+    "href": "posts/epica/epica.html#footnotes",
+    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nI only consider Epica’s eight full-length releases: The Phantom Agony (2003), Consign To Oblivion (2005), The Divine Conspiracy (2007), Design Your Universe (2009), Requiem for the Indifferent (2012), The Quantum Enigma (2014), The Holographic Principle (2016), Omega (2021) and their two EPs, The Solace System (2017) and The Alchemy Project (2022). I leave out the Attack on Titan cover album (which does not make Crimson Bow and Arrow any less epic), singles and live albums.↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page.\n\n\n\nPhoto: Vancouver Harbour Centre from Gastown. By yours truly."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "",
+    "text": "Twitter\n  \n  \n    \n     GitHub\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     RPubs\n  \n  \n    \n     IDEAS\n  \n  \n    \n     CV\n  \n  \n    \n     Short CV\n  \n\n  \n  \n\n\nI was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics, and I am a co-op students at Natural Resources Canada. I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since.\nI’m also passionate about teaching, which is why I started a Resources subpage in this website which may help a beginner get into R. I plan to expand this for new tools and fields in the future.\nApart from my work and research, I love literature, memes, playing videogames and trying new foods. I’m particularly fond of Ernesto Sábato’s books and videogames from Bethesda, Fallout 3 and 4 being my personal favorites. I’m not sure about my favorite food- maybe it’s poutine, but check back later."
+  },
+  {
+    "objectID": "about.html#bio",
+    "href": "about.html#bio",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "",
+    "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics, and I am a co-op students at Natural Resources Canada. I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Education ",
+    "text": "Education \n\nMaster of Arts in Economics, expected Aug. 2023 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
+  },
+  {
+    "objectID": "about.html#professional-experience",
+    "href": "about.html#professional-experience",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Professional Experience ",
+    "text": "Professional Experience \n\nCorporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
+  },
+  {
+    "objectID": "about.html#research-experienceaffiliations",
+    "href": "about.html#research-experienceaffiliations",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Research Experience/Affiliations ",
+    "text": "Research Experience/Affiliations \n\nResearch Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
+  },
+  {
+    "objectID": "about.html#teaching-experience",
+    "href": "about.html#teaching-experience",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Teaching Experience ",
+    "text": "Teaching Experience \n\nTeaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
+  },
+  {
+    "objectID": "about.html#other-training",
+    "href": "about.html#other-training",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Other training",
+    "text": "Other training\n\nData Scientist with R - June 2023 (DataCamp)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
+  },
+  {
+    "objectID": "about.html#footnotes",
+    "href": "about.html#footnotes",
+    "title": "Daniel Sánchez Pazmiño",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIn English, Ecuadorian Research Development Laboratory.↩︎"
+  },
+  {
+    "objectID": "media.html",
+    "href": "media.html",
+    "title": "Media",
+    "section": "",
+    "text": "Blog Post: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador with Alejandra Marchán\nISSN 2953-6456\nMarch 2023\n\nA quantitative-oriented, general interest article posted on LIDE’s blog-type website, El Quantificador. Title in English: Three problems for the quantitative analysis of femicides in Ecuador.\nThe article analyzes administrative data sourced from the Ecuadorian government using R and finds three important problems which impede a clear diagnosis of gender violence in the country. The source code was made available as a GitHub repository.\n\n\n\nBlog Post: Una perspectiva cuantitativa sobre las protestas en Ecuador\nISSN 2953-6456\nJuly 2022\n\nA quantitative-oriented, general interest article posted on LIDE’s blog-type website, El Quantificador. Title in English: A quantitative perspective on the Ecuadorian protests.\nThe article analyzes survey data from the AmericasBarometer using R on the attitudes of Ecuadorians towards protests. The source code was made available as a GitHub repository.\n\n\n\nRadio: The ISSPOL Scandal\nSeptember 2020\n\nIn this radio feature, I speak with some of my USFQ School of Economics professors at a local radio station program about a recent corruption scandal in the country and the specific implications of a journal article’s empirical findings about corruption."
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html",
+    "href": "posts/protestas/protests_spanish.html",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "",
+    "text": "Nota\n\n\n\nEste post fue originalmente publicado en El Quantificador, el blog de interés general del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), una ONG ecuatoriana cuyo objetivo es la investigación y difusión de política pública basada en evidencia científica.\nEl Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.\nEdición Julio 2022- Enero 2023\nISSN 2953-6456"
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html#la-participación-en-protestas",
+    "href": "posts/protestas/protests_spanish.html#la-participación-en-protestas",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "La participación en protestas",
+    "text": "La participación en protestas\n\n\n\n\n\n\n\n\n\nA mediados de junio 2022, la Confederación de Nacionalidades Indígenas del Ecuador (CONAIE) convocó a una movilización masiva en el país con el fin de que el presidente Guillermo Lasso incluya dentro de su plan de gobierno diez pedidos de índole económica y social [1]. Después de 18 días de manifestaciones, el paro terminó tras un acuerdo entre el gobierno nacional y la CONAIE [2]. Las manifestaciones dejan al Ecuador con nueve muertos, millones de dólares en daños y pérdidas económicas así como varios heridos y aprehendidos por la policía [3–5].\nEl Ecuador parece haber perdido la relativa estabilidad política que tuvo durante los diez años de gobierno de Rafael Correa, especialmente considerando la protesta histórica de octubre 2019, también liderada por la CONAIE contra el gobierno del entonces presidente Lenín Moreno [6]. Sin embargo, en nuestro país los períodos de estabilidad han sido la excepción y no la norma. Históricamente Ecuador ha tenido un golpe de estado cada 6 años y un 50% de éstos fueron exitosos derrocando al gobierno de turno [7].\nLa encuesta del Barómetro de las Américas (AB) del Latin American Public Opinion Project (LAPOP) ha llevado a cabo varios sondeos de opinión pública en Ecuador desde el 2004, incluyendo una batería de preguntas sobre protestas desde 2006. La última vez que se realizaron estas preguntas fue a inicios del 2019, lo que nos permite observar la opinión pública poco antes de la protesta de octubre 2019, en donde la CONAIE y otras organizaciones también convocaron movilizaciones en contra del entonces presidente Lenín Moreno.\nEl gráfico de arriba nos muestra que en el 2006 cerca del 21.57% de los encuestados reportaron haber asistido a una protesta en los últimos 12 meses —probablemente por la “Rebelión de los Forajidos” que derrocó al Presidente Lucio Gutiérrez—. A partir de ese año, el porcentaje de participación decrece gradualmente en el país, culminando a comienzos del 2019 con un 7.66%. En verano del 2015 hubo importantes movilizaciones convocadas por la CONAIE y políticos de la oposición contra el gobierno de Rafael Correa [8,9]. Sin embargo, las manifestaciones parecen no haber convocado a tantas personas, aún cuando éstas coincidieron con la más baja popularidad del régimen del entonces presidente [10]."
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html#características-de-los-protestantes",
+    "href": "posts/protestas/protests_spanish.html#características-de-los-protestantes",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "Características de los protestantes",
+    "text": "Características de los protestantes\n¿Qué caracteriza a los manifestantes ecuatorianos? A lo largo del tiempo éstos han sido mayoritariamente hombres, excepto en el 2014 y 2019, en donde no existen diferencias estadísticamente significativas entre hombres y mujeres. Es más probable que quienes protesten estén identificados con algún grupo político 1 y no aprueben la gestión del presidente. Aunque los protestantes, en general, son más jóvenes y más educados que quienes no protestan, la diferencia es casi negligible- contrario a lo que se pensaría-.\n¿Son quienes salen a las calles más pobres que quienes no protestan? No. De hecho, apenas el 38% de quienes protestan consideran que su situación económica es peor que la de hace 12 meses. Este porcentaje es solo levemente mayor al porcentaje de no protestantes que consideran que su situación ha empeorado. De igual manera, la tasa histórica de desempleo 2 de los protestantes no es estadísticamente diferente a la tasa de desempleo global de la muestra -salvo en 2014, donde sí existe una diferencia de diez puntos porcentuales-.\nUn detalle clave sobre los protestantes es su composición racial y los datos de la encuesta permiten saber que no existen diferencias estadísticamente significativas entre los porcentajes históricos de protestantes y no protestantes indígenas. De hecho, el porcentaje que representan los indígenas sobre el total de manifestantes es cercano a solamente el 6% histórico desde 2006 a 2019. Esta baja cifra puede estar subestimada dado que no se realizan demasiadas encuestas en cantones rurales, donde la población indígena se concentra. Sin embargo, tiene sentido pensar que la cifra real no debería desviarse tanto de la que se presenta aquí: al ser los indígenas una minoría de la población del país3, es probable que también constituyen una minoría dentro de quienes participan en protestas. Por otro lado, sí existe una diferencia estadísticamente significativa en participacion en protestas respecto al porcentaje de gente que se autoidentifica como blanca, al ser menos probable que ellos protesten."
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html#participación-en-protestas-vs.-apoyo-al-derecho-de-protesta",
+    "href": "posts/protestas/protests_spanish.html#participación-en-protestas-vs.-apoyo-al-derecho-de-protesta",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "Participación en protestas vs. apoyo al derecho de protesta",
+    "text": "Participación en protestas vs. apoyo al derecho de protesta\n\n\n\n\n\n\n\n\n\nViene al caso considerar una diferencia clave que pudo haber sido fácil de confundir últimamente, especialmente mientras las protestas tomaban lugar: la participación en protestas no es lo mismo que la aprobación a las mismas. El Barómetro de las Américas de LAPOP nos permite construir una serie de tiempo para monitorear el apoyo histórico a las protestas de los ecuatorianos, como se ve a continuación.\nLos datos nos muestran que, previo a la protesta del 2019, el derecho a protestar tanto en general como de grupos de oposición ha sido aprobado por la mayoría de la población en edad de votar, salvo en el 2012 y en el 2014. En un principio, más ecuatorianos apoyan las protestas en general que las protestas de los grupos en contra del gobierno actual4. Sin embargo, la relación se invierte para 2016, cerca del fin del gobierno de Correa, en donde era más probable que una persona apruebe las protestas contra el actual gobierno que las protestas en general.\n\n\n\n\n\n\n\n\n\nUn hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no… ¿no son válidas?\n\n\nTable 1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas\n\n\n\n\n(a) Protestar en general\n\n\nHa participado en una protesta\nAprueba\nNo aprueba\n\n\n\n\nSí\n74%\n26%\n\n\nNo\n57%\n43%\n\n\n\n\n\n\n(b) Protestar en oposición al gobierno\n\n\nHa participado en una protesta\nAprueba\nNo aprueba\n\n\n\n\nSí\n62%\n38%\n\n\nNo\n55%\n45%\n\n\n\n\n\n\nLa tabla anterior nos muestra el porcentaje histórico de dos tipos de aprobación a las protestas clasificado por la participación en protestas. Como se esperaría, un protestante es más propenso a aprobar el derecho de protestar que alguien que no ha protestado. Sin embargo, también se esperaría que quienes participan en protestas aprueben ampliamente el derecho a protestar en cualquier ámbito, pero existe un 26% de ellos que no lo han aprobado históricamente. Respecto al apoyo a las protestas de los grupos de oposición al gobierno, los porcentajes son peores: históricamente un 38% de protestantes no aprueba ese derecho. Este es un fenómeno extraño y preocupante que merece ser observado más a fondo en el futuro, con datos actualizados."
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html#algunas-implicaciones",
+    "href": "posts/protestas/protests_spanish.html#algunas-implicaciones",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "Algunas implicaciones",
+    "text": "Algunas implicaciones\nEl análisis realizado se puede resumir en los siguientes puntos:\n\nLos protestantes tienden a aprobar el derecho a protestar (aunque no tanto), identificarse con algún ala política (derecha, izquierda o centro) y a desaprobar el trabajo del presidente. Es menos probable encontrar manifestantes mujeres y blancos.\nNo existen diferencias significativas entre protestantes y no protestantes en cuanto a edad, años de escolaridad, la probabilidad de ser indígena, estar desempleado y tener una peor situación económica.\nSe encuentra una clara divergencia entre la participación en protestas y la aprobación de las mismas, siendo siempre el porcentaje de aprobación mucho mayor al de participación.\nInquietantemente, la aprobación a las protestas se mueve en contra del apoyo al presidente de turno. Mientras más popular el gobierno, menos respetado el derecho a la protesta.\n\nEs necesario entender lo que implican las protestas, tanto para quienes las lideran y las enfrentan como para los ciudadanos comunes y corrientes. En mi opinión, es incluso más importante que el ecuatoriano promedio las comprenda, puesto que son ellos los que suelen estar en primera línea de las manifestaciones a diferencia de aquellos políticos, dirigentes y autoridades que las protagonizan. No es justificable la violencia del estado hacia la protesta social, así como la minimización de los problemas que aquejan a las comunidades índigenas5, pero la violencia por parte de protestantes tampoco puede justificarse. Informar nuestra discusión sobre la coyuntura del país con hechos, libres de ideología y subjetividad, es extremadamente imperante para encaminarnos hacia una mejor nación, evitando la violencia y polarización social así como protegiendo el derecho a la protesta pacífica, clave para el buen funcionamiento de una democracia [12].\nLas protestas de junio 2022 finalizan con concesiones de ambas partes, las cuales desafortunadamente solo giran alrededor del precio de la gasolina, postergando hacia el mediano plazo la resolución de los otros problemas como la obtención de precios justos para los productores agrícolas y el manejo de la crisis de inseguridad. La historia amenaza con repetirse en esta mesa de diálogo, recordando que en el 2019 las protestas finalizaron por una estabilización del precio de la gasolina aunque los actores involucrados fueron incapaces de llegar a un acuerdo [6]. Nuestro país no puede aguantar más violencia entre protestantes y autoridades cada dos años; los agentes sociales deben esforzarse para que el Ecuador sea justamente eso: un país, y no un licuador6 al que le entregas algo íntegro y te lo devuelve triturado. Debemos exigir al resto y exigirnos a nosotros mismos la fuerza para construir un país de paz y prosperidad, pero también un país de cambio pacífico y efectivo cuando lo apremie.\n\n\n\n\n\n\nNota\n\n\n\nEste post fue orgullosamente concebido con Quarto y R mediante RStudio, originalmente publicado en El Quantificador del Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visita el repositorio de GitHub para replicar los cálculos y aprender un poco más sobre los datos, y no dudes en contactarme a mí o al equipo de El Quantificador con preguntas. Se utilizó las bases de datos de acceso libre del Barómetro de las Américas, por lo que agradecemos al proyecto de Opinión Pública de América Latina (LAPOP) y a sus principales donantes (la Agencia de los Estados Unidos para el Desarrollo Internacional, el Programa de las Naciones Unidas para el Desarrollo, el Banco Interamericano de Desarrollo y Vanderbilt University) por poner a disposición los datos."
+  },
+  {
+    "objectID": "posts/protestas/protests_spanish.html#footnotes",
+    "href": "posts/protestas/protests_spanish.html#footnotes",
+    "title": "Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nUn 12% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (18%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.↩︎\nA diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el INEC mensualmente.↩︎\nPara 2020, los indígenas constituían alrededor de un 6% de la población nacional [11].↩︎\nLa pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” [12].↩︎\nVéase, por ejemplo, [13].↩︎\nImagen original de @ecuacultural.↩︎"
+  },
+  {
     "objectID": "posts_home.html",
     "href": "posts_home.html",
     "title": "Posts",
     "section": "",
     "text": "Twenty years of Epica: The Empirics of The Phantom Agony\n\n\n\n\n\n\n\nenglish\n\n\nmusic\n\n\ntext analysis\n\n\ndata viz\n\n\nepica\n\n\nmetal\n\n\n\n\nI access the Genius, Last.fm and Spotify APIs with R to analyse the data behind Epica’s first album, The Phantom Agony. Cover picture by Diego Eivar.\n\n\n\n\n\n\nJun 17, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: A quantitative perspective of the protests on Ecuador\n\n\n\n\n\n\n\nenglish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nTook me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.\n\n\n\n\n\n\nJan 9, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador\n\n\n\n\n\n\n\nspanish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nAs my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.\n\n\n\n\n\n\nAug 15, 2022\n\n\nDaniel Sánchez\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
-  },
-  {
-    "objectID": "research.html#working-papers-and-publications",
-    "href": "research.html#working-papers-and-publications",
-    "title": "Research",
-    "section": "Working papers and publications",
-    "text": "Working papers and publications\n\nImmunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery1\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs.\n\n\n\nHonesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021)\n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the Philosophy, Politics and Economics Review.\nPresented a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all2 of the paper’s prose and R code. Spanish version coming in the future."
-  },
-  {
-    "objectID": "research.html#footnotes",
-    "href": "research.html#footnotes",
-    "title": "Research",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe publisher’s website is often down, so I include a link to the exact same version uploaded to this webpage.↩︎\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎"
   },
   {
     "objectID": "resources.html",
@@ -224,45 +259,101 @@
     "text": "Footnotes\n\n\nThis is specially useful considering how widespread the use of MS Office is in both industry and academia. However, I still feel that RMarkdown is a bit clumsy when outputting to MS Office. I know that using bookdown and officedown may solve many issues that are found with RMarkdown when outputting to MS Word, but I’m not sure how as of now. I hope to include this material in the future.↩︎\n Not really a book or a standalone website, but the course material for a course Dr. Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr. Heiss’ material is g-o-l-d. See his page here.↩︎\nThe same as the previous footnote, but this is the course material for Jenny Bryan’s course on statistics at the University of British Columbia. Happy Git is also part of that course.↩︎"
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "As a mentor, I believe in two main principles: transparency and practicality. Transparency can be seen by both academic honesty but also through the practice of reproducible research, which is something I try to do by publishing my code and teaching materials publicly when possible. I also aim to foster the practicality and accessibility of my teaching by uploading my course materials to this site and to my GitHub profile when possible.\nBelow, I’ve listed my teaching experience and course materials if they were available to upload publicly."
+    "text": "Burnaby, BC, Canada\n Master of Arts in Economics (c)\n Data Analytics & Causal Inference\n\n\n dsanchezp998@gmail.com\n English & Spanish\n R, Python & SQL\n\n\n\n\n\n\n\n\nSummary\n\n\n\nExperienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight with clear and effective communication.\n\n\n\n\n\nSimon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project.\n\n\n\n\n\n June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English.\n\n\n\n\n\n\nResearch Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)\n\n\n\n\n\nTeaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)\n\n\n\n\n\nData Scientist with R - June 2023 (DataCamp)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
   },
   {
-    "objectID": "teaching.html#teaching-assistant---simon-fraser-university",
-    "href": "teaching.html#teaching-assistant---simon-fraser-university",
-    "title": "Teaching",
-    "section": "Teaching Assistant - Simon Fraser University",
-    "text": "Teaching Assistant - Simon Fraser University\n\nECON103 Principles of Microeconomics: Summer 2023 - Undergraduate level\nECON355W Economic Development: Spring 2023 - Undergraduate level\nECON310 Money & Banking: Fall 2022 - Undergraduate level"
+    "objectID": "cv.html#education-r-fagraduation-cap",
+    "href": "cv.html#education-r-fagraduation-cap",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Master of Arts in Economics, expected April 2024 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
   },
   {
-    "objectID": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
-    "href": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
-    "title": "Teaching",
-    "section": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)",
-    "text": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)\n\nECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
+    "objectID": "cv.html#professional-experience-r-fasuitcase",
+    "href": "cv.html#professional-experience-r-fasuitcase",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Corporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
   },
   {
-    "objectID": "teaching.html#instructor---ecel-research-group-quito-ecuador",
-    "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
-    "title": "Teaching",
-    "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
-    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub"
+    "objectID": "cv.html#research-experienceaffiliations-r-falaptop-code",
+    "href": "cv.html#research-experienceaffiliations-r-falaptop-code",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
   },
   {
-    "objectID": "posts/epica/epica.html#what-makes-epica-different",
-    "href": "posts/epica/epica.html#what-makes-epica-different",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "What makes Epica different?",
-    "text": "What makes Epica different?\nEpica is unique. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make it stand out in the genre. The band combines gutural growls from death metal with soprano vocals and choir and string orchestras. This notable musical style was born in The Phantom Agony, after dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch signer Simone Simons.\nTo look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others [1]. The Spotify API can be accessed with R through the spotifyr package, but it needs users to create a Spotify Developer account and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this tutorial.\nOnce having acquired the credentials, set them up as system environment variables through a call to Sys.setenv(SPOTIFY_CLIENT_ID = 'something') and Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something'). Having these as system variables make the code less clunky and faster. Further, since we’re going to access data from Epica, it’s useful to set up the Spotify identificator for the band, which can be found in the Spotify artist’s link, after the artist/ and before the interrogation sign ?. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for ggplot2 graphics, but trust me, it’s worth it. Below, I acquire track-level audio metrics and then group at the album level1 by taking averages of all metrics.\n\n\nCode\n# Setup the access token\n\naccess_token &lt;- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_ID'),\n                                         client_secret = Sys.getenv('SPOTIFY_CLIENT_SECRET'))\n\n\n# Define an album/EPs vector, a year vector, to use later as well as the artist id\n\nepica_spotify_id &lt;- '5HA5aLY3jJV7eimXWkRBBp'\n\nepica_releases_year &lt;- \n  data.frame(\n    release_spotify = c(\"The Phantom Agony (Expanded Edition)\", \"Consign To Oblivion (Expanded Edition)\", \n                        \"The Divine Conspiracy\", \"Design Your Universe\", \"Requiem for the Indifferent\", \n                        \"The Quantum Enigma\", \"The Holographic Principle\",\"The Solace System\", \n                        \"Omega\", \"The Alchemy Project\"),\n    release_name =  c(\"The Phantom Agony\", \"Consign To Oblivion\", \"The Divine Conspiracy\", \"Design Your Universe\", \n                      \"Requiem for the Indifferent\", \"The Quantum Enigma\", \"The Holographic Principle\",\n                      \"The Solace System\", \"Omega\", \"The Alchemy Project\"),\n    release_year = c(2003, 2005, 2007, 2009, 2012, 2014, 2016, 2017, 2021, 2022)\n)\n\n# Get metrics at the track level and filter for the selection of releases I chose\n\nepica_track_metrics &lt;-\n  get_artist_audio_features(epica_spotify_id, include_groups = c('album', 'single')) %&gt;%\n  select(track_name,\n         album_name,\n         album_id,\n         energy,\n         loudness,\n         speechiness,\n         acousticness,\n         instrumentalness,\n         liveness,\n         valence,\n         tempo) %&gt;% \n  filter(album_name %in% epica_releases_year$release_spotify) \n\n# Group at the album level, reshape to long form, then plot\n\nepica_album_metrics &lt;-\n  epica_track_metrics %&gt;% \n  group_by(album_name) %&gt;% \n  summarise_if(is.numeric, mean) %&gt;% \n  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %&gt;% \n  arrange(desc(release_year)) %&gt;% \n  select(-album_name) %&gt;% \n  mutate(loudness = abs(loudness),\n         release_name_year = paste(release_name,' ', '(', release_year, ')', sep = '')) %&gt;% \n  relocate(release_name, release_name_year, release_year) %&gt;% \n  gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)\n\npositions = c('energy', 'instrumentalness', 'speechiness', 'valence')\n\nepica_album_metrics %&gt;%\n  filter(metric %in% c('energy', 'valence', 'instrumentalness', 'speechiness')) %&gt;% \n  ggplot(aes(reorder(release_name_year, release_year), value, fill = metric)) +\n  geom_col(width = 0.7, position = position_dodge(width = 0.7)) +\n  coord_flip() +\n  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence')) + \n  labs(title = \"Spotify Audio Metrics for Epica's Discography 2003 - 2022\",\n     y = '',\n     x = 'Releases (LP/EP)',\n     caption = 'Data obtained from the Spotify API through the spotifyr package',\n     fill = 'Audio Metric') +\n  theme_daniel +\n  theme(axis.text.x = element_blank(),\n        axis.text.y = element_text(colour = 'gray'),\n        legend.text = element_text(size = 12),\n        legend.title = element_text(size = 12),\n        legend.position = c(-0.05, -0.05),\n        legend.direction = 'horizontal')"
+    "objectID": "cv.html#teaching-experience-r-faschool",
+    "href": "cv.html#teaching-experience-r-faschool",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
   },
   {
-    "objectID": "posts/epica/epica.html#footnotes",
-    "href": "posts/epica/epica.html#footnotes",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nI only consider Epica’s eight full-length releases: The Phantom Agony (2003), Consign To Oblivion (2005), The Divine Conspiracy (2007), Design Your Universe (2009), Requiem for the Indifferent (2012), The Quantum Enigma (2014), The Holographic Principle (2016), Omega (2021) and their two EPs, The Solace System (2017) and The Alchemy Project (2022). I leave out the Attack on Titan cover album (which does not make Crimson Bow and Arrow any less epic), singles and live albums.↩︎"
+    "objectID": "cv.html#other-training",
+    "href": "cv.html#other-training",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Data Scientist with R - June 2023 (DataCamp)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Simon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project."
+  },
+  {
+    "objectID": "cv.html#professional-experience",
+    "href": "cv.html#professional-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Corporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
+  },
+  {
+    "objectID": "cv.html#research-experienceaffiliations",
+    "href": "cv.html#research-experienceaffiliations",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
+  },
+  {
+    "objectID": "cv.html#teaching-experience",
+    "href": "cv.html#teaching-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
+  },
+  {
+    "objectID": "cv.html#industry-experience",
+    "href": "cv.html#industry-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English."
+  },
+  {
+    "objectID": "cv.html#first-column",
+    "href": "cv.html#first-column",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Burnaby, BC, Canada\n Master of Arts in Economics (c)"
+  },
+  {
+    "objectID": "cv.html#second-column",
+    "href": "cv.html#second-column",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Data Analytics & Causal Inference\n dsanchezp998@gmail.com\n English & Spanish"
+  },
+  {
+    "objectID": "cv.html#research-experience-affiliations",
+    "href": "cv.html#research-experience-affiliations",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
   }
 ]
