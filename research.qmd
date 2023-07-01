@@ -2,6 +2,10 @@
 title: "Research"
 ---
 
+```{r}
+library(fontawesome)
+```
+
 I'm interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me. 
 
 I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub](https://github.com/dsanchezp18) and [RPubs](https://github.com/dsanchezp18) sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I've done with LIDE can be seen below or also at the organization's blog, [El Quantificador](https://elquantificador.org/). 
@@ -16,7 +20,7 @@ I believe that research should be as reproducible as possible, so I try to alway
 
 ### [Honesty by Convenience: Corruption Tolerance in Ecuador](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
 
-*Dedicated to the memory of Jorge Pazmiño (1941-2021)*
+*Dedicated to the memory of Jorge Pazmiño (1941-2021)  `r fa('cross')`*
 
 - Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the [Philosophy, Politics and Economics Review](https://pressbooks.lib.vt.edu/pper). 
 
