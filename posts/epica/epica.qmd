@@ -5,6 +5,7 @@ date: "2023-06-17"
 description: I access the Genius, Last.fm and Spotify APIs with R to analyse the data behind Epica's first album, *The Phantom Agony*. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar).
 categories: [english, music, text analysis, data viz, epica, metal]
 csl: ../../econometrics.csl
+draft: true
 image: cover.png
 knitr:
   opts_chunk: 
