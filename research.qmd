@@ -3,6 +3,8 @@ title: "Research"
 ---
 
 ```{r}
+#| label: setup
+#| include: false
 library(fontawesome)
 ```
 
