@@ -14,6 +14,20 @@
     "text": "Teaching Assistant - Simon Fraser University\n\nECON103 Principles of Microeconomics: Summer 2023 - Undergraduate level\nECON355W Economic Development: Spring 2023 - Undergraduate level\nECON310 Money & Banking: Fall 2022 - Undergraduate level"
   },
   {
+    "objectID": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
+    "href": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
+    "title": "Teaching",
+    "section": "Teaching Assistant - New Dimensions/Laboratorio LIDE",
+    "text": "Teaching Assistant - New Dimensions/Laboratorio LIDE\n\nIntroduction to SQL (May - June 2023)\nIntroduction to Power BI (April - May 2023)\n\nSome learning materials available in the program’s GitHub repository."
+  },
+  {
+    "objectID": "teaching.html#instructor---new-dimensionslaboratorio-lide",
+    "href": "teaching.html#instructor---new-dimensionslaboratorio-lide",
+    "title": "Teaching",
+    "section": "Instructor - New Dimensions/Laboratorio LIDE",
+    "text": "Instructor - New Dimensions/Laboratorio LIDE\n\nData Visualisation using Tableau, (August 2023)."
+  },
+  {
     "objectID": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
     "href": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
     "title": "Teaching",
@@ -91,27 +105,6 @@
     "text": "Footnotes\n\n\n12% of people who protest report not having a political identification, while a higher percentage of non-protesters (18%) report the same. Political groups to choose from in this question are “the left” and “the right”, denoted by a scale of 1 to 10.”↩︎\nUnlike the normal unemployment rate, calculated based on the total economically active population, this unemployment rate is calculated based on the total number of people of voting age, so we must be careful when comparing it to the rates reported monthly by INEC.↩︎\nFor 2020, indigenous people constituted around 6% of the national population [11].↩︎\nThe original question in the survey asks about the degree of approval for the possibility of people who “always speak badly of the current form of government and the government system” [12].↩︎\nSee, for example, [13].↩︎"
   },
   {
-    "objectID": "posts/epica/epica.html",
-    "href": "posts/epica/epica.html",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "",
-    "text": "On June 5th, 2003, dutch-based symphonic metal band Epica released their first full-length album, The Phantom Agony, the first of eight albums on the band’s successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, Omega, an EP in 2022, The Alchemy Project, and were headliners of Metallica’s M72 2023 World Tour concerts in Europe. Epica’s lengthy trajectory and activeness make the band a great case study about heavy/death/symphonic metal music in general and how the genre has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica’s discography, with an emphasis on The Phantom Agony."
-  },
-  {
-    "objectID": "posts/epica/epica.html#what-makes-epica-different",
-    "href": "posts/epica/epica.html#what-makes-epica-different",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "What makes Epica different?",
-    "text": "What makes Epica different?\nEpica is unique. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make it stand out in the genre. The band combines gutural growls from death metal with soprano vocals and choir and string orchestras. This notable musical style was born in The Phantom Agony, after dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch signer Simone Simons.\nTo look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others [1]. The Spotify API can be accessed with R through the spotifyr package, but it needs users to create a Spotify Developer account and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this tutorial.\nOnce having acquired the credentials, set them up as system environment variables through a call to Sys.setenv(SPOTIFY_CLIENT_ID = 'something') and Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something'). Having these as system variables make the code less clunky and faster. Further, since we’re going to access data from Epica, it’s useful to set up the Spotify identificator for the band, which can be found in the Spotify artist’s link, after the artist/ and before the interrogation sign ?. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for ggplot2 graphics, but trust me, it’s worth it. Below, I acquire track-level audio metrics and then group at the album level1 by taking averages of all metrics.\n\n\nCode\n# Setup the access token\n\naccess_token &lt;- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_ID'),\n                                         client_secret = Sys.getenv('SPOTIFY_CLIENT_SECRET'))\n\n\n# Define an album/EPs vector, a year vector, to use later as well as the artist id\n\nepica_spotify_id &lt;- '5HA5aLY3jJV7eimXWkRBBp'\n\nepica_releases_year &lt;- \n  data.frame(\n    release_spotify = c(\"The Phantom Agony (Expanded Edition)\", \"Consign To Oblivion (Expanded Edition)\", \n                        \"The Divine Conspiracy\", \"Design Your Universe\", \"Requiem for the Indifferent\", \n                        \"The Quantum Enigma\", \"The Holographic Principle\",\"The Solace System\", \n                        \"Omega\", \"The Alchemy Project\"),\n    release_name =  c(\"The Phantom Agony\", \"Consign To Oblivion\", \"The Divine Conspiracy\", \"Design Your Universe\", \n                      \"Requiem for the Indifferent\", \"The Quantum Enigma\", \"The Holographic Principle\",\n                      \"The Solace System\", \"Omega\", \"The Alchemy Project\"),\n    release_year = c(2003, 2005, 2007, 2009, 2012, 2014, 2016, 2017, 2021, 2022)\n)\n\n# Get metrics at the track level and filter for the selection of releases I chose\n\nepica_track_metrics &lt;-\n  get_artist_audio_features(epica_spotify_id, include_groups = c('album', 'single')) %&gt;%\n  select(track_name,\n         album_name,\n         album_id,\n         energy,\n         loudness,\n         speechiness,\n         acousticness,\n         instrumentalness,\n         liveness,\n         valence,\n         tempo) %&gt;% \n  filter(album_name %in% epica_releases_year$release_spotify) \n\n# Group at the album level, reshape to long form, then plot\n\nepica_album_metrics &lt;-\n  epica_track_metrics %&gt;% \n  group_by(album_name) %&gt;% \n  summarise_if(is.numeric, mean) %&gt;% \n  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %&gt;% \n  arrange(desc(release_year)) %&gt;% \n  select(-album_name) %&gt;% \n  mutate(loudness = abs(loudness),\n         release_name_year = paste(release_name,' ', '(', release_year, ')', sep = '')) %&gt;% \n  relocate(release_name, release_name_year, release_year) %&gt;% \n  gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)\n\nepica_album_metrics %&gt;%\n  filter(metric %in% c('energy', 'valence', 'instrumentalness', 'speechiness')) %&gt;% \n  ggplot(aes(reorder(release_name_year, release_year), value, fill = metric)) +\n  geom_col(width = 0.7, position = position_dodge(width = 0.7)) +\n  coord_flip() +\n  scale_fill_discrete(labels = c('Energy', 'Instrumentalness', 'Speechiness', 'Valence')) + \n  labs(title = \"Spotify Audio Metrics for Epica's Discography 2003 - 2022\",\n     y = '',\n     x = 'Releases (LP/EP)',\n     caption = 'Data obtained from the Spotify API through the spotifyr package',\n     fill = 'Audio Metric') +\n  theme_daniel +\n  theme(axis.text.x = element_blank(),\n        axis.text.y = element_text(colour = 'gray'),\n        legend.text = element_text(size = 12),\n        legend.title = element_text(size = 12),\n        legend.position = 'top',\n        legend.direction = 'horizontal')"
-  },
-  {
-    "objectID": "posts/epica/epica.html#footnotes",
-    "href": "posts/epica/epica.html#footnotes",
-    "title": "Twenty years of Epica: The Empirics of The Phantom Agony",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nI only consider Epica’s eight full-length releases: The Phantom Agony (2003), Consign To Oblivion (2005), The Divine Conspiracy (2007), Design Your Universe (2009), Requiem for the Indifferent (2012), The Quantum Enigma (2014), The Holographic Principle (2016), Omega (2021) and their two EPs, The Solace System (2017) and The Alchemy Project (2022). I leave out the Attack on Titan cover album (which does not make Crimson Bow and Arrow any less epic), singles and live albums.↩︎"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Home",
@@ -133,46 +126,88 @@
     "text": "I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics, and I am a co-op students at Natural Resources Canada. I participate as a Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)1, an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.\nAs put by Professor Daniel M. Giménez, R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I’ve been using R as much as I can ever since."
   },
   {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Education ",
-    "text": "Education \n\nMaster of Arts in Economics, expected Aug. 2023 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
-  },
-  {
-    "objectID": "about.html#professional-experience",
-    "href": "about.html#professional-experience",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Professional Experience ",
-    "text": "Professional Experience \n\nCorporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
-  },
-  {
-    "objectID": "about.html#research-experienceaffiliations",
-    "href": "about.html#research-experienceaffiliations",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Research Experience/Affiliations ",
-    "text": "Research Experience/Affiliations \n\nResearch Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "about.html#teaching-experience",
-    "href": "about.html#teaching-experience",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Teaching Experience ",
-    "text": "Teaching Experience \n\nTeaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "about.html#other-training",
-    "href": "about.html#other-training",
-    "title": "Daniel Sánchez Pazmiño",
-    "section": "Other training",
-    "text": "Other training\n\nData Scientist with R - June 2023 (DataCamp)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
-  },
-  {
     "objectID": "about.html#footnotes",
     "href": "about.html#footnotes",
     "title": "Daniel Sánchez Pazmiño",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nIn English, Ecuadorian Research Development Laboratory.↩︎"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Burnaby, BC, Canada\n Master of Arts in Economics (c)\n Data Analytics & Causal Inference\n\n\n dsanchezp998@gmail.com\n English (TOEFL 119/120) & Spanish (Native)\n R, Python & SQL\n\n\n\n\n\n\n\n\nSummary\n\n\n\nExperienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight with clear and effective communication.\n\n\n\n\n\nSimon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project.\n\n\n\n\n\n June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English.\n\n\n\n\n\n\nMultiporpose Scripting:\n\nR (3+years): tidyverse, knitr/sweave, infer, caret, etc.\nPython (1 year): pandas, numpy, matplotlib, scipy, etc.\n\nDashboarding & Visualisation:\n\nPower BI (1 year)\nTableau (1 year)\nR: shiny/flexdashboard, ggplot2, plotly, dypgraphs, higcharter\nPython: seaborn, matplotlib, plotly.\n\nData Management & Wrangling:\n\nPostgreSQL/SQL Server (1 year)\nPower Query/Mashup\nR: dplyr, data.table, bigmemory\nPython: pandas\n\nDocument Markup\n\nLaTeX\nMarkdown\nQuarto\nRMarkdown\nKnitr/Sweave\n\n0thers: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Shell, VBA. API access using selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR, yfinance, wbgapi, etc.\n\n\n\n\n\n\n June 2022 - Present\n\nCo-autorship of research papers with organization members, including a work in progress to be submitted for publication at The Gerontologist International Spotlight Issue.\nReviewer and maintainer of El Quantificador, LIDE’s blog for short, data-oriented articles on social matters, which involve wrangling, analysis and visualization of data using R. Maintenance of the website in a blogdown environment with RStudio.\nAssisting in the implementation of several of the organization’s projects, including the data analyitcs education program for women of disadvantaged backgrounds, New Dimensions.\n\n\n\n\n January - April 2022\n\nContributed to the production of empirical papers and literature reviews, notably, Family Firms and Economic Performance: A Systematic Literature Review with Segundo Camino-Mogro, PhD(c).\nProduced original research using SCVS administrative data, later published in the institution’s peer-reviewed journal, X-pedientes Económicos.\n\n\n\n\n\n\nSánchez Pazmiño, Daniel. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/pper/chapter/article-5/\n\nReproducible code available on GitHub and RPubs.\n\nSánchez-Pazmiño, D.H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery1. In X-Pedientes Económicos. https://daniel-ec.netlify.app/files/research/immunizing-the-econ.pdf1\n\nReproducible code available on GitHub and RPubs.\n\n\n\n\n\n\nMarchán, A. & Sánchez, D. (2023). Three problems for the quantitative analysis of femicides in Ecuador (Original in Spanish: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador). ISSN 2953-6456. https://elquantificador.org/post/valores/2023-03- 07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/.\nSánchez, D. (2022). A quantitative perspective on the Ecuadorian protests. ISSN 2953-6456. https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/\n\n\n\n\n\n\n Sept. 2022 - Present\n\nCooperating with SFU Economics as a TA.in ECON310 Money & Banking (Fall2022), ECON355W Economic Development (Spring 2023) & ECON103 Principles of Microeconomics (Summer 2023).\nLecturing in tutorials 2-4 times a week with groups of 15-20 students of varying levels of quantitative acumen.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments and exams.\n\n\n\n\n January 2018 - Present\n\nAided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, calculus, finance, among others.\n\n\n\n\n April 2023 - August 2023\n\nAssisted instructors for the Business Analytics for Women education program, New Dimensions, in the SQL and Power BI modules.\nTaught a four hour module on Data Visualisation using Tableau.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments.\n\n\n\n\n Aug. 2020 - Dec. 2021\n\nCooperated with USFQ Economics as a TA for courses in Introductory Economics & Austrian School Economics.\nPrepared class seminars, managed the course LMS & attended students during office hours.\nCreated and graded assignments and exams and held tutorial sessions 4-5 times a semester.\n\n\n\n\n April 2021\n\nDeveloped and taught Introductory LaTeX course through ECEL Research Group, a USFQ-related academic student body.\nLectured for 7 hours about LaTeX, facilitating the transmission of complicated programing concepts and exercises to 15-20 participants, using the Overleaf LaTeX interface.\nDeveloped course materials with LaTeX, available on GitHub including applications of the markup language with R and Stata.\n\n\n\n\n\n\n\n June 2022\n\nUSFQ Gerontology Community Outreach Project to develop a network of senior-friendly cities in Pichincha, Ecuador.\nAssisted the project leader in the economic and financial studies of several products offered by the organization, as well as market research and sales forecasting.\n\n\n\n\n\nParticipated as a member for an experimental economics oriented academic club based off USFQ’s School of Economics.\nDiscussed papers weekly and supported organizing events for the university community.\nOrganized and taught an introductory LaTeX course on April 2021.\n\n\n\n\n\nSupported the care of children and the preparation of their daily academic and didactic activities.\nProposed and developed a didactic long-term project of didactic activities for the children, to be implemented in theFoundation beginning August 2019.\n\n\n\n\n\n\nData Scientist with R - June 2023 (DataCamp2)\nData Visualization with R- June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)\nUniversity Pathway Advanced English, ILSC Vancouver - August to November 2016"
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Simon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project."
+  },
+  {
+    "objectID": "cv.html#industry-experience",
+    "href": "cv.html#industry-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English."
+  },
+  {
+    "objectID": "cv.html#technical-skills",
+    "href": "cv.html#technical-skills",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Multiporpose Scripting:\n\nR (3+years): tidyverse, knitr/sweave, infer, caret, etc.\nPython (1 year): pandas, numpy, matplotlib, scipy, etc.\n\nDashboarding & Visualisation:\n\nPower BI (1 year)\nTableau (1 year)\nR: shiny/flexdashboard, ggplot2, plotly, dypgraphs, higcharter\nPython: seaborn, matplotlib, plotly.\n\nData Management & Wrangling:\n\nPostgreSQL/SQL Server (1 year)\nPower Query/Mashup\nR: dplyr, data.table, bigmemory\nPython: pandas\n\nDocument Markup\n\nLaTeX\nMarkdown\nQuarto\nRMarkdown\nKnitr/Sweave\n\n0thers: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Shell, VBA. API access using selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR, yfinance, wbgapi, etc."
+  },
+  {
+    "objectID": "cv.html#research-experience-affiliations",
+    "href": "cv.html#research-experience-affiliations",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "June 2022 - Present\n\nCo-autorship of research papers with organization members, including a work in progress to be submitted for publication at The Gerontologist International Spotlight Issue.\nReviewer and maintainer of El Quantificador, LIDE’s blog for short, data-oriented articles on social matters, which involve wrangling, analysis and visualization of data using R. Maintenance of the website in a blogdown environment with RStudio.\nAssisting in the implementation of several of the organization’s projects, including the data analyitcs education program for women of disadvantaged backgrounds, New Dimensions.\n\n\n\n\n January - April 2022\n\nContributed to the production of empirical papers and literature reviews, notably, Family Firms and Economic Performance: A Systematic Literature Review with Segundo Camino-Mogro, PhD(c).\nProduced original research using SCVS administrative data, later published in the institution’s peer-reviewed journal, X-pedientes Económicos."
+  },
+  {
+    "objectID": "cv.html#research",
+    "href": "cv.html#research",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Sánchez Pazmiño, Daniel. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/pper/chapter/article-5/\n\nReproducible code available on GitHub and RPubs.\n\nSánchez-Pazmiño, D.H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery1. In X-Pedientes Económicos. https://daniel-ec.netlify.app/files/research/immunizing-the-econ.pdf1\n\nReproducible code available on GitHub and RPubs."
+  },
+  {
+    "objectID": "cv.html#other-publications",
+    "href": "cv.html#other-publications",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Marchán, A. & Sánchez, D. (2023). Three problems for the quantitative analysis of femicides in Ecuador (Original in Spanish: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador). ISSN 2953-6456. https://elquantificador.org/post/valores/2023-03- 07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/.\nSánchez, D. (2022). A quantitative perspective on the Ecuadorian protests. ISSN 2953-6456. https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/"
+  },
+  {
+    "objectID": "cv.html#teaching-experience",
+    "href": "cv.html#teaching-experience",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Sept. 2022 - Present\n\nCooperating with SFU Economics as a TA.in ECON310 Money & Banking (Fall2022), ECON355W Economic Development (Spring 2023) & ECON103 Principles of Microeconomics (Summer 2023).\nLecturing in tutorials 2-4 times a week with groups of 15-20 students of varying levels of quantitative acumen.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments and exams.\n\n\n\n\n January 2018 - Present\n\nAided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, calculus, finance, among others.\n\n\n\n\n April 2023 - August 2023\n\nAssisted instructors for the Business Analytics for Women education program, New Dimensions, in the SQL and Power BI modules.\nTaught a four hour module on Data Visualisation using Tableau.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments.\n\n\n\n\n Aug. 2020 - Dec. 2021\n\nCooperated with USFQ Economics as a TA for courses in Introductory Economics & Austrian School Economics.\nPrepared class seminars, managed the course LMS & attended students during office hours.\nCreated and graded assignments and exams and held tutorial sessions 4-5 times a semester.\n\n\n\n\n April 2021\n\nDeveloped and taught Introductory LaTeX course through ECEL Research Group, a USFQ-related academic student body.\nLectured for 7 hours about LaTeX, facilitating the transmission of complicated programing concepts and exercises to 15-20 participants, using the Overleaf LaTeX interface.\nDeveloped course materials with LaTeX, available on GitHub including applications of the markup language with R and Stata."
+  },
+  {
+    "objectID": "cv.html#extracurriculars",
+    "href": "cv.html#extracurriculars",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "June 2022\n\nUSFQ Gerontology Community Outreach Project to develop a network of senior-friendly cities in Pichincha, Ecuador.\nAssisted the project leader in the economic and financial studies of several products offered by the organization, as well as market research and sales forecasting.\n\n\n\n\n\nParticipated as a member for an experimental economics oriented academic club based off USFQ’s School of Economics.\nDiscussed papers weekly and supported organizing events for the university community.\nOrganized and taught an introductory LaTeX course on April 2021.\n\n\n\n\n\nSupported the care of children and the preparation of their daily academic and didactic activities.\nProposed and developed a didactic long-term project of didactic activities for the children, to be implemented in theFoundation beginning August 2019."
+  },
+  {
+    "objectID": "cv.html#other-training",
+    "href": "cv.html#other-training",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Data Scientist with R - June 2023 (DataCamp2)\nData Visualization with R- June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)\nUniversity Pathway Advanced English, ILSC Vancouver - August to November 2016"
+  },
+  {
+    "objectID": "cv.html#footnotes",
+    "href": "cv.html#footnotes",
+    "title": "Curriculum Vitae",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe link to the journal’s version is usually down, but you may find it here.↩︎\nSee full list of certificates here↩︎"
   },
   {
     "objectID": "media.html",
@@ -228,7 +263,7 @@
     "href": "posts_home.html",
     "title": "Posts",
     "section": "",
-    "text": "Twenty years of Epica: The Empirics of The Phantom Agony\n\n\n\n\n\n\n\nenglish\n\n\nmusic\n\n\ntext analysis\n\n\ndata viz\n\n\nepica\n\n\nmetal\n\n\n\n\nI access the Genius, Last.fm and Spotify APIs with R to analyse the data behind Epica’s first album, The Phantom Agony. Cover picture by Diego Eivar.\n\n\n\n\n\n\nJun 17, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: A quantitative perspective of the protests on Ecuador\n\n\n\n\n\n\n\nenglish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nTook me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.\n\n\n\n\n\n\nJan 9, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador\n\n\n\n\n\n\n\nspanish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nAs my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.\n\n\n\n\n\n\nAug 15, 2022\n\n\nDaniel Sánchez\n\n\n\n\n\n\nNo matching items"
+    "text": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador\n\n\n\n\n\n\n\nenglish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nTook me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.\n\n\n\n\n\n\nJan 9, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador\n\n\n\n\n\n\n\nspanish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nAs my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.\n\n\n\n\n\n\nAug 15, 2022\n\n\nDaniel Sánchez\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "resources.html",
@@ -257,131 +292,5 @@
     "title": "Resources",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is specially useful considering how widespread the use of MS Office is in both industry and academia. However, I still feel that RMarkdown is a bit clumsy when outputting to MS Office. I know that using bookdown and officedown may solve many issues that are found with RMarkdown when outputting to MS Word, but I’m not sure how as of now. I hope to include this material in the future.↩︎\n Not really a book or a standalone website, but the course material for a course Dr. Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr. Heiss’ material is g-o-l-d. See his page here.↩︎\nThe same as the previous footnote, but this is the course material for Jenny Bryan’s course on statistics at the University of British Columbia. Happy Git is also part of that course.↩︎"
-  },
-  {
-    "objectID": "cv.html",
-    "href": "cv.html",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Burnaby, BC, Canada\n Master of Arts in Economics (c)\n Data Analytics & Causal Inference\n\n\n dsanchezp998@gmail.com\n English (TOEFL 119/120) & Spanish (Native)\n R, Python & SQL\n\n\n\n\n\n\n\n\nSummary\n\n\n\nExperienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight with clear and effective communication.\n\n\n\n\n\nSimon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project.\n\n\n\n\n\n June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English.\n\n\n\n\n\n\nMultiporpose Scripting:\n\nR (3+years): tidyverse, knitr/sweave, infer, caret, etc.\nPython (1 year): pandas, numpy, matplotlib, scipy, etc.\n\nDashboarding & Visualisation:\n\nPower BI (1 year)\nTableau (1 year)\nR: shiny/flexdashboard, ggplot2, plotly, dypgraphs, higcharter\nPython: seaborn, matplotlib, plotly.\n\nData Management & Wrangling:\n\nPostgreSQL/SQL Server (1 year)\nPower Query/Mashup\nR: dplyr, data.table, bigmemory\nPython: pandas\n\nDocument Markup\n\nLaTeX\nMarkdown\nQuarto\nRMarkdown\nKnitr/Sweave\n\n0thers: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Shell, VBA. API access using selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR, yfinance, wbgapi, etc.\n\n\n\n\n\n\n June 2022 - Present\n\nCo-autorship of research papers with organization members, including a work in progress to be submitted for publication at The Gerontologist International Spotlight Issue.\nReviewer and maintainer of El Quantificador, LIDE’s blog for short, data-oriented articles on social matters, which involve wrangling, analysis and visualization of data using R. Maintenance of the website in a blogdown environment with RStudio.\nAssisting in the implementation of several of the organization’s projects, including the data analyitcs education program for women of disadvantaged backgrounds, New Dimensions.\n\n\n\n\n January - April 2022\n\nContributed to the production of empirical papers and literature reviews, notably, Family Firms and Economic Performance: A Systematic Literature Review with Segundo Camino-Mogro, PhD(c).\nProduced original research using SCVS administrative data, later published in the institution’s peer-reviewed journal, X-pedientes Económicos.\n\n\n\n\n\n\nSánchez Pazmiño, Daniel. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/pper/chapter/article-5/\n\nReproducible code available on GitHub and RPubs.\n\nSánchez-Pazmiño, D.H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery1. In X-Pedientes Económicos. https://daniel-ec.netlify.app/files/research/immunizing-the-econ.pdf1\n\nReproducible code available on GitHub and RPubs.\n\n\n\n\n\n\nMarchán, A. & Sánchez, D. (2023). Three problems for the quantitative analysis of femicides in Ecuador (Original in Spanish: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador). ISSN 2953-6456. https://elquantificador.org/post/valores/2023-03- 07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/.\nSánchez, D. (2022). A quantitative perspective on the Ecuadorian protests. ISSN 2953-6456. https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/\n\n\n\n\n\n\n Sept. 2022 - Present\n\nCooperating with SFU Economics as a TA.in ECON310 Money & Banking (Fall2022), ECON355W Economic Development (Spring 2023) & ECON103 Principles of Microeconomics (Summer 2023).\nLecturing in tutorials 2-4 times a week with groups of 15-20 students of varying levels of quantitative acumen.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments and exams.\n\n\n\n\n January 2018 - Present\n\nAided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, calculus, finance, among others.\n\n\n\n\n April 2023 - August 2023\n\nAssisted instructors for the Business Analytics for Women education program, New Dimensions, in the SQL and Power BI modules.\nTaught a four hour module on Data Visualisation using Tableau.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments.\n\n\n\n\n Aug. 2020 - Dec. 2021\n\nCooperated with USFQ Economics as a TA for courses in Introductory Economics & Austrian School Economics.\nPrepared class seminars, managed the course LMS & attended students during office hours.\nCreated and graded assignments and exams and held tutorial sessions 4-5 times a semester.\n\n\n\n\n April 2021\n\nDeveloped and taught Introductory LaTeX course through ECEL Research Group, a USFQ-related academic student body.\nLectured for 7 hours about LaTeX, facilitating the transmission of complicated programing concepts and exercises to 15-20 participants, using the Overleaf LaTeX interface.\nDeveloped course materials with LaTeX, available on GitHub including applications of the markup language with R and Stata.\n\n\n\n\n\n\nData Scientist with R - June 2023 (DataCamp2)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
-  },
-  {
-    "objectID": "cv.html#education-r-fagraduation-cap",
-    "href": "cv.html#education-r-fagraduation-cap",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Master of Arts in Economics, expected April 2024 (Simon Fraser University)\nBachelor of Arts in Finance, May 2022 (Universidad San Francisco de Quito)\nBachelor of Arts in Economics, Dec. 2021 (Universidad San Francisco de Quito)"
-  },
-  {
-    "objectID": "cv.html#professional-experience-r-fasuitcase",
-    "href": "cv.html#professional-experience-r-fasuitcase",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Corporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
-  },
-  {
-    "objectID": "cv.html#research-experienceaffiliations-r-falaptop-code",
-    "href": "cv.html#research-experienceaffiliations-r-falaptop-code",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "cv.html#teaching-experience-r-faschool",
-    "href": "cv.html#teaching-experience-r-faschool",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Teaching Assistant, Sept. 2022 - Present (Simon Fraser University)\nTeaching Assistant & Instructor, April 2023 - July 2023 (New Dimensions/LIDE)\nTeaching Assistant, Aug. 2020 - Dec. 2021 (Universidad San Francisco de Quito)\nCourse Instructor LaTeX, Apr. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "cv.html#other-training",
-    "href": "cv.html#other-training",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Data Scientist with R - June 2023 (DataCamp2)\nData Visualization with R - June 2023 (DataCamp)\nSFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)\nStatistics Fundamentals with R - July 2022 (DataCamp)\nData Analyst with R - June 2022 (DataCamp)\nPower BI Fundamentals - June 2022 (DataCamp)\nTableau Fundamentals - June 2022 (DataCamp)\nIntermediate SQL - May 2022 (DataCamp)"
-  },
-  {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Simon Fraser University, Master of Arts in Economics (August 2022 - April 2024)\n\nGPA 3.89/4.33. Awarded full funding through an entrance scholarship and teaching assistantships, among 100+ applicants.\n\nUniversidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)\n\nGPA 3.81/4.00, magna cum laude.\n\nBachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)\n\nGPA 3.82/4.00, magna cum laude. Capstone Project: *Honesty by Convenience: Corruption Tolerance in Ecuador. Awarded best Fall 2021 capstone project."
-  },
-  {
-    "objectID": "cv.html#professional-experience",
-    "href": "cv.html#professional-experience",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Corporate Finance Consultant, March 2022 - Present (LVM Consulting)\nData Analyst, May 2022 - April 2023 (Milmoh, S.L.)\nFinance Intern, May - Jul. 2018 (Produbanco)\nAccounting Intern, May - Jul. 2017 (Baker Tilly Ecuador)"
-  },
-  {
-    "objectID": "cv.html#research-experienceaffiliations",
-    "href": "cv.html#research-experienceaffiliations",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Research Associate, June 2022 - Present (Laboratorio de Investigación para el Desarrollo del Ecuador)\nResearch Intern, Jan. - Apr. 2022 (Superintendencia de Compañías, Valores y Seguros Ecuador)\nFull Member, Jan. - Nov. 2021 (ECEL Research Group)"
-  },
-  {
-    "objectID": "cv.html#teaching-experience",
-    "href": "cv.html#teaching-experience",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Sept. 2022 - Present\n\nCooperating with SFU Economics as a TA.in ECON310 Money & Banking (Fall2022), ECON355W Economic Development (Spring 2023) & ECON103 Principles of Microeconomics (Summer 2023).\nLecturing in tutorials 2-4 times a week with groups of 15-20 students of varying levels of quantitative acumen.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments and exams.\n\n\n\n\n January 2018 - Present\n\nAided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, calculus, finance, among others.\n\n\n\n\n April 2023 - August 2023\n\nAssisted instructors for the Business Analytics for Women education program, New Dimensions, in the SQL and Power BI modules.\nTaught a four hour module on Data Visualisation using Tableau.\nCoordinating with professors and co-TAs to prepare class seminars, manage the course LMS & attend students during weekly office hours. Creating and grading assignments.\n\n\n\n\n Aug. 2020 - Dec. 2021\n\nCooperated with USFQ Economics as a TA for courses in Introductory Economics & Austrian School Economics.\nPrepared class seminars, managed the course LMS & attended students during office hours.\nCreated and graded assignments and exams and held tutorial sessions 4-5 times a semester.\n\n\n\n\n April 2021\n\nDeveloped and taught Introductory LaTeX course through ECEL Research Group, a USFQ-related academic student body.\nLectured for 7 hours about LaTeX, facilitating the transmission of complicated programing concepts and exercises to 15-20 participants, using the Overleaf LaTeX interface.\nDeveloped course materials with LaTeX, available on GitHub including applications of the markup language with R and Stata."
-  },
-  {
-    "objectID": "cv.html#industry-experience",
-    "href": "cv.html#industry-experience",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "June 2023 - Present\n\nCo-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).\nCreation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.\nDeveloped presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.\n\n\n\n\n March 2022 - June 2022\n\nAssisted in corporate finance consulting on an occasional per-job basis for 10+ projects with large companies in Ecuador.\nSupported the creation of discounted cash flow (DCF) and comparable multiples valuation models in MS Excel.\nDeveloped business research in the Bloomberg Terminal, S&P Capital IQ and EMIS platforms to calibrate valuations.\n\n\n\n\n May 2022 - April 2023\n\nWrangled, analyzed and visualized data with Power BI, Tableau and R, creating dashboards and reporting pipelines to aid 10+ European clients in business decisions.\nManaged and structured data models with PostgreSQL to deploy and mantain assets in Power BI, Tableau and R.\nDeveloped reports, code documentation and presented monthly results to clients, including key business insights.\n\n\n\n\n May - July 2018\n\nSupported the project finance team in the Finance division of one of Ecuador’s largest financial institutions.\nCreated dashboards of the Bank’s financial performance at the aggregate and branch level\nDeveloped periodical reports using bank data which eased the communication of bank’s results to the chief financial officer and various department leaders.\n\n\n\n\n May - July 2017\n\nParticipated as an intern in the Outsourcing division of an international Top 10 Auditing/Financial Consulting firm. Aided in the reporting of the clients’ financial information to numerous public entities.\nAttended meetings and training sessions on accounting and finance concepts to be used in the company’s day-to-day activities.\nTranslated financial documents from English to Spanish and Spanish to English."
-  },
-  {
-    "objectID": "cv.html#first-column",
-    "href": "cv.html#first-column",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Burnaby, BC, Canada\n Master of Arts in Economics (c)"
-  },
-  {
-    "objectID": "cv.html#second-column",
-    "href": "cv.html#second-column",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Data Analytics & Causal Inference\n dsanchezp998@gmail.com\n English & Spanish"
-  },
-  {
-    "objectID": "cv.html#research-experience-affiliations",
-    "href": "cv.html#research-experience-affiliations",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "June 2022 - Present\n\nCo-autorship of research papers with organization members, including a work in progress to be submitted for publication at The Gerontologist International Spotlight Issue.\nReviewer and maintainer of El Quantificador, LIDE’s blog for short, data-oriented articles on social matters, which involve wrangling, analysis and visualization of data using R. Maintenance of the website in a blogdown environment with RStudio.\nAssisting in the implementation of several of the organization’s projects, including the data analyitcs education program for women of disadvantaged backgrounds, New Dimensions.\n\n\n\n\n January - April 2022\n\nContributed to the production of empirical papers and literature reviews, notably, Family Firms and Economic Performance: A Systematic Literature Review with Segundo Camino-Mogro, PhD(c).\nProduced original research using SCVS administrative data, later published in the institution’s peer-reviewed journal, X-pedientes Económicos."
-  },
-  {
-    "objectID": "cv.html#research",
-    "href": "cv.html#research",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Sánchez Pazmiño, Daniel. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/pper/chapter/article-5/\n\nReproducible code available on GitHub and RPubs.\n\nSánchez-Pazmiño, D.H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery1. In X-Pedientes Económicos. https://daniel-ec.netlify.app/files/research/immunizing-the-econ.pdf1\n\nReproducible code available on GitHub and RPubs."
-  },
-  {
-    "objectID": "cv.html#other-publications",
-    "href": "cv.html#other-publications",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Marchán, A. & Sánchez, D. (2023). Three problems for the quantitative analysis of femicides in Ecuador (Original in Spanish: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador). ISSN 2953-6456. https://elquantificador.org/post/valores/2023-03- 07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/.\nSánchez, D. (2022). A quantitative perspective on the Ecuadorian protests. ISSN 2953-6456. https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/"
-  },
-  {
-    "objectID": "cv.html#footnotes",
-    "href": "cv.html#footnotes",
-    "title": "Curriculum Vitae",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe link to the journal’s version is usually down, but you may find it here.↩︎\nSee full list of certificates here↩︎"
-  },
-  {
-    "objectID": "cv.html#technical-skills",
-    "href": "cv.html#technical-skills",
-    "title": "Curriculum Vitae",
-    "section": "",
-    "text": "Multiporpose Scripting:\n\nR (3+years): tidyverse, knitr/sweave, infer, caret, etc.\nPython (1 year): pandas, numpy, matplotlib, scipy, etc.\n\nDashboarding & Visualisation:\n\nPower BI (1 year)\nTableau (1 year)\nR: shiny/flexdashboard, ggplot2, plotly, dypgraphs, higcharter\nPython: seaborn, matplotlib, plotly.\n\nData Management & Wrangling:\n\nPostgreSQL/SQL Server (1 year)\nPower Query/Mashup\nR: dplyr, data.table, bigmemory\nPython: pandas\n\nDocument Markup\n\nLaTeX\nMarkdown\nQuarto\nRMarkdown\nKnitr/Sweave\n\n0thers: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Shell, VBA. API access using selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR, yfinance, wbgapi, etc."
   }
 ]

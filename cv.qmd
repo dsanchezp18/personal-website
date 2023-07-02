@@ -222,13 +222,38 @@ https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecua
 
 - Developed course materials with LaTeX, available on [GitHub](https://github.com/dsanchezp18/ecel-latex) including applications of the markup language with R and Stata.
 
+## Extracurriculars
+
+### Financial Analysis Volunteer, Universidad San Francisco de Quito
+
+`r fa('calendar')` June 2022
+
+- USFQ Gerontology Community Outreach Project to develop a network of senior-friendly cities in Pichincha, Ecuador.
+
+- Assisted the project leader in the economic and financial studies of several products offered by the organization, as well as market research and sales forecasting.
+
+### Full member, ECEL Research Group
+
+- Participated as a member for an experimental economics oriented academic club based off USFQ’s School of Economics.
+
+- Discussed papers weekly and supported organizing events for the university community.
+
+- Organized and taught an introductory LaTeX course on April 2021.
+
+### Volunteer, Angeles de Guadalupe Foundation
+
+- Supported the care of children and the preparation of their daily academic and didactic activities.
+
+- Proposed and developed a didactic long-term project of didactic activities for the children, to be implemented in theFoundation beginning August 2019.
+
 ## Other training `r fa('school')`
 
-- Data Scientist with R - June 2023 (DataCamp^[See full list of certificates [here](https://docs.google.com/spreadsheets/d/1FyRoLfCxDTZWAc4KclG57NyAm4fQkSfWovXKHamNUgc/edit?usp=sharing)])
-- Data Visualization with R - June 2023 (DataCamp)
-- SFU Big Data Hub Fellowships: AI Essentials - November 2022 (Simon Fraser University)
-- Statistics Fundamentals with R - July 2022 (DataCamp)
-- Data Analyst with R - June 2022 (DataCamp)
-- Power BI Fundamentals - June 2022 (DataCamp)
-- Tableau Fundamentals - June 2022 (DataCamp)
-- Intermediate SQL - May 2022 (DataCamp)
+- [Data Scientist with R](https://www.datacamp.com/statement-of-accomplishment/track/e4dc8d8e504e9a8876da63594f45c218ff6aff8b) - June 2023 (DataCamp^[See full list of certificates [here](https://docs.google.com/spreadsheets/d/1FyRoLfCxDTZWAc4KclG57NyAm4fQkSfWovXKHamNUgc/edit?usp=sharing)])
+- [Data Visualization with R](https://www.datacamp.com/statement-of-accomplishment/track/6ef155d1b147de5b9ff882486ab6e4a8343235a8)- June 2023 (DataCamp)
+- [SFU Big Data Hub Fellowships](https://drive.google.com/file/d/1-zv3u4XveY5OiWMSijBnOkGSj5xNtP4T/view?usp=sharing): AI Essentials - November 2022 (Simon Fraser University)
+- [Statistics Fundamentals with R](https://www.datacamp.com/statement-of-accomplishment/track/ed7bf0109007d0465fab47b5742e00a4abda0ca1) - July 2022 (DataCamp)
+- [Data Analyst with R](https://www.datacamp.com/statement-of-accomplishment/track/de49799dd48f4379a583a46a422360502d7f7f18) - June 2022 (DataCamp)
+- [Power BI Fundamentals](https://www.datacamp.com/statement-of-accomplishment/track/29f31720f7778d93959273b7ffb3189de3ab8e9e) - June 2022 (DataCamp)
+- [Tableau Fundamentals](https://www.datacamp.com/statement-of-accomplishment/track/de49799dd48f4379a583a46a422360502d7f7f18) - June 2022 (DataCamp)
+- [Intermediate SQL](https://www.datacamp.com/statement-of-accomplishment/course/60cd712849c87d01191867fbce9c71cf33a84dda) - May 2022 (DataCamp)
+- University Pathway Advanced English, ILSC Vancouver - August to November 2016
