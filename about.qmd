@@ -28,8 +28,7 @@ about:
       href: files/cv/daniel_sanchez_cv_shorter.pdf
 ---
 
-:::{#about-heading}
-
+::: {#about-heading}
 ```{r}
 #| label: setup
 #| include: false
@@ -40,11 +39,10 @@ library(fontawesome)
 
 I was born and raised in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics, and I am a co-op students at Natural Resources Canada. I participate as a Research Associate at [Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)](https://laboratoriolide.org/)[^1], an Ecuadorian research nonprofit whose aim is to produce and diffuse research which can help create and promote effective public policy.
 
-As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since. 
+As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), R is my copilot - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics, and I've been using R as much as I can ever since.
+:::
 
 [^1]: In English, Ecuadorian Research Development Laboratory.
-
-:::
 
 I'm also passionate about teaching, which is why I started a [Resources](resources.qmd) subpage in this website which may help a beginner get into R. I plan to expand this for new tools and fields in the future.
 
