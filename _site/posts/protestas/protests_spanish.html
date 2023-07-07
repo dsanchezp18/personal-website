@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,21 +14,15 @@
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
-ul.task-list li input[type="checkbox"] {
-  width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
-  vertical-align: middle;
-}
-/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging-indent div.csl-entry {
+.hanging div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -42,7 +36,8 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}</style>
+}
+</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -85,13 +80,13 @@ div.csl-indent {
 
 <meta property="og:title" content="Daniel - Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador">
 <meta property="og:description" content="As my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
-<meta property="og:image" content="https://daniel-ec.netlify.app/posts/protestas/logo_quanti.png">
+<meta property="og:image" content="https://daniel-ec.netlify.app/posts\protestas\logo_quanti.png">
 <meta property="og:site-name" content="Daniel">
 <meta property="og:image:height" content="595">
 <meta property="og:image:width" content="597">
 <meta name="twitter:title" content="Daniel - Repost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador">
 <meta name="twitter:description" content="As my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.">
-<meta name="twitter:image" content="https://daniel-ec.netlify.app/posts/protestas/icon.jpeg">
+<meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
 </head>
@@ -102,48 +97,37 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+      <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Daniel Sánchez</span>
-    </a>
-  </div>
-            <div id="quarto-search" class="" title="Search"></div>
+  </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html">About</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html" rel="" target="">
- <span class="menu-text">Research</span></a>
+    <a class="nav-link" href="../../research.html">Research</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html" rel="" target="">
- <span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="../../teaching.html">Teaching</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html" rel="" target="">
- <span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="../../resources.html">Resources</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../media.html" rel="" target="">
- <span class="menu-text">Media</span></a>
+    <a class="nav-link" href="../../media.html">Media</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_home.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../posts_home.html">Posts</a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -184,7 +168,6 @@ div.csl-indent {
         <p class="date">August 15, 2022</p>
       </div>
     </div>
-    
       
     </div>
     
@@ -193,7 +176,7 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
@@ -211,12 +194,12 @@ div.csl-indent {
 
 
 
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Nota
 </div>
 </div>
@@ -227,12 +210,12 @@ Nota
 <p><em>El Ecuador finalizó la primera mitad del 2022 con 18 días de movilizaciones, constituyendo así el Paro Nacional más extenso de las últimas décadas. Dada la creciente crisis política, social y económica así como la falta de garantías para una resolución pacífica, es importante comprender la manera en la que los ecuatorianos se comportan frente a las protestas. Un análisis de la encuesta de opinión pública del Barómetro de las Américas descubre que quienes participan en protestas son más propensos a ser hombres, a respetar el derecho a la protesta en general, a desaprobar la gestión del Presidente y a identificarse con algún grupo político. Notablemente, los resultados de la encuesta sugieren que quienes se autoidentifican como indígenas, quienes cuya situación económica ha empeorado y quienes están desempleados no son más propensos a participar en protestas. También se descubre que el respecto al derecho a protestar se mueve en contra al apoyo al Presidente de turno, lo que revela una preocupante situación: el ecuatoriano podría solo respetar este derecho cuando las movilizaciones se alinean a sus intereses políticos.</em></p>
 <p><em>Edición Julio 2022- Enero 2023</em></p>
 <p><em>ISSN 2953-6456</em></p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Reproducibilidad
 </div>
 </div>
@@ -287,7 +270,7 @@ Reproducibilidad
 <p>Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no… ¿no son válidas?</p>
 <div id="tbl-panel" class="tbl-parent quarto-layout-panel anchored">
 <div class="panel-caption table-caption">
-<p>Table&nbsp;1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas</p>
+<p>Table 1: Aprobación al derecho a protestar por participación de los últimos 12 meses en protestas</p>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div id="tbl-panel-1" class="quarto-layout-cell quarto-layout-cell-subref anchored" data-ref-parent="tbl-panel" style="flex-basis: 50.0%;justify-content: center;">
@@ -353,12 +336,12 @@ Reproducibilidad
 </ul>
 <p>Es necesario entender lo que implican las protestas, tanto para quienes las lideran y las enfrentan como para los ciudadanos comunes y corrientes. En mi opinión, es incluso más importante que el ecuatoriano promedio las comprenda, puesto que son ellos los que suelen estar en primera línea de las manifestaciones a diferencia de aquellos políticos, dirigentes y autoridades que las protagonizan. No es justificable la violencia del estado hacia la protesta social, así como la minimización de los problemas que aquejan a las comunidades índigenas<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, pero la violencia por parte de protestantes tampoco puede justificarse. Informar nuestra discusión sobre la coyuntura del país con hechos, libres de ideología y subjetividad, es extremadamente imperante para encaminarnos hacia una mejor nación, evitando la violencia y polarización social así como protegiendo el derecho a la protesta pacífica, clave para el buen funcionamiento de una democracia <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.</p>
 <p>Las protestas de junio 2022 finalizan con concesiones de ambas partes, las cuales desafortunadamente solo giran alrededor del precio de la gasolina, postergando hacia el mediano plazo la resolución de los otros problemas como la obtención de precios justos para los productores agrícolas y el manejo de la crisis de inseguridad. La historia amenaza con repetirse en esta mesa de diálogo, recordando que en el 2019 las protestas finalizaron por una estabilización del precio de la gasolina aunque los actores involucrados fueron incapaces de llegar a un acuerdo <span class="citation" data-cites="LAPOPReport.2022">[<a href="#ref-LAPOPReport.2022" role="doc-biblioref">6</a>]</span>. Nuestro país no puede aguantar más violencia entre protestantes y autoridades cada dos años; los agentes sociales deben esforzarse para que el Ecuador sea justamente eso: un país, y no un <a href="https://www.instagram.com/p/CIbaLjPh5LW/?utm_source=ig_web_copy_link">licuador</a><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> al que le entregas algo íntegro y te lo devuelve triturado. Debemos exigir al resto y exigirnos a nosotros mismos la fuerza para construir un país de paz y prosperidad, pero también un país de cambio pacífico y efectivo cuando lo apremie.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-note callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-title-container flex-fill">
+<div class="callout-caption-container flex-fill">
 Nota
 </div>
 </div>
@@ -375,55 +358,55 @@ Nota
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body" role="list">
-<div id="ref-Pazmino.2022" class="csl-entry" role="listitem">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">Referencias</h2><div id="refs" class="references csl-bib-body" role="doc-bibliography">
+<div id="ref-Pazmino.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Pazmiño, L.B. <a href="https://gk.city/2022/06/12/paro-13-junio-indigenas-bananeros-exigencias/"><span class="nocase">Esto sabemos del paro del 13 de junio</span></a>. <em><span>GK</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-GK.2022" class="csl-entry" role="listitem">
+<div id="ref-GK.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">GK <a href="https://gk.city/2022/06/30/termina-el-paro-nacional-en-ecuador/"><span class="nocase">El paro nacional termin<span class="nocase">ó</span></span></a>. <em><span>GK</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Maria.2022" class="csl-entry" role="listitem">
+<div id="ref-Maria.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">3. </div><div class="csl-right-inline">María, J.; Janetsky, M. <a href="https://www.nytimes.com/es/2022/06/24/espanol/ecuador-protestas.html"><span class="nocase">¿Por qu<span class="nocase">é</span> hay protestas en Ecuador?</span></a> <em><span>The New York Times</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Montalvo.2022" class="csl-entry" role="listitem">
+<div id="ref-Montalvo.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">4. </div><div class="csl-right-inline">Montalvo, D. <a href="https://www.larepublica.ec/blog/2022/06/18/danos-por-protestas-le-costaron-a-quito-25-000-esta-semana/"><span class="nocase">Da<span class="nocase">ñ</span>os por protestas le costaron a Quito <span>$</span>25.000 esta semana</span></a>. <em><span>La Rep<span>ú</span>blica EC</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-Comercio.2022" class="csl-entry" role="listitem">
+<div id="ref-Comercio.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">5. </div><div class="csl-right-inline">Redacción El Comercio <a href="https://www.elcomercio.com/actualidad/protestas-causan-problemas.html"><span class="nocase">Las protestas causan 4 problemas</span></a>. <em><span>El Comercio</span></em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-LAPOPReport.2022" class="csl-entry" role="listitem">
+<div id="ref-LAPOPReport.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">6. </div><div class="csl-right-inline"><em><a href="https://www.vanderbilt.edu/lapop/ecuador/ABECU2021-Country-Report-Spa-Final-220411.pdf"><span class="nocase">Cultura pol<span class="nocase">í</span>tica de la democracia en Ecuador y en las Am<span class="nocase">é</span>ricas 2021: Tom<span class="nocase">á</span>ndole el pulso a la democracia</span></a></em>; Moscoso Moreno, A., Moncagatta, P., Donoso, J.C., Larrea, S., Montalvo, J.D., Eds.; 2022;</div>
 </div>
-<div id="ref-Loaiza.2022" class="csl-entry" role="listitem">
+<div id="ref-Loaiza.2022" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">7. </div><div class="csl-right-inline">Loaiza, Y. <a href="https://www.infobae.com/america/historia-america/2022/06/25/un-golpe-cada-6-anos-la-tragica-historia-de-derrocamientos-y-convulsion-social-del-ecuador/"><span class="nocase">Un golpe cada 6 a<span class="nocase">ñ</span>os: la tr<span class="nocase">á</span>gica historia de derrocamientos y convulsi<span class="nocase">ó</span>n social del Ecuador</span></a>. <em>infobae</em> <strong>2022</strong>.</div>
 </div>
-<div id="ref-CONAIE.2015" class="csl-entry" role="listitem">
+<div id="ref-CONAIE.2015" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">8. </div><div class="csl-right-inline">CONAIE <a href="https://conaie.org/2015/06/30/1044-2/"><span class="nocase">Organizaciones Shuar y Achuar de Morona protestan en V<span class="nocase">í</span>a Macas- Puyo -</span></a> 2015.</div>
 </div>
-<div id="ref-BBC.2015" class="csl-entry" role="listitem">
+<div id="ref-BBC.2015" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">9. </div><div class="csl-right-inline">BBC Mundo <a href="https://www.bbc.com/mundo/noticias/2015/06/150625_ecuador_marchas_correa_ep"><span class="nocase">Ecuador: en Quito y Guayaquil marchan nuevamente contra Rafael Correa</span></a>. <em><span>BBC News Mundo</span></em> <strong>2015</strong>.</div>
 </div>
-<div id="ref-Melendez.2017" class="csl-entry" role="listitem">
+<div id="ref-Melendez.2017" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">10. </div><div class="csl-right-inline">Meléndez, C.; Moncagatta, P. <span class="nocase">Ecuador: Una d<span class="nocase">é</span>cada de corre<span class="nocase">í</span>smo</span>. <em><span>Revista de Ciencia Pol<span>í</span>tica de Santiago</span></em> <strong>2017</strong>, <em>37</em>, 413–448, doi:<a href="https://doi.org/10.4067/s0718-090x2017000200413">10.4067/s0718-090x2017000200413</a>.</div>
 </div>
-<div id="ref-Ortiz.2020" class="csl-entry" role="listitem">
+<div id="ref-Ortiz.2020" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">11. </div><div class="csl-right-inline">Ortiz, P. <a href="https://www.iwgia.org/es/ecuador/3741-mi-2020-ecuador.html"><span class="nocase">El Mundo Ind<span class="nocase">í</span>gena 2020: Ecuador - IWGIA - International Work Group for Indigenous Affairs</span></a> 2020.</div>
 </div>
-<div id="ref-Donoso.2018" class="csl-entry" role="listitem">
+<div id="ref-Donoso.2018" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">12. </div><div class="csl-right-inline"><a href="https://www.vanderbilt.edu/lapop/ecuador/AB2016-17_Ecuador_Country_Report_V3_12.20.18_W_01.15.19.pdf"><span class="nocase">Cultura pol<span class="nocase">í</span>tica de la democracia en Ecuador y en las Am<span class="nocase">é</span>ricas, 2016/17: Un estudio comparado sobre democracia y gobernabilidad</span></a> 2018.</div>
 </div>
-<div id="ref-Dell.2010" class="csl-entry" role="listitem">
+<div id="ref-Dell.2010" class="csl-entry" role="doc-biblioentry">
 <div class="csl-left-margin">13. </div><div class="csl-right-inline">Dell, M. <span class="nocase">The Persistent Effects of Peru’s Mining Mita</span>. <em><span>Econometrica</span></em> <strong>2010</strong>, <em>78</em>, 1863–1903, doi:<a href="https://doi.org/10.3982/ECTA8121">10.3982/ECTA8121</a>.</div>
 </div>
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Un 12% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (18%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>A diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el <a href="https://www.ecuadorencifras.gob.ec/enemdu-2021/">INEC</a> mensualmente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Para 2020, los indígenas constituían alrededor de un 6% de la población nacional <span class="citation" data-cites="Ortiz.2020">[<a href="#ref-Ortiz.2020" role="doc-biblioref">11</a>]</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>Véase, por ejemplo, <span class="citation" data-cites="Dell.2010">[<a href="#ref-Dell.2010" role="doc-biblioref">13</a>]</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p>Imagen original de <a href="https://www.instagram.com/ecuacultural">@ecuacultural</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1" role="doc-endnote"><p>Un 12% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (18%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>A diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el <a href="https://www.ecuadorencifras.gob.ec/enemdu-2021/">INEC</a> mensualmente.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Para 2020, los indígenas constituían alrededor de un 6% de la población nacional <span class="citation" data-cites="Ortiz.2020">[<a href="#ref-Ortiz.2020" role="doc-biblioref">11</a>]</span>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>La pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” <span class="citation" data-cites="Donoso.2018">[<a href="#ref-Donoso.2018" role="doc-biblioref">12</a>]</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>Véase, por ejemplo, <span class="citation" data-cites="Dell.2010">[<a href="#ref-Dell.2010" role="doc-biblioref">13</a>]</span>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>Imagen original de <a href="https://www.instagram.com/ecuacultural">@ecuacultural</a>.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -453,23 +436,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -481,24 +450,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
     setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -526,136 +478,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   for (var i=0; i<noterefs.length; i++) {
     const ref = noterefs[i];
     tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      let href = ref.getAttribute('href');
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
       });
-    }
+      return popup.innerHTML;
+    });
   }
 });
 </script>
@@ -693,9 +540,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </li>  
 </ul>
     </div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

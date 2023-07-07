@@ -2,6 +2,16 @@
 title: "Media"
 ---
 
+# [Blog Post: Homosexualidad: ¿qué piensan los ecuatorianos?](https://elquantificador.org/post/valores/2023-07-02-homosexualidad-qu-piensan-los-ecuatorianos/) with [Alonso Quijano](https://laboratoriolide.org/investigadores/alonso-quijano-ruiz/).
+
+*ISSN 2953-6456*
+
+*July 2023*
+
+- A short article which analyses Ecuadorian public opinion metrics on LGBTQ+ issues, namely, their degree of homophobia and their approval of their rights.
+
+- Analyses made available in [GitHub](https://github.com/elquantificador/homosexualidad-ecu-percepciones).
+
 # [Blog Post: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador](https://elquantificador.org/post/valores/2023-03-07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/) with [Alejandra Marchán](https://sites.google.com/view/amarchan98/home)
 
 *ISSN 2953-6456*
