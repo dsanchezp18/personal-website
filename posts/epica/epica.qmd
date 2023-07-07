@@ -44,6 +44,7 @@ library(here)
 library(ggthemes)
 library(ggdark)
 library(showtext)
+library(fedmatch)
 
 # Add aesthetics
 
@@ -103,15 +104,29 @@ epica_spotify_id <- '5HA5aLY3jJV7eimXWkRBBp'
 
 epica_releases_year <- 
   data.frame(
-    release_spotify = c("The Phantom Agony (Expanded Edition)", "Consign To Oblivion (Expanded Edition)", 
-                        "The Divine Conspiracy", "Design Your Universe", "Requiem for the Indifferent", 
-                        "The Quantum Enigma", "The Holographic Principle","The Solace System", 
-                        "Omega", "The Alchemy Project"),
-    release_name =  c("The Phantom Agony", "Consign To Oblivion", "The Divine Conspiracy", "Design Your Universe", 
-                      "Requiem for the Indifferent", "The Quantum Enigma", "The Holographic Principle",
-                      "The Solace System", "Omega", "The Alchemy Project"),
+    release_spotify = c("The Phantom Agony (Expanded Edition)", 
+                        "Consign To Oblivion (Expanded Edition)", 
+                        "The Divine Conspiracy", 
+                        "Design Your Universe", 
+                        "Requiem for the Indifferent", 
+                        "The Quantum Enigma", 
+                        "The Holographic Principle",
+                        "The Solace System", 
+                        "Omega", 
+                        "The Alchemy Project"),
+    release_name =  c("The Phantom Agony", 
+                      "Consign To Oblivion", 
+                      "The Divine Conspiracy",
+                      "Design Your Universe", 
+                      "Requiem for the Indifferent", 
+                      "The Quantum Enigma",
+                      "The Holographic Principle",
+                      "The Solace System", 
+                      "Omega", 
+                      "The Alchemy Project"),
     release_year = c(2003, 2005, 2007, 2009, 2012, 2014, 2016, 2017, 2021, 2022)
-)
+)  %>% 
+mutate(release_name_year = paste(release_name,' ', '(', release_year, ')', sep = ''))
 
 # Get metrics at the track level and filter for the selection of releases I chose
 
@@ -139,17 +154,17 @@ epica_album_metrics <-
   left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %>% 
   arrange(desc(release_year)) %>% 
   select(-album_name) %>% 
-  mutate(loudness = abs(loudness),
-         release_name_year = paste(release_name,' ', '(', release_year, ')', sep = '')) %>% 
+  mutate(loudness = abs(loudness)) %>% 
   relocate(release_name, release_name_year, release_year) %>% 
   gather(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)
 
 # Create an ordering for my metrics
 
-orderings <- data.frame(
-  metric = c('energy', 'valence', 'instrumentalness', 'speechiness'),
-  order = c(4,3,2,1)
-)
+orderings <- 
+  data.frame(
+    metric = c('energy', 'valence', 'instrumentalness', 'speechiness'),
+    order = c(4,3,2,1)
+  )
 
 # Graph
 
@@ -164,7 +179,7 @@ epica_album_metrics %>%
     subtitle = "Spotify audio metrics for all Epica albums & EPs \n",
      y = '',
      x = '',
-     caption = str_wrap('Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.', 130),
+     caption = str_wrap('Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.', 110),
      fill = 'Audio Metric') +
   theme_daniel +
   theme(axis.text.x = element_blank(),
@@ -182,12 +197,133 @@ Somewhat of a pattern can be found in the band's last two releases: the instrume
 
 What comes to one's mind when reading about music data analysis it is easy to automatically jump towards streams. With today's stream-based music industry, data on music preferences must be infinitely better than whatever it used to be some decades ago. However, two problems arise with stream data. The first and most mundane is that *stream data is not easily accesible*, probably due to the proprietary nature of the platforms that collect such data (and perhaps its business value?). The second and more *metaphysical* issue with stream analysis is that, even though I am not a professional musician myself, I am pretty sure that no serious artist writes their music based on data (and they shouldn't). If you're not going to see Mark Jansen and Simone Simons sit down in front of a double screen display to look at a Power BI dashboard, why bother with all this?
 
-My answer is *because we can*, or at least because there's an attempt to be made, and it aids the non-professional musician's understanding of the world of music. And while you won't see Mark Jansen trying to deploy a dockerised Shiny app, you *will* see him sitting down reading scientific literature to write lyrics [@metal-exposure2021]. Epica's inspiration on science for their music makes trying to use science to understand their music fair and as a student of social science, using data to understand the world is my best attempt at science.
+My answer is *because we can*, or at least because there's an attempt to be made, and it aids the non-professional musician's understanding of the world of music. And while you won't see Mark Jansen trying to deploy a dockerised Shiny app, you *will* see him sitting down reading scientific literature to write lyrics [@metal-exposure2021]. Epica's inspiration on scientific knowledge for their lyrics allows for a scientific approach when trying to understand their music. As a student of social science, using data to understand the world is my best attempt at such type of knowledge.
 
 Having that in mind, in this section I present an attempt at stream analysis with publicly available stream data from Last.fm. Last.fm is an online platform which tracks data from users through scrobbling, a way to "scrape" the data from music platforms and native media players and upload it to the user's Last.fm account. A listener, whoever, needs to self-select into creating a Last.fm account and connecting their streaming websites or computer's native media players to Last.fm. This data becomes publicly available to compute recommendations and compatibility analyses for the users. While it certainly leaves out an important chunk of the population: all of those who don't use Last.fm, which might create significant selection bias, this is better than nothing at all.
 
 By using the [*lastfmR*](package) from Piotr Patrzyk^[Run `remotes::install_github("ppatrzyk/lastfmR")` in the console and you will access the package easily enough.], which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.
 
+```{r}
+#| label: last-fm
+#| include: false
 
+# Get all tracks scrobbled and clean up the track names as they are *very* dirty
 
+# This will remove all of the "part" words from the track names, which are pretty common
+
+remove_parts<- c('pt 1', 'pt 2', 'pt 3', 'pt 4', 'pt 5', 'pt 6', 'pt 7', 'pt 8', 'pt 9', 'pt 10', 'pt 11', 'pt 12', 'pt 13', 'pt 14', 'pt 15',
+                  'pt1', 'pt2', 'pt3', 'pt4', 'pt5', 'pt6', 'pt7', 'pt8', 'pt9', 'pt10', 'pt11', 'pt12', 'pt13', 'pt14', 'pt15',
+                  'part 1', 'part 2', 'part 3', 'part 4', 'part 5', 'part 6', 'part 7', 'part 8', 'part 9', 'part 10', 'part 11', 'part 12', 'part 13', 'part 14', 'part 15',
+                  'part1', 'part2', 'part3', 'part4', 'part5', 'part6', 'part7', 'part8', 'part9', 'part10', 'part11', 'part12', 'part13', 'part14', 'part15', 'part',
+                  'part i', 'part ii', 'part iii', 'part iv', 'part v', 'part vi', 'part vii', 'part viii', 'part ix', 'part x', 'part xi', 'part xii', 'part xiii', 'part xiv', 'part xv')
+
+epica_tracks_lastfm <-
+  lastfmR::get_tracks('Epica') %>% 
+  mutate(track_clean = clean_strings(track, remove_char = remove_parts))
+
+# Group by track name and sum scrobbles to later join with the spotify data
+
+track_scrobbles <-
+  epica_tracks_lastfm %>% 
+  group_by(track_clean) %>% 
+  summarise(scrobbles = sum(scrobbles)) %>% 
+  ungroup()
+
+# Inner join the songs dataset from lastfm to spotify track metrics based on "clean" track names
+
+epica_tracks <-
+  epica_track_metrics %>% 
+  transmute(track_name,
+            album_name, 
+            album_id,
+            track_clean = clean_strings(track_name, remove_char = remove_parts)) %>% 
+  inner_join(track_scrobbles, by = 'track_clean')
+  
+# Create scrobbles by album and join with the album metrics and with album table to get the year
+
+scrobbles_by_album <-
+  epica_tracks %>% 
+  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %>%
+  group_by(release_name_year, release_year) %>% 
+  summarise(scrobbles = sum(scrobbles)) %>% 
+  ungroup()  %>% 
+  arrange(desc(release_year))
+```
+
+```{r}
+#| label: code-last-fm-only
+#| echo: true
+#| eval: false
+# Get all tracks scrobbled and clean up the track names as they are *very* dirty
+
+# This will remove all of the "part" words from the track names, which are pretty common
+
+remove_parts<- c('pt 1', 'pt 2', 'pt 3', 'pt 4', 'pt 5', 'pt 6', 'pt 7', 'pt 8', 'pt 9', 'pt 10', 'pt 11', 'pt 12', 'pt 13', 'pt 14', 'pt 15',
+                  'pt1', 'pt2', 'pt3', 'pt4', 'pt5', 'pt6', 'pt7', 'pt8', 'pt9', 'pt10', 'pt11', 'pt12', 'pt13', 'pt14', 'pt15',
+                  'part 1', 'part 2', 'part 3', 'part 4', 'part 5', 'part 6', 'part 7', 'part 8', 'part 9', 'part 10', 'part 11', 'part 12', 'part 13', 'part 14', 'part 15',
+                  'part1', 'part2', 'part3', 'part4', 'part5', 'part6', 'part7', 'part8', 'part9', 'part10', 'part11', 'part12', 'part13', 'part14', 'part15', 'part',
+                  'part i', 'part ii', 'part iii', 'part iv', 'part v', 'part vi', 'part vii', 'part viii', 'part ix', 'part x', 'part xi', 'part xii', 'part xiii', 'part xiv', 'part xv')
+
+epica_tracks_lastfm <-
+  lastfmR::get_tracks('Epica') %>% 
+  mutate(track_clean = clean_strings(track, remove_char = remove_parts))
+
+# Group by track name and sum scrobbles to later join with the spotify data
+
+track_scrobbles <-
+  epica_tracks_lastfm %>% 
+  group_by(track_clean) %>% 
+  summarise(scrobbles = sum(scrobbles)) %>% 
+  ungroup()
+
+# Inner join the songs dataset from lastfm to spotify track metrics based on "clean" track names
+
+epica_tracks <-
+  epica_track_metrics %>% 
+  transmute(track_name,
+            album_name, 
+            album_id,
+            track_clean = clean_strings(track_name, remove_char = remove_parts)) %>% 
+  inner_join(track_scrobbles, by = 'track_clean')
+  
+# Create scrobbles by album and join with the album metrics and with album table to get the year
+
+scrobbles_by_album <-
+  epica_tracks %>% 
+  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %>%
+  group_by(release_name_year, release_year) %>% 
+  summarise(scrobbles = sum(scrobbles)) %>% 
+  ungroup()  %>% 
+  arrange(desc(release_year))
+
+# Get a scrobbles ranking by album
+
+scrobbles_by_album %>%
+  ggplot(aes(reorder(release_name_year,scrobbles), scrobbles)) + 
+  geom_col() + 
+  coord_flip()
+
+```
+
+```{r}
+#| label: scrobbles-by-album
+#| echo:false
+
+# Draw a circular barplot with the scrobbles by album
+
+scrobbles_by_album %>%
+  ggplot(aes(reorder(release_name_year,scrobbles), scrobbles)) + 
+  geom_col() + 
+  coord_polar(start = 0)
+
+  labs(title = 'Epica\'s scrobbles by album',
+       subtitle = 'Last.fm scrobbles by album',
+       x = '',
+       y = '',
+       caption = str_wrap('Note: Last.fm provides scrobbles at the track level. The horizontal axis shows the sum of scrobbles, grouping by band release. Data obtained from the Last.fm API through the lastfmR package.', 110)) +
+  theme_daniel +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_text(colour = 'gray')) +
+  
+```
 
