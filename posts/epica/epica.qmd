@@ -323,7 +323,7 @@ scrobbles_by_album %>%
        caption = str_wrap('Note: Last.fm provides scrobbles at the track level. The horizontal axis shows the sum of scrobbles, grouping by band release. Data obtained from the Last.fm API through the lastfmR package.', 110)) +
   theme_daniel +
   theme(axis.text.x = element_blank(),
-        axis.text.y = element_text(colour = 'gray')) +
+        axis.text.y = element_text(colour = 'gray'))
   
 ```
 

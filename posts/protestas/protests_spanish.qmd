@@ -507,12 +507,13 @@ caption_grafo2<-
 
 # Grafico 1: actitudes
 
-ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = legend))+
+ggplot(desap_time_df, 
+       aes(x = year, y = prot_desap, color = legend, group = legend))+
   geom_line()+
   geom_line(aes(x = year, y = prot_desap - 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_line(aes(x = year, y = prot_desap + 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_point()+
-  scale_color_manual(values = c('#964B00', quant_red),
+  scale_color_manual(values = c('cyan', 'purple'),
                      breaks = c('Aprueba las protestas en general', 'Aprueba las protestas contra el gobierno'))+
   labs(x = '',
        y = '% de aprobación',
@@ -546,7 +547,7 @@ caption_grafo21<-
 ggplot(political_graph_df,
                   aes(x = year, y = perc, color = legend, group = legend))+
                   geom_line(size = 0.8)+
-                  scale_color_manual(values = c('#61346B','#BF69C2'),
+                  scale_color_manual(values = c('orange','#BF69C2'),
                                      breaks = c('Confía en el Presidente','Aprueba el trabajo del Presidente'))+
                   geom_point(size = 2.15)+
                   geom_line(aes(x = year, 
