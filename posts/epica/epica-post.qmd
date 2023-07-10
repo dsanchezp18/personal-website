@@ -45,6 +45,8 @@ library(ggthemes)
 library(ggdark)
 library(showtext)
 library(fedmatch)
+library(ggimage)
+library(ggtext)
 
 # Add aesthetics
 
@@ -62,6 +64,7 @@ theme_daniel<-
         plot.caption = element_text(hjust = 0, face = 'italic'),
         plot.title.position = 'plot',
         plot.caption.position = 'plot',
+        plot.subtitle = element_text(lineheight = 0.5, vjust = 0.5),
         axis.ticks = element_blank(),
         plot.title = element_text(size = 60))
 
@@ -71,7 +74,7 @@ source('credentials.R')
 
 ```
 
-On June 5th, 2003, dutch-based symphonic metal band [Epica](https://www.epica.nl/home) released their first full-length album, [*The Phantom Agony*](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw), the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, [*Omega*](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA), an EP in 2022, [*The Alchemy Project*](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w), and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory and activeness make the band a great case study about death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.
+On June 5th, 2003, dutch-based symphonic metal band [Epica](https://www.epica.nl/home) released their first full-length album, [*The Phantom Agony*](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw), the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, [*Omega*](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA), an EP in 2022, [*The Alchemy Project*](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w), and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy fvgbyjtrajectory and activeness make the band a great case study about death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.
 
 ## What makes Epica different?
 
@@ -96,7 +99,6 @@ You can display the code which generated the graphs using the down arrow in the 
 
 access_token <- get_spotify_access_token(client_id = Sys.getenv('SPOTIFY_CLIENT_ID'),
                                          client_secret = Sys.getenv('SPOTIFY_CLIENT_SECRET'))
-
 
 # Define an album/EPs vector, a year vector, to use later as well as the artist id
 
@@ -174,22 +176,23 @@ epica_album_metrics %>%
   mutate(metric = factor(str_to_sentence(metric))) %>% 
   ggplot(aes(reorder(release_name_year, release_year), value, fill = reorder(metric, order))) +
   geom_col(width = 0.7, position = position_dodge(width = 0.7)) +
-  coord_flip() +
+  coord_flip() + 
   labs(title = 'The Sound of Epica 2000-2023',
     subtitle = "Spotify audio metrics for all Epica albums & EPs \n",
      y = '',
      x = '',
-     caption = str_wrap('Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.', 110),
-     fill = 'Audio Metric') +
+     caption = str_wrap('Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.', 120),
+     fill = 'Metric') +
   theme_daniel +
   theme(axis.text.x = element_blank(),
         axis.text.y = element_text(colour = 'gray'),
-        legend.position = c(0.12, 1.05), 
+        legend.position = c(0.65, 1.10), 
         legend.margin = margin(0),
-        legend.direction = 'horizontal') 
+        legend.direction = 'horizontal') +  
+  guides(fill = guide_legend(nrow = 2))
 ```
 
-Epica's characteristic sound, which meddles the armonious verses by the female lead with violent male growls was born in a single, *Cry for the Moon* released 2003 and also included in their first album. *Cry for the Moon* remains as one of Epica's most important tracks, as it set the scene for the what was to come later. Curiously, this first album is not the most instrumental of them all, ranking fourth in terms of instrumentalness. The most instrumental release by Epica is actually *Consign to Oblivion* (2005), often considered as the band's *magnum opus*, followed by 2016's *The Holographic Principle*. The data also shows an apparent trade-off between energy and instrumentality, an intuitive idea which is only challenged by the unique *Design Your Universe* (2009) with both high instrumentality and energy, which in my view marked the difference between the modern and the *classical* Epica. This last release contained the unforgettable *Unleashed*, probably Epica's most mainstream track so far.
+Epica's characteristic sound, which meddles the harmonious verses by the female lead with violent male growls was born in a single, *Cry for the Moon* released 2003 and also included in their first album. *Cry for the Moon* remains as one of Epica's most important tracks, as it set the scene for the what was to come later. Curiously, this first album is not the most instrumental of them all, ranking fourth in terms of instrumentalness. The most instrumental release by Epica is actually *Consign to Oblivion* (2005), often considered as the band's *magnum opus*, followed by 2016's *The Holographic Principle*. The data also shows an apparent trade-off between energy and instrumentality, an intuitive idea which is only challenged by the unique *Design Your Universe* (2009) with both high instrumentality and energy, which in my view marked the difference between the modern and the *classical* Epica. This last release contained the unforgettable *Unleashed*, probably Epica's most mainstream track so far.
 
 Somewhat of a pattern can be found in the band's last two releases: the instrumentality fades, apparently in favour of more energy. Is this the way that Epica makes its way into today's hyper competitive and commercial music industry? A question like this has no clear answer (and perhaps does not deserve one), but the strategy here might be one of making a subtle impact. With newer releases which are *friendler* to the unexperienced listeners, Epica subtly enters the scene to the create an *obsessive devotion* after the innocent streamer turns to mindless fanatic after listening to the band's more loyal records of old.
 
@@ -205,55 +208,9 @@ By using the [*lastfmR*](package) from Piotr Patrzyk^[Run `remotes::install_gith
 
 ```{r}
 #| label: last-fm
-#| include: false
-
-# Get all tracks scrobbled and clean up the track names as they are *very* dirty
-
-# This will remove all of the "part" words from the track names, which are pretty common
-
-remove_parts<- c('pt 1', 'pt 2', 'pt 3', 'pt 4', 'pt 5', 'pt 6', 'pt 7', 'pt 8', 'pt 9', 'pt 10', 'pt 11', 'pt 12', 'pt 13', 'pt 14', 'pt 15',
-                  'pt1', 'pt2', 'pt3', 'pt4', 'pt5', 'pt6', 'pt7', 'pt8', 'pt9', 'pt10', 'pt11', 'pt12', 'pt13', 'pt14', 'pt15',
-                  'part 1', 'part 2', 'part 3', 'part 4', 'part 5', 'part 6', 'part 7', 'part 8', 'part 9', 'part 10', 'part 11', 'part 12', 'part 13', 'part 14', 'part 15',
-                  'part1', 'part2', 'part3', 'part4', 'part5', 'part6', 'part7', 'part8', 'part9', 'part10', 'part11', 'part12', 'part13', 'part14', 'part15', 'part',
-                  'part i', 'part ii', 'part iii', 'part iv', 'part v', 'part vi', 'part vii', 'part viii', 'part ix', 'part x', 'part xi', 'part xii', 'part xiii', 'part xiv', 'part xv')
-
-epica_tracks_lastfm <-
-  lastfmR::get_tracks('Epica') %>% 
-  mutate(track_clean = clean_strings(track, remove_char = remove_parts))
-
-# Group by track name and sum scrobbles to later join with the spotify data
-
-track_scrobbles <-
-  epica_tracks_lastfm %>% 
-  group_by(track_clean) %>% 
-  summarise(scrobbles = sum(scrobbles)) %>% 
-  ungroup()
-
-# Inner join the songs dataset from lastfm to spotify track metrics based on "clean" track names
-
-epica_tracks <-
-  epica_track_metrics %>% 
-  transmute(track_name,
-            album_name, 
-            album_id,
-            track_clean = clean_strings(track_name, remove_char = remove_parts)) %>% 
-  inner_join(track_scrobbles, by = 'track_clean')
-  
-# Create scrobbles by album and join with the album metrics and with album table to get the year
-
-scrobbles_by_album <-
-  epica_tracks %>% 
-  left_join(epica_releases_year, by = c('album_name' = 'release_spotify')) %>%
-  group_by(release_name_year, release_year) %>% 
-  summarise(scrobbles = sum(scrobbles)) %>% 
-  ungroup()  %>% 
-  arrange(desc(release_year))
-```
-
-```{r}
-#| label: code-last-fm-only
 #| echo: true
-#| eval: false
+#| results: hide
+
 # Get all tracks scrobbled and clean up the track names as they are *very* dirty
 
 # This will remove all of the "part" words from the track names, which are pretty common
@@ -295,35 +252,35 @@ scrobbles_by_album <-
   summarise(scrobbles = sum(scrobbles)) %>% 
   ungroup()  %>% 
   arrange(desc(release_year))
-
-# Get a scrobbles ranking by album
-
-scrobbles_by_album %>%
-  ggplot(aes(reorder(release_name_year,scrobbles), scrobbles)) + 
-  geom_col() + 
-  coord_flip()
-
 ```
 
 ```{r}
 #| label: scrobbles-by-album
 #| echo: false
+#| fig-width: 12
+#| fig-height: 8
 
-# Draw a circular barplot with the scrobbles by album
+# Include the epica logo in the dataframe
 
 scrobbles_by_album %>%
-  ggplot(aes(reorder(release_name_year,scrobbles), scrobbles)) + 
-  geom_col() + 
-  coord_polar(start = 0)
-
-  labs(title = 'Epica\'s scrobbles by album',
-       subtitle = 'Last.fm scrobbles by album',
-       x = '',
-       y = '',
-       caption = str_wrap('Note: Last.fm provides scrobbles at the track level. The horizontal axis shows the sum of scrobbles, grouping by band release. Data obtained from the Last.fm API through the lastfmR package.', 110)) +
-  theme_daniel +
-  theme(axis.text.x = element_blank(),
-        axis.text.y = element_text(colour = 'gray')) +
-  
+  filter(release_year < 2021) %>%
+  mutate(image2 = 'snake-logo1.png',
+         scrobbles1 = scrobbles/1000000) %>% 
+  ggplot(aes(scrobbles1, reorder(release_name_year, scrobbles1))) +
+  geom_segment(aes(yend = release_name_year), 
+               xend = 0, 
+               colour = "gray",
+               linetype = "dashed") +
+  geom_image(aes(image = image2), size = 0.08) +
+  labs(x = "Millions of Last.fm scrobbles", 
+       y = "",
+       caption = str_wrap("Scrobbles are records of Last.fm users who chose to report the songs they listen to the platform. Data obtained through the Last.fm and Spotify APIs through the lastfmR and spotifyR packages. A mapping of the Last.fm dataset was done to the Spotify album-track datasets using the fedmatch package, so data may not show all true scrobbles.", 120),
+       title = "Epica's most popular albums were released in the 2000s",
+       subtitle = "The Classical Conspiracy (2007) remains a fan favourite with over 5M scrobbles")+
+  theme_daniel + 
+  theme(axis.text.y = element_text(colour = 'gray'),
+        axis.text.x = element_text(colour = 'gray'),
+        axis.line.x = element_line(colour = 'white'),
+        axis.ticks.x = element_line(colour = 'white'))
 ```
 
