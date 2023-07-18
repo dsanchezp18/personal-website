@@ -42,12 +42,14 @@ quant_red<-'#F44D54'
 # Objetos de tema extra
 
 theme_daniel<-
-  theme(panel.grid = element_blank(),
+  theme(panel.grid.major.y = element_blank(),
+        axis.line = element_line(colour = 'gray'),
         axis.text.y = element_blank(),
-        plot.caption = element_text(hjust = 0, face = 'italic'),
+        axis.text.x = element_text(colour = 'grey'),
         legend.background = element_blank(),
         axis.ticks = element_blank(),
-        text = element_text(family = 'Questrial', size = 25))
+        text = element_text(family = 'Questrial', size = 45),
+        plot.caption = element_text(hjust = 0, face = 'italic', size = 30))
 
 # Creamos el objeto de diseño muestral para utilizar en los cálculos
 
@@ -86,6 +88,8 @@ Todo el código de R utilizado para este post esta incluido en el código fuente
 ```{r}
 #| label: data-wrangling-grafo-1
 #| include: true
+#| fig-width: 12
+#| fig-height: 8
 #| fig-align: center
 
 ## 1. Participación en protestas
@@ -134,15 +138,17 @@ ggplot(prot_df, aes(x = year, y = protest))+
   geom_vline(xintercept = 7.5, linetype = 'dotted', color = quant_red, size = 1.25)+
   geom_errorbar(aes(ymin = protest - 1.96*se,
                     ymax = protest + 1.96*se),
-                width = 0.3)+
+                width = 0.3,
+                colour = 'gray')+
   geom_text(aes(label = round(protest, 4)*100),
-                size = 6.5,
-                vjust = 4)+
+            size = 10,
+            vjust = 10,
+            colour = 'white') +
   labs(x = '',
        y = '% de manifestantes',
        title = 'Participación en protestas del Ecuador 2006-2019',
        subtitle = '¿En los últimos 12 meses ha participado en una manifestación o protesta pública?',
-       caption = str_wrap(caption_grafo1, 107))+
+       caption = str_wrap(caption_grafo1, 118))+
   theme_hc(style = 'darkunica')+
   theme_daniel
 
@@ -385,6 +391,8 @@ Un detalle clave sobre los protestantes es su composición racial y los datos de
 #| label: data-wrangle-protestas-grafo-2
 #| include: true
 #| fig-align: center
+#| fig-width: 12
+#| fig-height: 8
 # Tabulamos la variable de apoyo a las protestas en general
 
 # La variable toma valores de 1 al 10, siendo 10 que más apoyan las protestas en general. Escogemos a quienes responden 1-5
@@ -503,13 +511,13 @@ rownames(political_graph_df)<-NULL
 # Caption largo
 
 caption_grafo2<-
-  'Nota: Datos del Barómetro de las Américas. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. El porcentaje que aprueba las protestas se calcula para quienes responden números mayores a 4 (del 1 al 10). Los porcentajes son sobre el total de personas en edad de votar.'
+  'Nota: Datos del Barómetro de las Américas. Las encuestas fueron realizadas de enero a marzo de cada año excepto la ronda 2016, realizada de noviembre 2016 a enero 2017. El porcentaje que aprueba las protestas se calcula para quienes responden números mayores a 4 (del 1 al 10). Los porcentajes son sobre el total de personas en edad de votar. Las líneas punteadas representan intervalos de confianza al 95% ajustados por el diseño muestral.'
 
 # Grafico 1: actitudes
 
 ggplot(desap_time_df, 
        aes(x = year, y = prot_desap, color = legend, group = legend))+
-  geom_line()+
+  geom_line(size = 1.2)+
   geom_line(aes(x = year, y = prot_desap - 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_line(aes(x = year, y = prot_desap + 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_point()+
@@ -520,12 +528,15 @@ ggplot(desap_time_df,
        title = 'Actitudes hacia las protestas',
        subtitle = '% que aprueba la protesta pacífica',
        color = '',
-       caption = str_wrap(caption_grafo2, 103))+
+       caption = str_wrap(caption_grafo2, 118))+
   theme_daniel+
   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme_daniel
+  theme_daniel +
+  theme(legend.position = c(0.25, 0.15),
+      axis.ticks.y = element_line(colour = 'white'),
+      axis.text.y = element_text(colour = 'grey50'))
 ```
 
 
@@ -539,6 +550,8 @@ Los datos nos muestran que, previo a la protesta del 2019, el derecho a protesta
 #| label: data-wrangle-protestas-grafo-2.1
 #| include: true
 #| fig-align: center
+#| fig-width: 12
+#| fig-height: 8
 # Grafico 2.1: actitudes politicas
 
 caption_grafo21<-
@@ -561,27 +574,30 @@ ggplot(political_graph_df,
                             color = 'grey50', 
                             linetype = 'dotted')+
                   geom_vline(xintercept = 7.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 5, y = 0.5, label = 'Gob. de Correa', size = 5, fill = '#696969')+
-                  geom_vline(xintercept = 2.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 1.48, y = 0.45, label = 'Gob. de\nGutiérrez-Palacio', size = 5, fill = '#696969')+
-                  annotate('label', x = 8.05, y = 0.5, label = 'Gob. de\nMoreno', size = 5, fill = '#696969')+
+                  annotate('label', x = 5, y = 0.5, label = 'Gob. de Correa', size = 10, fill = '#696969', colour = 'white')+
+                  geom_vline(xintercept = 2.5, color = quant_grey, linetype = 'dotted', colour = 'white')+
+                  annotate('label', x = 1.48, y = 0.45, 
+                           label = 'Gob. de\nGutiérrez-Palacio', size = 10, fill = '#696969', colour = 'white')+
+                  annotate('label', x = 8.05, y = 0.5, label = 'Gob. de\nMoreno', size = 10, fill = '#696969', colour = 'white')+
                   theme_daniel+
                   labs(x = '',
                        y = '% de aprobación',
                        color = '',
                        title = 'Actitudes hacia el gobierno',
                        subtitle = '% que aprueba o confia en el Presidente de la República',
-                       caption = str_wrap(caption_grafo21,100))+
+                       caption = str_wrap(caption_grafo21,118))+
                   theme(legend.position = c(0.5,0.12),
                         axis.ticks.x = element_blank(),
                         text = element_text(size = 5.5))+
                   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
-  theme_hc(style = 'darkunica')+
-  theme_daniel
+  theme_hc(style = 'darkunica') +
+  theme_daniel +
+  theme(axis.ticks.y = element_line(colour = 'white'),
+        axis.text.y = element_text(colour = 'grey50'))
 ```
 
-Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de la derecha. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no... ¿no son válidas?
+Un hecho que salta a la vista es que el período de menor tolerancia a la protesta se dio durante el pico de popularidad del gobierno de Rafael Correa, como puede observarse en el gráfico de abajo. En períodos donde el presidente era popular, existía mayor rechazo hacia la protesta mientras que en períodos donde el presidente era menos popular había más aprobación hacia la protesta. Desde que Lenín Moreno se distanció del antiguo régimen, se vuelve a tener una mayor tolerancia a la protesta. No debemos inferir causalidad de correlación solamente, sin embargo, estos hechos abren la puerta a una posible explicación de protestas a conveniencia. Es decir, las protestas son válidas y legítimas cuando se alinean a mis intereses y tendencias políticas, pero si es que no... ¿no son válidas?
 
 ::: {#tbl-panel layout-ncol=2}
 

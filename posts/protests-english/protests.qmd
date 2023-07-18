@@ -42,12 +42,14 @@ quant_red<-'#F44D54'
 # Objetos de tema extra
 
 theme_daniel<-
-  theme(panel.grid = element_blank(),
+  theme(panel.grid.major.y = element_blank(),
+        axis.line = element_line(colour = 'gray'),
         axis.text.y = element_blank(),
-        plot.caption = element_text(hjust = 0, face = 'italic'),
+        axis.text.x = element_text(colour = 'grey'),
         legend.background = element_blank(),
         axis.ticks = element_blank(),
-        text = element_text(family = 'Questrial', size = 25))
+        text = element_text(family = 'Questrial', size = 45),
+        plot.caption = element_text(hjust = 0, face = 'italic', size = 30))
 
 # Creamos el objeto de diseño muestral para utilizar en los cálculos
 
@@ -87,6 +89,8 @@ The code used for this post is included in the source code of this website, whic
 #| label: data-wrangling-grafo-1
 #| include: true
 #| fig-align: center
+#| fig-width: 12
+#| fig-height: 8
 
 prot_time <-
   svyby(~ protest,
@@ -109,7 +113,7 @@ caption_grafo1<-
 
 ggplot(prot_df, aes(x = year, y = protest))+
   geom_col(fill = quant_blue,
-           color = 'black', 
+           colour = 'black', 
            width = 0.7)+
   geom_vline(xintercept = 0.5, linetype = 'dotted', color = quant_red, size = 1.25)+
   geom_vline(xintercept = 3.45, linetype = 'dotted', color = quant_red, size = 1.25)+
@@ -117,18 +121,19 @@ ggplot(prot_df, aes(x = year, y = protest))+
   geom_vline(xintercept = 7.5, linetype = 'dotted', color = quant_red, size = 1.25)+
   geom_errorbar(aes(ymin = protest - 1.96*se,
                     ymax = protest + 1.96*se),
-                width = 0.3)+
+                width = 0.3,
+                colour = 'gray')+
   geom_text(aes(label = round(protest, 4)*100),
-                size = 6.5,
-                vjust = 4)+
+            size = 10,
+            vjust = 10,
+            colour = 'white') +
   labs(x = '',
        y = '% who protest',
        title = "Ecuador's protest participation 2006-2019",
        subtitle = 'Have you participated in a public demonstration or protest in the last 12 months?',
-       caption = str_wrap(caption_grafo1, 105))+
+       caption = str_wrap(caption_grafo1, 115))+
   theme_hc(style = 'darkunica')+
   theme_daniel
-
 ```
 
 In mid-June 2022, the Confederation of Indigenous Nationalities of Ecuador (CONAIE) called for a massive mobilization in the country in order for President Guillermo Lasso to include ten economic and social demands in his government plan [@Pazmino.2022]. After 18 days of demonstrations, the strike ended following an agreement between the national government and CONAIE [@GK.2022]. The demonstrations left Ecuador with nine deaths, millions of dollars in damages and economic losses, as well as several injured and apprehended by the police [@Maria.2022; @Montalvo.2022; @Comercio.2022].
@@ -321,6 +326,9 @@ A key detail about protesters is their racial composition, and survey data shows
 #| label: data-wrangle-protestas-grafo-2
 #| include: true
 #| fig-align: center
+#| fig-width: 12
+#| fig-height: 8
+
 # Tabulamos la variable de apoyo a las protestas en general
 
 # La variable toma valores de 1 al 10, siendo 10 que más apoyan las protestas en general. Escogemos a quienes responden 1-5
@@ -437,12 +445,12 @@ rownames(political_graph_df)<-NULL
 # Caption largo
 
 caption_grafo2<-
-  'Note: Data from the AmericasBarometer. Surveys were conducted from January to March of each year except for round 2016, conducted from November 2016 to January 2017. The percent who approve of protests is calculated for those who respond with numbers greater than 4 (from 1 to 10). The percentages are based on the total number of people in voting age.'
+  'Note: Data from the AmericasBarometer. Surveys were conducted from January to March of each year except for 2016, which was conducted from November 2016 to January 2017. The percent who approve is calculated for those who respond with numbers greater than 4 (from 1 to 10). The percentages are based on the total number of people in voting age. Dotted lines represent 95% confidence intervals adjusted for survey design effects.'
 
 # Grafico 1: actitudes
 
 ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = legend))+
-  geom_line()+
+  geom_line(size = 1.2)+
   geom_line(aes(x = year, y = prot_desap - 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_line(aes(x = year, y = prot_desap + 1.96*se), color = quant_grey, linetype = 'dotted')+
   geom_point()+
@@ -450,15 +458,18 @@ ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = lege
                      breaks = c('Approves protests in general', 'Approves protests against the government'))+
   labs(x = '',
        y = '% who approve',
-       title = 'Attitudes towards protests',
-       subtitle = '% approve pacific protests',
+       title = "Ecuador's attitudes towards protests 2004-2019",
+       subtitle = '% who approve pacific protests',
        color = '',
-       caption = str_wrap(caption_grafo2, 103))+
+       caption = str_wrap(caption_grafo2, 115))+
   theme_daniel+
   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme_daniel
+  theme_daniel +
+  theme(legend.position = c(0.25, 0.25),
+        axis.ticks.y = element_line(colour = 'white'),
+        axis.text.y = element_text(colour = 'grey50'))
 ```
 
 It is relevant to consider a key difference that may have been easily confused lately, especially while the protests were taking place: **participation in protests is not the same as approval of them**. LAPOP's AmericasBarometer allows to construct a time series to monitor Ecuadorians' historical support for protests, as seen below.
@@ -471,14 +482,19 @@ The data shows us that prior to the 2019 protest, the right to protest both in g
 #| label: data-wrangle-protestas-grafo-2.1
 #| include: true
 #| fig-align: center
+#| fig-width: 12
+#| fig-height: 8
+
 # Grafico 2.1: actitudes politicas
+
+caption3<- 'Note: Data from the Americas Barometer. Surveys were conducted from January to March of each year except for the 2016 round, conducted from November 2016 to January 2017. The dotted gray lines represent the lower and upper limits of the 95% confidence interval. The percentage of people who trust the President is calculated for those who answer numbers greater than 4 (from 1 to 7) while approval is calculated for those who answer numbers greater than 3 (from 1 to 5). The percentages are based on the total number of eligible voters.'
 
 ggplot(political_graph_df,
                   aes(x = year, y = perc, color = legend, group = legend))+
-                  geom_line(size = 0.8)+
+                  geom_line(size = 1.2)+
                   scale_color_manual(values = c('orange','#BF69C2'),
                                      breaks = c('Confides in the President','Approves the President'))+
-                  geom_point(size = 2.15)+
+                  geom_point(size = 3)+
                   geom_line(aes(x = year, 
                                 y = perc - 1.96*se),
                             size = 0.7,
@@ -489,27 +505,38 @@ ggplot(political_graph_df,
                             size = 0.7,
                             color = 'grey50', 
                             linetype = 'dotted')+
-                  geom_vline(xintercept = 7.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 5, y = 0.5, label = 'Correa Tenure.', size = 5, fill = '#696969')+
-                  geom_vline(xintercept = 2.5, color = quant_grey, linetype = 'dotted')+
-                  annotate('label', x = 1.48, y = 0.45, label = 'Gutiérrez-Palacio\nTenure', size = 5, fill = '#696969')+
-                  annotate('label', x = 8.05, y = 0.5, label = 'Moreno \nTenure', size = 5, fill = '#696969')+
+                  geom_vline(xintercept = 7.5, color = 'grey', linetype = 'dotted')+
+                  annotate('label', x = 5, y = 0.5, 
+                           label = 'Correa Tenure', 
+                           size = 10, 
+                           fill = '#696969',
+                           colour = 'white')+
+                  geom_vline(xintercept = 2.5, color = 'grey', linetype = 'dotted')+
+                  annotate('label', x = 1.48, y = 0.45, label = 'Gutiérrez-Palacio Tenure', 
+                           size = 10, fill = '#696969',
+                           colour = 'white')+
+                  annotate('label', x = 8.05, y = 0.5, 
+                           label = 'Moreno \nTenure', 
+                           size = 10, 
+                           fill = '#696969',
+                           colour = 'white')+
                   theme_daniel+
                   labs(x = '',
                        y = '% who approve',
                        color = '',
                        title = 'Attitudes towards the government',
-                       subtitle = 'Percentage that approves or trusts the President of the Republic.')+
+                       subtitle = 'Percentage that approves or trusts the President of the Republic.',
+                       caption = str_wrap(caption3, 115))+
                   theme(legend.position = c(0.5,0.12),
                         axis.ticks.x = element_blank(),
                         text = element_text(size = 5.5))+
                   scale_y_continuous(breaks = c(0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
                      labels = c(10, 20, 30, 40, 50, 60, 70, 80, 90))+
   theme_hc(style = 'darkunica')+
-  theme_daniel
+  theme_daniel +
+  theme(axis.ticks.y = element_line(colour = 'white'),
+        axis.text.y = element_text(colour = 'grey50'))
 ```
-
-*Note: Data from the Barometer of the Americas. Surveys were conducted from January to March of each year except for the 2016 round, conducted from November 2016 to January 2017. The dotted gray lines represent the lower and upper limits of the 95% confidence interval. The percentage of people who trust the President is calculated for those who answer numbers greater than 4 (from 1 to 7) while approval is calculated for those who answer numbers greater than 3 (from 1 to 5). The percentages are based on the total number of eligible voters.*
 
 One fact that stands out is that the period of lower tolerance to protest occurred during the peak of popularity of Rafael Correa's government, as can be seen in the graph on the right. In periods where the president was popular, there was greater rejection of protest while in periods where the president was less popular there was more approval of protest. Since Lenín Moreno distanced himself from the old regime, there is again a greater tolerance for protest. We should not infer causality of correlation alone, however, these facts open the door to a possible explanation of protests at convenience. That is to say, protests are valid and legitimate when they align with my interests and political tendencies, but if not? are they not valid?
 
