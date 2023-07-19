@@ -2,7 +2,7 @@
 title: "Twenty years of Epica: The EmpiRics"
 author: "Daniel Sánchez"
 date: "2023-06-17"
-description: "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band's musical features, streams and lyrics. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar)."
+description: "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band's musical features, streams and lyrics. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar)."
 categories: [english, music, text analysis, data viz, epica, metal]
 csl: ../../econometrics.csl
 draft: true
@@ -36,7 +36,7 @@ library(fuzzyjoin)
 library(tidyr)
 library(lubridate)
 library(fixest)
-library(broom)
+library(broom )
 library(geniusr)
 library(tidytext)
 library(wordcloud)
@@ -413,9 +413,10 @@ wc_phantom_agony <-
              backgroundColor = 'grey30',
              color = colors)
 
-htmlwidgets::saveWidget(wc_phantom_agony, "wordcloud_phantom_agony.html", selfcontained = TRUE)
+htmlwidgets::saveWidget(wc_phantom_agony, 
+                        "wordcloud_phantom_agony.html", 
+                        selfcontained = TRUE)
 ```
-
 
 ```{=html}
 <iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>

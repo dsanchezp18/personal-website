@@ -8,7 +8,7 @@
 
 <meta name="author" content="Daniel Sánchez">
 <meta name="dcterms.date" content="2023-06-17">
-<meta name="description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
+<meta name="description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
 
 <title>Daniel - Twenty years of Epica: The EmpiRics</title>
 <style>
@@ -118,13 +118,13 @@ div.csl-indent {
 
 
 <meta property="og:title" content="Daniel - Twenty years of Epica: The EmpiRics">
-<meta property="og:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
+<meta property="og:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
 <meta property="og:image" content="https://daniel-ec.netlify.app/posts/epica/cover.png">
 <meta property="og:site-name" content="Daniel">
 <meta property="og:image:height" content="640">
 <meta property="og:image:width" content="1136">
 <meta name="twitter:title" content="Daniel - Twenty years of Epica: The EmpiRics">
-<meta name="twitter:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
+<meta name="twitter:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by Diego Eivar.">
 <meta name="twitter:image" content="https://daniel-ec.netlify.app/posts/epica/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
@@ -189,7 +189,7 @@ div.csl-indent {
       <div class="quarto-title-block"><div><h1 class="title">Twenty years of Epica: The EmpiRics</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
                   <div>
         <div class="description">
-          As a (late) tribute to Epica’s <em>The Phantom Agony</em> twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by <a href="https://www.facebook.com/bubueivar">Diego Eivar</a>.
+          As a (late) tribute to Epica’s <em>The Phantom Agony</em> twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band’s musical features, streams and lyrics. Cover picture by <a href="https://www.facebook.com/bubueivar">Diego Eivar</a>.
         </div>
       </div>
                           <div class="quarto-categories">
@@ -550,7 +550,9 @@ Tip
 <span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>             <span class="at">backgroundColor =</span> <span class="st">'grey30'</span>,</span>
 <span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> colors)</span>
 <span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, <span class="st">"wordcloud_phantom_agony.html"</span>, <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, </span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"wordcloud_phantom_agony.html"</span>, </span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>                        <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
@@ -889,7 +891,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Twenty years of Epica: The EmpiRics"</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Daniel Sánchez"</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-06-17"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify application porgramming interfaces (APIs) with R to analyse the Dutch band's musical features, streams and lyrics. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar)."</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band's musical features, streams and lyrics. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar)."</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [english, music, text analysis, data viz, epica, metal]</span></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> ../../econometrics.csl</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> true</span></span>
@@ -923,7 +925,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
 <span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
 <span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom )</span>
 <span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geniusr)</span>
 <span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
 <span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud)</span>
@@ -1300,35 +1302,36 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-423"><a href="#cb5-423" aria-hidden="true" tabindex="-1"></a>             <span class="at">backgroundColor =</span> <span class="st">'grey30'</span>,</span>
 <span id="cb5-424"><a href="#cb5-424" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> colors)</span>
 <span id="cb5-425"><a href="#cb5-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-426"><a href="#cb5-426" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, <span class="st">"wordcloud_phantom_agony.html"</span>, <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-427"><a href="#cb5-427" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-428"><a href="#cb5-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-429"><a href="#cb5-429" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-430"><a href="#cb5-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb5-431"><a href="#cb5-431" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="wordcloud_phantom_agony.html" width="100%" height="600"&gt;&lt;/iframe&gt;</span></span>
-<span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-433"><a href="#cb5-433" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-436"><a href="#cb5-436" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-437"><a href="#cb5-437" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: word-count-graph</span></span>
-<span id="cb5-438"><a href="#cb5-438" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb5-439"><a href="#cb5-439" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb5-440"><a href="#cb5-440" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
-<span id="cb5-441"><a href="#cb5-441" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-442"><a href="#cb5-442" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq)) <span class="sc">+</span></span>
-<span id="cb5-443"><a href="#cb5-443" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">'#742014'</span>) <span class="sc">+</span></span>
-<span id="cb5-444"><a href="#cb5-444" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb5-445"><a href="#cb5-445" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">size =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
-<span id="cb5-446"><a href="#cb5-446" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's The Phantom Agony"</span>,</span>
-<span id="cb5-447"><a href="#cb5-447" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb5-448"><a href="#cb5-448" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb5-449"><a href="#cb5-449" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed through the tidytext package."</span>, <span class="dv">116</span>),</span>
-<span id="cb5-450"><a href="#cb5-450" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'Epica combines the theme of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
-<span id="cb5-451"><a href="#cb5-451" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb5-452"><a href="#cb5-452" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb5-453"><a href="#cb5-453" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-454"><a href="#cb5-454" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-455"><a href="#cb5-455" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span>
-<span id="cb5-456"><a href="#cb5-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-426"><a href="#cb5-426" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, </span>
+<span id="cb5-427"><a href="#cb5-427" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"wordcloud_phantom_agony.html"</span>, </span>
+<span id="cb5-428"><a href="#cb5-428" aria-hidden="true" tabindex="-1"></a>                        <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-429"><a href="#cb5-429" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-430"><a href="#cb5-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-431"><a href="#cb5-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="wordcloud_phantom_agony.html" width="100%" height="600"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb5-433"><a href="#cb5-433" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-434"><a href="#cb5-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-437"><a href="#cb5-437" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-438"><a href="#cb5-438" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: word-count-graph</span></span>
+<span id="cb5-439"><a href="#cb5-439" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb5-440"><a href="#cb5-440" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb5-441"><a href="#cb5-441" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
+<span id="cb5-442"><a href="#cb5-442" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-443"><a href="#cb5-443" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq)) <span class="sc">+</span></span>
+<span id="cb5-444"><a href="#cb5-444" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">'#742014'</span>) <span class="sc">+</span></span>
+<span id="cb5-445"><a href="#cb5-445" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-446"><a href="#cb5-446" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">size =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb5-447"><a href="#cb5-447" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's The Phantom Agony"</span>,</span>
+<span id="cb5-448"><a href="#cb5-448" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb5-449"><a href="#cb5-449" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb5-450"><a href="#cb5-450" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed through the tidytext package."</span>, <span class="dv">116</span>),</span>
+<span id="cb5-451"><a href="#cb5-451" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'Epica combines the theme of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb5-452"><a href="#cb5-452" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb5-453"><a href="#cb5-453" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb5-454"><a href="#cb5-454" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-455"><a href="#cb5-455" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-456"><a href="#cb5-456" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span>
+<span id="cb5-457"><a href="#cb5-457" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
