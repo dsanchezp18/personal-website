@@ -244,6 +244,7 @@ div.csl-indent {
 
 
 
+<iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
 <blockquote class="blockquote">
 <p><em>Epica could record an album of Karol G covers and no one would bat an eye</em> - <a href="https://yourlastrites.com/2022/11/17/epica-the-alchemy-project-review/#:~:text=Though%20Epica%20has%20since%20normalized,given%20the%20diversity%20of%20its">Last Rites</a>, 2022</p>
 </blockquote>
@@ -555,7 +556,6 @@ Tip
 <span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>                        <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -568,8 +568,8 @@ Tip
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's The Phantom Agony"</span>,</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed through the tidytext package."</span>, <span class="dv">116</span>),</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'Epica combines the theme of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package."</span>, <span class="dv">116</span>),</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'The album combines the themes of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
@@ -580,6 +580,8 @@ Tip
 <p><img src="epica-post_files/figure-html/word-count-graph-1.png" class="img-fluid" width="1152"></p>
 </div>
 </div>
+<p>Epica’s characteristic lyrics across all albums revolve around intangible, philosophical topics which motivate self-reflection, which is something still strongly present in words such as <em>life</em>, <em>die</em>, <em>agony</em>, <em>forever</em>. However, in their first album, the band strongly tackled social issues regarding religion, namely, the misuse of religion for the personal benefit of religious and political leaders. Epica commonly uses series of songs across different albums which approach common topics, and in <em>The Phantom Agony</em>, the first series for the band started: <em>The Embrace That Smothers</em> (i.e.&nbsp;religion being the embrace?). Actually, this series has started before Epica came to life, as in Mark Jansen’s previous band, After Forever, the series had already started, also covering the theme of religion. The world events of the time likely motivated Mark Jansen’s work, considering how the lyrics made clear that the topic in question was instead of solely relying on figurative/metaphorical elements <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p><em>The Embrace that Smothers</em> continued on for nine songs across three albums. However, this series, in my view, is best exemplified by <em>The Phantom Agony</em>, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes, leaning on works by social and natural scientists, ancient cultures, among others. The seamless interface of the <em>geniusr</em> package allowed me to easily compare the lyrics of <em>The Phantom Agony</em> to the complete discography, which I summarise below.</p>
 
 
 <!-- -->
@@ -601,6 +603,7 @@ Tip
 <li id="fn1"><p>I only consider Epica’s eight full-length releases: <em>The Phantom Agony (2003)</em>, <em>Consign To Oblivion (2005)</em>, <em>The Divine Conspiracy (2007)</em>, <em>Design Your Universe (2009)</em>, <em>Requiem for the Indifferent (2012)</em>, <em>The Quantum Enigma (2014)</em>, <em>The Holographic Principle (2016)</em>, <em>Omega (2021)</em> and their two EPs, <em>The Solace System (2017)</em> and <em>The Alchemy Project (2022)</em>. I leave out the <em>Attack on Titan</em> cover album (which does not make <em>Crimson Bow and Arrow</em> any less epic), singles and live albums.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Run <code>remotes::install_github("ppatrzyk/lastfmR")</code> in the console and you will access the package easily enough.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>What took most effort was making the <em>geniusr</em> package to work properly. At the time of this post’s writing, it was necessary to install a fork of the package through <code>remotes::install_githubb('giovanni-cutri/geniusR')</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>For instance, <em>Seif al Din</em> in TPA contains a lengthy and clear statement on how <em>most leaders interpret the old words to their advantage</em> (Epica, 2003 on <a href="https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics">Genius</a>, pp.&nbsp;3)<span class="citation" data-cites="epicaEpicaSeifDin">[<a href="#ref-epicaEpicaSeifDin" role="doc-biblioref"><strong>epicaEpicaSeifDin?</strong></a>]</span><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -911,404 +914,404 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="co">    code-overflow: wrap</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lastfmR) <span class="co"># Use remotes::install_github("ppatrzyk/lastfmR") to install the lastfmR package</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spotifyr)</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fuzzyjoin) </span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
-<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
-<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom )</span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geniusr)</span>
-<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud)</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdark)</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fedmatch)</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="co"># Add aesthetics</span></span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add_google</span>(<span class="st">"Questrial"</span>, <span class="at">family =</span> <span class="st">"Questrial"</span>)</span>
-<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span>
-<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>theme_daniel<span class="ot">&lt;-</span></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_hc</span>(<span class="at">style =</span> <span class="st">'darkunica'</span>,</span>
-<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>           <span class="at">base_family =</span> <span class="st">'Questrial'</span>,</span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>           <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>),</span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">'italic'</span>),</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">'plot'</span>,</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption.position =</span> <span class="st">'plot'</span>,</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">60</span>))</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute my credentials (unstaged in the repository for privacy reasons)</span></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'credentials.R'</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="wordcloud_phantom_agony.html" width="100%" height="600"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lastfmR) <span class="co"># Use remotes::install_github("ppatrzyk/lastfmR") to install the lastfmR package</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(spotifyr)</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fuzzyjoin) </span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fixest)</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(broom )</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geniusr)</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidytext)</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud)</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggdark)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(showtext)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fedmatch)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggimage)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggtext)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(wordcloud2)</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="co"># Add aesthetics</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="fu">font_add_google</span>(<span class="st">"Questrial"</span>, <span class="at">family =</span> <span class="st">"Questrial"</span>)</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a><span class="fu">showtext_auto</span>()</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>theme_daniel<span class="ot">&lt;-</span></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_hc</span>(<span class="at">style =</span> <span class="st">'darkunica'</span>,</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>           <span class="at">base_family =</span> <span class="st">'Questrial'</span>,</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>           <span class="at">base_size =</span> <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.line.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>),</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">face =</span> <span class="st">'italic'</span>),</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title.position =</span> <span class="st">'plot'</span>,</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption.position =</span> <span class="st">'plot'</span>,</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">lineheight =</span> <span class="fl">0.5</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">60</span>))</span>
 <span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *Epica could record an album of Karol G covers and no one would bat an eye* - </span><span class="co">[</span><span class="ot">Last Rites</span><span class="co">](https://yourlastrites.com/2022/11/17/epica-the-alchemy-project-review/#:~:text=Though%20Epica%20has%20since%20normalized,given%20the%20diversity%20of%20its)</span><span class="at">, 2022</span></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute my credentials (unstaged in the repository for privacy reasons)</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">'credentials.R'</span>)</span>
 <span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>On June 5th, 2003, dutch-based symphonic metal band <span class="co">[</span><span class="ot">Epica</span><span class="co">](https://www.epica.nl/home)</span> released their first full-length album, <span class="co">[</span><span class="ot">*The Phantom Agony*</span><span class="co">](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw)</span>, the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, <span class="co">[</span><span class="ot">*Omega*</span><span class="co">](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA)</span>, an EP in 2022, <span class="co">[</span><span class="ot">*The Alchemy Project*</span><span class="co">](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w)</span>, and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory  make the band a great case study about how death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## What makes Epica different?</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *Epica could record an album of Karol G covers and no one would bat an eye* - </span><span class="co">[</span><span class="ot">Last Rites</span><span class="co">](https://yourlastrites.com/2022/11/17/epica-the-alchemy-project-review/#:~:text=Though%20Epica%20has%20since%20normalized,given%20the%20diversity%20of%20its)</span><span class="at">, 2022</span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>Epica is *unique*. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make them stand out in the genre. The band combines gutural growls from death metal with soprano vocals and string orchestras. This notable musical style was first heard in *The Phantom Agony*, after Dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch singer Simone Simons.</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>On June 5th, 2003, dutch-based symphonic metal band <span class="co">[</span><span class="ot">Epica</span><span class="co">](https://www.epica.nl/home)</span> released their first full-length album, <span class="co">[</span><span class="ot">*The Phantom Agony*</span><span class="co">](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw)</span>, the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, <span class="co">[</span><span class="ot">*Omega*</span><span class="co">](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA)</span>, an EP in 2022, <span class="co">[</span><span class="ot">*The Alchemy Project*</span><span class="co">](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w)</span>, and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory  make the band a great case study about how death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.</span>
 <span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>To look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others <span class="co">[</span><span class="ot">@duman2022</span><span class="co">]</span>. The Spotify API can be accessed with R through the <span class="co">[</span><span class="ot">*spotifyr*</span><span class="co">](https://www.rcharlie.com/spotifyr/)</span> package, but it needs users to create a <span class="co">[</span><span class="ot">Spotify Developer account</span><span class="co">](https://developer.spotify.com/)</span> and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this <span class="co">[</span><span class="ot">tutorial</span><span class="co">](https://msmith7161.github.io/what-is-speechiness/)</span>.</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## What makes Epica different?</span></span>
 <span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>Once having acquired the credentials, set them up as system environment variables through a call to <span class="in">`Sys.setenv(SPOTIFY_CLIENT_ID = 'something')`</span> and <span class="in">`Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something')`</span>. Having these as system variables make the code less clunky and faster. Further, since we're going to access data from Epica, it's useful to set up the Spotify identificator for the band, which can be found in the Spotify <span class="co">[</span><span class="ot">artist's link</span><span class="co">](https://open.spotify.com/artist/5HA5aLY3jJV7eimXWkRBBp?si=7BH2xg27Q9-gjo7UC25-FA)</span>, after the <span class="in">`artist/`</span> and before the interrogation sign <span class="in">`?`</span>. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for *ggplot2* graphics, but trust me, it's worth it. Below, I acquire track-level audio metrics and then group at the album level<span class="ot">[^1]</span> by taking averages of all metrics.</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>Epica is *unique*. Though that is something that any die-hard fan will tell you about their favourite band, Epica has several differencing factors which make them stand out in the genre. The band combines gutural growls from death metal with soprano vocals and string orchestras. This notable musical style was first heard in *The Phantom Agony*, after Dutch guitarist and singer Mark Jansen left After Forever and founded Epica with dutch singer Simone Simons.</span>
 <span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>I only consider Epica's eight full-length releases: *The Phantom Agony (2003)*, *Consign To Oblivion (2005)*, *The Divine Conspiracy (2007)*, *Design Your Universe (2009)*, *Requiem for the Indifferent (2012)*, *The Quantum Enigma (2014)*, *The Holographic Principle (2016)*, *Omega (2021)* and their two EPs, *The Solace System (2017)* and *The Alchemy Project (2022)*. I leave out the *Attack on Titan* cover album (which does not make *Crimson Bow and Arrow* any less epic), singles and live albums.</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>To look at how Epica has constructed its musical features, we can use Spotify-calculated audio features, which rank songs based on energy, danceability, valence, among others <span class="co">[</span><span class="ot">@duman2022</span><span class="co">]</span>. The Spotify API can be accessed with R through the <span class="co">[</span><span class="ot">*spotifyr*</span><span class="co">](https://www.rcharlie.com/spotifyr/)</span> package, but it needs users to create a <span class="co">[</span><span class="ot">Spotify Developer account</span><span class="co">](https://developer.spotify.com/)</span> and request a Client ID and a Client Secret. For a comprehensive tutorial on how to do this, see this <span class="co">[</span><span class="ot">tutorial</span><span class="co">](https://msmith7161.github.io/what-is-speechiness/)</span>.</span>
 <span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>You can display the code which generated the graphs using the down arrow in the code blocks.</span>
-<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>Once having acquired the credentials, set them up as system environment variables through a call to <span class="in">`Sys.setenv(SPOTIFY_CLIENT_ID = 'something')`</span> and <span class="in">`Sys.setenv(SPOTIFY_CLIENT_SECRET= 'something')`</span>. Having these as system variables make the code less clunky and faster. Further, since we're going to access data from Epica, it's useful to set up the Spotify identificator for the band, which can be found in the Spotify <span class="co">[</span><span class="ot">artist's link</span><span class="co">](https://open.spotify.com/artist/5HA5aLY3jJV7eimXWkRBBp?si=7BH2xg27Q9-gjo7UC25-FA)</span>, after the <span class="in">`artist/`</span> and before the interrogation sign <span class="in">`?`</span>. With that, we can acquire all albums from Epica available in Spotify, as well as audio metrics per track. The data requires quite a bit of preparation for *ggplot2* graphics, but trust me, it's worth it. Below, I acquire track-level audio metrics and then group at the album level<span class="ot">[^1]</span> by taking averages of all metrics.</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>I only consider Epica's eight full-length releases: *The Phantom Agony (2003)*, *Consign To Oblivion (2005)*, *The Divine Conspiracy (2007)*, *Design Your Universe (2009)*, *Requiem for the Indifferent (2012)*, *The Quantum Enigma (2014)*, *The Holographic Principle (2016)*, *Omega (2021)* and their two EPs, *The Solace System (2017)* and *The Alchemy Project (2022)*. I leave out the *Attack on Titan* cover album (which does not make *Crimson Bow and Arrow* any less epic), singles and live albums.</span>
 <span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: albums-tracks-spotify</span></span>
-<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup the access token</span></span>
-<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>(<span class="at">client_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_ID'</span>),</span>
-<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">client_secret =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_SECRET'</span>))</span>
-<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an album/EPs vector, a year vector, to use later as well as the artist id</span></span>
-<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>epica_spotify_id <span class="ot">&lt;-</span> <span class="st">'5HA5aLY3jJV7eimXWkRBBp'</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>You can display the code which generated the graphs using the down arrow in the code blocks.</span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: albums-tracks-spotify</span></span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup the access token</span></span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>(<span class="at">client_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_ID'</span>),</span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>                                         <span class="at">client_secret =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_SECRET'</span>))</span>
 <span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>epica_releases_year <span class="ot">&lt;-</span> </span>
-<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_spotify =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony (Expanded Edition)"</span>, </span>
-<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Consign To Oblivion (Expanded Edition)"</span>, </span>
-<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Divine Conspiracy"</span>, </span>
-<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Design Your Universe"</span>, </span>
-<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Requiem for the Indifferent"</span>, </span>
-<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Quantum Enigma"</span>, </span>
-<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Holographic Principle"</span>,</span>
-<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Solace System"</span>, </span>
-<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Omega"</span>, </span>
-<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Alchemy Project"</span>),</span>
-<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_name =</span>  <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span>, </span>
-<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Consign To Oblivion"</span>, </span>
-<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Divine Conspiracy"</span>,</span>
-<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Design Your Universe"</span>, </span>
-<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Requiem for the Indifferent"</span>, </span>
-<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Quantum Enigma"</span>,</span>
-<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Holographic Principle"</span>,</span>
-<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Solace System"</span>, </span>
-<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Omega"</span>, </span>
-<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Alchemy Project"</span>),</span>
-<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_year =</span> <span class="fu">c</span>(<span class="dv">2003</span>, <span class="dv">2005</span>, <span class="dv">2007</span>, <span class="dv">2009</span>, <span class="dv">2012</span>, <span class="dv">2014</span>, <span class="dv">2016</span>, <span class="dv">2017</span>, <span class="dv">2021</span>, <span class="dv">2022</span>)</span>
-<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>)  <span class="sc">%&gt;%</span> </span>
-<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">release_name_year =</span> <span class="fu">paste</span>(release_name,<span class="st">' '</span>, <span class="st">'('</span>, release_year, <span class="st">')'</span>, <span class="at">sep =</span> <span class="st">''</span>))</span>
-<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a><span class="co"># Get metrics at the track level and filter for the selection of releases I chose</span></span>
-<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>epica_track_metrics <span class="ot">&lt;-</span></span>
-<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_artist_audio_features</span>(epica_spotify_id, <span class="at">include_groups =</span> <span class="fu">c</span>(<span class="st">'album'</span>, <span class="st">'single'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(track_name,</span>
-<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>         album_name,</span>
-<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>         album_id,</span>
-<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>         energy,</span>
-<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>         loudness,</span>
-<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>         speechiness,</span>
-<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>         acousticness,</span>
-<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>         instrumentalness,</span>
-<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>         liveness,</span>
-<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>         valence,</span>
-<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>         tempo) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">%in%</span> epica_releases_year<span class="sc">$</span>release_spotify) </span>
-<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Group at the album level, reshape to long form, then plot</span></span>
-<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>epica_album_metrics <span class="ot">&lt;-</span></span>
-<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span> </span>
-<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_if</span>(is.numeric, mean) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(epica_releases_year, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_spotify'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(release_year)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>album_name) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">loudness =</span> <span class="fu">abs</span>(loudness)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(release_name, release_name_year, release_year) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)</span>
-<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an ordering for my metrics</span></span>
-<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>orderings <span class="ot">&lt;-</span> </span>
-<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a>    <span class="at">metric =</span> <span class="fu">c</span>(<span class="st">'energy'</span>, <span class="st">'valence'</span>, <span class="st">'instrumentalness'</span>, <span class="st">'speechiness'</span>),</span>
-<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a>    <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
-<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a>epica_album_metrics <span class="sc">%&gt;%</span></span>
-<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(metric <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'energy'</span>, <span class="st">'valence'</span>, <span class="st">'instrumentalness'</span>, <span class="st">'speechiness'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(orderings, <span class="at">by =</span> <span class="st">'metric'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">metric =</span> <span class="fu">factor</span>(<span class="fu">str_to_sentence</span>(metric))) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(release_name_year, release_year), value, <span class="at">fill =</span> <span class="fu">reorder</span>(metric, order))) <span class="sc">+</span></span>
-<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.7</span>)) <span class="sc">+</span></span>
-<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
-<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'The Sound of Epica 2000-2023'</span>,</span>
-<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Spotify audio metrics for all Epica albums &amp; EPs </span><span class="sc">\n</span><span class="st">"</span>,</span>
-<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>     <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>     <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">'Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.'</span>, <span class="dv">120</span>),</span>
-<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>     <span class="at">fill =</span> <span class="st">'Metric'</span>) <span class="sc">+</span></span>
-<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.65</span>, <span class="fl">1.10</span>), </span>
-<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>),</span>
-<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">'horizontal'</span>) <span class="sc">+</span>  </span>
-<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>))</span>
-<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>Epica's characteristic sound, which meddles the harmonious verses by the female lead with violent male growls was born in a single, *Cry for the Moon* released 2003 and also included in their first album. *Cry for the Moon* remains as one of Epica's most important tracks, as it set the scene for the what was to come later. Curiously, this first album is not the most instrumental of them all, ranking fourth in terms of instrumentalness. The most instrumental release by Epica is actually *Consign to Oblivion* (2005), often considered as the band's *magnum opus*, followed by 2016's *The Holographic Principle*. The data also shows an apparent trade-off between energy and instrumentality, an intuitive idea which is only challenged by the unique *Design Your Universe* (2009) with both high instrumentality and energy, which in my view marked the difference between the modern and the *classical* Epica. This last release contained the unforgettable *Unleashed*, probably Epica's most mainstream track so far.</span>
-<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>Somewhat of a pattern can be found in the band's last two releases: the instrumentality fades, apparently in favour of more energy. Is this the way that Epica makes its way into today's hyper competitive and commercial music industry? A question like this has no clear answer (and perhaps does not deserve one), but the strategy here might be one of making a subtle impact. With newer releases which are *friendler* to the unexperienced listeners, Epica subtly enters the scene to the create an *obsessive devotion* after the innocent streamer turns to mindless fanatic after listening to the band's more loyal records of old.</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a><span class="co"># Define an album/EPs vector, a year vector, to use later as well as the artist id</span></span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>epica_spotify_id <span class="ot">&lt;-</span> <span class="st">'5HA5aLY3jJV7eimXWkRBBp'</span></span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>epica_releases_year <span class="ot">&lt;-</span> </span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_spotify =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony (Expanded Edition)"</span>, </span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Consign To Oblivion (Expanded Edition)"</span>, </span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Divine Conspiracy"</span>, </span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Design Your Universe"</span>, </span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Requiem for the Indifferent"</span>, </span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Quantum Enigma"</span>, </span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Holographic Principle"</span>,</span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Solace System"</span>, </span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Omega"</span>, </span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"The Alchemy Project"</span>),</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_name =</span>  <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span>, </span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Consign To Oblivion"</span>, </span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Divine Conspiracy"</span>,</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Design Your Universe"</span>, </span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Requiem for the Indifferent"</span>, </span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Quantum Enigma"</span>,</span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Holographic Principle"</span>,</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Solace System"</span>, </span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Omega"</span>, </span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"The Alchemy Project"</span>),</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>    <span class="at">release_year =</span> <span class="fu">c</span>(<span class="dv">2003</span>, <span class="dv">2005</span>, <span class="dv">2007</span>, <span class="dv">2009</span>, <span class="dv">2012</span>, <span class="dv">2014</span>, <span class="dv">2016</span>, <span class="dv">2017</span>, <span class="dv">2021</span>, <span class="dv">2022</span>)</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>)  <span class="sc">%&gt;%</span> </span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(<span class="at">release_name_year =</span> <span class="fu">paste</span>(release_name,<span class="st">' '</span>, <span class="st">'('</span>, release_year, <span class="st">')'</span>, <span class="at">sep =</span> <span class="st">''</span>))</span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a><span class="co"># Get metrics at the track level and filter for the selection of releases I chose</span></span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a>epica_track_metrics <span class="ot">&lt;-</span></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_artist_audio_features</span>(epica_spotify_id, <span class="at">include_groups =</span> <span class="fu">c</span>(<span class="st">'album'</span>, <span class="st">'single'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(track_name,</span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>         album_name,</span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>         album_id,</span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>         energy,</span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>         loudness,</span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>         speechiness,</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a>         acousticness,</span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>         instrumentalness,</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>         liveness,</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>         valence,</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>         tempo) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">%in%</span> epica_releases_year<span class="sc">$</span>release_spotify) </span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a><span class="co"># Group at the album level, reshape to long form, then plot</span></span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>epica_album_metrics <span class="ot">&lt;-</span></span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span> </span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise_if</span>(is.numeric, mean) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(epica_releases_year, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_spotify'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(release_year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>album_name) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-171"><a href="#cb5-171" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">loudness =</span> <span class="fu">abs</span>(loudness)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-172"><a href="#cb5-172" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relocate</span>(release_name, release_name_year, release_year) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-173"><a href="#cb5-173" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(metric, value, energy, loudness, speechiness, acousticness, instrumentalness, liveness, valence, tempo)</span>
+<span id="cb5-174"><a href="#cb5-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-175"><a href="#cb5-175" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an ordering for my metrics</span></span>
+<span id="cb5-176"><a href="#cb5-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-177"><a href="#cb5-177" aria-hidden="true" tabindex="-1"></a>orderings <span class="ot">&lt;-</span> </span>
+<span id="cb5-178"><a href="#cb5-178" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb5-179"><a href="#cb5-179" aria-hidden="true" tabindex="-1"></a>    <span class="at">metric =</span> <span class="fu">c</span>(<span class="st">'energy'</span>, <span class="st">'valence'</span>, <span class="st">'instrumentalness'</span>, <span class="st">'speechiness'</span>),</span>
+<span id="cb5-180"><a href="#cb5-180" aria-hidden="true" tabindex="-1"></a>    <span class="at">order =</span> <span class="fu">c</span>(<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb5-181"><a href="#cb5-181" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-182"><a href="#cb5-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-183"><a href="#cb5-183" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
+<span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a>epica_album_metrics <span class="sc">%&gt;%</span></span>
+<span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(metric <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'energy'</span>, <span class="st">'valence'</span>, <span class="st">'instrumentalness'</span>, <span class="st">'speechiness'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(orderings, <span class="at">by =</span> <span class="st">'metric'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">metric =</span> <span class="fu">factor</span>(<span class="fu">str_to_sentence</span>(metric))) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(release_name_year, release_year), value, <span class="at">fill =</span> <span class="fu">reorder</span>(metric, order))) <span class="sc">+</span></span>
+<span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_dodge</span>(<span class="at">width =</span> <span class="fl">0.7</span>)) <span class="sc">+</span></span>
+<span id="cb5-191"><a href="#cb5-191" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span> </span>
+<span id="cb5-192"><a href="#cb5-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">'The Sound of Epica 2000-2023'</span>,</span>
+<span id="cb5-193"><a href="#cb5-193" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Spotify audio metrics for all Epica albums &amp; EPs </span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb5-194"><a href="#cb5-194" aria-hidden="true" tabindex="-1"></a>     <span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb5-195"><a href="#cb5-195" aria-hidden="true" tabindex="-1"></a>     <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a>     <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">'Note: Spotify provides audio metrics at the track level. The horizontal axis shows the average value of the metric, grouping by band release. Data obtained from the Spotify API through the spotifyr package.'</span>, <span class="dv">120</span>),</span>
+<span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a>     <span class="at">fill =</span> <span class="st">'Metric'</span>) <span class="sc">+</span></span>
+<span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.65</span>, <span class="fl">1.10</span>), </span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>),</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.direction =</span> <span class="st">'horizontal'</span>) <span class="sc">+</span>  </span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>))</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a><span class="fu"># An attempt at stream analysis with Last.fm scrobbles</span></span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>Epica's characteristic sound, which meddles the harmonious verses by the female lead with violent male growls was born in a single, *Cry for the Moon* released 2003 and also included in their first album. *Cry for the Moon* remains as one of Epica's most important tracks, as it set the scene for the what was to come later. Curiously, this first album is not the most instrumental of them all, ranking fourth in terms of instrumentalness. The most instrumental release by Epica is actually *Consign to Oblivion* (2005), often considered as the band's *magnum opus*, followed by 2016's *The Holographic Principle*. The data also shows an apparent trade-off between energy and instrumentality, an intuitive idea which is only challenged by the unique *Design Your Universe* (2009) with both high instrumentality and energy, which in my view marked the difference between the modern and the *classical* Epica. This last release contained the unforgettable *Unleashed*, probably Epica's most mainstream track so far.</span>
 <span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>What comes to one's mind when reading about music data analysis it is easy to automatically jump towards streams. With today's stream-based music industry, data on music preferences must be infinitely better than whatever it used to be some decades ago. However, two problems arise with stream data. The first and most mundane is that *stream data is not easily accesible*, probably due to the proprietary nature of the platforms that collect such data (and perhaps its business value?). The second and more *metaphysical* issue with stream analysis is that, even though I am not a professional musician myself, I am pretty sure that no serious artist writes their music based on data (and they shouldn't). If you're not going to see Mark Jansen and Simone Simons sit down in front of a double screen display to look at a Power BI dashboard, why bother with all this?</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>Somewhat of a pattern can be found in the band's last two releases: the instrumentality fades, apparently in favour of more energy. Is this the way that Epica makes its way into today's hyper competitive and commercial music industry? A question like this has no clear answer (and perhaps does not deserve one), but the strategy here might be one of making a subtle impact. With newer releases which are *friendler* to the unexperienced listeners, Epica subtly enters the scene to the create an *obsessive devotion* after the innocent streamer turns to mindless fanatic after listening to the band's more loyal records of old.</span>
 <span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>My answer is *because we can*, or at least because there's an attempt to be made, and it aids the non-professional musician's understanding of the world of music. And while you won't see Mark Jansen trying to deploy a dockerised Shiny app, you *will* see him sitting down reading scientific literature to write lyrics <span class="co">[</span><span class="ot">@metal-exposure2021</span><span class="co">]</span>. Epica's inspiration on scientific knowledge for their lyrics allows for a scientific approach when trying to understand their music. As a student of social science, using data to understand the world is my best attempt at such type of knowledge.</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a><span class="fu"># An attempt at stream analysis with Last.fm scrobbles</span></span>
 <span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>Having that in mind, in this section I present an attempt at stream analysis with publicly available stream data from Last.fm. Last.fm is an online platform which tracks data from users through scrobbling, a way to "scrape" the data from music platforms and native media players and upload it to the user's Last.fm account. A listener, whoever, needs to self-select into creating a Last.fm account and connecting their streaming websites or computer's native media players to Last.fm. This data becomes publicly available to compute recommendations and compatibility analyses for the users. While it certainly leaves out an important chunk of the population: all of those who don't use Last.fm, which might create significant selection bias, this is better than nothing at all.</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>What comes to one's mind when reading about music data analysis it is easy to automatically jump towards streams. With today's stream-based music industry, data on music preferences must be infinitely better than whatever it used to be some decades ago. However, two problems arise with stream data. The first and most mundane is that *stream data is not easily accesible*, probably due to the proprietary nature of the platforms that collect such data (and perhaps its business value?). The second and more *metaphysical* issue with stream analysis is that, even though I am not a professional musician myself, I am pretty sure that no serious artist writes their music based on data (and they shouldn't). If you're not going to see Mark Jansen and Simone Simons sit down in front of a double screen display to look at a Power BI dashboard, why bother with all this?</span>
 <span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>By using the <span class="co">[</span><span class="ot">*lastfmR*</span><span class="co">](package)</span> from Piotr Patrzyk^<span class="co">[</span><span class="ot">Run `remotes::install_github("ppatrzyk/lastfmR")` in the console and you will access the package easily enough.</span><span class="co">]</span>, which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.</span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a>My answer is *because we can*, or at least because there's an attempt to be made, and it aids the non-professional musician's understanding of the world of music. And while you won't see Mark Jansen trying to deploy a dockerised Shiny app, you *will* see him sitting down reading scientific literature to write lyrics <span class="co">[</span><span class="ot">@metal-exposure2021</span><span class="co">]</span>. Epica's inspiration on scientific knowledge for their lyrics allows for a scientific approach when trying to understand their music. As a student of social science, using data to understand the world is my best attempt at such type of knowledge.</span>
 <span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: last-fm</span></span>
-<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
-<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: hide</span></span>
-<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all tracks scrobbled and clean up the track names as they are *very* dirty</span></span>
-<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a><span class="co"># This will remove all of the "part" words from the track names, which are pretty common</span></span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>Having that in mind, in this section I present an attempt at stream analysis with publicly available stream data from Last.fm. Last.fm is an online platform which tracks data from users through scrobbling, a way to "scrape" the data from music platforms and native media players and upload it to the user's Last.fm account. A listener, whoever, needs to self-select into creating a Last.fm account and connecting their streaming websites or computer's native media players to Last.fm. This data becomes publicly available to compute recommendations and compatibility analyses for the users. While it certainly leaves out an important chunk of the population: all of those who don't use Last.fm, which might create significant selection bias, this is better than nothing at all.</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>By using the <span class="co">[</span><span class="ot">*lastfmR*</span><span class="co">](package)</span> from Piotr Patrzyk^<span class="co">[</span><span class="ot">Run `remotes::install_github("ppatrzyk/lastfmR")` in the console and you will access the package easily enough.</span><span class="co">]</span>, which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: last-fm</span></span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a><span class="co">#| results: hide</span></span>
 <span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>remove_parts<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'pt 1'</span>, <span class="st">'pt 2'</span>, <span class="st">'pt 3'</span>, <span class="st">'pt 4'</span>, <span class="st">'pt 5'</span>, <span class="st">'pt 6'</span>, <span class="st">'pt 7'</span>, <span class="st">'pt 8'</span>, <span class="st">'pt 9'</span>, <span class="st">'pt 10'</span>, <span class="st">'pt 11'</span>, <span class="st">'pt 12'</span>, <span class="st">'pt 13'</span>, <span class="st">'pt 14'</span>, <span class="st">'pt 15'</span>,</span>
-<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'pt1'</span>, <span class="st">'pt2'</span>, <span class="st">'pt3'</span>, <span class="st">'pt4'</span>, <span class="st">'pt5'</span>, <span class="st">'pt6'</span>, <span class="st">'pt7'</span>, <span class="st">'pt8'</span>, <span class="st">'pt9'</span>, <span class="st">'pt10'</span>, <span class="st">'pt11'</span>, <span class="st">'pt12'</span>, <span class="st">'pt13'</span>, <span class="st">'pt14'</span>, <span class="st">'pt15'</span>,</span>
-<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part 1'</span>, <span class="st">'part 2'</span>, <span class="st">'part 3'</span>, <span class="st">'part 4'</span>, <span class="st">'part 5'</span>, <span class="st">'part 6'</span>, <span class="st">'part 7'</span>, <span class="st">'part 8'</span>, <span class="st">'part 9'</span>, <span class="st">'part 10'</span>, <span class="st">'part 11'</span>, <span class="st">'part 12'</span>, <span class="st">'part 13'</span>, <span class="st">'part 14'</span>, <span class="st">'part 15'</span>,</span>
-<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part1'</span>, <span class="st">'part2'</span>, <span class="st">'part3'</span>, <span class="st">'part4'</span>, <span class="st">'part5'</span>, <span class="st">'part6'</span>, <span class="st">'part7'</span>, <span class="st">'part8'</span>, <span class="st">'part9'</span>, <span class="st">'part10'</span>, <span class="st">'part11'</span>, <span class="st">'part12'</span>, <span class="st">'part13'</span>, <span class="st">'part14'</span>, <span class="st">'part15'</span>, <span class="st">'part'</span>,</span>
-<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part i'</span>, <span class="st">'part ii'</span>, <span class="st">'part iii'</span>, <span class="st">'part iv'</span>, <span class="st">'part v'</span>, <span class="st">'part vi'</span>, <span class="st">'part vii'</span>, <span class="st">'part viii'</span>, <span class="st">'part ix'</span>, <span class="st">'part x'</span>, <span class="st">'part xi'</span>, <span class="st">'part xii'</span>, <span class="st">'part xiii'</span>, <span class="st">'part xiv'</span>, <span class="st">'part xv'</span>,</span>
-<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'01'</span>, <span class="st">'02'</span>, <span class="st">'03'</span>, <span class="st">'04'</span>, <span class="st">'05'</span>, <span class="st">'06'</span>, <span class="st">'07'</span>, <span class="st">'08'</span>, <span class="st">'09'</span>, <span class="st">'10'</span>, <span class="st">'11'</span>, <span class="st">'12'</span>, <span class="st">'13'</span>, <span class="st">'14'</span>, <span class="st">'15'</span>, <span class="st">'17'</span>, <span class="st">'18'</span>, <span class="st">'19'</span>, <span class="st">'20'</span>, <span class="st">'21'</span>, <span class="st">'22'</span>, <span class="st">'23'</span>, <span class="st">'24'</span>, <span class="st">'25'</span>, <span class="st">'26'</span>, <span class="st">'27'</span>, <span class="st">'28'</span>, <span class="st">'29'</span>, <span class="st">'30'</span>, <span class="st">'1'</span>, <span class="st">'2'</span>, <span class="st">'3'</span>, <span class="st">'4'</span>, <span class="st">'5'</span>, <span class="st">'6'</span>, <span class="st">'7'</span>, <span class="st">'8'</span>, <span class="st">'9'</span>, <span class="st">'0'</span>)</span>
-<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>epica_tracks_lastfm <span class="ot">&lt;-</span></span>
-<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>  lastfmR<span class="sc">::</span><span class="fu">get_tracks</span>(<span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track, <span class="at">remove_char =</span> remove_parts))</span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all tracks scrobbled and clean up the track names as they are *very* dirty</span></span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a><span class="co"># This will remove all of the "part" words from the track names, which are pretty common</span></span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>remove_parts<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'pt 1'</span>, <span class="st">'pt 2'</span>, <span class="st">'pt 3'</span>, <span class="st">'pt 4'</span>, <span class="st">'pt 5'</span>, <span class="st">'pt 6'</span>, <span class="st">'pt 7'</span>, <span class="st">'pt 8'</span>, <span class="st">'pt 9'</span>, <span class="st">'pt 10'</span>, <span class="st">'pt 11'</span>, <span class="st">'pt 12'</span>, <span class="st">'pt 13'</span>, <span class="st">'pt 14'</span>, <span class="st">'pt 15'</span>,</span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'pt1'</span>, <span class="st">'pt2'</span>, <span class="st">'pt3'</span>, <span class="st">'pt4'</span>, <span class="st">'pt5'</span>, <span class="st">'pt6'</span>, <span class="st">'pt7'</span>, <span class="st">'pt8'</span>, <span class="st">'pt9'</span>, <span class="st">'pt10'</span>, <span class="st">'pt11'</span>, <span class="st">'pt12'</span>, <span class="st">'pt13'</span>, <span class="st">'pt14'</span>, <span class="st">'pt15'</span>,</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part 1'</span>, <span class="st">'part 2'</span>, <span class="st">'part 3'</span>, <span class="st">'part 4'</span>, <span class="st">'part 5'</span>, <span class="st">'part 6'</span>, <span class="st">'part 7'</span>, <span class="st">'part 8'</span>, <span class="st">'part 9'</span>, <span class="st">'part 10'</span>, <span class="st">'part 11'</span>, <span class="st">'part 12'</span>, <span class="st">'part 13'</span>, <span class="st">'part 14'</span>, <span class="st">'part 15'</span>,</span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part1'</span>, <span class="st">'part2'</span>, <span class="st">'part3'</span>, <span class="st">'part4'</span>, <span class="st">'part5'</span>, <span class="st">'part6'</span>, <span class="st">'part7'</span>, <span class="st">'part8'</span>, <span class="st">'part9'</span>, <span class="st">'part10'</span>, <span class="st">'part11'</span>, <span class="st">'part12'</span>, <span class="st">'part13'</span>, <span class="st">'part14'</span>, <span class="st">'part15'</span>, <span class="st">'part'</span>,</span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'part i'</span>, <span class="st">'part ii'</span>, <span class="st">'part iii'</span>, <span class="st">'part iv'</span>, <span class="st">'part v'</span>, <span class="st">'part vi'</span>, <span class="st">'part vii'</span>, <span class="st">'part viii'</span>, <span class="st">'part ix'</span>, <span class="st">'part x'</span>, <span class="st">'part xi'</span>, <span class="st">'part xii'</span>, <span class="st">'part xiii'</span>, <span class="st">'part xiv'</span>, <span class="st">'part xv'</span>,</span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'01'</span>, <span class="st">'02'</span>, <span class="st">'03'</span>, <span class="st">'04'</span>, <span class="st">'05'</span>, <span class="st">'06'</span>, <span class="st">'07'</span>, <span class="st">'08'</span>, <span class="st">'09'</span>, <span class="st">'10'</span>, <span class="st">'11'</span>, <span class="st">'12'</span>, <span class="st">'13'</span>, <span class="st">'14'</span>, <span class="st">'15'</span>, <span class="st">'17'</span>, <span class="st">'18'</span>, <span class="st">'19'</span>, <span class="st">'20'</span>, <span class="st">'21'</span>, <span class="st">'22'</span>, <span class="st">'23'</span>, <span class="st">'24'</span>, <span class="st">'25'</span>, <span class="st">'26'</span>, <span class="st">'27'</span>, <span class="st">'28'</span>, <span class="st">'29'</span>, <span class="st">'30'</span>, <span class="st">'1'</span>, <span class="st">'2'</span>, <span class="st">'3'</span>, <span class="st">'4'</span>, <span class="st">'5'</span>, <span class="st">'6'</span>, <span class="st">'7'</span>, <span class="st">'8'</span>, <span class="st">'9'</span>, <span class="st">'0'</span>)</span>
 <span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by track name and sum scrobbles to later join with the spotify data</span></span>
-<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>track_scrobbles <span class="ot">&lt;-</span></span>
-<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>  epica_tracks_lastfm <span class="sc">%&gt;%</span> </span>
-<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(track_clean) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">scrobbles =</span> <span class="fu">sum</span>(scrobbles)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_clean, <span class="at">remove_char =</span> remove_parts),</span>
-<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>         <span class="at">live =</span> <span class="fu">if_else</span>(track_clean <span class="sc">%&gt;%</span> <span class="fu">str_like</span>(<span class="st">'%live%'</span>), <span class="st">'live'</span>, <span class="st">'not live'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(live <span class="sc">==</span> <span class="st">'not live'</span>,</span>
-<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>         track_clean <span class="sc">!=</span> <span class="st">' '</span>,</span>
-<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(track_clean),</span>
-<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span>(track_clean <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'i'</span>, <span class="st">'ii'</span>, <span class="st">'iii'</span>, <span class="st">'iv'</span>, <span class="st">'v'</span>, <span class="st">'vi'</span>, <span class="st">'viii'</span>, <span class="st">'viii'</span>, <span class="st">'ix'</span>, <span class="st">'x'</span>)))</span>
-<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner join the songs dataset from lastfm to spotify track metrics based on "clean" track names</span></span>
-<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>epica_tracks <span class="ot">&lt;-</span></span>
-<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span> </span>
-<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(track_name,</span>
-<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a>            album_name, </span>
-<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>            album_id,</span>
-<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>            <span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_name, <span class="at">remove_char =</span> remove_parts)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(track_scrobbles, <span class="at">by =</span> <span class="st">'track_clean'</span>)</span>
-<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="ot">&lt;-</span></span>
-<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span></span>
-<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(track_name,</span>
-<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a>            album_name, </span>
-<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>            album_id,</span>
-<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>            <span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_name, <span class="at">remove_char =</span> remove_parts)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stringdist_inner_join</span>(track_scrobbles, </span>
-<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>                        <span class="at">by =</span> <span class="st">'track_clean'</span>, </span>
-<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>                        <span class="at">method =</span> <span class="st">'dl'</span>, </span>
-<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max_dist =</span> <span class="dv">2</span>,</span>
-<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>                        <span class="at">distance_col =</span> <span class="st">'dist'</span>)</span>
-<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>epica_tracks <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">sum</span>(scrobbles))  </span>
-<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">sum</span>(scrobbles)) </span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a>epica_tracks_lastfm <span class="ot">&lt;-</span></span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>  lastfmR<span class="sc">::</span><span class="fu">get_tracks</span>(<span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track, <span class="at">remove_char =</span> remove_parts))</span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a><span class="co"># Group by track name and sum scrobbles to later join with the spotify data</span></span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a>track_scrobbles <span class="ot">&lt;-</span></span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a>  epica_tracks_lastfm <span class="sc">%&gt;%</span> </span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(track_clean) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">scrobbles =</span> <span class="fu">sum</span>(scrobbles)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-249"><a href="#cb5-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb5-250"><a href="#cb5-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_clean, <span class="at">remove_char =</span> remove_parts),</span>
+<span id="cb5-251"><a href="#cb5-251" aria-hidden="true" tabindex="-1"></a>         <span class="at">live =</span> <span class="fu">if_else</span>(track_clean <span class="sc">%&gt;%</span> <span class="fu">str_like</span>(<span class="st">'%live%'</span>), <span class="st">'live'</span>, <span class="st">'not live'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-252"><a href="#cb5-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(live <span class="sc">==</span> <span class="st">'not live'</span>,</span>
+<span id="cb5-253"><a href="#cb5-253" aria-hidden="true" tabindex="-1"></a>         track_clean <span class="sc">!=</span> <span class="st">' '</span>,</span>
+<span id="cb5-254"><a href="#cb5-254" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(track_clean),</span>
+<span id="cb5-255"><a href="#cb5-255" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span>(track_clean <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">'i'</span>, <span class="st">'ii'</span>, <span class="st">'iii'</span>, <span class="st">'iv'</span>, <span class="st">'v'</span>, <span class="st">'vi'</span>, <span class="st">'viii'</span>, <span class="st">'viii'</span>, <span class="st">'ix'</span>, <span class="st">'x'</span>)))</span>
+<span id="cb5-256"><a href="#cb5-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-257"><a href="#cb5-257" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner join the songs dataset from lastfm to spotify track metrics based on "clean" track names</span></span>
+<span id="cb5-258"><a href="#cb5-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-259"><a href="#cb5-259" aria-hidden="true" tabindex="-1"></a>epica_tracks <span class="ot">&lt;-</span></span>
+<span id="cb5-260"><a href="#cb5-260" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span> </span>
+<span id="cb5-261"><a href="#cb5-261" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(track_name,</span>
+<span id="cb5-262"><a href="#cb5-262" aria-hidden="true" tabindex="-1"></a>            album_name, </span>
+<span id="cb5-263"><a href="#cb5-263" aria-hidden="true" tabindex="-1"></a>            album_id,</span>
+<span id="cb5-264"><a href="#cb5-264" aria-hidden="true" tabindex="-1"></a>            <span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_name, <span class="at">remove_char =</span> remove_parts)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-265"><a href="#cb5-265" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(track_scrobbles, <span class="at">by =</span> <span class="st">'track_clean'</span>)</span>
+<span id="cb5-266"><a href="#cb5-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-267"><a href="#cb5-267" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="ot">&lt;-</span></span>
+<span id="cb5-268"><a href="#cb5-268" aria-hidden="true" tabindex="-1"></a>  epica_track_metrics <span class="sc">%&gt;%</span></span>
+<span id="cb5-269"><a href="#cb5-269" aria-hidden="true" tabindex="-1"></a>  <span class="fu">transmute</span>(track_name,</span>
+<span id="cb5-270"><a href="#cb5-270" aria-hidden="true" tabindex="-1"></a>            album_name, </span>
+<span id="cb5-271"><a href="#cb5-271" aria-hidden="true" tabindex="-1"></a>            album_id,</span>
+<span id="cb5-272"><a href="#cb5-272" aria-hidden="true" tabindex="-1"></a>            <span class="at">track_clean =</span> <span class="fu">clean_strings</span>(track_name, <span class="at">remove_char =</span> remove_parts)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-273"><a href="#cb5-273" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stringdist_inner_join</span>(track_scrobbles, </span>
+<span id="cb5-274"><a href="#cb5-274" aria-hidden="true" tabindex="-1"></a>                        <span class="at">by =</span> <span class="st">'track_clean'</span>, </span>
+<span id="cb5-275"><a href="#cb5-275" aria-hidden="true" tabindex="-1"></a>                        <span class="at">method =</span> <span class="st">'dl'</span>, </span>
+<span id="cb5-276"><a href="#cb5-276" aria-hidden="true" tabindex="-1"></a>                        <span class="at">max_dist =</span> <span class="dv">2</span>,</span>
+<span id="cb5-277"><a href="#cb5-277" aria-hidden="true" tabindex="-1"></a>                        <span class="at">distance_col =</span> <span class="st">'dist'</span>)</span>
 <span id="cb5-278"><a href="#cb5-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="sc">%&gt;%</span> <span class="fu">select</span>(track_clean.x, track_clean.y, dist) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(dist))</span>
+<span id="cb5-279"><a href="#cb5-279" aria-hidden="true" tabindex="-1"></a>epica_tracks <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">sum</span>(scrobbles))  </span>
 <span id="cb5-280"><a href="#cb5-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scrobbles by album and join with the album metrics and with album table to get the year</span></span>
+<span id="cb5-281"><a href="#cb5-281" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">sum</span>(scrobbles)) </span>
 <span id="cb5-282"><a href="#cb5-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a>scrobbles_by_album <span class="ot">&lt;-</span></span>
-<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a>  epica_tracks <span class="sc">%&gt;%</span> </span>
-<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(epica_releases_year, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_spotify'</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(release_name_year, release_year) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">scrobbles =</span> <span class="fu">sum</span>(scrobbles)) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()  <span class="sc">%&gt;%</span> </span>
-<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(release_year))</span>
-<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: scrobbles-by-album</span></span>
-<span id="cb5-296"><a href="#cb5-296" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb5-297"><a href="#cb5-297" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a><span class="co"># Include the epica logo in the dataframe</span></span>
-<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a>scrobbles_by_album <span class="sc">%&gt;%</span></span>
-<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(release_year <span class="sc">&lt;</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">image2 =</span> <span class="st">'snake-logo1.png'</span>,</span>
-<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a>         <span class="at">scrobbles1 =</span> scrobbles<span class="sc">/</span><span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(scrobbles1, <span class="fu">reorder</span>(release_name_year, scrobbles1))) <span class="sc">+</span></span>
-<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">yend =</span> release_name_year), </span>
-<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a>               <span class="at">xend =</span> <span class="dv">0</span>, </span>
-<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"gray"</span>,</span>
-<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
-<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image =</span> image2), <span class="at">size =</span> <span class="fl">0.08</span>) <span class="sc">+</span></span>
-<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Millions of Last.fm scrobbles"</span>, </span>
-<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Scrobbles are records of Last.fm users who chose to report the songs they listen to the platform. Data obtained through the Last.fm and Spotify APIs through the lastfmR and spotifyR packages. A mapping of the Last.fm dataset was done to the Spotify album-track datasets using Damerau-Levenshtein string distance, so data may not show all true scrobbles."</span>, <span class="dv">120</span>),</span>
-<span id="cb5-315"><a href="#cb5-315" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Epica's most popular albums were released in the 2000s"</span>,</span>
-<span id="cb5-316"><a href="#cb5-316" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"The Classical Conspiracy (2007) remains a fan favourite with over 5M scrobbles"</span>)<span class="sc">+</span></span>
-<span id="cb5-317"><a href="#cb5-317" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span> </span>
-<span id="cb5-318"><a href="#cb5-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb5-319"><a href="#cb5-319" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb5-320"><a href="#cb5-320" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>),</span>
-<span id="cb5-321"><a href="#cb5-321" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>))</span>
-<span id="cb5-322"><a href="#cb5-322" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-323"><a href="#cb5-323" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-324"><a href="#cb5-324" aria-hidden="true" tabindex="-1"></a>The streams were obtained using the *lastfmR* package, which allows to obtain the number of streams of all songs which are mapped to most artists. However, two issues exist with the use of *lastfmR* for performing stream analysis. First, tracks are scrobbled from users *with the exact same name that they have in the user's computer or stream platform*. This is not an issue for Last.fm users who are streaming from platforms, as the track names are standard and easy to map to albums, however, for those users scrobbling from their own media players (e.g. iTunes) you will get messy track names and thus it is not possible to make perfect matches when joining the data. I used Damerau-Levenshtein string distance to perfom fuzzy joins, however, the existence of 100+ entries for the same song in the Last.fm makes it possible to only observe a portion of the scrobbles, as the API limits scrobble data to 10,000 rows. </span>
-<span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a>The other issue is impossible to alleviate: we only observe a minority of stream users as probably only a small portion of all Epica listeners choose to record their listening patterns with Last.fm. All results from the analysis of this dataset could be significantly biased (which is why it is probably not worth running any kind of statistical model using this data). Access to the full dataset is likely only available to platform insiders and artists themselves, so at least any kind of advanced regression analysis is theoretically possible and useful for these parties. </span>
+<span id="cb5-283"><a href="#cb5-283" aria-hidden="true" tabindex="-1"></a>epica_tracks_joined <span class="sc">%&gt;%</span> <span class="fu">select</span>(track_clean.x, track_clean.y, dist) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(dist))</span>
+<span id="cb5-284"><a href="#cb5-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-285"><a href="#cb5-285" aria-hidden="true" tabindex="-1"></a><span class="co"># Create scrobbles by album and join with the album metrics and with album table to get the year</span></span>
+<span id="cb5-286"><a href="#cb5-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-287"><a href="#cb5-287" aria-hidden="true" tabindex="-1"></a>scrobbles_by_album <span class="ot">&lt;-</span></span>
+<span id="cb5-288"><a href="#cb5-288" aria-hidden="true" tabindex="-1"></a>  epica_tracks <span class="sc">%&gt;%</span> </span>
+<span id="cb5-289"><a href="#cb5-289" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(epica_releases_year, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_spotify'</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-290"><a href="#cb5-290" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(release_name_year, release_year) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-291"><a href="#cb5-291" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">scrobbles =</span> <span class="fu">sum</span>(scrobbles)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-292"><a href="#cb5-292" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()  <span class="sc">%&gt;%</span> </span>
+<span id="cb5-293"><a href="#cb5-293" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(release_year))</span>
+<span id="cb5-294"><a href="#cb5-294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-295"><a href="#cb5-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-298"><a href="#cb5-298" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-299"><a href="#cb5-299" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: scrobbles-by-album</span></span>
+<span id="cb5-300"><a href="#cb5-300" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb5-301"><a href="#cb5-301" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb5-302"><a href="#cb5-302" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
+<span id="cb5-303"><a href="#cb5-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-304"><a href="#cb5-304" aria-hidden="true" tabindex="-1"></a><span class="co"># Include the epica logo in the dataframe</span></span>
+<span id="cb5-305"><a href="#cb5-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-306"><a href="#cb5-306" aria-hidden="true" tabindex="-1"></a>scrobbles_by_album <span class="sc">%&gt;%</span></span>
+<span id="cb5-307"><a href="#cb5-307" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(release_year <span class="sc">&lt;</span> <span class="dv">2021</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-308"><a href="#cb5-308" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">image2 =</span> <span class="st">'snake-logo1.png'</span>,</span>
+<span id="cb5-309"><a href="#cb5-309" aria-hidden="true" tabindex="-1"></a>         <span class="at">scrobbles1 =</span> scrobbles<span class="sc">/</span><span class="dv">1000000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-310"><a href="#cb5-310" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(scrobbles1, <span class="fu">reorder</span>(release_name_year, scrobbles1))) <span class="sc">+</span></span>
+<span id="cb5-311"><a href="#cb5-311" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">yend =</span> release_name_year), </span>
+<span id="cb5-312"><a href="#cb5-312" aria-hidden="true" tabindex="-1"></a>               <span class="at">xend =</span> <span class="dv">0</span>, </span>
+<span id="cb5-313"><a href="#cb5-313" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"gray"</span>,</span>
+<span id="cb5-314"><a href="#cb5-314" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb5-315"><a href="#cb5-315" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_image</span>(<span class="fu">aes</span>(<span class="at">image =</span> image2), <span class="at">size =</span> <span class="fl">0.08</span>) <span class="sc">+</span></span>
+<span id="cb5-316"><a href="#cb5-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Millions of Last.fm scrobbles"</span>, </span>
+<span id="cb5-317"><a href="#cb5-317" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb5-318"><a href="#cb5-318" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Scrobbles are records of Last.fm users who chose to report the songs they listen to the platform. Data obtained through the Last.fm and Spotify APIs through the lastfmR and spotifyR packages. A mapping of the Last.fm dataset was done to the Spotify album-track datasets using Damerau-Levenshtein string distance, so data may not show all true scrobbles. Snake logo created and owned by EPICA."</span>, <span class="dv">120</span>),</span>
+<span id="cb5-319"><a href="#cb5-319" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Epica's most popular albums were released in the 2000s"</span>,</span>
+<span id="cb5-320"><a href="#cb5-320" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"The Classical Conspiracy (2007) remains a fan favourite with over 5M scrobbles"</span>)<span class="sc">+</span></span>
+<span id="cb5-321"><a href="#cb5-321" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span> </span>
+<span id="cb5-322"><a href="#cb5-322" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb5-323"><a href="#cb5-323" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb5-324"><a href="#cb5-324" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>),</span>
+<span id="cb5-325"><a href="#cb5-325" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">'white'</span>))</span>
+<span id="cb5-326"><a href="#cb5-326" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-327"><a href="#cb5-327" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a>Having mentioned that, the figure above shows pretty coherent results. The most listened albums are those released in the 2000s, as they've had more time to be scrobbled by Last.fm users. This makes sense for a non-mainstream artist like Epica, however, it is also possible that listeners appreciate the more symphonic albums, among them *The Phantom Agony*. Because of the small difference in scrobbles between *Consign to Oblivion* and *The Divine Conspiracy*, it isn't possible to say which of the two is the most popular. However, with the data at hand, it is safe to say that Epica's most popular releases were released in the previous decade, when modern metal was considerably more listened relative to the 2010s. Epica's latest effort, *The Alchemy Project*, released in 2022, seems to be the weakest, however, given the short amount of time that has passed, one could expect streams to gradually increase to the same levels of the late 2010s releases. </span>
+<span id="cb5-328"><a href="#cb5-328" aria-hidden="true" tabindex="-1"></a>The streams were obtained using the *lastfmR* package, which allows to obtain the number of streams of all songs which are mapped to most artists. However, two issues exist with the use of *lastfmR* for performing stream analysis. First, tracks are scrobbled from users *with the exact same name that they have in the user's computer or stream platform*. This is not an issue for Last.fm users who are streaming from platforms, as the track names are standard and easy to map to albums, however, for those users scrobbling from their own media players (e.g. iTunes) you will get messy track names and thus it is not possible to make perfect matches when joining the data. I used Damerau-Levenshtein string distance to perfom fuzzy joins, however, the existence of 100+ entries for the same song in the Last.fm makes it possible to only observe a portion of the scrobbles, as the API limits scrobble data to 10,000 rows. </span>
 <span id="cb5-329"><a href="#cb5-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a><span class="fu"># Using the Genius API for lyric text analysis</span></span>
+<span id="cb5-330"><a href="#cb5-330" aria-hidden="true" tabindex="-1"></a>The other issue is impossible to alleviate: we only observe a minority of stream users as probably only a small portion of all Epica listeners choose to record their listening patterns with Last.fm. All results from the analysis of this dataset could be significantly biased (which is why it is probably not worth running any kind of statistical model using this data). Access to the full dataset is likely only available to platform insiders and artists themselves, so at least any kind of advanced regression analysis is theoretically possible and useful for these parties. </span>
 <span id="cb5-331"><a href="#cb5-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a>Apart from Epica's characteristic blend of symphony and traditional heavy metal, another element which makes the artist stand out are the lyrics. Epica's lyrics, unlike what much of today's lyrics, are not easily accessible: all deal with complex ideas which motivate reflection by the listener on themes prevalent on the world. Moreover, the lyrics are strongly multiligual, with a strong emphasis on the use of Latin verses, probably the most notable Epica signature to the average listener. </span>
+<span id="cb5-332"><a href="#cb5-332" aria-hidden="true" tabindex="-1"></a>Having mentioned that, the figure above shows pretty coherent results. The most listened albums are those released in the 2000s, as they've had more time to be scrobbled by Last.fm users. This makes sense for a non-mainstream artist like Epica, however, it is also possible that listeners appreciate the more symphonic albums, among them *The Phantom Agony*. Because of the small difference in scrobbles between *Consign to Oblivion* and *The Divine Conspiracy*, it isn't possible to say which of the two is the most popular. However, with the data at hand, it is safe to say that Epica's most popular releases were released in the previous decade, when modern metal was considerably more listened relative to the 2010s. Epica's latest effort, *The Alchemy Project*, released in 2022, seems to be the weakest, however, given the short amount of time that has passed, one could expect streams to gradually increase to the same levels of the late 2010s releases. </span>
 <span id="cb5-333"><a href="#cb5-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a>Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically <span class="co">[</span><span class="ot">tidy text analysis</span><span class="co">](https://www.tidytextmining.com/)</span>. With the existence of the amazing <span class="co">[</span><span class="ot">*geniusr*</span><span class="co">](https://ewenme.github.io/geniusr/)</span> package, text analysis of musical lyrics is almost effortless^<span class="co">[</span><span class="ot">What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_githubb('giovanni-cutri/geniusR')`.</span><span class="co">]</span>, as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis. </span>
+<span id="cb5-334"><a href="#cb5-334" aria-hidden="true" tabindex="-1"></a><span class="fu"># Using the Genius API for lyric text analysis</span></span>
 <span id="cb5-335"><a href="#cb5-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a>Below, I present some code and the classic wordcloud + wordcount bar plot of *The Phantom Agony*'s lyrics.</span>
+<span id="cb5-336"><a href="#cb5-336" aria-hidden="true" tabindex="-1"></a>Apart from Epica's characteristic blend of symphony and traditional heavy metal, another element which makes the artist stand out are the lyrics. Epica's lyrics, unlike what much of today's lyrics, are not easily accessible: all deal with complex ideas which motivate reflection by the listener on themes prevalent on the world. Moreover, the lyrics are strongly multiligual, with a strong emphasis on the use of Latin verses, probably the most notable Epica signature to the average listener. </span>
 <span id="cb5-337"><a href="#cb5-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: text-analysis</span></span>
-<span id="cb5-342"><a href="#cb5-342" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the genius artist id for Epica using their artist search function</span></span>
-<span id="cb5-343"><a href="#cb5-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-344"><a href="#cb5-344" aria-hidden="true" tabindex="-1"></a>epica_id <span class="ot">&lt;-</span></span>
-<span id="cb5-345"><a href="#cb5-345" aria-hidden="true" tabindex="-1"></a>  <span class="fu">search_artist</span>(<span class="st">'epica'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-346"><a href="#cb5-346" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(artist_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-347"><a href="#cb5-347" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
-<span id="cb5-348"><a href="#cb5-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-349"><a href="#cb5-349" aria-hidden="true" tabindex="-1"></a><span class="co"># Look for a track in the album to get the Genius album id</span></span>
-<span id="cb5-350"><a href="#cb5-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-351"><a href="#cb5-351" aria-hidden="true" tabindex="-1"></a>cry_for_the_moon_id <span class="ot">&lt;-</span></span>
-<span id="cb5-352"><a href="#cb5-352" aria-hidden="true" tabindex="-1"></a>  <span class="fu">search_song</span>(<span class="st">'cry for the moon'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-353"><a href="#cb5-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-354"><a href="#cb5-354" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-355"><a href="#cb5-355" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
-<span id="cb5-356"><a href="#cb5-356" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-357"><a href="#cb5-357" aria-hidden="true" tabindex="-1"></a><span class="co"># Get data for cry for the moon</span></span>
-<span id="cb5-358"><a href="#cb5-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-359"><a href="#cb5-359" aria-hidden="true" tabindex="-1"></a>cry_for_the_moon_df <span class="ot">&lt;-</span></span>
-<span id="cb5-360"><a href="#cb5-360" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_song_df</span>(cry_for_the_moon_id)</span>
-<span id="cb5-361"><a href="#cb5-361" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-362"><a href="#cb5-362" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the album id for The Phantom Agony in the data of Cry for the Moon</span></span>
-<span id="cb5-363"><a href="#cb5-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-364"><a href="#cb5-364" aria-hidden="true" tabindex="-1"></a>the_phantom_agony_id <span class="ot">&lt;-</span></span>
-<span id="cb5-365"><a href="#cb5-365" aria-hidden="true" tabindex="-1"></a>  cry_for_the_moon_df <span class="sc">%&gt;%</span> </span>
-<span id="cb5-366"><a href="#cb5-366" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(album_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-367"><a href="#cb5-367" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
-<span id="cb5-368"><a href="#cb5-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-369"><a href="#cb5-369" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all songs in the album and their ids</span></span>
-<span id="cb5-370"><a href="#cb5-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-371"><a href="#cb5-371" aria-hidden="true" tabindex="-1"></a>the_phantom_agony_songs  <span class="ot">&lt;-</span> </span>
-<span id="cb5-372"><a href="#cb5-372" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_album_tracklist_id</span>(the_phantom_agony_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-373"><a href="#cb5-373" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-374"><a href="#cb5-374" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(song_name, song_id), </span>
-<span id="cb5-375"><a href="#cb5-375" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>))</span>
-<span id="cb5-376"><a href="#cb5-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-377"><a href="#cb5-377" aria-hidden="true" tabindex="-1"></a>track_ids <span class="ot">&lt;-</span></span>
-<span id="cb5-378"><a href="#cb5-378" aria-hidden="true" tabindex="-1"></a>  the_phantom_agony_songs<span class="sc">$</span>song_id</span>
-<span id="cb5-379"><a href="#cb5-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-380"><a href="#cb5-380" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract lyrics for all tracks and combine into a single dataframe</span></span>
-<span id="cb5-381"><a href="#cb5-381" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-382"><a href="#cb5-382" aria-hidden="true" tabindex="-1"></a>phantom_agony_lyrics <span class="ot">&lt;-</span></span>
-<span id="cb5-383"><a href="#cb5-383" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(track_ids, get_lyrics_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-384"><a href="#cb5-384" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb5-385"><a href="#cb5-385" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>)</span>
-<span id="cb5-386"><a href="#cb5-386" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-387"><a href="#cb5-387" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize the lyrics and antijoin with stop words</span></span>
-<span id="cb5-388"><a href="#cb5-388" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-389"><a href="#cb5-389" aria-hidden="true" tabindex="-1"></a>phantom_agony_words <span class="ot">&lt;-</span></span>
-<span id="cb5-390"><a href="#cb5-390" aria-hidden="true" tabindex="-1"></a>  phantom_agony_lyrics <span class="sc">%&gt;%</span> </span>
-<span id="cb5-391"><a href="#cb5-391" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word,</span>
-<span id="cb5-392"><a href="#cb5-392" aria-hidden="true" tabindex="-1"></a>                <span class="at">input =</span> line) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-393"><a href="#cb5-393" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>)</span>
-<span id="cb5-394"><a href="#cb5-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-395"><a href="#cb5-395" aria-hidden="true" tabindex="-1"></a><span class="co"># A word count df</span></span>
-<span id="cb5-396"><a href="#cb5-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-397"><a href="#cb5-397" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="ot">&lt;-</span></span>
-<span id="cb5-398"><a href="#cb5-398" aria-hidden="true" tabindex="-1"></a>  phantom_agony_words <span class="sc">%&gt;%</span> </span>
-<span id="cb5-399"><a href="#cb5-399" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-400"><a href="#cb5-400" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">freq =</span> <span class="st">'n'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-401"><a href="#cb5-401" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(freq))</span>
-<span id="cb5-402"><a href="#cb5-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-403"><a href="#cb5-403" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colours</span></span>
-<span id="cb5-404"><a href="#cb5-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-405"><a href="#cb5-405" aria-hidden="true" tabindex="-1"></a>bright_orange <span class="ot">&lt;-</span> <span class="st">"#FFA500"</span>  <span class="co"># hex code for bright orange</span></span>
+<span id="cb5-338"><a href="#cb5-338" aria-hidden="true" tabindex="-1"></a>Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically <span class="co">[</span><span class="ot">tidy text analysis</span><span class="co">](https://www.tidytextmining.com/)</span>. With the existence of the amazing <span class="co">[</span><span class="ot">*geniusr*</span><span class="co">](https://ewenme.github.io/geniusr/)</span> package, text analysis of musical lyrics is almost effortless^<span class="co">[</span><span class="ot">What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_githubb('giovanni-cutri/geniusR')`.</span><span class="co">]</span>, as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis. </span>
+<span id="cb5-339"><a href="#cb5-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-340"><a href="#cb5-340" aria-hidden="true" tabindex="-1"></a>Below, I present some code and the classic wordcloud + wordcount bar plot of *The Phantom Agony*'s lyrics.</span>
+<span id="cb5-341"><a href="#cb5-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-344"><a href="#cb5-344" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-345"><a href="#cb5-345" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: text-analysis</span></span>
+<span id="cb5-346"><a href="#cb5-346" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the genius artist id for Epica using their artist search function</span></span>
+<span id="cb5-347"><a href="#cb5-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-348"><a href="#cb5-348" aria-hidden="true" tabindex="-1"></a>epica_id <span class="ot">&lt;-</span></span>
+<span id="cb5-349"><a href="#cb5-349" aria-hidden="true" tabindex="-1"></a>  <span class="fu">search_artist</span>(<span class="st">'epica'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-350"><a href="#cb5-350" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(artist_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-351"><a href="#cb5-351" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
+<span id="cb5-352"><a href="#cb5-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-353"><a href="#cb5-353" aria-hidden="true" tabindex="-1"></a><span class="co"># Look for a track in the album to get the Genius album id</span></span>
+<span id="cb5-354"><a href="#cb5-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-355"><a href="#cb5-355" aria-hidden="true" tabindex="-1"></a>cry_for_the_moon_id <span class="ot">&lt;-</span></span>
+<span id="cb5-356"><a href="#cb5-356" aria-hidden="true" tabindex="-1"></a>  <span class="fu">search_song</span>(<span class="st">'cry for the moon'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-357"><a href="#cb5-357" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-358"><a href="#cb5-358" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-359"><a href="#cb5-359" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
+<span id="cb5-360"><a href="#cb5-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-361"><a href="#cb5-361" aria-hidden="true" tabindex="-1"></a><span class="co"># Get data for cry for the moon</span></span>
+<span id="cb5-362"><a href="#cb5-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-363"><a href="#cb5-363" aria-hidden="true" tabindex="-1"></a>cry_for_the_moon_df <span class="ot">&lt;-</span></span>
+<span id="cb5-364"><a href="#cb5-364" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_song_df</span>(cry_for_the_moon_id)</span>
+<span id="cb5-365"><a href="#cb5-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-366"><a href="#cb5-366" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the album id for The Phantom Agony in the data of Cry for the Moon</span></span>
+<span id="cb5-367"><a href="#cb5-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-368"><a href="#cb5-368" aria-hidden="true" tabindex="-1"></a>the_phantom_agony_id <span class="ot">&lt;-</span></span>
+<span id="cb5-369"><a href="#cb5-369" aria-hidden="true" tabindex="-1"></a>  cry_for_the_moon_df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-370"><a href="#cb5-370" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(album_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-371"><a href="#cb5-371" aria-hidden="true" tabindex="-1"></a>  <span class="fu">as.vector</span>()</span>
+<span id="cb5-372"><a href="#cb5-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-373"><a href="#cb5-373" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all songs in the album and their ids</span></span>
+<span id="cb5-374"><a href="#cb5-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-375"><a href="#cb5-375" aria-hidden="true" tabindex="-1"></a>the_phantom_agony_songs  <span class="ot">&lt;-</span> </span>
+<span id="cb5-376"><a href="#cb5-376" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_album_tracklist_id</span>(the_phantom_agony_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-377"><a href="#cb5-377" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-378"><a href="#cb5-378" aria-hidden="true" tabindex="-1"></a>              <span class="fu">select</span>(song_name, song_id), </span>
+<span id="cb5-379"><a href="#cb5-379" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>))</span>
+<span id="cb5-380"><a href="#cb5-380" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-381"><a href="#cb5-381" aria-hidden="true" tabindex="-1"></a>track_ids <span class="ot">&lt;-</span></span>
+<span id="cb5-382"><a href="#cb5-382" aria-hidden="true" tabindex="-1"></a>  the_phantom_agony_songs<span class="sc">$</span>song_id</span>
+<span id="cb5-383"><a href="#cb5-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-384"><a href="#cb5-384" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract lyrics for all tracks and combine into a single dataframe</span></span>
+<span id="cb5-385"><a href="#cb5-385" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-386"><a href="#cb5-386" aria-hidden="true" tabindex="-1"></a>phantom_agony_lyrics <span class="ot">&lt;-</span></span>
+<span id="cb5-387"><a href="#cb5-387" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(track_ids, get_lyrics_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-388"><a href="#cb5-388" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-389"><a href="#cb5-389" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="sc">-</span><span class="dv">1</span><span class="sc">:-</span><span class="dv">2</span>)</span>
+<span id="cb5-390"><a href="#cb5-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-391"><a href="#cb5-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize the lyrics and antijoin with stop words</span></span>
+<span id="cb5-392"><a href="#cb5-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-393"><a href="#cb5-393" aria-hidden="true" tabindex="-1"></a>phantom_agony_words <span class="ot">&lt;-</span></span>
+<span id="cb5-394"><a href="#cb5-394" aria-hidden="true" tabindex="-1"></a>  phantom_agony_lyrics <span class="sc">%&gt;%</span> </span>
+<span id="cb5-395"><a href="#cb5-395" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">output =</span> word,</span>
+<span id="cb5-396"><a href="#cb5-396" aria-hidden="true" tabindex="-1"></a>                <span class="at">input =</span> line) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-397"><a href="#cb5-397" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>)</span>
+<span id="cb5-398"><a href="#cb5-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-399"><a href="#cb5-399" aria-hidden="true" tabindex="-1"></a><span class="co"># A word count df</span></span>
+<span id="cb5-400"><a href="#cb5-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-401"><a href="#cb5-401" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="ot">&lt;-</span></span>
+<span id="cb5-402"><a href="#cb5-402" aria-hidden="true" tabindex="-1"></a>  phantom_agony_words <span class="sc">%&gt;%</span> </span>
+<span id="cb5-403"><a href="#cb5-403" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-404"><a href="#cb5-404" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">freq =</span> <span class="st">'n'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-405"><a href="#cb5-405" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(freq))</span>
 <span id="cb5-406"><a href="#cb5-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-407"><a href="#cb5-407" aria-hidden="true" tabindex="-1"></a>dark_red <span class="ot">&lt;-</span> <span class="st">"#8B0000"</span>  <span class="co"># hex code for dark red</span></span>
+<span id="cb5-407"><a href="#cb5-407" aria-hidden="true" tabindex="-1"></a><span class="co"># Define colours</span></span>
 <span id="cb5-408"><a href="#cb5-408" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-409"><a href="#cb5-409" aria-hidden="true" tabindex="-1"></a>golden_yellow <span class="ot">&lt;-</span> <span class="st">"#FFD700"</span>  <span class="co"># hex code for golden yellow</span></span>
+<span id="cb5-409"><a href="#cb5-409" aria-hidden="true" tabindex="-1"></a>bright_orange <span class="ot">&lt;-</span> <span class="st">"#FFA500"</span>  <span class="co"># hex code for bright orange</span></span>
 <span id="cb5-410"><a href="#cb5-410" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-411"><a href="#cb5-411" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette</span></span>
-<span id="cb5-412"><a href="#cb5-412" aria-hidden="true" tabindex="-1"></a>color_palette <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(bright_orange, dark_red, golden_yellow))</span>
-<span id="cb5-413"><a href="#cb5-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-414"><a href="#cb5-414" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a palette of 10 colors</span></span>
-<span id="cb5-415"><a href="#cb5-415" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">color_palette</span>(<span class="dv">100</span>)</span>
-<span id="cb5-416"><a href="#cb5-416" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-417"><a href="#cb5-417" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb5-418"><a href="#cb5-418" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-419"><a href="#cb5-419" aria-hidden="true" tabindex="-1"></a>wc_phantom_agony <span class="ot">&lt;-</span></span>
-<span id="cb5-420"><a href="#cb5-420" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">data =</span> phantom_agony_wordcount <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">100</span>),</span>
-<span id="cb5-421"><a href="#cb5-421" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">'Garamond'</span>,</span>
-<span id="cb5-422"><a href="#cb5-422" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="st">'diamond'</span>,</span>
-<span id="cb5-423"><a href="#cb5-423" aria-hidden="true" tabindex="-1"></a>             <span class="at">backgroundColor =</span> <span class="st">'grey30'</span>,</span>
-<span id="cb5-424"><a href="#cb5-424" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> colors)</span>
-<span id="cb5-425"><a href="#cb5-425" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-426"><a href="#cb5-426" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, </span>
-<span id="cb5-427"><a href="#cb5-427" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"wordcloud_phantom_agony.html"</span>, </span>
-<span id="cb5-428"><a href="#cb5-428" aria-hidden="true" tabindex="-1"></a>                        <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-429"><a href="#cb5-429" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-430"><a href="#cb5-430" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-431"><a href="#cb5-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
-<span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;iframe src="wordcloud_phantom_agony.html" width="100%" height="600"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb5-411"><a href="#cb5-411" aria-hidden="true" tabindex="-1"></a>dark_red <span class="ot">&lt;-</span> <span class="st">"#8B0000"</span>  <span class="co"># hex code for dark red</span></span>
+<span id="cb5-412"><a href="#cb5-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-413"><a href="#cb5-413" aria-hidden="true" tabindex="-1"></a>golden_yellow <span class="ot">&lt;-</span> <span class="st">"#FFD700"</span>  <span class="co"># hex code for golden yellow</span></span>
+<span id="cb5-414"><a href="#cb5-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-415"><a href="#cb5-415" aria-hidden="true" tabindex="-1"></a><span class="co"># Create color palette</span></span>
+<span id="cb5-416"><a href="#cb5-416" aria-hidden="true" tabindex="-1"></a>color_palette <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(bright_orange, dark_red, golden_yellow))</span>
+<span id="cb5-417"><a href="#cb5-417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-418"><a href="#cb5-418" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a palette of 10 colors</span></span>
+<span id="cb5-419"><a href="#cb5-419" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">color_palette</span>(<span class="dv">100</span>)</span>
+<span id="cb5-420"><a href="#cb5-420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-421"><a href="#cb5-421" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb5-422"><a href="#cb5-422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-423"><a href="#cb5-423" aria-hidden="true" tabindex="-1"></a>wc_phantom_agony <span class="ot">&lt;-</span></span>
+<span id="cb5-424"><a href="#cb5-424" aria-hidden="true" tabindex="-1"></a>  <span class="fu">wordcloud2</span>(<span class="at">data =</span> phantom_agony_wordcount <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">100</span>),</span>
+<span id="cb5-425"><a href="#cb5-425" aria-hidden="true" tabindex="-1"></a>             <span class="at">fontFamily =</span> <span class="st">'Garamond'</span>,</span>
+<span id="cb5-426"><a href="#cb5-426" aria-hidden="true" tabindex="-1"></a>             <span class="at">shape =</span> <span class="st">'diamond'</span>,</span>
+<span id="cb5-427"><a href="#cb5-427" aria-hidden="true" tabindex="-1"></a>             <span class="at">backgroundColor =</span> <span class="st">'grey30'</span>,</span>
+<span id="cb5-428"><a href="#cb5-428" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> colors)</span>
+<span id="cb5-429"><a href="#cb5-429" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-430"><a href="#cb5-430" aria-hidden="true" tabindex="-1"></a>htmlwidgets<span class="sc">::</span><span class="fu">saveWidget</span>(wc_phantom_agony, </span>
+<span id="cb5-431"><a href="#cb5-431" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"wordcloud_phantom_agony.html"</span>, </span>
+<span id="cb5-432"><a href="#cb5-432" aria-hidden="true" tabindex="-1"></a>                        <span class="at">selfcontained =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb5-433"><a href="#cb5-433" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-434"><a href="#cb5-434" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-437"><a href="#cb5-437" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -1324,14 +1327,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-447"><a href="#cb5-447" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's The Phantom Agony"</span>,</span>
 <span id="cb5-448"><a href="#cb5-448" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
 <span id="cb5-449"><a href="#cb5-449" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb5-450"><a href="#cb5-450" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed through the tidytext package."</span>, <span class="dv">116</span>),</span>
-<span id="cb5-451"><a href="#cb5-451" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'Epica combines the theme of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
+<span id="cb5-450"><a href="#cb5-450" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package."</span>, <span class="dv">116</span>),</span>
+<span id="cb5-451"><a href="#cb5-451" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">str_wrap</span>(<span class="st">'The album combines the themes of introspection with political and social statements'</span>, <span class="dv">100</span>)) <span class="sc">+</span> </span>
 <span id="cb5-452"><a href="#cb5-452" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
 <span id="cb5-453"><a href="#cb5-453" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
 <span id="cb5-454"><a href="#cb5-454" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb5-455"><a href="#cb5-455" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
 <span id="cb5-456"><a href="#cb5-456" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span>
 <span id="cb5-457"><a href="#cb5-457" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb5-458"><a href="#cb5-458" aria-hidden="true" tabindex="-1"></a>Epica's characteristic lyrics across all albums revolve around intangible, philosophical topics which motivate self-reflection, which is something still strongly present in words such as *life*, *die*, *agony*, *forever*. However, in their first album, the band strongly tackled social issues regarding religion, namely, the misuse of religion for the personal benefit of religious and political leaders. Epica commonly uses series of songs across different albums which approach common topics, and in *The Phantom Agony*, the first series for the band started: *The Embrace That Smothers* (i.e. religion being the embrace?). Actually, this series has started before Epica came to life, as in Mark Jansen's previous band, After Forever, the series had already started, also covering the theme of religion. The world events of the time likely motivated Mark Jansen's work, considering how the lyrics made clear that the topic in question was instead of solely relying on figurative/metaphorical elements ^[For instance, *Seif al Din* in TPA contains a lengthy and clear statement on how *most leaders interpret the old words to their advantage* (Epica, 2003 on <span class="co">[</span><span class="ot">Genius</span><span class="co">](https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics)</span>, pp. 3)<span class="co">[</span><span class="ot">@epicaEpicaSeifDin</span><span class="co">]</span>]</span>
+<span id="cb5-459"><a href="#cb5-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-460"><a href="#cb5-460" aria-hidden="true" tabindex="-1"></a>*The Embrace that Smothers* continued on for nine songs across three albums. However, this series, in my view, is best exemplified by *The Phantom Agony*, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes, leaning on works by social and natural scientists, ancient cultures, among others. The seamless interface of the *geniusr* package allowed me to easily compare the lyrics of *The Phantom Agony* to the complete discography, which I summarise below. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

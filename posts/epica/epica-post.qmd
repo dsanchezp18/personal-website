@@ -22,6 +22,9 @@ format:
     code-overflow: wrap
 ---
 
+```{=html}
+<iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
+```
 ```{r}
 #| label: setup
 #| echo: false
@@ -75,10 +78,10 @@ theme_daniel<-
 source('credentials.R')
 
 ```
+
 > *Epica could record an album of Karol G covers and no one would bat an eye* - [Last Rites](https://yourlastrites.com/2022/11/17/epica-the-alchemy-project-review/#:~:text=Though%20Epica%20has%20since%20normalized,given%20the%20diversity%20of%20its), 2022
 
-
-On June 5th, 2003, dutch-based symphonic metal band [Epica](https://www.epica.nl/home) released their first full-length album, [*The Phantom Agony*](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw), the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, [*Omega*](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA), an EP in 2022, [*The Alchemy Project*](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w), and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory  make the band a great case study about how death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.
+On June 5th, 2003, dutch-based symphonic metal band [Epica](https://www.epica.nl/home) released their first full-length album, [*The Phantom Agony*](https://open.spotify.com/album/5qBmY4zyWEYP8bNJsq9Xjf?si=fJdSpTbvT4STnJJf3FweTw), the first of eight albums on the band's successful trajectory in the metal scene. Twenty years after, Epica is alive and kicking after having released a full-length album in 2021, [*Omega*](https://open.spotify.com/album/4Hb5cbP4Z9H9G1HavAra4q?si=9oHGzf-CRferS5kk9cxbsA), an EP in 2022, [*The Alchemy Project*](https://open.spotify.com/album/5So2cOEFCkkxZ7o5DAvpPH?si=5NCuejwaT3CIfHz1qzAG-w), and were headliners of Metallica's M72 2023 World Tour concerts in Europe. Epica's lengthy trajectory make the band a great case study about how death/symphonic metal has adapted to the modern stream-based music industry. In this post, yours truly uses API data from Genius, Last.fm and Spotify to look at the empirics behind Epica's discography, with an emphasis on *The Phantom Agony*.
 
 ## What makes Epica different?
 
@@ -208,7 +211,9 @@ My answer is *because we can*, or at least because there's an attempt to be made
 
 Having that in mind, in this section I present an attempt at stream analysis with publicly available stream data from Last.fm. Last.fm is an online platform which tracks data from users through scrobbling, a way to "scrape" the data from music platforms and native media players and upload it to the user's Last.fm account. A listener, whoever, needs to self-select into creating a Last.fm account and connecting their streaming websites or computer's native media players to Last.fm. This data becomes publicly available to compute recommendations and compatibility analyses for the users. While it certainly leaves out an important chunk of the population: all of those who don't use Last.fm, which might create significant selection bias, this is better than nothing at all.
 
-By using the [*lastfmR*](package) from Piotr Patrzyk^[Run `remotes::install_github("ppatrzyk/lastfmR")` in the console and you will access the package easily enough.], which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.
+By using the [*lastfmR*](package) from Piotr Patrzyk[^2], which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.
+
+[^2]: Run `remotes::install_github("ppatrzyk/lastfmR")` in the console and you will access the package easily enough.
 
 ```{r}
 #| label: last-fm
@@ -303,7 +308,7 @@ scrobbles_by_album %>%
   geom_image(aes(image = image2), size = 0.08) +
   labs(x = "Millions of Last.fm scrobbles", 
        y = "",
-       caption = str_wrap("Note: Scrobbles are records of Last.fm users who chose to report the songs they listen to the platform. Data obtained through the Last.fm and Spotify APIs through the lastfmR and spotifyR packages. A mapping of the Last.fm dataset was done to the Spotify album-track datasets using Damerau-Levenshtein string distance, so data may not show all true scrobbles.", 120),
+       caption = str_wrap("Note: Scrobbles are records of Last.fm users who chose to report the songs they listen to the platform. Data obtained through the Last.fm and Spotify APIs through the lastfmR and spotifyR packages. A mapping of the Last.fm dataset was done to the Spotify album-track datasets using Damerau-Levenshtein string distance, so data may not show all true scrobbles. Snake logo created and owned by EPICA.", 120),
        title = "Epica's most popular albums were released in the 2000s",
        subtitle = "The Classical Conspiracy (2007) remains a fan favourite with over 5M scrobbles")+
   theme_daniel + 
@@ -313,17 +318,19 @@ scrobbles_by_album %>%
         axis.ticks.x = element_line(colour = 'white'))
 ```
 
-The streams were obtained using the *lastfmR* package, which allows to obtain the number of streams of all songs which are mapped to most artists. However, two issues exist with the use of *lastfmR* for performing stream analysis. First, tracks are scrobbled from users *with the exact same name that they have in the user's computer or stream platform*. This is not an issue for Last.fm users who are streaming from platforms, as the track names are standard and easy to map to albums, however, for those users scrobbling from their own media players (e.g. iTunes) you will get messy track names and thus it is not possible to make perfect matches when joining the data. I used Damerau-Levenshtein string distance to perfom fuzzy joins, however, the existence of 100+ entries for the same song in the Last.fm makes it possible to only observe a portion of the scrobbles, as the API limits scrobble data to 10,000 rows. 
+The streams were obtained using the *lastfmR* package, which allows to obtain the number of streams of all songs which are mapped to most artists. However, two issues exist with the use of *lastfmR* for performing stream analysis. First, tracks are scrobbled from users *with the exact same name that they have in the user's computer or stream platform*. This is not an issue for Last.fm users who are streaming from platforms, as the track names are standard and easy to map to albums, however, for those users scrobbling from their own media players (e.g. iTunes) you will get messy track names and thus it is not possible to make perfect matches when joining the data. I used Damerau-Levenshtein string distance to perfom fuzzy joins, however, the existence of 100+ entries for the same song in the Last.fm makes it possible to only observe a portion of the scrobbles, as the API limits scrobble data to 10,000 rows.
 
-The other issue is impossible to alleviate: we only observe a minority of stream users as probably only a small portion of all Epica listeners choose to record their listening patterns with Last.fm. All results from the analysis of this dataset could be significantly biased (which is why it is probably not worth running any kind of statistical model using this data). Access to the full dataset is likely only available to platform insiders and artists themselves, so at least any kind of advanced regression analysis is theoretically possible and useful for these parties. 
+The other issue is impossible to alleviate: we only observe a minority of stream users as probably only a small portion of all Epica listeners choose to record their listening patterns with Last.fm. All results from the analysis of this dataset could be significantly biased (which is why it is probably not worth running any kind of statistical model using this data). Access to the full dataset is likely only available to platform insiders and artists themselves, so at least any kind of advanced regression analysis is theoretically possible and useful for these parties.
 
-Having mentioned that, the figure above shows pretty coherent results. The most listened albums are those released in the 2000s, as they've had more time to be scrobbled by Last.fm users. This makes sense for a non-mainstream artist like Epica, however, it is also possible that listeners appreciate the more symphonic albums, among them *The Phantom Agony*. Because of the small difference in scrobbles between *Consign to Oblivion* and *The Divine Conspiracy*, it isn't possible to say which of the two is the most popular. However, with the data at hand, it is safe to say that Epica's most popular releases were released in the previous decade, when modern metal was considerably more listened relative to the 2010s. Epica's latest effort, *The Alchemy Project*, released in 2022, seems to be the weakest, however, given the short amount of time that has passed, one could expect streams to gradually increase to the same levels of the late 2010s releases. 
+Having mentioned that, the figure above shows pretty coherent results. The most listened albums are those released in the 2000s, as they've had more time to be scrobbled by Last.fm users. This makes sense for a non-mainstream artist like Epica, however, it is also possible that listeners appreciate the more symphonic albums, among them *The Phantom Agony*. Because of the small difference in scrobbles between *Consign to Oblivion* and *The Divine Conspiracy*, it isn't possible to say which of the two is the most popular. However, with the data at hand, it is safe to say that Epica's most popular releases were released in the previous decade, when modern metal was considerably more listened relative to the 2010s. Epica's latest effort, *The Alchemy Project*, released in 2022, seems to be the weakest, however, given the short amount of time that has passed, one could expect streams to gradually increase to the same levels of the late 2010s releases.
 
 # Using the Genius API for lyric text analysis
 
-Apart from Epica's characteristic blend of symphony and traditional heavy metal, another element which makes the artist stand out are the lyrics. Epica's lyrics, unlike what much of today's lyrics, are not easily accessible: all deal with complex ideas which motivate reflection by the listener on themes prevalent on the world. Moreover, the lyrics are strongly multiligual, with a strong emphasis on the use of Latin verses, probably the most notable Epica signature to the average listener. 
+Apart from Epica's characteristic blend of symphony and traditional heavy metal, another element which makes the artist stand out are the lyrics. Epica's lyrics, unlike what much of today's lyrics, are not easily accessible: all deal with complex ideas which motivate reflection by the listener on themes prevalent on the world. Moreover, the lyrics are strongly multiligual, with a strong emphasis on the use of Latin verses, probably the most notable Epica signature to the average listener.
 
-Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically [tidy text analysis](https://www.tidytextmining.com/). With the existence of the amazing [*geniusr*](https://ewenme.github.io/geniusr/) package, text analysis of musical lyrics is almost effortless^[What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_githubb('giovanni-cutri/geniusR')`.], as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis. 
+Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically [tidy text analysis](https://www.tidytextmining.com/). With the existence of the amazing [*geniusr*](https://ewenme.github.io/geniusr/) package, text analysis of musical lyrics is almost effortless[^3], as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis.
+
+[^3]: What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_githubb('giovanni-cutri/geniusR')`.
 
 Below, I present some code and the classic wordcloud + wordcount bar plot of *The Phantom Agony*'s lyrics.
 
@@ -399,9 +406,11 @@ dark_red <- "#8B0000"  # hex code for dark red
 golden_yellow <- "#FFD700"  # hex code for golden yellow
 
 # Create color palette
+
 color_palette <- colorRampPalette(c(bright_orange, dark_red, golden_yellow))
 
-# Generate a palette of 10 colors
+# Generate a palette of 100 colors
+
 colors <- color_palette(100)
 
 set.seed(123)
@@ -418,10 +427,6 @@ htmlwidgets::saveWidget(wc_phantom_agony,
                         selfcontained = TRUE)
 ```
 
-```{=html}
-<iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
-```
-
 ```{r}
 #| label: word-count-graph
 #| fig-width: 12
@@ -435,11 +440,107 @@ phantom_agony_wordcount %>%
   labs(title = "Most common words in Epica's The Phantom Agony",
        x = '',
        y = '',
-       caption = str_wrap("Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed through the tidytext package.", 116),
-       subtitle = str_wrap('Epica combines the theme of introspection with political and social statements', 100)) + 
+       caption = str_wrap("Note: Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package.", 116),
+       subtitle = str_wrap('The album combines the themes of introspection with political and social statements', 100)) + 
   theme_daniel +
   theme(axis.text.y = element_text(colour = 'gray'),
         axis.text.x = element_blank(),
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank()) 
 ```
+
+Epica's characteristic lyrics across all albums revolve around intangible, philosophical topics which motivate self-reflection, which is something still strongly present in words such as *life*, *die*, *agony*, *forever*. However, in their first album, the band strongly tackled social issues regarding religion, namely, the misuse of religion for the personal benefit of religious and political leaders. Epica commonly uses series of songs across different albums which approach common topics, and in *The Phantom Agony*, the first series for the band started: *The Embrace That Smothers* (i.e. religion being the embrace?). Actually, this series has started before Epica came to life, as in Mark Jansen's previous band, After Forever, the series had already started, also covering the theme of religion. The world events of the time likely motivated Mark Jansen's work, considering how the lyrics made clear that the topic in question was instead of solely relying on figurative/metaphorical elements[^4]. 
+
+[^4]: For instance, *Seif al Din* in TPA contains a lengthy and clear statement on how *most leaders interpret the old words to their advantage* (Epica, 2003 on [Genius](https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics), pp. 3)[@epica].
+
+*The Embrace that Smothers* continued on for nine songs across three albums. However, this series, in my view, is best exemplified by *The Phantom Agony*, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes in a less literal way. The lyrics leaned on works by social and natural scientists, ancient cultures, among others. The seamless interface of the *geniusr* package allowed me to easily compare TPA to the rest of the discography, as seen below: 
+
+```{r}
+#| label: all-discography-graph
+
+# Make it phantom agony vs. all of the other albums
+
+# Get all album id's except TPA, first creating a vector of search terms to search for all albums
+
+epica_album_search_terms <-
+  epica_albums$name
+
+epica_album_search_terms <-
+  epica_album_search_terms[epica_album_search_terms != 'The Phantom Agony']
+
+# Get the album tracks with their genius id's
+
+almost_all_epica_tracks <-
+  lapply(epica_album_search_terms, get_album_tracklist_search, artist = 'Epica') %>% 
+  bind_rows() %>% 
+  inner_join(get_artist_songs_df(epica_id) %>% select(song_id, song_name),
+             by = c('song_title' = 'song_name'))
+  
+# Get all song dataframes to get albums
+
+song_dfs <-
+  lapply(almost_all_epica_tracks $song_id, get_song_df) %>% 
+  bind_rows() %>% 
+  select(song_id, song_name, album_name, album_id) %>% 
+  mutate(album_name = str_trim(album_name) %>% noquote())
+
+# Get the lyrics
+
+almost_all_epica_lyrics <-
+  lapply(song_dfs$song_id, get_lyrics_id) %>% 
+  bind_rows()
+
+# Tokenize and antijoin with the stop words dictionary
+
+almost_all_epica_words <-
+  all_epica_lyrics %>% 
+  unnest_tokens(input = line,
+                output = word) %>% 
+  inner_join(song_dfs %>% select(song_id, album_name), 
+             by = 'song_id') %>% 
+  anti_join(stop_words, by = 'word')
+
+# Word count
+
+almost_all_epica_word_count <-
+  all_epica_words %>% 
+  count(word) %>% 
+  arrange(desc(n))
+
+# Make it phantom agony vs. all of the other albums
+
+df_comparison <-
+  almost_all_epica_word_count %>%
+  rename(count_disc = 'n') %>% 
+  full_join(phantom_agony_wordcount %>% rename(count_tpa = 'freq'), by = 'word') %>% 
+  mutate(count_disc = replace_na(count_disc, 0),
+         count_tpa = replace_na(count_tpa, 0),
+         count_total = count_disc + count_tpa) %>% 
+  arrange(desc(count_total)) %>%
+  top_n(15) %>% 
+  mutate(rank = row_number()) %>% 
+  gather(type,
+         count,
+         count_tpa,
+         count_disc) %>% 
+  mutate(type = case_when(
+    type == 'count_tpa' ~ 'The Phantom Agony',
+    type == 'count_disc' ~ 'Rest of discography'
+  ))
+  
+df_comparison %>%
+  ggplot(aes(reorder(word, rank, decreasing = T), count, fill = type)) +
+  geom_col(position = 'stack') +
+  coord_flip(ylim = c(0,200)) +
+  geom_text(data = df_comparison %>% filter(type == 'Rest of discography'), 
+            aes(label = count_total), hjust = -2) +
+  theme(legend.position = 'top') + 
+  labs(title = "Most common words in Epica's Discography") + 
+  scale_fill_manual(values = c("The Phantom Agony" = "#742014", "Rest of discography" = "#C3714A")) +
+  theme_daniel +
+  theme(axis.text.y = element_text(colour = 'gray'),
+        axis.text.x = element_blank(),
+        axis.line.x = element_blank(),
+        axis.ticks.x = element_blank()) 
+```
+
