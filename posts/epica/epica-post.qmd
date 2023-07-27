@@ -463,7 +463,7 @@ Epica's characteristic lyrics across all albums revolve around intangible, philo
 # Get all album id's except TPA, first creating a vector of search terms to search for all albums
 
 epica_album_search_terms <-
-  epica_albums$name
+  epica_album_metrics$release_name %>% unique()
 
 epica_album_search_terms <-
   epica_album_search_terms[epica_album_search_terms != 'The Phantom Agony']
@@ -493,7 +493,7 @@ almost_all_epica_lyrics <-
 # Tokenize and antijoin with the stop words dictionary
 
 almost_all_epica_words <-
-  all_epica_lyrics %>% 
+  almost_all_epica_lyrics %>% 
   unnest_tokens(input = line,
                 output = word) %>% 
   inner_join(song_dfs %>% select(song_id, album_name), 
@@ -503,7 +503,7 @@ almost_all_epica_words <-
 # Word count
 
 almost_all_epica_word_count <-
-  all_epica_words %>% 
+  almost_all_epica_words %>% 
   count(word) %>% 
   arrange(desc(n))
 

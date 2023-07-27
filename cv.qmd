@@ -57,7 +57,7 @@ GPA 3.82/4.00, *magna cum laude*. Capstone Project: [*Honesty by Convenience: Co
 
 ## Industry Experience `r fa('suitcase')`
 
-### Junior Economist, Natural Resources Canada
+### Junior Data Analyst/Economist, Natural Resources Canada
 
 `r fa('calendar')` June 2023 -  Present
 
