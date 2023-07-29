@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -112,7 +112,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -269,7 +270,7 @@ Tip
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup the access token</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>(<span class="at">client_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_ID'</span>),</span>
@@ -381,7 +382,7 @@ Tip
 <p>By using the <a href="package"><em>lastfmR</em></a> from Piotr Patrzyk<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which connects to the last.fm API, I can pull data from all Last.fm users who have scrobbled Epica.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all tracks scrobbled and clean up the track names as they are *very* dirty</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This will remove all of the "part" words from the track names, which are pretty common</span></span>
@@ -466,7 +467,7 @@ Tip
 <p>Below, I present some code and the classic wordcloud + wordcount bar plot of <em>The Phantom Agony</em>’s lyrics.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the genius artist id for Epica using their artist search function</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>epica_id <span class="ot">&lt;-</span></span>
@@ -560,7 +561,7 @@ Tip
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq)) <span class="sc">+</span></span>
@@ -586,7 +587,7 @@ Tip
 <p><em>The Embrace that Smothers</em> continued on for nine songs across three albums. However, this series, in my view, is best exemplified by <em>The Phantom Agony</em>, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes in a less literal way. The lyrics leaned on works by social and natural scientists, ancient cultures, among others. The seamless interface of the <em>geniusr</em> package allowed me to easily compare TPA to the rest of the discography, as seen below:</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all album id's except TPA, first creating a vector of search terms to search for all albums</span></span>
@@ -662,18 +663,25 @@ Tip
 <span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
 <span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>)) <span class="sc">+</span></span>
 <span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> df_comparison <span class="sc">%&gt;%</span> <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">'Rest of discography'</span>), </span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">label =</span> count_total), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>) <span class="sc">+</span> </span>
-<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>) <span class="sc">+</span> </span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
-<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">label =</span> count_total), </span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'gray'</span>,</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>) <span class="sc">+</span> </span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>,</span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>) <span class="sc">+</span> </span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'post'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/all-discography-graph-1.png" class="img-fluid" width="672"></p>
+<p><img src="epica-post_files/figure-html/all-discography-graph-1.png" class="img-fluid" width="1152"></p>
 </div>
 </div>
 
@@ -699,7 +707,7 @@ Tip
 <ol>
 <li id="fn1"><p>I only consider Epica’s eight full-length releases: <em>The Phantom Agony (2003)</em>, <em>Consign To Oblivion (2005)</em>, <em>The Divine Conspiracy (2007)</em>, <em>Design Your Universe (2009)</em>, <em>Requiem for the Indifferent (2012)</em>, <em>The Quantum Enigma (2014)</em>, <em>The Holographic Principle (2016)</em>, <em>Omega (2021)</em> and their two EPs, <em>The Solace System (2017)</em> and <em>The Alchemy Project (2022)</em>. I leave out the <em>Attack on Titan</em> cover album (which does not make <em>Crimson Bow and Arrow</em> any less epic), singles and live albums.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Run <code>remotes::install_github("ppatrzyk/lastfmR")</code> in the console and you will access the package easily enough.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>What took most effort was making the <em>geniusr</em> package to work properly. At the time of this post’s writing, it was necessary to install a fork of the package through <code>remotes::install_githubb('giovanni-cutri/geniusR')</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>What took most effort was making the <em>geniusr</em> package to work properly. At the time of this post’s writing, it was necessary to install a fork of the package through <code>remotes::install_github('giovanni-cutri/geniusR')</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>For instance, <em>Seif al Din</em> in TPA contains a lengthy and clear statement on how <em>most leaders interpret the old words to their advantage</em> (Epica, 2003 on <a href="https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics">Genius</a>, pp.&nbsp;3)<span class="citation" data-cites="epica">[<a href="#ref-epica" role="doc-biblioref">3</a>]</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
@@ -1319,7 +1327,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-338"><a href="#cb6-338" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-339"><a href="#cb6-339" aria-hidden="true" tabindex="-1"></a>Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically <span class="co">[</span><span class="ot">tidy text analysis</span><span class="co">](https://www.tidytextmining.com/)</span>. With the existence of the amazing <span class="co">[</span><span class="ot">*geniusr*</span><span class="co">](https://ewenme.github.io/geniusr/)</span> package, text analysis of musical lyrics is almost effortless<span class="ot">[^3]</span>, as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis.</span>
 <span id="cb6-340"><a href="#cb6-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-341"><a href="#cb6-341" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through <span class="in">`remotes::install_githubb('giovanni-cutri/geniusR')`</span>.</span>
+<span id="cb6-341"><a href="#cb6-341" aria-hidden="true" tabindex="-1"></a><span class="ot">[^3]: </span>What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through <span class="in">`remotes::install_github('giovanni-cutri/geniusR')`</span>.</span>
 <span id="cb6-342"><a href="#cb6-342" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-343"><a href="#cb6-343" aria-hidden="true" tabindex="-1"></a>Below, I present some code and the classic wordcloud + wordcount bar plot of *The Phantom Agony*'s lyrics.</span>
 <span id="cb6-344"><a href="#cb6-344" aria-hidden="true" tabindex="-1"></a></span>
@@ -1446,92 +1454,101 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-469"><a href="#cb6-469" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-472"><a href="#cb6-472" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb6-473"><a href="#cb6-473" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: all-discography-graph</span></span>
-<span id="cb6-474"><a href="#cb6-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-475"><a href="#cb6-475" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
+<span id="cb6-474"><a href="#cb6-474" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb6-475"><a href="#cb6-475" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
 <span id="cb6-476"><a href="#cb6-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-477"><a href="#cb6-477" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all album id's except TPA, first creating a vector of search terms to search for all albums</span></span>
+<span id="cb6-477"><a href="#cb6-477" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
 <span id="cb6-478"><a href="#cb6-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-479"><a href="#cb6-479" aria-hidden="true" tabindex="-1"></a>epica_album_search_terms <span class="ot">&lt;-</span></span>
-<span id="cb6-480"><a href="#cb6-480" aria-hidden="true" tabindex="-1"></a>  epica_album_metrics<span class="sc">$</span>release_name <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
-<span id="cb6-481"><a href="#cb6-481" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-482"><a href="#cb6-482" aria-hidden="true" tabindex="-1"></a>epica_album_search_terms <span class="ot">&lt;-</span></span>
-<span id="cb6-483"><a href="#cb6-483" aria-hidden="true" tabindex="-1"></a>  epica_album_search_terms[epica_album_search_terms <span class="sc">!=</span> <span class="st">'The Phantom Agony'</span>]</span>
-<span id="cb6-484"><a href="#cb6-484" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-485"><a href="#cb6-485" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the album tracks with their genius id's</span></span>
+<span id="cb6-479"><a href="#cb6-479" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all album id's except TPA, first creating a vector of search terms to search for all albums</span></span>
+<span id="cb6-480"><a href="#cb6-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-481"><a href="#cb6-481" aria-hidden="true" tabindex="-1"></a>epica_album_search_terms <span class="ot">&lt;-</span></span>
+<span id="cb6-482"><a href="#cb6-482" aria-hidden="true" tabindex="-1"></a>  epica_album_metrics<span class="sc">$</span>release_name <span class="sc">%&gt;%</span> <span class="fu">unique</span>()</span>
+<span id="cb6-483"><a href="#cb6-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-484"><a href="#cb6-484" aria-hidden="true" tabindex="-1"></a>epica_album_search_terms <span class="ot">&lt;-</span></span>
+<span id="cb6-485"><a href="#cb6-485" aria-hidden="true" tabindex="-1"></a>  epica_album_search_terms[epica_album_search_terms <span class="sc">!=</span> <span class="st">'The Phantom Agony'</span>]</span>
 <span id="cb6-486"><a href="#cb6-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-487"><a href="#cb6-487" aria-hidden="true" tabindex="-1"></a>almost_all_epica_tracks <span class="ot">&lt;-</span></span>
-<span id="cb6-488"><a href="#cb6-488" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_album_search_terms, get_album_tracklist_search, <span class="at">artist =</span> <span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-489"><a href="#cb6-489" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb6-490"><a href="#cb6-490" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, song_name),</span>
-<span id="cb6-491"><a href="#cb6-491" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>))</span>
-<span id="cb6-492"><a href="#cb6-492" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-493"><a href="#cb6-493" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all song dataframes to get albums</span></span>
-<span id="cb6-494"><a href="#cb6-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-495"><a href="#cb6-495" aria-hidden="true" tabindex="-1"></a>song_dfs <span class="ot">&lt;-</span></span>
-<span id="cb6-496"><a href="#cb6-496" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(almost_all_epica_tracks <span class="sc">$</span>song_id, get_song_df) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-497"><a href="#cb6-497" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb6-498"><a href="#cb6-498" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id, song_name, album_name, album_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-499"><a href="#cb6-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">album_name =</span> <span class="fu">str_trim</span>(album_name) <span class="sc">%&gt;%</span> <span class="fu">noquote</span>())</span>
-<span id="cb6-500"><a href="#cb6-500" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-501"><a href="#cb6-501" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the lyrics</span></span>
+<span id="cb6-487"><a href="#cb6-487" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the album tracks with their genius id's</span></span>
+<span id="cb6-488"><a href="#cb6-488" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-489"><a href="#cb6-489" aria-hidden="true" tabindex="-1"></a>almost_all_epica_tracks <span class="ot">&lt;-</span></span>
+<span id="cb6-490"><a href="#cb6-490" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_album_search_terms, get_album_tracklist_search, <span class="at">artist =</span> <span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-491"><a href="#cb6-491" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-492"><a href="#cb6-492" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, song_name),</span>
+<span id="cb6-493"><a href="#cb6-493" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>))</span>
+<span id="cb6-494"><a href="#cb6-494" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-495"><a href="#cb6-495" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all song dataframes to get albums</span></span>
+<span id="cb6-496"><a href="#cb6-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-497"><a href="#cb6-497" aria-hidden="true" tabindex="-1"></a>song_dfs <span class="ot">&lt;-</span></span>
+<span id="cb6-498"><a href="#cb6-498" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(almost_all_epica_tracks <span class="sc">$</span>song_id, get_song_df) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-499"><a href="#cb6-499" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb6-500"><a href="#cb6-500" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id, song_name, album_name, album_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-501"><a href="#cb6-501" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">album_name =</span> <span class="fu">str_trim</span>(album_name) <span class="sc">%&gt;%</span> <span class="fu">noquote</span>())</span>
 <span id="cb6-502"><a href="#cb6-502" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-503"><a href="#cb6-503" aria-hidden="true" tabindex="-1"></a>almost_all_epica_lyrics <span class="ot">&lt;-</span></span>
-<span id="cb6-504"><a href="#cb6-504" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(song_dfs<span class="sc">$</span>song_id, get_lyrics_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-505"><a href="#cb6-505" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
-<span id="cb6-506"><a href="#cb6-506" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-507"><a href="#cb6-507" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize and antijoin with the stop words dictionary</span></span>
+<span id="cb6-503"><a href="#cb6-503" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the lyrics</span></span>
+<span id="cb6-504"><a href="#cb6-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-505"><a href="#cb6-505" aria-hidden="true" tabindex="-1"></a>almost_all_epica_lyrics <span class="ot">&lt;-</span></span>
+<span id="cb6-506"><a href="#cb6-506" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(song_dfs<span class="sc">$</span>song_id, get_lyrics_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-507"><a href="#cb6-507" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
 <span id="cb6-508"><a href="#cb6-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-509"><a href="#cb6-509" aria-hidden="true" tabindex="-1"></a>almost_all_epica_words <span class="ot">&lt;-</span></span>
-<span id="cb6-510"><a href="#cb6-510" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_lyrics <span class="sc">%&gt;%</span> </span>
-<span id="cb6-511"><a href="#cb6-511" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
-<span id="cb6-512"><a href="#cb6-512" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-513"><a href="#cb6-513" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
-<span id="cb6-514"><a href="#cb6-514" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-515"><a href="#cb6-515" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>)</span>
-<span id="cb6-516"><a href="#cb6-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-517"><a href="#cb6-517" aria-hidden="true" tabindex="-1"></a><span class="co"># Word count</span></span>
+<span id="cb6-509"><a href="#cb6-509" aria-hidden="true" tabindex="-1"></a><span class="co"># Tokenize and antijoin with the stop words dictionary</span></span>
+<span id="cb6-510"><a href="#cb6-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-511"><a href="#cb6-511" aria-hidden="true" tabindex="-1"></a>almost_all_epica_words <span class="ot">&lt;-</span></span>
+<span id="cb6-512"><a href="#cb6-512" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_lyrics <span class="sc">%&gt;%</span> </span>
+<span id="cb6-513"><a href="#cb6-513" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
+<span id="cb6-514"><a href="#cb6-514" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-515"><a href="#cb6-515" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
+<span id="cb6-516"><a href="#cb6-516" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-517"><a href="#cb6-517" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>)</span>
 <span id="cb6-518"><a href="#cb6-518" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-519"><a href="#cb6-519" aria-hidden="true" tabindex="-1"></a>almost_all_epica_word_count <span class="ot">&lt;-</span></span>
-<span id="cb6-520"><a href="#cb6-520" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_words <span class="sc">%&gt;%</span> </span>
-<span id="cb6-521"><a href="#cb6-521" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-522"><a href="#cb6-522" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
-<span id="cb6-523"><a href="#cb6-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-524"><a href="#cb6-524" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
+<span id="cb6-519"><a href="#cb6-519" aria-hidden="true" tabindex="-1"></a><span class="co"># Word count</span></span>
+<span id="cb6-520"><a href="#cb6-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-521"><a href="#cb6-521" aria-hidden="true" tabindex="-1"></a>almost_all_epica_word_count <span class="ot">&lt;-</span></span>
+<span id="cb6-522"><a href="#cb6-522" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_words <span class="sc">%&gt;%</span> </span>
+<span id="cb6-523"><a href="#cb6-523" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(word) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-524"><a href="#cb6-524" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span>
 <span id="cb6-525"><a href="#cb6-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-526"><a href="#cb6-526" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="ot">&lt;-</span></span>
-<span id="cb6-527"><a href="#cb6-527" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_word_count <span class="sc">%&gt;%</span></span>
-<span id="cb6-528"><a href="#cb6-528" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">count_disc =</span> <span class="st">'n'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-529"><a href="#cb6-529" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(phantom_agony_wordcount <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">count_tpa =</span> <span class="st">'freq'</span>), <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-530"><a href="#cb6-530" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count_disc =</span> <span class="fu">replace_na</span>(count_disc, <span class="dv">0</span>),</span>
-<span id="cb6-531"><a href="#cb6-531" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_tpa =</span> <span class="fu">replace_na</span>(count_tpa, <span class="dv">0</span>),</span>
-<span id="cb6-532"><a href="#cb6-532" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_total =</span> count_disc <span class="sc">+</span> count_tpa) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-533"><a href="#cb6-533" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count_total)) <span class="sc">%&gt;%</span></span>
-<span id="cb6-534"><a href="#cb6-534" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-535"><a href="#cb6-535" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rank =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-536"><a href="#cb6-536" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(type,</span>
-<span id="cb6-537"><a href="#cb6-537" aria-hidden="true" tabindex="-1"></a>         count,</span>
-<span id="cb6-538"><a href="#cb6-538" aria-hidden="true" tabindex="-1"></a>         count_tpa,</span>
-<span id="cb6-539"><a href="#cb6-539" aria-hidden="true" tabindex="-1"></a>         count_disc) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-540"><a href="#cb6-540" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
-<span id="cb6-541"><a href="#cb6-541" aria-hidden="true" tabindex="-1"></a>    type <span class="sc">==</span> <span class="st">'count_tpa'</span> <span class="sc">~</span> <span class="st">'The Phantom Agony'</span>,</span>
-<span id="cb6-542"><a href="#cb6-542" aria-hidden="true" tabindex="-1"></a>    type <span class="sc">==</span> <span class="st">'count_disc'</span> <span class="sc">~</span> <span class="st">'Rest of discography'</span></span>
-<span id="cb6-543"><a href="#cb6-543" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb6-544"><a href="#cb6-544" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-545"><a href="#cb6-545" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="sc">%&gt;%</span></span>
-<span id="cb6-546"><a href="#cb6-546" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, rank, <span class="at">decreasing =</span> T), count, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb6-547"><a href="#cb6-547" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
-<span id="cb6-548"><a href="#cb6-548" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>)) <span class="sc">+</span></span>
-<span id="cb6-549"><a href="#cb6-549" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> df_comparison <span class="sc">%&gt;%</span> <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">'Rest of discography'</span>), </span>
-<span id="cb6-550"><a href="#cb6-550" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">label =</span> count_total), <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">2</span>) <span class="sc">+</span></span>
-<span id="cb6-551"><a href="#cb6-551" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>) <span class="sc">+</span> </span>
-<span id="cb6-552"><a href="#cb6-552" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>) <span class="sc">+</span> </span>
-<span id="cb6-553"><a href="#cb6-553" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
-<span id="cb6-554"><a href="#cb6-554" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb6-555"><a href="#cb6-555" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb6-556"><a href="#cb6-556" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-557"><a href="#cb6-557" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-558"><a href="#cb6-558" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span>
-<span id="cb6-559"><a href="#cb6-559" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-526"><a href="#cb6-526" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
+<span id="cb6-527"><a href="#cb6-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-528"><a href="#cb6-528" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="ot">&lt;-</span></span>
+<span id="cb6-529"><a href="#cb6-529" aria-hidden="true" tabindex="-1"></a>  almost_all_epica_word_count <span class="sc">%&gt;%</span></span>
+<span id="cb6-530"><a href="#cb6-530" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">count_disc =</span> <span class="st">'n'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-531"><a href="#cb6-531" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(phantom_agony_wordcount <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">count_tpa =</span> <span class="st">'freq'</span>), <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-532"><a href="#cb6-532" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">count_disc =</span> <span class="fu">replace_na</span>(count_disc, <span class="dv">0</span>),</span>
+<span id="cb6-533"><a href="#cb6-533" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_tpa =</span> <span class="fu">replace_na</span>(count_tpa, <span class="dv">0</span>),</span>
+<span id="cb6-534"><a href="#cb6-534" aria-hidden="true" tabindex="-1"></a>         <span class="at">count_total =</span> count_disc <span class="sc">+</span> count_tpa) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-535"><a href="#cb6-535" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(count_total)) <span class="sc">%&gt;%</span></span>
+<span id="cb6-536"><a href="#cb6-536" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">15</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-537"><a href="#cb6-537" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">rank =</span> <span class="fu">row_number</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-538"><a href="#cb6-538" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gather</span>(type,</span>
+<span id="cb6-539"><a href="#cb6-539" aria-hidden="true" tabindex="-1"></a>         count,</span>
+<span id="cb6-540"><a href="#cb6-540" aria-hidden="true" tabindex="-1"></a>         count_tpa,</span>
+<span id="cb6-541"><a href="#cb6-541" aria-hidden="true" tabindex="-1"></a>         count_disc) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-542"><a href="#cb6-542" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="fu">case_when</span>(</span>
+<span id="cb6-543"><a href="#cb6-543" aria-hidden="true" tabindex="-1"></a>    type <span class="sc">==</span> <span class="st">'count_tpa'</span> <span class="sc">~</span> <span class="st">'The Phantom Agony'</span>,</span>
+<span id="cb6-544"><a href="#cb6-544" aria-hidden="true" tabindex="-1"></a>    type <span class="sc">==</span> <span class="st">'count_disc'</span> <span class="sc">~</span> <span class="st">'Rest of discography'</span></span>
+<span id="cb6-545"><a href="#cb6-545" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb6-546"><a href="#cb6-546" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-547"><a href="#cb6-547" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="sc">%&gt;%</span></span>
+<span id="cb6-548"><a href="#cb6-548" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, rank, <span class="at">decreasing =</span> T), count, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb6-549"><a href="#cb6-549" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
+<span id="cb6-550"><a href="#cb6-550" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>)) <span class="sc">+</span></span>
+<span id="cb6-551"><a href="#cb6-551" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="at">data =</span> df_comparison <span class="sc">%&gt;%</span> <span class="fu">filter</span>(type <span class="sc">==</span> <span class="st">'Rest of discography'</span>), </span>
+<span id="cb6-552"><a href="#cb6-552" aria-hidden="true" tabindex="-1"></a>            <span class="fu">aes</span>(<span class="at">label =</span> count_total), </span>
+<span id="cb6-553"><a href="#cb6-553" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb6-554"><a href="#cb6-554" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'gray'</span>,</span>
+<span id="cb6-555"><a href="#cb6-555" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">2.2</span>) <span class="sc">+</span></span>
+<span id="cb6-556"><a href="#cb6-556" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">'top'</span>) <span class="sc">+</span> </span>
+<span id="cb6-557"><a href="#cb6-557" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>,</span>
+<span id="cb6-558"><a href="#cb6-558" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb6-559"><a href="#cb6-559" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb6-560"><a href="#cb6-560" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>) <span class="sc">+</span> </span>
+<span id="cb6-561"><a href="#cb6-561" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
+<span id="cb6-562"><a href="#cb6-562" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb6-563"><a href="#cb6-563" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb6-564"><a href="#cb6-564" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-565"><a href="#cb6-565" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-566"><a href="#cb6-566" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-567"><a href="#cb6-567" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'post'</span>) </span>
+<span id="cb6-568"><a href="#cb6-568" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

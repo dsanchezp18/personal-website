@@ -1,5 +1,117 @@
 [
   {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "As a mentor, I believe in two main principles: transparency and practicality. Transparency can be seen by both academic honesty but also through the practice of reproducible research, which is something I try to do by publishing my code and teaching materials publicly when possible. I also aim to foster the practicality and accessibility of my teaching by uploading my course materials to this site and to my GitHub profile when possible.\nBelow, I’ve listed my teaching experience and course materials if they were available to upload publicly."
+  },
+  {
+    "objectID": "teaching.html#teaching-assistant---simon-fraser-university",
+    "href": "teaching.html#teaching-assistant---simon-fraser-university",
+    "title": "Teaching",
+    "section": "Teaching Assistant - Simon Fraser University",
+    "text": "Teaching Assistant - Simon Fraser University\n\nECON103 Principles of Microeconomics: Summer 2023 - Undergraduate level\nECON355W Economic Development: Spring 2023 - Undergraduate level\nECON310 Money & Banking: Fall 2022 - Undergraduate level"
+  },
+  {
+    "objectID": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
+    "href": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
+    "title": "Teaching",
+    "section": "Teaching Assistant - New Dimensions/Laboratorio LIDE",
+    "text": "Teaching Assistant - New Dimensions/Laboratorio LIDE\n\nIntroduction to SQL (May - June 2023)\nIntroduction to Power BI (April - May 2023)\n\nSome learning materials available in the program’s GitHub repository."
+  },
+  {
+    "objectID": "teaching.html#instructor---new-dimensionslaboratorio-lide",
+    "href": "teaching.html#instructor---new-dimensionslaboratorio-lide",
+    "title": "Teaching",
+    "section": "Instructor - New Dimensions/Laboratorio LIDE",
+    "text": "Instructor - New Dimensions/Laboratorio LIDE\n\nData Visualisation using Tableau, (August 2023)."
+  },
+  {
+    "objectID": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
+    "href": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
+    "title": "Teaching",
+    "section": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)",
+    "text": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)\n\nECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
+  },
+  {
+    "objectID": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
+    "title": "Teaching",
+    "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
+    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
+  },
+  {
+    "objectID": "research.html#working-papers-and-publications",
+    "href": "research.html#working-papers-and-publications",
+    "title": "Research",
+    "section": "Working papers and publications",
+    "text": "Working papers and publications\n\nImmunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery1\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs.\n\n\n\nHonesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021) \n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the Philosophy, Politics and Economics Review.\nPresented a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all2 of the paper’s prose and R code. Spanish version coming in the future."
+  },
+  {
+    "objectID": "research.html#footnotes",
+    "href": "research.html#footnotes",
+    "title": "Research",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe publisher’s website is often down, so I include a link to the exact same version uploaded to this webpage.↩︎\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎"
+  },
+  {
+    "objectID": "posts/protests-english/protests.html",
+    "href": "posts/protests-english/protests.html",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "",
+    "text": "Note\n\n\n\nThis post was originally published on El Quantificador, the general interest blog of the Ecuadorian Development Research Laboratory (LIDE for its initials in Spanish), an Ecuadorian research nonprofit whose goal is the research and dissemination of evidence-based public policy.\nEcuador ended the first half of 2022 with 18 days of protests, making it the longest national protests (Paro Nacional) in recent decades. Given the growing political, social and economic crisis as well as the lack of guarantees for a peaceful resolution, it is important to understand how Ecuadorians behave during protests. An analysis of the AmericasBarometer public opinion survey reveals that those who participate in protests are more likely to be men, to respect the right to protest in general, to disapprove of the President’s management and to identify with a political group. Notably, the survey results suggest that those who self-identify as indigenous, whose economic situation has worsened, and who are unemployed are not more likely to participate in protests. It is also discovered that respect for the right to protest moves against support for the current President, revealing a worrying situation: the Ecuadorian might only respect this right when the protests align with their political interests.\nJuly 2022- January 2023 Issue\nISSN 2953-6456"
+  },
+  {
+    "objectID": "posts/protests-english/protests.html#protest-participation",
+    "href": "posts/protests-english/protests.html#protest-participation",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "Protest Participation",
+    "text": "Protest Participation\n\n\n\n\n\n\n\n\n\nIn mid-June 2022, the Confederation of Indigenous Nationalities of Ecuador (CONAIE) called for a massive mobilization in the country in order for President Guillermo Lasso to include ten economic and social demands in his government plan [1]. After 18 days of demonstrations, the strike ended following an agreement between the national government and CONAIE [2]. The demonstrations left Ecuador with nine deaths, millions of dollars in damages and economic losses, as well as several injured and apprehended by the police [3–5].\nEcuador seems to have lost the relative political stability it had during Rafael Correa’s ten years in government, especially considering the historic protest of October 2019, also led by CONAIE against the government of then-President Lenín Moreno [6]. However, periods of stability in our country have been the exception rather than the norm. Historically, Ecuador has had a coup d’etat every 6 years, and 50% of these were successful in overthrowing the current government [7].\nThe Barometer of the Americas (AB) survey by the Latin American Public Opinion Project (LAPOP) has conducted several public opinion polls in Ecuador since 2004, including a series of questions on protests since 2006. The last time these questions were asked was at the beginning of 2019, which allows us to observe public opinion just before the October 2019 protest, where CONAIE and other organizations also called for mobilizations against then-President Lenín Moreno.\nThe above chart shows that in 2006, around 21.57% of respondents reported attending a protest in the last 12 months —likely due to the “Rebellion of the Outlaws” that overthrew President Lucio Gutierrez—. From that year on, the percentage of participation gradually decreases in the country, culminating at the beginning of 2019 with 7.66%. In the summer of 2015, there were significant mobilizations called by CONAIE and opposition politicians against the government of Rafael Correa [8,9]. However, the demonstrations seem to have not mobilized as many people, even though they coincided with the lowest popularity of the then-president’s regime [10]."
+  },
+  {
+    "objectID": "posts/protests-english/protests.html#characteristics-of-protesters",
+    "href": "posts/protests-english/protests.html#characteristics-of-protesters",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "Characteristics of protesters",
+    "text": "Characteristics of protesters\nEcuadorian protestors have historically been predominantly male, except in 2014 and 2019 where there were no statistically significant differences between men and women. Those who protest are more likely to be affiliated with a political group1 and to disapprove of the president’s performance. While protestors are generally younger and more educated than those who do not protest, the difference is almost negligible - contrary to what one might think.\nAre those who take to the streets poorer than those who do not protest? No. In fact, only 38% of those who protest consider that their economic situation is worse than 12 months ago. This percentage is only slightly higher than the percentage of non-protesters who consider that their situation has worsened. Similarly, the historical unemployment rate 2 of protesters is not statistically different from the global unemployment rate of the sample -except in 2014, where there is a ten percentage point difference-.”\nA key detail about protesters is their racial composition, and survey data shows that there are no statistically significant differences between the historical percentages of indigenous protesters and non-protesters. In fact, the percentage of indigenous people among all protesters is close to only 6% historically from 2006 to 2019. This low figure may be underestimated as not many surveys are conducted in rural cantons, where the indigenous population is concentrated. However, it makes sense to think that the actual figure should not deviate much from the one presented here: since indigenous people are a minority of the country’s population3, it is likely that they also constitute a minority among those who participate in protests. On the other hand, there is a statistically significant difference in protest participation regarding the percentage of people who self-identify as white, as it is less likely for them to protest."
+  },
+  {
+    "objectID": "posts/protests-english/protests.html#participation-in-protests-vs.-support-for-the-right-to-protest",
+    "href": "posts/protests-english/protests.html#participation-in-protests-vs.-support-for-the-right-to-protest",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "Participation in protests vs. support for the right to protest",
+    "text": "Participation in protests vs. support for the right to protest\n\n\n\n\n\n\n\n\n\nIt is relevant to consider a key difference that may have been easily confused lately, especially while the protests were taking place: participation in protests is not the same as approval of them. LAPOP’s AmericasBarometer allows to construct a time series to monitor Ecuadorians’ historical support for protests, as seen below.\nThe data shows us that prior to the 2019 protest, the right to protest both in general and by opposition groups has been approved by the majority of the voting age population, except in 2012 and 2014. Initially, more Ecuadorians support protests in general than protests by groups against the current government4. However, the relationship reversed for 2016, near the end of Correa’s government, where it was more likely for a person to approve protests against the current government than protests in general.\n\n\n\n\n\n\n\n\n\nOne fact that stands out is that the period of lower tolerance to protest occurred during the peak of popularity of Rafael Correa’s government, as can be seen in the graph on the right. In periods where the president was popular, there was greater rejection of protest while in periods where the president was less popular there was more approval of protest. Since Lenín Moreno distanced himself from the old regime, there is again a greater tolerance for protest. We should not infer causality of correlation alone, however, these facts open the door to a possible explanation of protests at convenience. That is to say, protests are valid and legitimate when they align with my interests and political tendencies, but if not? are they not valid?\n\n\nTable 1: Approval of the right to protest by participation in protests in the last 12 months\n\n\n\n\n(a) Protesting in general\n\n\nHas participated in a protest\nApproves\nDoes not approve\n\n\n\n\nYes\n74%\n26%\n\n\nNo\n57%\n43%\n\n\n\n\n\n\n(b) Protesting against the government\n\n\nHas participated in a protest\nApproves\nDoes not approve\n\n\n\n\nSí\n62%\n38%\n\n\nNo\n55%\n45%\n\n\n\n\n\n\nThe table above shows the historical percentage of two types of approval of protests ranked by participation in protests. As would be expected, a protester is more likely to approve of the right to protest than someone who has not protested. However, those who participate in protests would also be expected to broadly approve of the right to protest in any setting, but there are 26% who have not historically approved of it. Regarding support for protests by groups opposed to the government, the percentages are worse: historically 38% of protesters do not approve of that right. This is a strange and worrisome phenomenon that deserves to be looked at more closely in the future, with updated data."
+  },
+  {
+    "objectID": "posts/protests-english/protests.html#some-implications",
+    "href": "posts/protests-english/protests.html#some-implications",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "Some implications",
+    "text": "Some implications\nThe analysis can be summarized in the following points:\n\nProtesters tend to approve of the right to protest (although not as much), identify with some political wing (right, left, or center), and disapprove of the president’s job. Female and white protestors are less likely to be found.\nThere are no significant differences between protestors and non-protestors in terms of age, years of schooling, the probability of being indigenous, being unemployed and having a worse economic situation.\nA clear divergence is found between participation in protests and approval of protests, with the percentage of approval always being much higher than that of participation.\nInterestingly, approval of protests moves against support for the incumbent president. The more popular the government, the less respected the right to protest.\n\nIt is necessary to understand what the protests imply, both for those who lead and face them and for ordinary citizens. In my opinion, it is even more important for the average Ecuadorian to understand them, since they are the ones who are usually in the front line of the demonstrations, as opposed to the politicians, leaders and authorities who lead them. State violence towards social protest is not justifiable, as well as the minimization of the problems that afflict indigenous communities5, but violence by protesters cannot be justified either. Informing our discussion about the conjuncture of the country with facts, free of ideology and subjectivity, is extremely imperative to move towards a better nation, avoiding violence and social polarization as well as protecting the right to peaceful protest, key to the proper functioning of a democracy [12].\nThe June 2022 protests end with concessions from both sides, which unfortunately only revolve around the price of gasoline, postponing to the medium term the resolution of the other problems such as obtaining fair prices for agricultural producers and the management of the insecurity crisis. History threatens to repeat itself at this dialogue table, remembering that in 2019 the protests ended by a stabilization of the price of gasoline although the actors involved were unable to reach an agreement [6]. Our country cannot put up with more violence between protesters and authorities every two years; social actors must strive for Ecuador to be just that: a country, and not a blender[^5] to which you give something whole and it gives it back to you crushed. We must demand from the rest and demand from ourselves the strength to build a country of peace and prosperity, but also a country of peaceful and effective change when it is needed.\n\n\n\n\n\n\nNote\n\n\n\nThis post was proudly conceived with Quarto and R using RStudio, originally published in El Quantificador from Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visit the GitHub repository to replicate the calculations and learn a bit more about the data, and feel free to contact me or El Quantificador’s team with questions. We used the open-access AmericasBarometer databases, for which we thank the Latin American Public Opinion Project (LAPOP) and its major donors (the United States Agency for International Development, the United Nations Development Program, the Inter-American Development Bank, and Vanderbilt University) for making the data available."
+  },
+  {
+    "objectID": "posts/protests-english/protests.html#footnotes",
+    "href": "posts/protests-english/protests.html#footnotes",
+    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\n12% of people who protest report not having a political identification, while a higher percentage of non-protesters (18%) report the same. Political groups to choose from in this question are “the left” and “the right”, denoted by a scale of 1 to 10.”↩︎\nUnlike the normal unemployment rate, calculated based on the total economically active population, this unemployment rate is calculated based on the total number of people of voting age, so we must be careful when comparing it to the rates reported monthly by INEC.↩︎\nFor 2020, indigenous people constituted around 6% of the national population [11].↩︎\nThe original question in the survey asks about the degree of approval for the possibility of people who “always speak badly of the current form of government and the government system” [12].↩︎\nSee, for example, [13].↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page.\n\n\n\nPhoto: Vancouver Harbour Centre from Gastown. By yours truly."
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Daniel Sánchez Pazmiño",
@@ -98,13 +210,6 @@
     "text": "Footnotes\n\n\nThe link to the journal’s version is usually down, but you may find it here.↩︎\nSee full list of certificates here↩︎"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Home",
-    "section": "",
-    "text": "Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also Research Associate at Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE), an Ecuadorian research nonprofit.\nIn this webpage, you will find short and long versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write about economics, politics and other stuff in the Posts page.\n\n\n\nPhoto: Vancouver Harbour Centre from Gastown. By yours truly."
-  },
-  {
     "objectID": "media.html",
     "href": "media.html",
     "title": "Media",
@@ -154,74 +259,11 @@
     "text": "Footnotes\n\n\nUn 12% de personas que protestan reportan no tener identificación política, mientras que un porcentaje mayor de no protesantes (18%) reporta lo mismo. Los grupos políticos a elegir en esta pregunta son “la izquierda” y “la derecha”, denotados por una escala del 1 al 10.↩︎\nA diferencia de la tasa de desempleo normal, calculada sobre el total de población económicamente activa, esta tasa de desempleo se calcula sobre el total de personas en edad de votar, por lo que debemos tener cuidado al compararla con las tasas reportadas por el INEC mensualmente.↩︎\nPara 2020, los indígenas constituían alrededor de un 6% de la población nacional [11].↩︎\nLa pregunta original realizada en la encuesta pregunta sobre el grado de aprobación a la posibilidad de las personas que “siempre hablan mal de la forma de gobierno actual y del sistema de gobierno” [12].↩︎\nVéase, por ejemplo, [13].↩︎\nImagen original de @ecuacultural.↩︎"
   },
   {
-    "objectID": "posts/protests-english/protests.html",
-    "href": "posts/protests-english/protests.html",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "",
-    "text": "Note\n\n\n\nThis post was originally published on El Quantificador, the general interest blog of the Ecuadorian Development Research Laboratory (LIDE for its initials in Spanish), an Ecuadorian research nonprofit whose goal is the research and dissemination of evidence-based public policy.\nEcuador ended the first half of 2022 with 18 days of protests, making it the longest national protests (Paro Nacional) in recent decades. Given the growing political, social and economic crisis as well as the lack of guarantees for a peaceful resolution, it is important to understand how Ecuadorians behave during protests. An analysis of the AmericasBarometer public opinion survey reveals that those who participate in protests are more likely to be men, to respect the right to protest in general, to disapprove of the President’s management and to identify with a political group. Notably, the survey results suggest that those who self-identify as indigenous, whose economic situation has worsened, and who are unemployed are not more likely to participate in protests. It is also discovered that respect for the right to protest moves against support for the current President, revealing a worrying situation: the Ecuadorian might only respect this right when the protests align with their political interests.\nJuly 2022- January 2023 Issue\nISSN 2953-6456"
-  },
-  {
-    "objectID": "posts/protests-english/protests.html#protest-participation",
-    "href": "posts/protests-english/protests.html#protest-participation",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "Protest Participation",
-    "text": "Protest Participation\n\n\n\n\n\n\n\n\n\nIn mid-June 2022, the Confederation of Indigenous Nationalities of Ecuador (CONAIE) called for a massive mobilization in the country in order for President Guillermo Lasso to include ten economic and social demands in his government plan [1]. After 18 days of demonstrations, the strike ended following an agreement between the national government and CONAIE [2]. The demonstrations left Ecuador with nine deaths, millions of dollars in damages and economic losses, as well as several injured and apprehended by the police [3–5].\nEcuador seems to have lost the relative political stability it had during Rafael Correa’s ten years in government, especially considering the historic protest of October 2019, also led by CONAIE against the government of then-President Lenín Moreno [6]. However, periods of stability in our country have been the exception rather than the norm. Historically, Ecuador has had a coup d’etat every 6 years, and 50% of these were successful in overthrowing the current government [7].\nThe Barometer of the Americas (AB) survey by the Latin American Public Opinion Project (LAPOP) has conducted several public opinion polls in Ecuador since 2004, including a series of questions on protests since 2006. The last time these questions were asked was at the beginning of 2019, which allows us to observe public opinion just before the October 2019 protest, where CONAIE and other organizations also called for mobilizations against then-President Lenín Moreno.\nThe above chart shows that in 2006, around 21.57% of respondents reported attending a protest in the last 12 months —likely due to the “Rebellion of the Outlaws” that overthrew President Lucio Gutierrez—. From that year on, the percentage of participation gradually decreases in the country, culminating at the beginning of 2019 with 7.66%. In the summer of 2015, there were significant mobilizations called by CONAIE and opposition politicians against the government of Rafael Correa [8,9]. However, the demonstrations seem to have not mobilized as many people, even though they coincided with the lowest popularity of the then-president’s regime [10]."
-  },
-  {
-    "objectID": "posts/protests-english/protests.html#characteristics-of-protesters",
-    "href": "posts/protests-english/protests.html#characteristics-of-protesters",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "Characteristics of protesters",
-    "text": "Characteristics of protesters\nEcuadorian protestors have historically been predominantly male, except in 2014 and 2019 where there were no statistically significant differences between men and women. Those who protest are more likely to be affiliated with a political group1 and to disapprove of the president’s performance. While protestors are generally younger and more educated than those who do not protest, the difference is almost negligible - contrary to what one might think.\nAre those who take to the streets poorer than those who do not protest? No. In fact, only 38% of those who protest consider that their economic situation is worse than 12 months ago. This percentage is only slightly higher than the percentage of non-protesters who consider that their situation has worsened. Similarly, the historical unemployment rate 2 of protesters is not statistically different from the global unemployment rate of the sample -except in 2014, where there is a ten percentage point difference-.”\nA key detail about protesters is their racial composition, and survey data shows that there are no statistically significant differences between the historical percentages of indigenous protesters and non-protesters. In fact, the percentage of indigenous people among all protesters is close to only 6% historically from 2006 to 2019. This low figure may be underestimated as not many surveys are conducted in rural cantons, where the indigenous population is concentrated. However, it makes sense to think that the actual figure should not deviate much from the one presented here: since indigenous people are a minority of the country’s population3, it is likely that they also constitute a minority among those who participate in protests. On the other hand, there is a statistically significant difference in protest participation regarding the percentage of people who self-identify as white, as it is less likely for them to protest."
-  },
-  {
-    "objectID": "posts/protests-english/protests.html#participation-in-protests-vs.-support-for-the-right-to-protest",
-    "href": "posts/protests-english/protests.html#participation-in-protests-vs.-support-for-the-right-to-protest",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "Participation in protests vs. support for the right to protest",
-    "text": "Participation in protests vs. support for the right to protest\n\n\n\n\n\n\n\n\n\nIt is relevant to consider a key difference that may have been easily confused lately, especially while the protests were taking place: participation in protests is not the same as approval of them. LAPOP’s AmericasBarometer allows to construct a time series to monitor Ecuadorians’ historical support for protests, as seen below.\nThe data shows us that prior to the 2019 protest, the right to protest both in general and by opposition groups has been approved by the majority of the voting age population, except in 2012 and 2014. Initially, more Ecuadorians support protests in general than protests by groups against the current government4. However, the relationship reversed for 2016, near the end of Correa’s government, where it was more likely for a person to approve protests against the current government than protests in general.\n\n\n\n\n\n\n\n\n\nOne fact that stands out is that the period of lower tolerance to protest occurred during the peak of popularity of Rafael Correa’s government, as can be seen in the graph on the right. In periods where the president was popular, there was greater rejection of protest while in periods where the president was less popular there was more approval of protest. Since Lenín Moreno distanced himself from the old regime, there is again a greater tolerance for protest. We should not infer causality of correlation alone, however, these facts open the door to a possible explanation of protests at convenience. That is to say, protests are valid and legitimate when they align with my interests and political tendencies, but if not? are they not valid?\n\n\nTable 1: Approval of the right to protest by participation in protests in the last 12 months\n\n\n\n\n(a) Protesting in general\n\n\nHas participated in a protest\nApproves\nDoes not approve\n\n\n\n\nYes\n74%\n26%\n\n\nNo\n57%\n43%\n\n\n\n\n\n\n(b) Protesting against the government\n\n\nHas participated in a protest\nApproves\nDoes not approve\n\n\n\n\nSí\n62%\n38%\n\n\nNo\n55%\n45%\n\n\n\n\n\n\nThe table above shows the historical percentage of two types of approval of protests ranked by participation in protests. As would be expected, a protester is more likely to approve of the right to protest than someone who has not protested. However, those who participate in protests would also be expected to broadly approve of the right to protest in any setting, but there are 26% who have not historically approved of it. Regarding support for protests by groups opposed to the government, the percentages are worse: historically 38% of protesters do not approve of that right. This is a strange and worrisome phenomenon that deserves to be looked at more closely in the future, with updated data."
-  },
-  {
-    "objectID": "posts/protests-english/protests.html#some-implications",
-    "href": "posts/protests-english/protests.html#some-implications",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "Some implications",
-    "text": "Some implications\nThe analysis can be summarized in the following points:\n\nProtesters tend to approve of the right to protest (although not as much), identify with some political wing (right, left, or center), and disapprove of the president’s job. Female and white protestors are less likely to be found.\nThere are no significant differences between protestors and non-protestors in terms of age, years of schooling, the probability of being indigenous, being unemployed and having a worse economic situation.\nA clear divergence is found between participation in protests and approval of protests, with the percentage of approval always being much higher than that of participation.\nInterestingly, approval of protests moves against support for the incumbent president. The more popular the government, the less respected the right to protest.\n\nIt is necessary to understand what the protests imply, both for those who lead and face them and for ordinary citizens. In my opinion, it is even more important for the average Ecuadorian to understand them, since they are the ones who are usually in the front line of the demonstrations, as opposed to the politicians, leaders and authorities who lead them. State violence towards social protest is not justifiable, as well as the minimization of the problems that afflict indigenous communities5, but violence by protesters cannot be justified either. Informing our discussion about the conjuncture of the country with facts, free of ideology and subjectivity, is extremely imperative to move towards a better nation, avoiding violence and social polarization as well as protecting the right to peaceful protest, key to the proper functioning of a democracy [12].\nThe June 2022 protests end with concessions from both sides, which unfortunately only revolve around the price of gasoline, postponing to the medium term the resolution of the other problems such as obtaining fair prices for agricultural producers and the management of the insecurity crisis. History threatens to repeat itself at this dialogue table, remembering that in 2019 the protests ended by a stabilization of the price of gasoline although the actors involved were unable to reach an agreement [6]. Our country cannot put up with more violence between protesters and authorities every two years; social actors must strive for Ecuador to be just that: a country, and not a blender[^5] to which you give something whole and it gives it back to you crushed. We must demand from the rest and demand from ourselves the strength to build a country of peace and prosperity, but also a country of peaceful and effective change when it is needed.\n\n\n\n\n\n\nNote\n\n\n\nThis post was proudly conceived with Quarto and R using RStudio, originally published in El Quantificador from Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE). Visit the GitHub repository to replicate the calculations and learn a bit more about the data, and feel free to contact me or El Quantificador’s team with questions. We used the open-access AmericasBarometer databases, for which we thank the Latin American Public Opinion Project (LAPOP) and its major donors (the United States Agency for International Development, the United Nations Development Program, the Inter-American Development Bank, and Vanderbilt University) for making the data available."
-  },
-  {
-    "objectID": "posts/protests-english/protests.html#footnotes",
-    "href": "posts/protests-english/protests.html#footnotes",
-    "title": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\n12% of people who protest report not having a political identification, while a higher percentage of non-protesters (18%) report the same. Political groups to choose from in this question are “the left” and “the right”, denoted by a scale of 1 to 10.”↩︎\nUnlike the normal unemployment rate, calculated based on the total economically active population, this unemployment rate is calculated based on the total number of people of voting age, so we must be careful when comparing it to the rates reported monthly by INEC.↩︎\nFor 2020, indigenous people constituted around 6% of the national population [11].↩︎\nThe original question in the survey asks about the degree of approval for the possibility of people who “always speak badly of the current form of government and the government system” [12].↩︎\nSee, for example, [13].↩︎"
-  },
-  {
     "objectID": "posts_home.html",
     "href": "posts_home.html",
     "title": "Posts",
     "section": "",
     "text": "Repost from El Quantificador: A quantitative perspective of the protests on Ecuador\n\n\n\n\n\n\n\nenglish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nTook me long, but I’m republishing my contribution to El Quantificador as a translated version from the original in Spanish. Proudly aided by ChatGPT for the translation.\n\n\n\n\n\n\nJan 9, 2023\n\n\nDaniel Sánchez\n\n\n\n\n\n\n  \n\n\n\n\nRepost from El Quantificador: Una perspectiva cuantitativa sobre las protestas en Ecuador\n\n\n\n\n\n\n\nspanish\n\n\npolitics\n\n\necuador\n\n\nprotests\n\n\ndata viz\n\n\n\n\nAs my first post, I republish my contribution to El Quantificador, LIDE's blog-type website that publishes short, data-oriented articles on social matters to tackle misinformation in Ecuador.\n\n\n\n\n\n\nAug 15, 2022\n\n\nDaniel Sánchez\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
-  },
-  {
-    "objectID": "research.html#working-papers-and-publications",
-    "href": "research.html#working-papers-and-publications",
-    "title": "Research",
-    "section": "Working papers and publications",
-    "text": "Working papers and publications\n\nImmunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery1\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs.\n\n\n\nHonesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021) \n\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the Philosophy, Politics and Economics Review.\nPresented a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all2 of the paper’s prose and R code. Spanish version coming in the future."
-  },
-  {
-    "objectID": "research.html#footnotes",
-    "href": "research.html#footnotes",
-    "title": "Research",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe publisher’s website is often down, so I include a link to the exact same version uploaded to this webpage.↩︎\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎"
   },
   {
     "objectID": "resources.html",
@@ -250,47 +292,5 @@
     "title": "Resources",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThis is specially useful considering how widespread the use of MS Office is in both industry and academia. However, I still feel that RMarkdown is a bit clumsy when outputting to MS Office. I know that using bookdown and officedown may solve many issues that are found with RMarkdown when outputting to MS Word, but I’m not sure how as of now. I hope to include this material in the future.↩︎\n Not really a book or a standalone website, but the course material for a course Dr. Andrew Heiss taught at the Andrew Young School of Policy Studies at Georgia State University. All of Dr. Heiss’ material is g-o-l-d. See his page here.↩︎\nThe same as the previous footnote, but this is the course material for Jenny Bryan’s course on statistics at the University of British Columbia. Happy Git is also part of that course.↩︎"
-  },
-  {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
-    "section": "",
-    "text": "As a mentor, I believe in two main principles: transparency and practicality. Transparency can be seen by both academic honesty but also through the practice of reproducible research, which is something I try to do by publishing my code and teaching materials publicly when possible. I also aim to foster the practicality and accessibility of my teaching by uploading my course materials to this site and to my GitHub profile when possible.\nBelow, I’ve listed my teaching experience and course materials if they were available to upload publicly."
-  },
-  {
-    "objectID": "teaching.html#teaching-assistant---simon-fraser-university",
-    "href": "teaching.html#teaching-assistant---simon-fraser-university",
-    "title": "Teaching",
-    "section": "Teaching Assistant - Simon Fraser University",
-    "text": "Teaching Assistant - Simon Fraser University\n\nECON103 Principles of Microeconomics: Summer 2023 - Undergraduate level\nECON355W Economic Development: Spring 2023 - Undergraduate level\nECON310 Money & Banking: Fall 2022 - Undergraduate level"
-  },
-  {
-    "objectID": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
-    "href": "teaching.html#teaching-assistant---new-dimensionslaboratorio-lide",
-    "title": "Teaching",
-    "section": "Teaching Assistant - New Dimensions/Laboratorio LIDE",
-    "text": "Teaching Assistant - New Dimensions/Laboratorio LIDE\n\nIntroduction to SQL (May - June 2023)\nIntroduction to Power BI (April - May 2023)\n\nSome learning materials available in the program’s GitHub repository."
-  },
-  {
-    "objectID": "teaching.html#instructor---new-dimensionslaboratorio-lide",
-    "href": "teaching.html#instructor---new-dimensionslaboratorio-lide",
-    "title": "Teaching",
-    "section": "Instructor - New Dimensions/Laboratorio LIDE",
-    "text": "Instructor - New Dimensions/Laboratorio LIDE\n\nData Visualisation using Tableau, (August 2023)."
-  },
-  {
-    "objectID": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
-    "href": "teaching.html#teaching-assistant--universidad-san-francisco-de-quito-quito-ecuador",
-    "title": "Teaching",
-    "section": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)",
-    "text": "Teaching Assistant- Universidad San Francisco de Quito (Quito, Ecuador)\n\nECN-1001 Introduction to Economics: Fall 2020, 2021 & Spring 2021 - Undergraduate level\nECN-1001H Introduction to Economics Honours: Fall 2021 & Spring 2021 - Undergraduate level\nECN-3091 Austrian School Economics: Fall 2021 - Undergraduate level"
-  },
-  {
-    "objectID": "teaching.html#instructor---ecel-research-group-quito-ecuador",
-    "href": "teaching.html#instructor---ecel-research-group-quito-ecuador",
-    "title": "Teaching",
-    "section": "Instructor - ECEL Research Group (Quito, Ecuador)",
-    "text": "Instructor - ECEL Research Group (Quito, Ecuador)\n\nIntroductory LaTeX: Preparing high level documents- April 2021\n\nCourse materials available on GitHub"
   }
 ]

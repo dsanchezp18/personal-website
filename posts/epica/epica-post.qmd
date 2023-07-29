@@ -330,7 +330,7 @@ Apart from Epica's characteristic blend of symphony and traditional heavy metal,
 
 Apart from their artistic value, which music experters are better able to exploit than me, rich lyrics allow for extensive and awesome text analysis, but more specifically [tidy text analysis](https://www.tidytextmining.com/). With the existence of the amazing [*geniusr*](https://ewenme.github.io/geniusr/) package, text analysis of musical lyrics is almost effortless[^3], as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the *tidytext* package, which helps clean the *corpus* of text into tokens (words) and then eliminates the typical common words (common words) to perform word counts and more sophisticated analysis.
 
-[^3]: What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_githubb('giovanni-cutri/geniusR')`.
+[^3]: What took most effort was making the *geniusr* package to work properly. At the time of this post's writing, it was necessary to install a fork of the package through `remotes::install_github('giovanni-cutri/geniusR')`.
 
 Below, I present some code and the classic wordcloud + wordcount bar plot of *The Phantom Agony*'s lyrics.
 
@@ -457,6 +457,8 @@ Epica's characteristic lyrics across all albums revolve around intangible, philo
 
 ```{r}
 #| label: all-discography-graph
+#| fig-width: 12
+#| fig-height: 8
 
 # Make it phantom agony vs. all of the other albums
 
@@ -533,14 +535,21 @@ df_comparison %>%
   geom_col(position = 'stack') +
   coord_flip(ylim = c(0,200)) +
   geom_text(data = df_comparison %>% filter(type == 'Rest of discography'), 
-            aes(label = count_total), hjust = -2) +
+            aes(label = count_total), 
+            size = 12,
+            color = 'gray',
+            hjust = -2.2) +
   theme(legend.position = 'top') + 
-  labs(title = "Most common words in Epica's Discography") + 
+  labs(title = "Most common words in Epica's Discography",
+       y = '',
+       x = '',
+       fill = '') + 
   scale_fill_manual(values = c("The Phantom Agony" = "#742014", "Rest of discography" = "#C3714A")) +
   theme_daniel +
   theme(axis.text.y = element_text(colour = 'gray'),
         axis.text.x = element_blank(),
         axis.line.x = element_blank(),
-        axis.ticks.x = element_blank()) 
+        axis.ticks.x = element_blank(),
+        legend.position = 'post') 
 ```
 
