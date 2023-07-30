@@ -1,5 +1,5 @@
 ---
-title: "Twenty years of Epica: The EmpiRics"
+title: "Twenty years of Epica: The Empi(R)ics"
 author: "Daniel Sánchez"
 date: "2023-06-17"
 description: "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify application programming interfaces (APIs) with R to analyse the Dutch band's musical features, streams and lyrics. Cover picture by [Diego Eivar](https://www.facebook.com/bubueivar)."
@@ -449,9 +449,9 @@ phantom_agony_wordcount %>%
         axis.ticks.x = element_blank()) 
 ```
 
-Epica's characteristic lyrics across all albums revolve around intangible, philosophical topics which motivate self-reflection, which is something still strongly present in words such as *life*, *die*, *agony*, *forever*. However, in their first album, the band strongly tackled social issues regarding religion, namely, the misuse of religion for the personal benefit of religious and political leaders. Epica commonly uses series of songs across different albums which approach common topics, and in *The Phantom Agony*, the first series for the band started: *The Embrace That Smothers* (i.e. religion being the embrace?). Actually, this series has started before Epica came to life, as in Mark Jansen's previous band, After Forever, the series had already started, also covering the theme of religion. The world events of the time likely motivated Mark Jansen's work, considering how the lyrics made clear that the topic in question was instead of solely relying on figurative/metaphorical elements[^4]. 
+Epica's characteristic lyrics across all albums revolve around intangible, philosophical topics which motivate self-reflection, which is something still strongly present in words such as *life*, *die*, *agony*, *forever*. However, in their first album, the band strongly tackled social issues, namely, the misuse of religion for the personal benefit of its leaders. Epica commonly uses series of songs across different albums which approach common topics, and in *The Phantom Agony*, the first series for the band started: *The Embrace That Smothers* (i.e. religion being the embrace?)^[Technically, this series started before Epica came to life as band. Mark Jansen's previous band, After Forever, started the series and Epica finished it.] The world events of the time (911) likely motivated Jansen's literal rather than figurative approach to the topic.[^4]. 
 
-[^4]: For instance, *Seif al Din* in TPA contains a lengthy and clear statement on how *most leaders interpret the old words to their advantage* (Epica, 2003 on [Genius](https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics), pp. 3)[@epica].
+[^4]: For instance, *Seif al Din* in TPA contains a lengthy and clear statement on how *most leaders interpret the old words to their advantage* (Epica, 2003 on [Genius](https://genius.com/Epica-seif-al-din-the-embrace-that-smothers-part-vi-lyrics), pp. 3)[@epica]. In my view, other albums are much less literal.
 
 *The Embrace that Smothers* continued on for nine songs across three albums. However, this series, in my view, is best exemplified by *The Phantom Agony*, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes in a less literal way. The lyrics leaned on works by social and natural scientists, ancient cultures, among others. The seamless interface of the *geniusr* package allowed me to easily compare TPA to the rest of the discography, as seen below: 
 
@@ -481,7 +481,7 @@ almost_all_epica_tracks <-
 # Get all song dataframes to get albums
 
 song_dfs <-
-  lapply(almost_all_epica_tracks $song_id, get_song_df) %>% 
+  lapply(almost_all_epica_tracks$song_id, get_song_df) %>% 
   bind_rows() %>% 
   select(song_id, song_name, album_name, album_id) %>% 
   mutate(album_name = str_trim(album_name) %>% noquote())
@@ -552,4 +552,46 @@ df_comparison %>%
         axis.ticks.x = element_blank(),
         legend.position = 'post') 
 ```
+
+As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. 
+
+## Sentiment analysis
+
+A painful truth about metal is that (at least in Latin America), it often faced resistance from people who related the genre to negativeness and violence. When Marilyn Manson visited Mexico in 2003, for instance [Christian organizations held prayer sessions to "counter the satanist effects of the artist"](https://www.eluniverso.com/2003/11/05/0001/259/A4B577F8FED84DB29FD4109E384B70C3.html/)^[Seemingly, this also happened in Hungary and Italy at around the same time.]. Though Epica has not faced any kind of satanism accusation, for many people it falls under the broad spectrum of metal, which is supposed to be charged with negative energy of sorts. How true is this?
+
+It is possible to attempt an answer to this question through *sentiment analysis*. In a nutshell, one uses dictionaries or lexicons which contain thousands of words along with a connotation (could be negative, energetic, etc.) to compare with the text of choice. Below, I use the Bing lexicon to categorize *The Phantom Agony's* lyrics into either positive or negative. 
+
+```{r}
+#| label: sentiment-bing
+bing_lexicon <-
+  get_sentiments('bing')
+
+bing_wordcount <-
+  phantom_agony_wordcount %>% 
+  inner_join(bing_lexicon, by = 'word') %>%
+  group_by(sentiment) %>% 
+  arrange(desc(freq)) %>%
+  slice_head(n = 10)
+  
+bing_wordcount %>% 
+  ggplot(aes(reorder(word, freq), freq)) +
+  geom_col() +
+  facet_wrap(~ sentiment, scales = 'free_y') +
+  coord_flip() +
+  geom_text(aes(label = freq), colour = 'gray', size = 10) 
+
+```
+This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. In any case, it would be interesting to categorize the positive-negative dichotomy over the years across all Epica's albums: 
+
+```{r}
+#| label: sentiment-over-time
+
+epica_all_words <-
+  lapply(epica_album_metrics$release_name, get_album_tracklist_search, artist = 'Epica') %>% 
+  bind_rows() %>% 
+  inner_join(get_artist_songs_df(epica_id) %>% select(song_id, song_name),
+             by = c('song_title' = 'song_name')) %>% 
+  select(song_id) 
+```
+
 
