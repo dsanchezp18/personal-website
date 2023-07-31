@@ -581,17 +581,109 @@ bing_wordcount %>%
   geom_text(aes(label = freq), colour = 'gray', size = 10) 
 
 ```
-This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. In any case, it would be interesting to categorize the positive-negative dichotomy over the years across all Epica's albums: 
+This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention *suffering*, but the song is about getting over *suffering* to reach happiness, the bing lexicon would still categorise the song as mostly negatively. The stringent dichotomy of positive-negatively is structurally flawed in that a word's connotation is not independent from the context it is in. To partially solve this, there are other lexicons, the *Loughran* being one that has more than just positive or negative sentiments. I apply this lexicon to the band's lyrics below: 
 
 ```{r}
 #| label: sentiment-over-time
+#| include: false
 
-epica_all_words <-
-  lapply(epica_album_metrics$release_name, get_album_tracklist_search, artist = 'Epica') %>% 
+epica_all_ids <-
+  lapply(epica_album_metrics$release_name %>% unique(), 
+         get_album_tracklist_search, 
+         artist = 'Epica') %>% 
   bind_rows() %>% 
   inner_join(get_artist_songs_df(epica_id) %>% select(song_id, song_name),
              by = c('song_title' = 'song_name')) %>% 
-  select(song_id) 
+  select(song_id)
+
+epica_all_song_dfs <-
+  lapply(epica_all_ids$song_id, get_song_df) %>% 
+  bind_rows() %>% 
+  select(song_id, song_name, album_name, album_id) %>% 
+  mutate(album_name = str_trim(album_name) %>% noquote())
+
+epica_all_words <-
+  epica_all_song_dfs$song_id %>% 
+  lapply(get_lyrics_id) %>% 
+  bind_rows()
+
+epica_tokenised <-
+  epica_all_words %>%  
+  unnest_tokens(input = line,
+                output = word) %>% 
+  inner_join(epica_all_song_dfs %>% select(song_id, album_name), 
+             by = 'song_id') %>% 
+  anti_join(stop_words, by = 'word') %>% 
+  inner_join(bing_lexicon, by = 'word') 
+
+epica_sentiment_releases <- 
+  epica_tokenised %>% 
+  group_by(album_name, sentiment) %>% 
+  summarise(freq = n()) %>% 
+  mutate(perc = freq/sum(freq),
+         album_name = as.character(album_name)) %>% 
+  inner_join(epica_releases_year,
+             by = c('album_name' = 'release_name'))
+
+# Graph
+
+epica_sentiment_releases %>% 
+  ggplot(aes(reorder(album_name, release_year), freq, fill = sentiment)) + 
+  geom_col(position = 'stack')
+  
+
 ```
+
+```{r}
+#| label: sentiment-nrc
+
+nrc <- get_sentiments('nrc') 
+
+epica_tokenised <-
+  epica_all_words %>%  
+  unnest_tokens(input = line,
+                output = word) %>% 
+  inner_join(epica_all_song_dfs %>% select(song_id, album_name), 
+             by = 'song_id') %>% 
+  anti_join(stop_words, by = 'word') %>%
+  inner_join(nrc, by = 'word')
+
+epica_nrc_tpa <-
+  epica_tokenised %>% 
+  filter(album_name == 'The Phantom Agony') %>% 
+  group_by(sentiment) %>% 
+  summarise(freq = n()) %>% 
+  mutate(type = 'The Phantom Agony')
+
+epica_nrc_all_but_tpa <-
+  epica_tokenised %>% 
+  filter(album_name != 'The Phantom Agony') %>% 
+  group_by(sentiment) %>% 
+  summarise(freq = n()) %>% 
+  mutate(type = 'Rest of discography')
+
+epica_nrc_counts <-
+  epica_nrc_tpa %>% 
+  bind_rows(epica_nrc_all_but_tpa)
+
+epica_nrc_counts %>% 
+  ggplot(aes(reorder(sentiment, freq), freq, fill = type)) +
+  geom_col(position = 'stack')+
+  coord_flip()
+
+```
+Aha! A lexicon which is able to categorise sentiments in a richer manner finds that while Epica is predominantly "negative", this lexicon shows that words which are categorised as positive are the second most common. Note that the NRC lexicon could categorise a word in two different sentiments, so this graph is counting *matches* of the words with the lexicon rather than unique word counts themselves: the words in sadness, anger and disgust are already contained in the negative sentiment, for instance.
+
+While the argument against the nosy relatives judging the young metalhead is far from over, the data here shows two things. The richer lexicon, the richer conclusions that can be obtained. Having a binary approach here is definitely not useful, which is why it is important to consider several sentiments and how might they work in context within the artist's work. Second, and probably most important: lexicons kind of suck when analysing music, as they expect literal meanings, not figurative ones. The few conclusions that could be extracted from sentiment analysis have to be carefully vetted through a thorough, qualitative-ish analysis of the songs. 
+
+# Some final remarks
+
+Though I also feel that this painful, pseudo-scientific attempt at understanding Epica's lyrics has run its course, a few things are worth mentioning.
+
+Though not much is clear from the analysis above, one thing is: as times have changed, Epica has done so too, but it has still remained true to its beginnings. *The Phantom Agony* set the scene for what was to come afterwards in terms of lyric content and musicality, and that is why it remains as one of the most streamed releases for the band. Epica remains strongly energic, but has reduced its degree of instrumentality to favour more modern types of metal in their latest releases.
+
+It is difficult to quantify lyrical content, but through tidy text analysis we're able to see how Epica has shifted towards less literal content as time has passed. With *The Phantom Agony* words with more literal, earthly meanings were common; it was after that Epica converged to the theme of instrospection. Sentiment analysis yields that Epica uses mostly negative words, but it was discussed how this may not necessarily mean that Epica itself is a "negative" band. 
+
+Why care about this? Well, all music genres change, and metal is no different. Understanding how change takes place makes us better listeners of music and less susceptible to the fear mongering that every now then takes place (i.e. is metal dead?). Further, while empirical analysis of musical data might not be of interest to those who are not fans, the exercise itself is valid in the context of reproducibility. Creating a scientific environment for the analysis of music data in an open source language like R helps researchers and industry professionals assess questions of broader impact while worrying less about developing the environment from scratch. 
 
 
