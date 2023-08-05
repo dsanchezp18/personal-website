@@ -551,14 +551,17 @@ df_comparison %>%
   labs(title = "Most common words in Epica's Discography",
        y = '',
        x = '',
-       fill = '') + 
+       fill = '',
+       caption = str_wrap("Note: Includes word counts of The Phantom Agony and the rest of the Epica discography. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package.", 116)) +
+  guides(fill = guide_legend(ncol = 2)) +
   scale_fill_manual(values = c("The Phantom Agony" = "#742014", "Rest of discography" = "#C3714A")) +
   theme_daniel +
   theme(axis.text.y = element_text(colour = 'gray'),
         axis.text.x = element_blank(),
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank(),
-        legend.position = 'bottom') 
+        legend.position = 'top',
+        legend.justification = c(-0.25, 0)) 
 ```
 
 As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. 
@@ -587,12 +590,17 @@ bing_wordcount <-
 bing_wordcount %>% 
   ggplot(aes(reorder(word, freq), freq, fill = sentiment)) +
   facet_wrap(~ sentiment, scales = 'free_y') +
+  geom_text(aes(label = freq), 
+            size = 12,
+            color = 'gray',
+            hjust = -1) +
   geom_col() +
   coord_flip() +
   labs(y = '',
        x = '',
        title = "The Phantom Agony's Sentiment Analysis",
-       subtitle = 'Using the Bing lexicon to classify words into a positive/negative dichotomy') +
+       subtitle = 'Using the Bing lexicon to classify words into a positive/negative dichotomy\n',
+       caption = str_wrap("Note: Includes word counts of The Phantom Agony. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package. Sentiment analysis used the Bing lexicon from the tidytext package.", 116)) +
   guides(fill = 'none') +
   geom_text(aes(label = freq), colour = 'gray', hjust = 0.5) +
   theme_daniel +

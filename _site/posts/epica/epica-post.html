@@ -678,14 +678,17 @@ Tip
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>,</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
 <span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>) <span class="sc">+</span> </span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'bottom'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Includes word counts of The Phantom Agony and the rest of the Epica discography. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package."</span>, <span class="dv">116</span>)) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">ncol =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'top'</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="epica-post_files/figure-html/comparison-graph-1.png" class="img-fluid" width="1152"></p>
@@ -712,17 +715,22 @@ Tip
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>bing_wordcount <span class="sc">%&gt;%</span> </span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sentiment, <span class="at">scales =</span> <span class="st">'free_y'</span>) <span class="sc">+</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The Phantom Agony's Sentiment Analysis"</span>,</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'Using the Bing lexicon to classify words into a positive/negative dichotomy'</span>) <span class="sc">+</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'grey'</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'gray'</span>,</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The Phantom Agony's Sentiment Analysis"</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'Using the Bing lexicon to classify words into a positive/negative dichotomy</span><span class="sc">\n</span><span class="st">'</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Includes word counts of The Phantom Agony. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package. Sentiment analysis used the Bing lexicon from the tidytext package."</span>, <span class="dv">116</span>)) <span class="sc">+</span></span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'grey'</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <p><img src="epica-post_files/figure-html/sentiment-bing-1.png" class="img-fluid" width="1152"></p>
@@ -1646,160 +1654,168 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-567"><a href="#cb9-567" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Most common words in Epica's Discography"</span>,</span>
 <span id="cb9-568"><a href="#cb9-568" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">''</span>,</span>
 <span id="cb9-569"><a href="#cb9-569" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb9-570"><a href="#cb9-570" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>) <span class="sc">+</span> </span>
-<span id="cb9-571"><a href="#cb9-571" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
-<span id="cb9-572"><a href="#cb9-572" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb9-573"><a href="#cb9-573" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
-<span id="cb9-574"><a href="#cb9-574" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-575"><a href="#cb9-575" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-576"><a href="#cb9-576" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-577"><a href="#cb9-577" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'bottom'</span>) </span>
-<span id="cb9-578"><a href="#cb9-578" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-579"><a href="#cb9-579" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-580"><a href="#cb9-580" aria-hidden="true" tabindex="-1"></a>As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. </span>
-<span id="cb9-581"><a href="#cb9-581" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-582"><a href="#cb9-582" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sentiment analysis</span></span>
-<span id="cb9-583"><a href="#cb9-583" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-584"><a href="#cb9-584" aria-hidden="true" tabindex="-1"></a>A painful truth about metal is that (at least in Latin America), it often faced resistance from people who related the genre to negativeness and violence. When Marilyn Manson visited Mexico in 2003, for instance <span class="co">[</span><span class="ot">Christian organizations held prayer sessions to "counter the satanist effects of the artist"</span><span class="co">](https://www.eluniverso.com/2003/11/05/0001/259/A4B577F8FED84DB29FD4109E384B70C3.html/)</span>^<span class="co">[</span><span class="ot">Seemingly, this also happened in Hungary and Italy at around the same time.</span><span class="co">]</span>. Though Epica has not faced any kind of satanism accusation, for many people it falls under the broad spectrum of metal, which is supposed to be charged with negative energy of sorts. How true is this?</span>
-<span id="cb9-585"><a href="#cb9-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-586"><a href="#cb9-586" aria-hidden="true" tabindex="-1"></a>It is possible to attempt an answer to this question through *sentiment analysis*. In a nutshell, one uses dictionaries or lexicons which contain thousands of words along with a connotation (could be negative, energetic, etc.) to compare with the text of choice. Below, I use the Bing lexicon to categorize *The Phantom Agony's* lyrics into either positive or negative. </span>
-<span id="cb9-587"><a href="#cb9-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-590"><a href="#cb9-590" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-591"><a href="#cb9-591" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-bing</span></span>
-<span id="cb9-592"><a href="#cb9-592" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
-<span id="cb9-593"><a href="#cb9-593" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
-<span id="cb9-594"><a href="#cb9-594" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-595"><a href="#cb9-595" aria-hidden="true" tabindex="-1"></a>bing_lexicon <span class="ot">&lt;-</span></span>
-<span id="cb9-596"><a href="#cb9-596" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_sentiments</span>(<span class="st">'bing'</span>)</span>
+<span id="cb9-570"><a href="#cb9-570" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">''</span>,</span>
+<span id="cb9-571"><a href="#cb9-571" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Includes word counts of The Phantom Agony and the rest of the Epica discography. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package."</span>, <span class="dv">116</span>)) <span class="sc">+</span></span>
+<span id="cb9-572"><a href="#cb9-572" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">ncol =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb9-573"><a href="#cb9-573" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"The Phantom Agony"</span> <span class="ot">=</span> <span class="st">"#742014"</span>, <span class="st">"Rest of discography"</span> <span class="ot">=</span> <span class="st">"#C3714A"</span>)) <span class="sc">+</span></span>
+<span id="cb9-574"><a href="#cb9-574" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb9-575"><a href="#cb9-575" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'gray'</span>),</span>
+<span id="cb9-576"><a href="#cb9-576" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-577"><a href="#cb9-577" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-578"><a href="#cb9-578" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-579"><a href="#cb9-579" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">'top'</span>,</span>
+<span id="cb9-580"><a href="#cb9-580" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>)) </span>
+<span id="cb9-581"><a href="#cb9-581" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-582"><a href="#cb9-582" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-583"><a href="#cb9-583" aria-hidden="true" tabindex="-1"></a>As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. </span>
+<span id="cb9-584"><a href="#cb9-584" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-585"><a href="#cb9-585" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sentiment analysis</span></span>
+<span id="cb9-586"><a href="#cb9-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-587"><a href="#cb9-587" aria-hidden="true" tabindex="-1"></a>A painful truth about metal is that (at least in Latin America), it often faced resistance from people who related the genre to negativeness and violence. When Marilyn Manson visited Mexico in 2003, for instance <span class="co">[</span><span class="ot">Christian organizations held prayer sessions to "counter the satanist effects of the artist"</span><span class="co">](https://www.eluniverso.com/2003/11/05/0001/259/A4B577F8FED84DB29FD4109E384B70C3.html/)</span>^<span class="co">[</span><span class="ot">Seemingly, this also happened in Hungary and Italy at around the same time.</span><span class="co">]</span>. Though Epica has not faced any kind of satanism accusation, for many people it falls under the broad spectrum of metal, which is supposed to be charged with negative energy of sorts. How true is this?</span>
+<span id="cb9-588"><a href="#cb9-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-589"><a href="#cb9-589" aria-hidden="true" tabindex="-1"></a>It is possible to attempt an answer to this question through *sentiment analysis*. In a nutshell, one uses dictionaries or lexicons which contain thousands of words along with a connotation (could be negative, energetic, etc.) to compare with the text of choice. Below, I use the Bing lexicon to categorize *The Phantom Agony's* lyrics into either positive or negative. </span>
+<span id="cb9-590"><a href="#cb9-590" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-593"><a href="#cb9-593" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-594"><a href="#cb9-594" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-bing</span></span>
+<span id="cb9-595"><a href="#cb9-595" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb9-596"><a href="#cb9-596" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 8</span></span>
 <span id="cb9-597"><a href="#cb9-597" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-598"><a href="#cb9-598" aria-hidden="true" tabindex="-1"></a>bing_wordcount <span class="ot">&lt;-</span></span>
-<span id="cb9-599"><a href="#cb9-599" aria-hidden="true" tabindex="-1"></a>  phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
-<span id="cb9-600"><a href="#cb9-600" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bing_lexicon, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-601"><a href="#cb9-601" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-602"><a href="#cb9-602" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(freq)) <span class="sc">%&gt;%</span></span>
-<span id="cb9-603"><a href="#cb9-603" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb9-604"><a href="#cb9-604" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-605"><a href="#cb9-605" aria-hidden="true" tabindex="-1"></a>bing_wordcount <span class="sc">%&gt;%</span> </span>
-<span id="cb9-606"><a href="#cb9-606" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
-<span id="cb9-607"><a href="#cb9-607" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sentiment, <span class="at">scales =</span> <span class="st">'free_y'</span>) <span class="sc">+</span></span>
-<span id="cb9-608"><a href="#cb9-608" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
-<span id="cb9-609"><a href="#cb9-609" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
-<span id="cb9-610"><a href="#cb9-610" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">''</span>,</span>
-<span id="cb9-611"><a href="#cb9-611" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
-<span id="cb9-612"><a href="#cb9-612" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The Phantom Agony's Sentiment Analysis"</span>,</span>
-<span id="cb9-613"><a href="#cb9-613" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'Using the Bing lexicon to classify words into a positive/negative dichotomy'</span>) <span class="sc">+</span></span>
-<span id="cb9-614"><a href="#cb9-614" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
-<span id="cb9-615"><a href="#cb9-615" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb9-616"><a href="#cb9-616" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
-<span id="cb9-617"><a href="#cb9-617" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb9-618"><a href="#cb9-618" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'grey'</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
-<span id="cb9-619"><a href="#cb9-619" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-620"><a href="#cb9-620" aria-hidden="true" tabindex="-1"></a>This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention *suffering*, but the song is about getting over *suffering* to reach happiness, the bing lexicon would still categorise the song as mostly negatively. The stringent dichotomy of positive-negatively is structurally flawed in that a word's connotation is not independent from the context it is in. To partially solve this, there are other lexicons, the *Loughran* being one that has more than just positive or negative sentiments. I apply this lexicon to the band's lyrics below: </span>
-<span id="cb9-621"><a href="#cb9-621" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-624"><a href="#cb9-624" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-625"><a href="#cb9-625" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-over-time</span></span>
-<span id="cb9-626"><a href="#cb9-626" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb9-627"><a href="#cb9-627" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
-<span id="cb9-628"><a href="#cb9-628" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-629"><a href="#cb9-629" aria-hidden="true" tabindex="-1"></a>epica_all_ids <span class="ot">&lt;-</span></span>
-<span id="cb9-630"><a href="#cb9-630" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_album_metrics<span class="sc">$</span>release_name <span class="sc">%&gt;%</span> <span class="fu">unique</span>(), </span>
-<span id="cb9-631"><a href="#cb9-631" aria-hidden="true" tabindex="-1"></a>         get_album_tracklist_search, </span>
-<span id="cb9-632"><a href="#cb9-632" aria-hidden="true" tabindex="-1"></a>         <span class="at">artist =</span> <span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-633"><a href="#cb9-633" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb9-634"><a href="#cb9-634" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, song_name),</span>
-<span id="cb9-635"><a href="#cb9-635" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-636"><a href="#cb9-636" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id)</span>
-<span id="cb9-637"><a href="#cb9-637" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-638"><a href="#cb9-638" aria-hidden="true" tabindex="-1"></a>epica_all_song_dfs <span class="ot">&lt;-</span></span>
-<span id="cb9-639"><a href="#cb9-639" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_all_ids<span class="sc">$</span>song_id, get_song_df) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-640"><a href="#cb9-640" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb9-641"><a href="#cb9-641" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id, song_name, album_name, album_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-642"><a href="#cb9-642" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">album_name =</span> <span class="fu">str_trim</span>(album_name) <span class="sc">%&gt;%</span> <span class="fu">noquote</span>())</span>
-<span id="cb9-643"><a href="#cb9-643" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-644"><a href="#cb9-644" aria-hidden="true" tabindex="-1"></a>epica_all_words <span class="ot">&lt;-</span></span>
-<span id="cb9-645"><a href="#cb9-645" aria-hidden="true" tabindex="-1"></a>  epica_all_song_dfs<span class="sc">$</span>song_id <span class="sc">%&gt;%</span> </span>
-<span id="cb9-646"><a href="#cb9-646" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(get_lyrics_id) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-647"><a href="#cb9-647" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
-<span id="cb9-648"><a href="#cb9-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-649"><a href="#cb9-649" aria-hidden="true" tabindex="-1"></a>epica_tokenised <span class="ot">&lt;-</span></span>
-<span id="cb9-650"><a href="#cb9-650" aria-hidden="true" tabindex="-1"></a>  epica_all_words <span class="sc">%&gt;%</span>  </span>
-<span id="cb9-651"><a href="#cb9-651" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
-<span id="cb9-652"><a href="#cb9-652" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-653"><a href="#cb9-653" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_all_song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
-<span id="cb9-654"><a href="#cb9-654" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-655"><a href="#cb9-655" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-656"><a href="#cb9-656" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bing_lexicon, <span class="at">by =</span> <span class="st">'word'</span>) </span>
-<span id="cb9-657"><a href="#cb9-657" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-658"><a href="#cb9-658" aria-hidden="true" tabindex="-1"></a>epica_sentiment_releases <span class="ot">&lt;-</span> </span>
-<span id="cb9-659"><a href="#cb9-659" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
-<span id="cb9-660"><a href="#cb9-660" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name, sentiment) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-661"><a href="#cb9-661" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-662"><a href="#cb9-662" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc =</span> freq<span class="sc">/</span><span class="fu">sum</span>(freq),</span>
-<span id="cb9-663"><a href="#cb9-663" aria-hidden="true" tabindex="-1"></a>         <span class="at">album_name =</span> <span class="fu">as.character</span>(album_name)) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-664"><a href="#cb9-664" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_releases_year,</span>
-<span id="cb9-665"><a href="#cb9-665" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_name'</span>))</span>
-<span id="cb9-666"><a href="#cb9-666" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-667"><a href="#cb9-667" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
-<span id="cb9-668"><a href="#cb9-668" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-669"><a href="#cb9-669" aria-hidden="true" tabindex="-1"></a>epica_sentiment_releases <span class="sc">%&gt;%</span> </span>
-<span id="cb9-670"><a href="#cb9-670" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(album_name, release_year), freq, <span class="at">fill =</span> sentiment)) <span class="sc">+</span> </span>
-<span id="cb9-671"><a href="#cb9-671" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>)</span>
-<span id="cb9-672"><a href="#cb9-672" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb9-673"><a href="#cb9-673" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-674"><a href="#cb9-674" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-675"><a href="#cb9-675" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-678"><a href="#cb9-678" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-679"><a href="#cb9-679" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-nrc</span></span>
-<span id="cb9-680"><a href="#cb9-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-681"><a href="#cb9-681" aria-hidden="true" tabindex="-1"></a>nrc <span class="ot">&lt;-</span> <span class="fu">get_sentiments</span>(<span class="st">'nrc'</span>) </span>
-<span id="cb9-682"><a href="#cb9-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-683"><a href="#cb9-683" aria-hidden="true" tabindex="-1"></a>epica_tokenised <span class="ot">&lt;-</span></span>
-<span id="cb9-684"><a href="#cb9-684" aria-hidden="true" tabindex="-1"></a>  epica_all_words <span class="sc">%&gt;%</span>  </span>
-<span id="cb9-685"><a href="#cb9-685" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
-<span id="cb9-686"><a href="#cb9-686" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-687"><a href="#cb9-687" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_all_song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
-<span id="cb9-688"><a href="#cb9-688" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-689"><a href="#cb9-689" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-690"><a href="#cb9-690" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(nrc, <span class="at">by =</span> <span class="st">'word'</span>)</span>
-<span id="cb9-691"><a href="#cb9-691" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-692"><a href="#cb9-692" aria-hidden="true" tabindex="-1"></a>epica_nrc_tpa <span class="ot">&lt;-</span></span>
-<span id="cb9-693"><a href="#cb9-693" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
-<span id="cb9-694"><a href="#cb9-694" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">==</span> <span class="st">'The Phantom Agony'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-695"><a href="#cb9-695" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-696"><a href="#cb9-696" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-697"><a href="#cb9-697" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">'The Phantom Agony'</span>)</span>
-<span id="cb9-698"><a href="#cb9-698" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-699"><a href="#cb9-699" aria-hidden="true" tabindex="-1"></a>epica_nrc_all_but_tpa <span class="ot">&lt;-</span></span>
-<span id="cb9-700"><a href="#cb9-700" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
-<span id="cb9-701"><a href="#cb9-701" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">!=</span> <span class="st">'The Phantom Agony'</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-702"><a href="#cb9-702" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-703"><a href="#cb9-703" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-704"><a href="#cb9-704" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">'Rest of discography'</span>)</span>
-<span id="cb9-705"><a href="#cb9-705" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-706"><a href="#cb9-706" aria-hidden="true" tabindex="-1"></a>epica_nrc_counts <span class="ot">&lt;-</span></span>
-<span id="cb9-707"><a href="#cb9-707" aria-hidden="true" tabindex="-1"></a>  epica_nrc_tpa <span class="sc">%&gt;%</span> </span>
-<span id="cb9-708"><a href="#cb9-708" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(epica_nrc_all_but_tpa)</span>
-<span id="cb9-709"><a href="#cb9-709" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-710"><a href="#cb9-710" aria-hidden="true" tabindex="-1"></a>epica_nrc_counts <span class="sc">%&gt;%</span> </span>
-<span id="cb9-711"><a href="#cb9-711" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(sentiment, freq), freq, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
-<span id="cb9-712"><a href="#cb9-712" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>)<span class="sc">+</span></span>
-<span id="cb9-713"><a href="#cb9-713" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
-<span id="cb9-714"><a href="#cb9-714" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-715"><a href="#cb9-715" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb9-716"><a href="#cb9-716" aria-hidden="true" tabindex="-1"></a>Aha! A lexicon which is able to categorise sentiments in a richer manner finds that while Epica is predominantly "negative", this lexicon shows that words which are categorised as positive are the second most common. Note that the NRC lexicon could categorise a word in two different sentiments, so this graph is counting *matches* of the words with the lexicon rather than unique word counts themselves: the words in sadness, anger and disgust are already contained in the negative sentiment, for instance.</span>
+<span id="cb9-598"><a href="#cb9-598" aria-hidden="true" tabindex="-1"></a>bing_lexicon <span class="ot">&lt;-</span></span>
+<span id="cb9-599"><a href="#cb9-599" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_sentiments</span>(<span class="st">'bing'</span>)</span>
+<span id="cb9-600"><a href="#cb9-600" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-601"><a href="#cb9-601" aria-hidden="true" tabindex="-1"></a>bing_wordcount <span class="ot">&lt;-</span></span>
+<span id="cb9-602"><a href="#cb9-602" aria-hidden="true" tabindex="-1"></a>  phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
+<span id="cb9-603"><a href="#cb9-603" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bing_lexicon, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-604"><a href="#cb9-604" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-605"><a href="#cb9-605" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(freq)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-606"><a href="#cb9-606" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb9-607"><a href="#cb9-607" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-608"><a href="#cb9-608" aria-hidden="true" tabindex="-1"></a>bing_wordcount <span class="sc">%&gt;%</span> </span>
+<span id="cb9-609"><a href="#cb9-609" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq, <span class="at">fill =</span> sentiment)) <span class="sc">+</span></span>
+<span id="cb9-610"><a href="#cb9-610" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> sentiment, <span class="at">scales =</span> <span class="st">'free_y'</span>) <span class="sc">+</span></span>
+<span id="cb9-611"><a href="#cb9-611" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), </span>
+<span id="cb9-612"><a href="#cb9-612" aria-hidden="true" tabindex="-1"></a>            <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb9-613"><a href="#cb9-613" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">'gray'</span>,</span>
+<span id="cb9-614"><a href="#cb9-614" aria-hidden="true" tabindex="-1"></a>            <span class="at">hjust =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb9-615"><a href="#cb9-615" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb9-616"><a href="#cb9-616" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb9-617"><a href="#cb9-617" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">''</span>,</span>
+<span id="cb9-618"><a href="#cb9-618" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">''</span>,</span>
+<span id="cb9-619"><a href="#cb9-619" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"The Phantom Agony's Sentiment Analysis"</span>,</span>
+<span id="cb9-620"><a href="#cb9-620" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">'Using the Bing lexicon to classify words into a positive/negative dichotomy</span><span class="sc">\n</span><span class="st">'</span>,</span>
+<span id="cb9-621"><a href="#cb9-621" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="fu">str_wrap</span>(<span class="st">"Note: Includes word counts of The Phantom Agony. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package. Sentiment analysis used the Bing lexicon from the tidytext package."</span>, <span class="dv">116</span>)) <span class="sc">+</span></span>
+<span id="cb9-622"><a href="#cb9-622" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="st">'none'</span>) <span class="sc">+</span></span>
+<span id="cb9-623"><a href="#cb9-623" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> freq), <span class="at">colour =</span> <span class="st">'gray'</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb9-624"><a href="#cb9-624" aria-hidden="true" tabindex="-1"></a>  theme_daniel <span class="sc">+</span></span>
+<span id="cb9-625"><a href="#cb9-625" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb9-626"><a href="#cb9-626" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'grey'</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb9-627"><a href="#cb9-627" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-628"><a href="#cb9-628" aria-hidden="true" tabindex="-1"></a>This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention *suffering*, but the song is about getting over *suffering* to reach happiness, the bing lexicon would still categorise the song as mostly negatively. The stringent dichotomy of positive-negatively is structurally flawed in that a word's connotation is not independent from the context it is in. To partially solve this, there are other lexicons, the *Loughran* being one that has more than just positive or negative sentiments. I apply this lexicon to the band's lyrics below: </span>
+<span id="cb9-629"><a href="#cb9-629" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-632"><a href="#cb9-632" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-633"><a href="#cb9-633" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-over-time</span></span>
+<span id="cb9-634"><a href="#cb9-634" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb9-635"><a href="#cb9-635" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb9-636"><a href="#cb9-636" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-637"><a href="#cb9-637" aria-hidden="true" tabindex="-1"></a>epica_all_ids <span class="ot">&lt;-</span></span>
+<span id="cb9-638"><a href="#cb9-638" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_album_metrics<span class="sc">$</span>release_name <span class="sc">%&gt;%</span> <span class="fu">unique</span>(), </span>
+<span id="cb9-639"><a href="#cb9-639" aria-hidden="true" tabindex="-1"></a>         get_album_tracklist_search, </span>
+<span id="cb9-640"><a href="#cb9-640" aria-hidden="true" tabindex="-1"></a>         <span class="at">artist =</span> <span class="st">'Epica'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-641"><a href="#cb9-641" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-642"><a href="#cb9-642" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(<span class="fu">get_artist_songs_df</span>(epica_id) <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, song_name),</span>
+<span id="cb9-643"><a href="#cb9-643" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'song_title'</span> <span class="ot">=</span> <span class="st">'song_name'</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-644"><a href="#cb9-644" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id)</span>
+<span id="cb9-645"><a href="#cb9-645" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-646"><a href="#cb9-646" aria-hidden="true" tabindex="-1"></a>epica_all_song_dfs <span class="ot">&lt;-</span></span>
+<span id="cb9-647"><a href="#cb9-647" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(epica_all_ids<span class="sc">$</span>song_id, get_song_df) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-648"><a href="#cb9-648" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb9-649"><a href="#cb9-649" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(song_id, song_name, album_name, album_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-650"><a href="#cb9-650" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">album_name =</span> <span class="fu">str_trim</span>(album_name) <span class="sc">%&gt;%</span> <span class="fu">noquote</span>())</span>
+<span id="cb9-651"><a href="#cb9-651" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-652"><a href="#cb9-652" aria-hidden="true" tabindex="-1"></a>epica_all_words <span class="ot">&lt;-</span></span>
+<span id="cb9-653"><a href="#cb9-653" aria-hidden="true" tabindex="-1"></a>  epica_all_song_dfs<span class="sc">$</span>song_id <span class="sc">%&gt;%</span> </span>
+<span id="cb9-654"><a href="#cb9-654" aria-hidden="true" tabindex="-1"></a>  <span class="fu">lapply</span>(get_lyrics_id) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-655"><a href="#cb9-655" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>()</span>
+<span id="cb9-656"><a href="#cb9-656" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-657"><a href="#cb9-657" aria-hidden="true" tabindex="-1"></a>epica_tokenised <span class="ot">&lt;-</span></span>
+<span id="cb9-658"><a href="#cb9-658" aria-hidden="true" tabindex="-1"></a>  epica_all_words <span class="sc">%&gt;%</span>  </span>
+<span id="cb9-659"><a href="#cb9-659" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
+<span id="cb9-660"><a href="#cb9-660" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-661"><a href="#cb9-661" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_all_song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
+<span id="cb9-662"><a href="#cb9-662" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-663"><a href="#cb9-663" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-664"><a href="#cb9-664" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(bing_lexicon, <span class="at">by =</span> <span class="st">'word'</span>) </span>
+<span id="cb9-665"><a href="#cb9-665" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-666"><a href="#cb9-666" aria-hidden="true" tabindex="-1"></a>epica_sentiment_releases <span class="ot">&lt;-</span> </span>
+<span id="cb9-667"><a href="#cb9-667" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
+<span id="cb9-668"><a href="#cb9-668" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(album_name, sentiment) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-669"><a href="#cb9-669" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-670"><a href="#cb9-670" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc =</span> freq<span class="sc">/</span><span class="fu">sum</span>(freq),</span>
+<span id="cb9-671"><a href="#cb9-671" aria-hidden="true" tabindex="-1"></a>         <span class="at">album_name =</span> <span class="fu">as.character</span>(album_name)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-672"><a href="#cb9-672" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_releases_year,</span>
+<span id="cb9-673"><a href="#cb9-673" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="fu">c</span>(<span class="st">'album_name'</span> <span class="ot">=</span> <span class="st">'release_name'</span>))</span>
+<span id="cb9-674"><a href="#cb9-674" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-675"><a href="#cb9-675" aria-hidden="true" tabindex="-1"></a><span class="co"># Graph</span></span>
+<span id="cb9-676"><a href="#cb9-676" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-677"><a href="#cb9-677" aria-hidden="true" tabindex="-1"></a>epica_sentiment_releases <span class="sc">%&gt;%</span> </span>
+<span id="cb9-678"><a href="#cb9-678" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(album_name, release_year), freq, <span class="at">fill =</span> sentiment)) <span class="sc">+</span> </span>
+<span id="cb9-679"><a href="#cb9-679" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>)</span>
+<span id="cb9-680"><a href="#cb9-680" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb9-681"><a href="#cb9-681" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-682"><a href="#cb9-682" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-683"><a href="#cb9-683" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-686"><a href="#cb9-686" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-687"><a href="#cb9-687" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: sentiment-nrc</span></span>
+<span id="cb9-688"><a href="#cb9-688" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-689"><a href="#cb9-689" aria-hidden="true" tabindex="-1"></a>nrc <span class="ot">&lt;-</span> <span class="fu">get_sentiments</span>(<span class="st">'nrc'</span>) </span>
+<span id="cb9-690"><a href="#cb9-690" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-691"><a href="#cb9-691" aria-hidden="true" tabindex="-1"></a>epica_tokenised <span class="ot">&lt;-</span></span>
+<span id="cb9-692"><a href="#cb9-692" aria-hidden="true" tabindex="-1"></a>  epica_all_words <span class="sc">%&gt;%</span>  </span>
+<span id="cb9-693"><a href="#cb9-693" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unnest_tokens</span>(<span class="at">input =</span> line,</span>
+<span id="cb9-694"><a href="#cb9-694" aria-hidden="true" tabindex="-1"></a>                <span class="at">output =</span> word) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-695"><a href="#cb9-695" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(epica_all_song_dfs <span class="sc">%&gt;%</span> <span class="fu">select</span>(song_id, album_name), </span>
+<span id="cb9-696"><a href="#cb9-696" aria-hidden="true" tabindex="-1"></a>             <span class="at">by =</span> <span class="st">'song_id'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-697"><a href="#cb9-697" aria-hidden="true" tabindex="-1"></a>  <span class="fu">anti_join</span>(stop_words, <span class="at">by =</span> <span class="st">'word'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-698"><a href="#cb9-698" aria-hidden="true" tabindex="-1"></a>  <span class="fu">inner_join</span>(nrc, <span class="at">by =</span> <span class="st">'word'</span>)</span>
+<span id="cb9-699"><a href="#cb9-699" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-700"><a href="#cb9-700" aria-hidden="true" tabindex="-1"></a>epica_nrc_tpa <span class="ot">&lt;-</span></span>
+<span id="cb9-701"><a href="#cb9-701" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
+<span id="cb9-702"><a href="#cb9-702" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">==</span> <span class="st">'The Phantom Agony'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-703"><a href="#cb9-703" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-704"><a href="#cb9-704" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-705"><a href="#cb9-705" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">'The Phantom Agony'</span>)</span>
+<span id="cb9-706"><a href="#cb9-706" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-707"><a href="#cb9-707" aria-hidden="true" tabindex="-1"></a>epica_nrc_all_but_tpa <span class="ot">&lt;-</span></span>
+<span id="cb9-708"><a href="#cb9-708" aria-hidden="true" tabindex="-1"></a>  epica_tokenised <span class="sc">%&gt;%</span> </span>
+<span id="cb9-709"><a href="#cb9-709" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(album_name <span class="sc">!=</span> <span class="st">'The Phantom Agony'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-710"><a href="#cb9-710" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sentiment) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-711"><a href="#cb9-711" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">freq =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-712"><a href="#cb9-712" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">type =</span> <span class="st">'Rest of discography'</span>)</span>
+<span id="cb9-713"><a href="#cb9-713" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-714"><a href="#cb9-714" aria-hidden="true" tabindex="-1"></a>epica_nrc_counts <span class="ot">&lt;-</span></span>
+<span id="cb9-715"><a href="#cb9-715" aria-hidden="true" tabindex="-1"></a>  epica_nrc_tpa <span class="sc">%&gt;%</span> </span>
+<span id="cb9-716"><a href="#cb9-716" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(epica_nrc_all_but_tpa)</span>
 <span id="cb9-717"><a href="#cb9-717" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-718"><a href="#cb9-718" aria-hidden="true" tabindex="-1"></a>While the argument against the nosy relatives judging the young metalhead is far from over, the data here shows two things. The richer lexicon, the richer conclusions that can be obtained. Having a binary approach here is definitely not useful, which is why it is important to consider several sentiments and how might they work in context within the artist's work. Second, and probably most important: lexicons kind of suck when analysing music, as they expect literal meanings, not figurative ones. The few conclusions that could be extracted from sentiment analysis have to be carefully vetted through a thorough, qualitative-ish analysis of the songs. </span>
-<span id="cb9-719"><a href="#cb9-719" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-720"><a href="#cb9-720" aria-hidden="true" tabindex="-1"></a><span class="fu"># Some final remarks</span></span>
-<span id="cb9-721"><a href="#cb9-721" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-722"><a href="#cb9-722" aria-hidden="true" tabindex="-1"></a>Though I also feel that this painful, pseudo-scientific attempt at understanding Epica's lyrics has run its course, a few things are worth mentioning.</span>
-<span id="cb9-723"><a href="#cb9-723" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-724"><a href="#cb9-724" aria-hidden="true" tabindex="-1"></a>Though not much is clear from the analysis above, one thing is: as times have changed, Epica has done so too, but it has still remained true to its beginnings. *The Phantom Agony* set the scene for what was to come afterwards in terms of lyric content and musicality, and that is why it remains as one of the most streamed releases for the band. Epica remains strongly energic, but has reduced its degree of instrumentality to favour more modern types of metal in their latest releases.</span>
+<span id="cb9-718"><a href="#cb9-718" aria-hidden="true" tabindex="-1"></a>epica_nrc_counts <span class="sc">%&gt;%</span> </span>
+<span id="cb9-719"><a href="#cb9-719" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(sentiment, freq), freq, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
+<span id="cb9-720"><a href="#cb9-720" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>)<span class="sc">+</span></span>
+<span id="cb9-721"><a href="#cb9-721" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()</span>
+<span id="cb9-722"><a href="#cb9-722" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-723"><a href="#cb9-723" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-724"><a href="#cb9-724" aria-hidden="true" tabindex="-1"></a>Aha! A lexicon which is able to categorise sentiments in a richer manner finds that while Epica is predominantly "negative", this lexicon shows that words which are categorised as positive are the second most common. Note that the NRC lexicon could categorise a word in two different sentiments, so this graph is counting *matches* of the words with the lexicon rather than unique word counts themselves: the words in sadness, anger and disgust are already contained in the negative sentiment, for instance.</span>
 <span id="cb9-725"><a href="#cb9-725" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-726"><a href="#cb9-726" aria-hidden="true" tabindex="-1"></a>It is difficult to quantify lyrical content, but through tidy text analysis we're able to see how Epica has shifted towards less literal content as time has passed. With *The Phantom Agony* words with more literal, earthly meanings were common; it was after that Epica converged to the theme of instrospection. Sentiment analysis yields that Epica uses mostly negative words, but it was discussed how this may not necessarily mean that Epica itself is a "negative" band. </span>
+<span id="cb9-726"><a href="#cb9-726" aria-hidden="true" tabindex="-1"></a>While the argument against the nosy relatives judging the young metalhead is far from over, the data here shows two things. The richer lexicon, the richer conclusions that can be obtained. Having a binary approach here is definitely not useful, which is why it is important to consider several sentiments and how might they work in context within the artist's work. Second, and probably most important: lexicons kind of suck when analysing music, as they expect literal meanings, not figurative ones. The few conclusions that could be extracted from sentiment analysis have to be carefully vetted through a thorough, qualitative-ish analysis of the songs. </span>
 <span id="cb9-727"><a href="#cb9-727" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-728"><a href="#cb9-728" aria-hidden="true" tabindex="-1"></a>Why care about this? Well, all music genres change, and metal is no different. Understanding how change takes place makes us better listeners of music and less susceptible to the fear mongering that every now then takes place (i.e. is metal dead?). Further, while empirical analysis of musical data might not be of interest to those who are not fans, the exercise itself is valid in the context of reproducibility. Creating a scientific environment for the analysis of music data in an open source language like R helps researchers and industry professionals assess questions of broader impact while worrying less about developing the environment from scratch. </span>
+<span id="cb9-728"><a href="#cb9-728" aria-hidden="true" tabindex="-1"></a><span class="fu"># Some final remarks</span></span>
 <span id="cb9-729"><a href="#cb9-729" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-730"><a href="#cb9-730" aria-hidden="true" tabindex="-1"></a>Though I also feel that this painful, pseudo-scientific attempt at understanding Epica's lyrics has run its course, a few things are worth mentioning.</span>
+<span id="cb9-731"><a href="#cb9-731" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-732"><a href="#cb9-732" aria-hidden="true" tabindex="-1"></a>Though not much is clear from the analysis above, one thing is: as times have changed, Epica has done so too, but it has still remained true to its beginnings. *The Phantom Agony* set the scene for what was to come afterwards in terms of lyric content and musicality, and that is why it remains as one of the most streamed releases for the band. Epica remains strongly energic, but has reduced its degree of instrumentality to favour more modern types of metal in their latest releases.</span>
+<span id="cb9-733"><a href="#cb9-733" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-734"><a href="#cb9-734" aria-hidden="true" tabindex="-1"></a>It is difficult to quantify lyrical content, but through tidy text analysis we're able to see how Epica has shifted towards less literal content as time has passed. With *The Phantom Agony* words with more literal, earthly meanings were common; it was after that Epica converged to the theme of instrospection. Sentiment analysis yields that Epica uses mostly negative words, but it was discussed how this may not necessarily mean that Epica itself is a "negative" band. </span>
+<span id="cb9-735"><a href="#cb9-735" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-736"><a href="#cb9-736" aria-hidden="true" tabindex="-1"></a>Why care about this? Well, all music genres change, and metal is no different. Understanding how change takes place makes us better listeners of music and less susceptible to the fear mongering that every now then takes place (i.e. is metal dead?). Further, while empirical analysis of musical data might not be of interest to those who are not fans, the exercise itself is valid in the context of reproducibility. Creating a scientific environment for the analysis of music data in an open source language like R helps researchers and industry professionals assess questions of broader impact while worrying less about developing the environment from scratch. </span>
+<span id="cb9-737"><a href="#cb9-737" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
