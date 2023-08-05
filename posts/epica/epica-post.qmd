@@ -72,7 +72,8 @@ theme_daniel<-
         plot.caption.position = 'plot',
         plot.subtitle = element_text(lineheight = 0.5, vjust = 0.5),
         axis.ticks = element_blank(),
-        plot.title = element_text(size = 60))
+        plot.title = element_text(size = 60),
+        axis.text = element_text(colour = 'gray'))
 
 # Execute my credentials (unstaged in the repository for privacy reasons)
 
@@ -663,6 +664,8 @@ epica_sentiment_releases %>%
 
 ```{r}
 #| label: sentiment-nrc
+#| fig-width: 12
+#| fig-height: 8
 
 nrc <- get_sentiments('nrc') 
 
@@ -696,7 +699,18 @@ epica_nrc_counts <-
 epica_nrc_counts %>% 
   ggplot(aes(reorder(sentiment, freq), freq, fill = type)) +
   geom_col(position = 'stack')+
-  coord_flip()
+  coord_flip() +
+  labs(x = '',
+       y = '',
+       title = "Sentiment Analysis of all Epica's discography",
+       subtitle = "Using the NRC lexicon to augment Epica's sentiment analysis",
+       caption = str_wrap("Note: Includes word counts of The Phantom Agony. Lyrics data obtained from the Genius API through the geniusr package. Tokenization of the text performed with the tidytext package. Sentiment analysis used the NRC lexicon from the tidytext package.", 116)) +
+  guides(fill = 'none') +
+  theme_daniel +
+  theme(axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        legend.position = 'top',
+        legend.justification = c(-0.25, 0))
 
 ```
 Aha! A lexicon which is able to categorise sentiments in a richer manner finds that while Epica is predominantly "negative", this lexicon shows that words which are categorised as positive are the second most common. Note that the NRC lexicon could categorise a word in two different sentiments, so this graph is counting *matches* of the words with the lexicon rather than unique word counts themselves: the words in sadness, anger and disgust are already contained in the negative sentiment, for instance.
