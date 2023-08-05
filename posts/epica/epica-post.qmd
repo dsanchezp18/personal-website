@@ -25,6 +25,7 @@ format:
 ```{=html}
 <iframe src="wordcloud_phantom_agony.html" width="100%" height="600"></iframe>
 ```
+
 ```{r}
 #| label: setup
 #| echo: false
@@ -336,6 +337,8 @@ Below, I present some code and the classic wordcloud + wordcount bar plot of *Th
 
 ```{r}
 #| label: text-analysis
+#| cache: true
+#| 
 # Get the genius artist id for Epica using their artist search function
 
 epica_id <-
@@ -456,9 +459,8 @@ Epica's characteristic lyrics across all albums revolve around intangible, philo
 *The Embrace that Smothers* continued on for nine songs across three albums. However, this series, in my view, is best exemplified by *The Phantom Agony*, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes in a less literal way. The lyrics leaned on works by social and natural scientists, ancient cultures, among others. The seamless interface of the *geniusr* package allowed me to easily compare TPA to the rest of the discography, as seen below: 
 
 ```{r}
-#| label: all-discography-graph
-#| fig-width: 12
-#| fig-height: 8
+#| label: all-discography-graph-analysis
+#| cache: true
 
 # Make it phantom agony vs. all of the other albums
 
@@ -529,7 +531,14 @@ df_comparison <-
     type == 'count_tpa' ~ 'The Phantom Agony',
     type == 'count_disc' ~ 'Rest of discography'
   ))
-  
+
+```
+
+```{r}
+#| label: comparison-graph
+#| fig-width: 12
+#| fig-height: 8
+
 df_comparison %>%
   ggplot(aes(reorder(word, rank, decreasing = T), count, fill = type)) +
   geom_col(position = 'stack') +
@@ -538,8 +547,7 @@ df_comparison %>%
             aes(label = count_total), 
             size = 12,
             color = 'gray',
-            hjust = -2.2) +
-  theme(legend.position = 'top') + 
+            hjust = -2.2) +  
   labs(title = "Most common words in Epica's Discography",
        y = '',
        x = '',
@@ -550,7 +558,7 @@ df_comparison %>%
         axis.text.x = element_blank(),
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank(),
-        legend.position = 'post') 
+        legend.position = 'bottom') 
 ```
 
 As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. 
@@ -563,6 +571,9 @@ It is possible to attempt an answer to this question through *sentiment analysis
 
 ```{r}
 #| label: sentiment-bing
+#| fig-width: 12
+#| fig-height: 8
+
 bing_lexicon <-
   get_sentiments('bing')
 
@@ -574,18 +585,26 @@ bing_wordcount <-
   slice_head(n = 10)
   
 bing_wordcount %>% 
-  ggplot(aes(reorder(word, freq), freq)) +
-  geom_col() +
+  ggplot(aes(reorder(word, freq), freq, fill = sentiment)) +
   facet_wrap(~ sentiment, scales = 'free_y') +
+  geom_col() +
   coord_flip() +
-  geom_text(aes(label = freq), colour = 'gray', size = 10) 
-
+  labs(y = '',
+       x = '',
+       title = "The Phantom Agony's Sentiment Analysis",
+       subtitle = 'Using the Bing lexicon to classify words into a positive/negative dichotomy') +
+  guides(fill = 'none') +
+  geom_text(aes(label = freq), colour = 'gray', hjust = 0.5) +
+  theme_daniel +
+  theme(axis.text.x = element_blank(),
+        axis.text = element_text(colour = 'grey', hjust = 1))
 ```
 This initial analysis shows that the top words in the album are mostly categorised as negative, and in fact over 70% of the album's words are categorised as negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention *suffering*, but the song is about getting over *suffering* to reach happiness, the bing lexicon would still categorise the song as mostly negatively. The stringent dichotomy of positive-negatively is structurally flawed in that a word's connotation is not independent from the context it is in. To partially solve this, there are other lexicons, the *Loughran* being one that has more than just positive or negative sentiments. I apply this lexicon to the band's lyrics below: 
 
 ```{r}
 #| label: sentiment-over-time
 #| include: false
+#| cache: true
 
 epica_all_ids <-
   lapply(epica_album_metrics$release_name %>% unique(), 
