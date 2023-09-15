@@ -1,7 +1,7 @@
 ---
 title: "Twenty years of Epica: The Empi(R)ics"
 author: "Daniel Sánchez"
-date: "2023-06-17"
+date: "2023-09-15"
 description: "As a (late) tribute to Epica's *The Phantom Agony* twentieth birthday, I analyse Epica's empirics by accessing the Genius, Last.fm and Spotify APIs with R to analyse the Dutch band's musical features, streams and lyrics."
 categories: [english, music, text analysis, data viz, epica, metal]
 csl: ../../econometrics.csl
@@ -20,7 +20,6 @@ format:
     code-summary: "Show the code"
     code-overflow: wrap
 ---
-
 ```{=html}
 <iframe src="wordcloud_phantom_agony.html" width="96%" height="500"></iframe>
 ```
