@@ -18,7 +18,7 @@ knitr:
 ```{r}
 #| label: setup
 
-# Cargar librerias
+# Libraries
 
 library(survey)
 library(tidyverse)
@@ -28,18 +28,18 @@ library(ggthemes)
 library(haven)
 library(showtext)
 
-# Cargar mis datos
+# Data
 
 load('lapop_full_data.Rdata')
 
-# Definimos colores en HEX para los gráficos
+# Hex colors for graphs
 
 quant_blue<-'#09A4CC'
 quant_grey<-'#5C7C94'
 quant_orange<-'#F8754D'
 quant_red<-'#F44D54'
 
-# Objetos de tema extra
+# Theme objects
 
 theme_daniel<-
   theme(panel.grid.major.y = element_blank(),
@@ -51,7 +51,7 @@ theme_daniel<-
         text = element_text(family = 'Questrial', size = 45),
         plot.caption = element_text(hjust = 0, face = 'italic', size = 30))
 
-# Creamos el objeto de diseño muestral para utilizar en los cálculos
+# Survey design object as per LAPOP instructions
 
 lapop_des<- svydesign(ids = ~ upm,
                  strata = ~ estratopri, 
@@ -134,6 +134,10 @@ ggplot(prot_df, aes(x = year, y = protest))+
        caption = str_wrap(caption_grafo1, 115))+
   theme_hc(style = 'darkunica')+
   theme_daniel
+
+ggsave('graf1lapop.png',
+       width = 8,
+       height = 6)
 ```
 
 In mid-June 2022, the Confederation of Indigenous Nationalities of Ecuador (CONAIE) called for a massive mobilization in the country in order for President Guillermo Lasso to include ten economic and social demands in his government plan [@Pazmino.2022]. After 18 days of demonstrations, the strike ended following an agreement between the national government and CONAIE [@GK.2022]. The demonstrations left Ecuador with nine deaths, millions of dollars in damages and economic losses, as well as several injured and apprehended by the police [@Maria.2022; @Montalvo.2022; @Comercio.2022].
@@ -147,7 +151,7 @@ The above chart shows that in 2006, around 21.57% of respondents reported attend
 ## Characteristics of protesters
 
 ```{r}
-#| label: protestantes-carac
+#| label: protestors-char
 
 df_prot<-
   df %>% 
@@ -329,18 +333,9 @@ A key detail about protesters is their racial composition, and survey data shows
 #| fig-width: 12
 #| fig-height: 8
 
-# Tabulamos la variable de apoyo a las protestas en general
-
-# La variable toma valores de 1 al 10, siendo 10 que más apoyan las protestas en general. Escogemos a quienes responden 1-5
-# como la gente que desaprueba el derecho a la protesta.
-
 df$prot_desap<-ifelse(df$e5 > 5, 1, 0)
 
-# Lo mismo con la variable de apoyo a las protestas de quienes hablan en contra del gobierno
-
 df$prot_desap_op<-ifelse(df$d2 > 5, 1, 0)
-
-# Actualizamos base de datos de protestantes y diseños muestrales
 
 lapop_des<-
   svydesign(ids = ~ upm, 
@@ -362,8 +357,6 @@ lapop_prot_des<-
             na.action = 'na.exclude',
             data = df_prot)
 
-# Hacemos la tabulación a nivel de año
-
 desap_time<-
     svyby(~ prot_desap,
           ~ year,
@@ -378,8 +371,6 @@ desap_op_time<-
           svymean,
           na.rm = T)
 
-# Juntar todo
-
 desap_time_df<-
   desap_time %>%
   mutate(legend = 'Approves protests in general') %>% 
@@ -389,8 +380,6 @@ desap_time_df<-
 
 rownames(desap_time_df)<-NULL
 
-# Tabulaciones
-
 # Job Approval Rating
 
 japrov_time<-svyby(~ pres_aprov_dic, 
@@ -399,8 +388,6 @@ japrov_time<-svyby(~ pres_aprov_dic,
                    svymean, 
                    na.rm = T)
 
-# Confidence in the president
-
 lapop_des$variables$pres_conf_dic <- as.factor(lapop_des$variables$pres_conf_dic)
 
 pconf_time<-svyby(~ pres_conf_dic, 
@@ -408,8 +395,6 @@ pconf_time<-svyby(~ pres_conf_dic,
                   design = lapop_des,
                   svymean, 
                   na.rm = T)
-
-# Manejo de datos
 
 political_graph_df<-
   pconf_time %>%
@@ -433,7 +418,6 @@ japrov_df_g<-
          se = se.pres_aprov_dicYes) %>% 
   mutate(legend = 'Approves the President')
 
-
 # Now unite all of these in the same dataframe to plot it. 
 
 political_graph_df<-
@@ -442,12 +426,12 @@ political_graph_df<-
 
 rownames(political_graph_df)<-NULL
 
-# Caption largo
+# Long caption
 
 caption_grafo2<-
   'Note: Data from the AmericasBarometer. Surveys were conducted from January to March of each year except for 2016, which was conducted from November 2016 to January 2017. The percent who approve is calculated for those who respond with numbers greater than 4 (from 1 to 10). The percentages are based on the total number of people in voting age. Dotted lines represent 95% confidence intervals adjusted for survey design effects.'
 
-# Grafico 1: actitudes
+# Graf 1
 
 ggplot(desap_time_df, aes(x = year, y = prot_desap, color = legend, group = legend))+
   geom_line(size = 1.2)+
@@ -485,7 +469,7 @@ The data shows us that prior to the 2019 protest, the right to protest both in g
 #| fig-width: 12
 #| fig-height: 8
 
-# Grafico 2.1: actitudes politicas
+# Graph 2 
 
 caption3<- 'Note: Data from the Americas Barometer. Surveys were conducted from January to March of each year except for the 2016 round, conducted from November 2016 to January 2017. The dotted gray lines represent the lower and upper limits of the 95% confidence interval. The percentage of people who trust the President is calculated for those who answer numbers greater than 4 (from 1 to 7) while approval is calculated for those who answer numbers greater than 3 (from 1 to 5). The percentages are based on the total number of eligible voters.'
 
@@ -536,6 +520,7 @@ ggplot(political_graph_df,
   theme_daniel +
   theme(axis.ticks.y = element_line(colour = 'white'),
         axis.text.y = element_text(colour = 'grey50'))
+
 ```
 
 One fact that stands out is that the period of lower tolerance to protest occurred during the peak of popularity of Rafael Correa's government, as can be seen in the graph on the right. In periods where the president was popular, there was greater rejection of protest while in periods where the president was less popular there was more approval of protest. Since Lenín Moreno distanced himself from the old regime, there is again a greater tolerance for protest. We should not infer causality of correlation alone, however, these facts open the door to a possible explanation of protests at convenience. That is to say, protests are valid and legitimate when they align with my interests and political tendencies, but if not? are they not valid?

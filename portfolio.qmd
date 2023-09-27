@@ -1,0 +1,141 @@
+---
+title: "Data Portfolio"
+knitr:
+  opts_chunk: 
+    message: false
+    warning:
+    echo: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+library(fontawesome)
+library(knitr)
+```
+
+This page holds my data work portfolio with self-contained projects that showcase several skills in data management, analytics/science and visualization. Use the headers to your right to select different projects. 
+
+All projects have GitHub repositories with open-source code (with Creative Commons licenses), which are reacheable through the GitHub links. 
+
+# Sentiment analysis of musical lyrics
+
+*Part of a personal blog post which uses several musical data sources to perfom analyses of musical data on the dutch symphonic metal band, Epica. I perform tidy text analysis with different lexicons after tokenizing all lyrics from Epica's discography, sourced from the Genius API. It involved complex data cleaning through table reshaping, record linkage and fuzzy joins.*
+
+- [Link to blog post `r fa('link')`](https://daniel-ec.netlify.app/posts/epica/epica-post).
+
+- [Link to code on GitHub `r fa('github')`](https://github.com/dsanchezp18/personal-website/blob/master/posts/epica/epica-post.qmd).
+
+
+```{r}
+#| label: image
+
+knitr::include_graphics('posts/epica/textanalysis1.png')
+
+```
+
+```{r}
+#| label: image2
+
+knitr::include_graphics('posts/epica/textanalysis2.png')
+
+```
+
+
+# Visualizing Music Trends using the Last.fm API  
+
+*This Tableau dashboard sources scrobble data from the Last.fm API and visualizes it in simple, attractive charts. Scrobbles come from my own account on Last.fm, yet the exercise can be done with any public account which chooses to show scrobbles publicly. The data was sourced and preparared using R. * 
+
+- [Link to Tableau Dashboard `r fa('link')` ](https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link).
+
+- [Link to GitHub `r fa('github')`](https://github.com/dsanchezp18/last-fm-viz) repository for data extraction and preparation.
+
+<iframe height="500" width="100%" frameborder="no" src="https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link"> </iframe>
+
+# Superstore Delivery Time Analytics
+
+*I give the classic Superstore dataset a twist by analyzing delivery times instead of sales in this Power BI dashboard. Be sure to turn on maps from your security options in Power BI desktop to see the full functionality of the file.*
+
+```{r}
+knitr::include_graphics('superstore_delivery_time.png')
+```
+- [Link to Power BI Dashboard files (.pbix) `r fa('link')` ](https://1drv.ms/f/s!AvgWfAgB6CDJlLoOU3qGv23IWFXHGg?e=GNYNCk).
+
+# Analyzing public opinion from survey data
+
+*After a series of protests developed in Ecuador in July 2022, I analyzed public opinion variables to try to understand the public sentiment behind the protest. I implement survey design adjustments from the AmericasBarometer survey to correct for oversampling of some regions and to present survey-robust confidence intervals in visualizations.*
+
+:::{.callout-note}
+# Note
+This post is sourced from my contribution to El Quantificador, a blog on social issues created by [LIDE](https://laboratoriolide.org/), an Ecuadorian research nonprofit organization. See the original post in Spanish [here](https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/). 
+:::
+
+- [Link to blog post `r fa('link')`](https://daniel-ec.netlify.app/posts/protests-english/protests).
+
+- [Link to code on GitHub `r fa('github')`](https://github.com/dsanchezp18/personal-website/tree/master/posts/protests-english).
+
+```{r}
+#| label: image3
+knitr::include_graphics('posts/protests-english/graf1lapop.png')
+```
+
+# Research: Differences-in-differences with COVID-19 administrative data in Ecuador
+
+[**- Sánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82. **](research.qmd)
+
+*In 2022 I was able to publish a paper (in English) in an Ecuadorian peer-reviewed journal. The paper used a two-way fixed effects differences-in-differences estimator to estimate the causal effect of COVID-19 vaccination on business creation on Ecuadorian provinces. The key result was that provinces which showed apparent reluctancy to vaccinate saw about 25% less business creation than provinces that didn't.*
+
+- [Link to full paper `r fa('link')`](files/research/immunizing-the-econ.pdf)^[The publisher's [website](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103) is often down, so I include a link to the exact same version uploaded to this webpage.]
+
+- [Link to code on GitHub repository `r fa('github')`](https://github.com/dsanchezp18/covidvax-econrecovery-paper)
+
+```{r}
+#| label: image4
+knitr::include_graphics('paraleltrends.png')
+```
+# Research: Survey-weighted logistic regression to investigate corruption at the individual level
+
+*In early 2023, I was able to publish another peer-reviewed paper in Virginia Tech's peer-reviewed journal, The Philosophy, Politics, and Economics Review. In this paper, I use survey-weighted logistic regression to investigate the drivers of a mysterious increase in corruption tolerance in Ecuador between 2014 and 2016, finding that political identification and presidential approval drove the change.*
+
+[Link to paper `r fa('link')`](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
+
+[Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/hbc-v2)
+
+```{r}
+#| label: image5
+knitr::include_graphics('ctol_map.png')
+```
+
+# Proyectos en Español
+
+Estos proyectos son artículos publicados en el blog El Quantificador por mí o junto con coautores. [El Quantificador](https://elquantificador.org/) es el blog social cuantitativo del [Laboratorio de Investigación para el Desarrollo del Ecuador](https://laboratoriolide.org/), en donde se publican artículos cortos de interés general con enfoque en responder preguntas de corte socioeconómico mediante análisis de datos y estadística. 
+
+## Una perspectiva cuantitativa de las protestas en Ecuador
+
+- [Link al artículo](https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/)
+
+- [Link al repositorio en GitHub](https://github.com/dsanchezp18/protests-article)
+
+```{r}
+knitr::include_graphics('graf2-politica-y-protestas.png')
+```
+
+## Homosexualidad: ¿qué piensan los ecuatorianos? (junto a [Alonso Quijano-Ruiz](https://laboratoriolide.org/investigadores/alonso-quijano-ruiz/))
+
+- [Link al artículo `r fa('link')`](https://elquantificador.org/post/valores/2023-07-02-homosexualidad-qu-piensan-los-ecuatorianos/)
+
+- [Link al repositorio en GitHub `r fa('github')`](https://github.com/elquantificador/homosexualidad-ecu-percepciones)
+
+```{r}
+knitr::include_graphics('grafico_lapop_politicos.png')
+```
+
+## Tres problemas para el análisis cuantitativo de los femicidios en Ecuador (junto a [Alejandra Marchán](https://sites.google.com/view/amarchan98/home))
+
+```{r}
+knitr::include_graphics('graf1-femicidios-vs-otros.png')
+```
+
+- [Link al artículo `r fa('link')`](https://elquantificador.org/post/valores/2023-03-07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/)
+
+- [Link al repositorio en GitHub `r fa('github')`](https://github.com/elquantificador/tres-problemas)

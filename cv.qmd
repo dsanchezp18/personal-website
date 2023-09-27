@@ -25,7 +25,6 @@ library(fontawesome)
 ::: {.g-col-6}
 
 
-
 `r fa('envelope')` dsanchezp998@gmail.com
 
 `r fa('language')` English (TOEFL 119/120) & Spanish (Native)
@@ -57,15 +56,15 @@ GPA 3.82/4.00, *magna cum laude*. Capstone Project: [*Honesty by Convenience: Co
 
 ## Industry Experience `r fa('suitcase')`
 
-### Junior Data Analyst/Economist, Natural Resources Canada
+### Junior Data Analyst, Natural Resources Canada
 
-`r fa('calendar')` June 2023 -  Present
+`r fa('calendar')` June 2023 - December 2023
 
 - Co-op student at the Innovation Branch of Natural Resources Canada (federal government of Canada).
 
 - Creation of data visualization, analysis and reporting pipelines and dashboards using Power BI, R and Python.
 
-- Developed presentations and reports for the department’s leadership, using economic and environmentalinformation at the firm, sector, province and national level.
+- Developed presentations and reports for the department’s leadership, using economic and environmental information at the firm, sector, province and national level.
 
 ### Corporate Finance Consultant, LVM Consulting
 
@@ -250,6 +249,7 @@ https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecua
 
 ## Other training `r fa('school')`
 
+- [Data Scientist Professional with R](https://www.datacamp.com/completed/statement-of-accomplishment/track/7959677023aa011ac70c4e310851efea40caaa7e)
 - [Data Scientist with R](https://www.datacamp.com/statement-of-accomplishment/track/e4dc8d8e504e9a8876da63594f45c218ff6aff8b) - June 2023 (DataCamp^[See full list of certificates [here](https://docs.google.com/spreadsheets/d/1FyRoLfCxDTZWAc4KclG57NyAm4fQkSfWovXKHamNUgc/edit?usp=sharing)])
 - [Data Visualization with R](https://www.datacamp.com/statement-of-accomplishment/track/6ef155d1b147de5b9ff882486ab6e4a8343235a8)- June 2023 (DataCamp)
 - [SFU Big Data Hub Fellowships](https://drive.google.com/file/d/1-zv3u4XveY5OiWMSijBnOkGSj5xNtP4T/view?usp=sharing): AI Essentials - November 2022 (Simon Fraser University)

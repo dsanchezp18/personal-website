@@ -560,7 +560,11 @@ df_comparison %>%
         axis.line.x = element_blank(),
         axis.ticks.x = element_blank(),
         legend.position = 'top',
-        legend.justification = c(-0.25, 0)) 
+        legend.justification = c(-0.25, 0))
+
+ggsave('textanalysis1.png',
+       width = 8,
+       height = 6)
 ```
 
 As expected given the retrospective nature of the band's work, *life* remains as the top word found in lyrics across all original releases, yet other words, such as *truth*, *matter*, *conquer* which are more literal, disappear from the band's top 15 word count. It is clear how the theme of self-reflection is present in all releases. 
@@ -605,6 +609,10 @@ bing_wordcount %>%
   theme_daniel +
   theme(axis.text.x = element_blank(),
         axis.text = element_text(colour = 'grey', hjust = 1))
+
+ggsave('textanalysis2.png',
+       width = 8,
+       height = 6)
 ```
 This initial analysis shows that the top words in the album are indeed categorised as negative, and in fact over 70% of the album's words are so negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention *suffering*, but the song is about getting over *suffering* to reach happiness, the bing lexicon would still consider the song as negative. The stringent dichotomy of positive-negatively is structurally flawed; a word's connotation is not independent from its context. To partially solve this, there are other lexicons, the *Loughran* being one that has more than just positive or negative dimensions. I apply this lexicon to the band's lyrics below: 
 
