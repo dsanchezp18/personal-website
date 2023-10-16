@@ -134,7 +134,6 @@ Aided in the reporting of the clients’ financial information to numerous publi
 
 - **0thers**: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Shell, VBA. API access using *selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR*, `yfinance`, `wbgapi`, etc. 
 
-
 ## Research Experience & Affiliations `r fa('book-open')`
 
 ### Research Associate, ([Laboratorio de Investigación para el Desarrollo del Ecuador](https://laboratoriolide.org/))
@@ -245,7 +244,7 @@ https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecua
 
 - Supported the care of children and the preparation of their daily academic and didactic activities.
 
-- Proposed and developed a didactic long-term project of didactic activities for the children, to be implemented in theFoundation beginning August 2019.
+- Proposed and developed a didactic long-term project of didactic activities for the children, to be implemented in the Foundation starting August 2019.
 
 ## Other training `r fa('school')`
 
