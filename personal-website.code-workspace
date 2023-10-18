@@ -4,5 +4,8 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"r.bracketedPaste": true,
+		"r.alwaysUseActiveTerminal": true
+	}
 }

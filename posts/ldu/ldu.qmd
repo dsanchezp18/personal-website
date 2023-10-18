@@ -1,0 +1,192 @@
+---
+title: "El trono en Ponceano: "
+author: "Daniel Sánchez"
+date: "2023-10-26"
+description: "Liga Deportiva Universitaria demuestra una vez más su potencial internacional pasando a la final de la Copa Sudamericana 2023. En este post, hago un intento de *football analytics* mediante... Imagen generada con inteligencia artificial."
+categories: [spanish, ecuador, football, data viz, R]
+csl: ../../econometrics.csl
+image: ldu_thumb.jpeg
+draft: true
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    echo: true
+    include: true
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+---
+
+Después de casi 14 años desde su última final en un campeonato internacional, Liga Deportiva Universitaria de Quito (LDU) selló su pase a la final de la Copa Sudamericana (el segundo campeonato más importante del fútbol de clubes en Sudamérica). El triunfo de Liga no viene fácil: aunque se ganó la fama del *Rey de Copas* por los cuatro títulos internacionales ganados durante 2007-2010 (incluyendo la Copa Libertadores, el título más importante de América, nunca antes ganado por otro equipo ecuatoriano), al equipo le ha costado restaurar su gloria desde entonces. El 28 de Octubre Liga promete desempolvar el trono en Ponceano, el barrio de Quito donde se encuentra el Estadio Rodrigo Paz Delgado, la *Casa Blanca*. En homenaje al equipo y en la misma línea de los otros artículos de este blog, en este post reviso la trayectoria de Liga en la Copa Sudamericana mediante.
+
+```{r}
+#| label: setup
+
+# Cargar librerias
+
+library(worldfootballR)
+library(dplyr)
+library(stringr)
+
+```
+
+```{r}
+#| label: extraccion-datos
+
+# Loop para extraer informacion-copa-sudamericana
+
+years <- seq(2014, 2022)
+
+sudamericana <- list()
+
+for (i in years){
+  sudamericana[[which(years == i)]] <- fb_league_stats(gender = 'M',
+                                                       season_end_year = i,
+                                                       team_or_player = 'team',
+                                                       non_dom_league_url = "https://fbref.com/en/comps/205/history/Copa-Sudamericana-Seasons",
+                                                       stat_type = 'standard',
+                                                       country = NA,
+                                                       tier = NA)
+}
+
+# Extraer como un solo df y preparar
+
+sudamericana_df <- 
+  bind_rows(sudamericana)  %>% 
+  janitor::clean_names()  %>% 
+  mutate(year = case_when(
+    url  %>% str_like('%2014%') ~ 2014,
+    url  %>% str_like('%2015%') ~ 2015,
+    url  %>% str_like('%2016%') ~ 2016,
+    url  %>% str_like('%2017%') ~ 2017,
+    url  %>% str_like('%2018%') ~ 2018,
+    url  %>% str_like('%2019%') ~ 2019,
+    url  %>% str_like('%2020%') ~ 2020,
+    url  %>% str_like('%2021%') ~ 2021,
+    url  %>% str_like('%2022%') ~ 2022,                                                        
+  ),
+  country = str_sub(squad, start = 1, end = 2)  %>% str_to_upper(),
+  team = str_sub(squad, start = 4, end = -1))  %>% 
+  select(-squad)
+
+# Filtrar para entradas de LDU
+
+sudamericana_ldu <-
+  sudamericana_df  %>%
+  filter(team == 'LDU de Quito')
+
+# Extraer informacion de Copa Libertadores 
+
+libertadores <- list()
+
+for (i in years){
+  libertadores[[which(years == i)]] <- fb_league_stats(gender = 'M',
+                                                       season_end_year = i,
+                                                       team_or_player = 'team',
+                                                       non_dom_league_url = "https://fbref.com/en/comps/14/history/Copa-Libertadores-Seasons",
+                                                       stat_type = 'standard',
+                                                       country = NA,
+                                                       tier = NA)
+}
+
+# Extraer como df y preparar
+
+libertadores_df <- 
+  bind_rows(libertadores)  %>% 
+  janitor::clean_names()  %>% 
+  mutate(year = case_when(
+    url  %>% str_like('%2014%') ~ 2014,
+    url  %>% str_like('%2015%') ~ 2015,
+    url  %>% str_like('%2016%') ~ 2016,
+    url  %>% str_like('%2017%') ~ 2017,
+    url  %>% str_like('%2018%') ~ 2018,
+    url  %>% str_like('%2019%') ~ 2019,
+    url  %>% str_like('%2020%') ~ 2020,
+    url  %>% str_like('%2021%') ~ 2021,
+    url  %>% str_like('%2022%') ~ 2022,                                                        
+  ),
+  country = str_sub(squad, start = 1, end = 2)  %>% str_to_upper(),
+  team = str_sub(squad, start = 4, end = -1))  %>% 
+  select(-squad)
+
+#  Filtrar para entradas de LDU
+
+libertadores_ldu <-
+  libertadores_df  %>%
+  filter(team == 'LDU de Quito')
+```
+
+```{r}
+#| label: extraccion-datos-partidos
+
+# Extraemos datos de partidos de Copa Sudamericana y Copa Libertadores desde 2014
+
+sudamericana_matches_raw <- load_match_comp_results('Copa Sudamericana')
+
+libertadores_matches_raw <- load_match_comp_results('Copa Libertadores de América')
+
+# Preparar datos de Copa Libertadores
+
+libertadores_matches <-
+  libertadores_matches_raw  %>% 
+  janitor::clean_names()  %>%
+  transmute(competition_name = iconv(competition_name, from = "UTF-8", to = "latin1"))
+
+# Preparar datos de Copa Sudamericana
+
+sudamericana_matches <-
+  sudamericana_matches_raw  %>% 
+  janitor::clean_names()  %>% 
+  transmute(competition_name,
+            year = season_end_year,
+            round,
+            round_number = case_when(
+              round == 'First stage' ~ 1,
+              round %in% c('Second Stage', 'Group stage') ~ 2,
+              round == 'Knockout round play-offs' ~ 3,
+              round == 'Round of 16' ~ 4,
+              round == 'Quarter-finals' ~ 5,
+              round == 'Semi-finals' ~ 6,
+              round == 'Final' ~ 7,
+            ),
+            day,
+            date,
+            time,
+            home_team_country = str_sub(home, start = -2)  %>% str_to_upper(),
+            home_team_name = str_sub(home, end = -4),
+            home_goals,
+            away_team_country = str_sub(away, start = 1, end = 2)  %>% str_to_upper(),
+            away_team_name = str_sub(away, start = 4, end = -1),
+            away_goals,
+            result = case_when(
+              home_goals > away_goals ~ 'home_win',
+              home_goals < away_goals ~ 'away_win',
+              home_goals == away_goals ~ NA),
+            match_winner = case_when(
+              home_goals > away_goals ~ home_team_name,
+              home_goals < away_goals ~ away_team_name,
+              home_goals == away_goals ~ 'none-draw'),
+            leg = case_when(
+              notes  %>% str_like('%Leg 1%') ~ 'leg_1',
+              notes  %>% str_like('%Leg 2%') ~ 'leg_2',
+              TRUE ~ NA
+            ),
+            penalty_kicks = if_else(notes  %>% str_like('%penalties%'), TRUE, FALSE),
+            extra_time = if_else(notes  %>% str_like('%extra time%'), TRUE, FALSE),
+            venue,
+            attendance,
+            referee,
+            notes)
+
+# Revisar datos LDU
+
+sudamericana_matches_ldu <-
+  sudamericana_matches  %>%
+  filter(year == 2023)  %>% 
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito')
+
+```
