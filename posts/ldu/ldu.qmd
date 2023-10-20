@@ -31,11 +31,37 @@ Después de casi 14 años desde su última final en un campeonato internacional,
 library(worldfootballR)
 library(dplyr)
 library(stringr)
+library(tidyr)
+library(ggplot2)
+library(ggthemes)
+library(showtext)
+
+# Definir tema base
+
+font_add_google("Questrial", family = "Questrial")
+showtext_auto()
+
+theme_daniel<-
+  theme_hc(style = 'darkunica',
+           base_family = 'Questrial',
+           base_size = 40) +
+  theme(axis.line.y = element_line(colour = 'white'),
+        axis.line.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        plot.caption = element_text(hjust = 0, face = 'italic'),
+        plot.title.position = 'plot',
+        plot.caption.position = 'plot',
+        plot.subtitle = element_text(lineheight = 0.5, vjust = 0.5),
+        axis.ticks = element_blank(),
+        plot.title = element_text(size = 60),
+        axis.text = element_text(colour = 'gray'))
 
 ```
 
 ```{r}
 #| label: extraccion-datos
+#| cache: true
 
 # Loop para extraer informacion-copa-sudamericana
 
@@ -118,40 +144,29 @@ libertadores_df <-
 libertadores_ldu <-
   libertadores_df  %>%
   filter(team == 'LDU de Quito')
-```
-
-```{r}
-#| label: extraccion-datos-partidos
 
 # Extraemos datos de partidos de Copa Sudamericana y Copa Libertadores desde 2014
 
-sudamericana_matches_raw <- load_match_comp_results('Copa Sudamericana')
-
 libertadores_matches_raw <- load_match_comp_results('Copa Libertadores de América')
+
+sudamericana_matches_raw <- load_match_comp_results('Copa Sudamericana')
 
 # Preparar datos de Copa Libertadores
 
 libertadores_matches <-
   libertadores_matches_raw  %>% 
   janitor::clean_names()  %>%
-  transmute(competition_name = iconv(competition_name, from = "UTF-8", to = "latin1"))
-
-# Preparar datos de Copa Sudamericana
-
-sudamericana_matches <-
-  sudamericana_matches_raw  %>% 
-  janitor::clean_names()  %>% 
-  transmute(competition_name,
+  transmute(competition_name = iconv(competition_name, from = "UTF-8", to = "latin1"),
             year = season_end_year,
             round,
             round_number = case_when(
               round == 'First stage' ~ 1,
-              round %in% c('Second Stage', 'Group stage') ~ 2,
+              round %in% c('Second stage', 'Group stage') ~ 2,
               round == 'Knockout round play-offs' ~ 3,
               round == 'Round of 16' ~ 4,
               round == 'Quarter-finals' ~ 5,
               round == 'Semi-finals' ~ 6,
-              round == 'Final' ~ 7,
+              round %in% c('Final', 'Finals') ~ 7
             ),
             day,
             date,
@@ -182,11 +197,123 @@ sudamericana_matches <-
             referee,
             notes)
 
-# Revisar datos LDU
+# Preparar datos de Copa Sudamericana
+
+sudamericana_matches <-
+  sudamericana_matches_raw  %>% 
+  janitor::clean_names()  %>% 
+  transmute(competition_name,
+            year = season_end_year,
+            round,
+            round_number = case_when(
+              round == 'First stage' ~ 1,
+              round %in% c('Second stage', 'Group stage') ~ 2,
+              round == 'Knockout round play-offs' ~ 3,
+              round == 'Round of 16' ~ 4,
+              round == 'Quarter-finals' ~ 5,
+              round == 'Semi-finals' ~ 6,
+              round %in% c('Final', 'Finals') ~ 7
+            ),
+            day,
+            date,
+            time,
+            home_team_country = str_sub(home, start = -2)  %>% str_to_upper(),
+            home_team_name = str_sub(home, end = -4),
+            home_goals,
+            away_team_country = str_sub(away, start = 1, end = 2)  %>% str_to_upper(),
+            away_team_name = str_sub(away, start = 4, end = -1),
+            away_goals,
+            result = case_when(
+              home_goals > away_goals ~ 'home_win',
+              home_goals < away_goals ~ 'away_win',
+              home_goals == away_goals ~ NA),
+            match_winner = case_when(
+              home_goals > away_goals ~ home_team_name,
+              home_goals < away_goals ~ away_team_name,
+              home_goals == away_goals ~ 'none-draw'),
+            leg = case_when(
+              notes  %>% str_like('%Leg 1%') ~ 'leg_1',
+              notes  %>% str_like('%Leg 2%') ~ 'leg_2',
+              TRUE ~ NA
+            ),
+            penalty_kicks = if_else(notes  %>% str_like('%penalties%'), TRUE, FALSE),
+            extra_time = if_else(notes  %>% str_like('%extra time%'), TRUE, FALSE),
+            venue,
+            attendance,
+            referee,
+            notes)
+
+# Filtrar para datos de LDU en Copa Libertadores solamente
+
+libertadores_matches_ldu <-
+  libertadores_matches  %>% 
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito')
+
+# Obtener la ultima etapa alcanzada para cada año de LDU
+
+ldu_stage_reached_libertadores <-
+  libertadores_matches_ldu  %>% 
+  group_by(year)  %>% 
+  summarise(stage_reached_libertadores = max(round_number, na.rm = T))
+
+# Filtrar para datos de LDU en Copa Sudamericana solamente
 
 sudamericana_matches_ldu <-
   sudamericana_matches  %>%
-  filter(year == 2023)  %>% 
   filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito')
+
+# Obtener la ultima etapa alcanzada para cada año de LDU
+
+ldu_stage_reached_sudamericana <-
+  sudamericana_matches_ldu  %>% 
+  group_by(year)  %>%
+  summarise(stage_reached_sudamericana = max(round_number, na.rm = T))
+
+# Crear data frame para realizar grafico de resultados LDU en campeonatos internacionales 
+
+international_results_ldu <-
+  data.frame(year = seq(2014, 2023))  %>% 
+  left_join(ldu_stage_reached_libertadores, by = 'year')  %>% 
+  left_join(ldu_stage_reached_sudamericana, by = 'year')  %>% 
+  mutate(stage_reached_libertadores = tidyr::replace_na(stage_reached_libertadores, 0.1),
+         stage_reached_sudamericana = tidyr::replace_na(stage_reached_sudamericana, 0.1),
+         stage_reached = pmax(stage_reached_libertadores, stage_reached_sudamericana),
+         label_libertadores = case_when(
+            stage_reached_libertadores == 0 ~ 'No participó',
+            stage_reached_libertadores  %>% between(1,3) ~ 'Fase de grupos',
+            stage_reached_libertadores == 3 ~ 'Repechaje',
+            stage_reached_libertadores == 4 ~ 'Octavos de final',
+            stage_reached_libertadores == 5 ~ 'Cuartos de final',
+            stage_reached_libertadores == 6 ~ 'Semifinal',
+            stage_reached_libertadores == 7 ~ 'Final'),
+          label_sudamericana = case_when(
+            stage_reached_sudamericana == 0 ~ 'No participó',
+            stage_reached_sudamericana  %>% between(1,3) ~ 'Fase de grupos',
+            stage_reached_sudamericana == 3 ~ 'Repechaje',
+            stage_reached_sudamericana == 4 ~ 'Octavos de final',
+            stage_reached_sudamericana == 5 ~ 'Cuartos de final',
+            stage_reached_sudamericana == 6 ~ 'Semifinal',
+            stage_reached_sudamericana == 7 ~ 'Final')
+          )
+```
+
+```{r}
+#| label: grafico-resultados
+#| fig-width: 12
+#| fig-height: 8
+
+# Grafico de resultados LDU en campeonatos internacionales
+
+international_results_ldu  %>%
+  ggplot(aes(x = year, y = stage_reached_sudamericana)) +
+  geom_col(width = 0.8, fill = 'white', colour = '#C7B143') + 
+  geom_text(aes(label = label_sudamericana), vjust = -0.5, size = 3.5) +
+  scale_x_continuous(breaks = seq(2014, 2023, 1)) +
+  labs(x = '',
+       y = '',
+       title = 'Resultados de Copa Sudamericana')+
+  theme_daniel+
+  theme(axis.line.y = element_blank(),
+        axis.text.y = element_blank())
 
 ```

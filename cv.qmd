@@ -248,6 +248,7 @@ https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecua
 
 ## Other training `r fa('school')`
 
+- [Importing and Cleaning Data with R](https://www.datacamp.com/statement-of-accomplishment/course/5e03fe5a702bdc1319e7df8298e3215e7f34239c?raw=1)
 - [Understanding and Visualizing Data with Python](https://coursera.org/share/386a614ccce4c470a91860c8761574e8)
 - [Python Fundamentals](https://www.datacamp.com/statement-of-accomplishment/track/20727871220aa1029da98676a9c6384837bbf16b?raw=1)
 - [Data Scientist Professional with R](https://www.datacamp.com/completed/statement-of-accomplishment/track/7959677023aa011ac70c4e310851efea40caaa7e)
