@@ -2,8 +2,12 @@
 title: "El trono en Ponceano: Liga de Quito en cifras con R"
 author: "Daniel Sánchez"
 date: "2023-10-25"
-description: "Liga Deportiva Universitaria demuestra una vez más su potencial internacional pasando a la final de la Copa Sudamericana 2023. En este post, reviso la trayectoria de LDU en campeonatos internacionales CONMEBOL, extrayendo datos de diferentes fuentes con R. Imagen generada con inteligencia artificial."
+description: "Liga Deportiva Universitaria demuestra una vez más su potencial internacional pasando a la final de la Copa Sudamericana 2023. En este post, reviso la trayectoria de LDU en campeonatos internacionales, extrayendo datos de diferentes fuentes con R. Imagen generada con inteligencia artificial."
 categories: [spanish, ecuador, football, data viz, R]
+website:
+  twitter-card:
+    image: dalle.png
+    creator: "@daniel_ec18"
 csl: ../../econometrics.csl
 image: dalle.png
 knitr:
@@ -226,9 +230,10 @@ Ventajosamente, existen esfuerzos internacionales que recientemente han empezado
 
 [^2]: La Copa Sudamericana es el segundo torneo mas importante del fútbol de clubes sudamericano, en donde clasifican clubes en posiciones intermedias de las divisiones nacionales. Es análogo a la Europa League en Europa.
 
-[^3]: En este post, cuando me refiero a un año, realmente me refiero a una *temporada*. Las temporadas para CONMEBOL y
+[^3]: En este post, cuando me refiero a un año, realmente me refiero a una *temporada*. Las temporadas comienzan el año anterior al indicado en las visualizaciones (por ejemplo, la temporada 2021 comienza en 2020 y termina en 2021).
 
 ```{r}
+
 #| label: grafico-resultados
 #| fig-width: 12
 #| fig-height: 8
@@ -268,9 +273,9 @@ international_results_ldu  %>%
 
 ```
 
-Naturalmente, a Liga le ha costado mas terminar en etapas avanzadas de Copa Libertadores que de Copa Sudamericana. El salto a la final de la COpa Sudamericana se da de forma abrupta: en 2022 no logra pasar de la etapa de grupos, pero en 2023 arrasa y llega a la final en Montevideo para enfrentarse a Fortaleza de Brasil, un equipo relativamente nuevo en la escena internacional al haber recientemente ascendido a la primera división de Brasil.
+Naturalmente, a Liga le ha costado más terminar en etapas avanzadas de Copa Libertadores que de Copa Sudamericana. El salto a la final de la Copa Sudamericana se da de forma abrupta: en 2022 no logra pasar de la etapa de grupos, pero en 2023 arrasa y llega a la final en Montevideo para enfrentarse a Fortaleza de Brasil, un equipo relativamente nuevo en la escena internacional al haber recientemente ascendido a la primera división de Brasil.
 
-Una de las complicaciones de los datos (tanto en FBref como en Transfermarkt) es que el gráfico arriba solamente muestra una escena parcial de la historia de LDU en campeonatos internacionales. Lo más lejos que se puede observar es el resultado de Sudamericana en 2015, en donde Liga cayó ante River Plate tras un recordado [penal errado](https://www.youtube.com/watch?v=kXfFJ-mEBjk) por Jonathan Álvez, con Liga como anfitrión. No es posible observar los datos de la mítica liga de los 2000, que ganó la Copa Libertadores y Sudamericana en 2008 y 2009 además de dos Recopas[^4] en 2009 y 2010. Tampoco es posible observar el periodo posterior a 2010, en donde Liga de Quito no logró clasificar a ningún torneo internacional hasta 2015.
+Una de las complicaciones de los datos (tanto en FBref como en Transfermarkt) es que el gráfico solamente muestra una escena parcial de la historia de LDU en campeonatos internacionales. Lo más lejos que se puede observar es el resultado de Sudamericana en 2015, en donde Liga cayó ante River Plate tras un recordado [penal errado](https://www.youtube.com/watch?v=kXfFJ-mEBjk) por Jonathan Álvez, con Liga como anfitrión. No es posible observar los datos de la mítica Liga de los 2000, que ganó la Copa Libertadores y Sudamericana en 2008 y 2009 además de dos Recopas[^4] en 2009 y 2010. Tampoco es posible observar el periodo posterior a 2010, en donde Liga de Quito no logró clasificar a ningún torneo internacional hasta 2015.
 
 [^4]: Minitorneo en donde el campeón Libertadores se enfrenta al de Sudamericana. Análogo a la Super Cup en Europa
 
@@ -385,7 +390,7 @@ ldu_match_goals %>%
 
 ```
 
-Los datos preprocesados de *worldfootballR* permiten calcular el número de goles a favor y en contra para cada una de las temporadas de LDU en torneos internacionales. Naturalmente, el equipo ha mejorado su ratio de goles a medida que ha ido pasando a etapas más avanzadas del torneo y como es de esperarse, Liga es más capaz de mantener su arco en cero en la Sudamericana que en la Libertadores. El mejor desempeño de LDU en la Sudamericana se da este año, con 23 goles en 14 partidos, lo que representa un 50% de partidos ganados. Esto, sin embargo, no es el mejor record de LDU en torneos internacionales de los últimos años: en 2020, aunque el equipo solo pasó a octavos de final, logró un 62.5% de partidos ganados en Copa Libertadores. Esto es un claro ejemplo de cómo la estadística simple no debería ser malinterpretada en contextos deportivos como éste.
+Los datos preprocesados de *worldfootballR* permiten calcular el número de goles a favor y en contra para cada una de las temporadas de LDU en torneos internacionales. Naturalmente, el equipo ha mejorado su ratio de goles a medida que ha ido pasando a etapas más avanzadas del torneo y como es de esperarse, Liga es más capaz de mantener su arco en cero en la Sudamericana que en la Libertadores. El mejor desempeño de LDU en la Sudamericana se da este año, con 23 goles en 14 partidos, lo que representa un 50% de partidos ganados. Esto, sin embargo, no es el mejor record de LDU en torneos internacionales de los últimos años: en 2020, aunque el equipo solo pasó a octavos de final, logró un 62.5% de partidos ganados en Copa Libertadores. Esto es un claro ejemplo de cómo la estadística simple no debería ser malinterpretada en contextos deportivos como este.
 
 Sin embargo, hay indicadores que rara vez fallan, y uno de ellos es \$ *la plata* \$. ¿Cuánto invirtió Liga de Quito en los últimos años para llegar donde está el día de hoy? Esta pregunta podría parecer extremadamente complicada de responder, pero los datos de Transfermarkt, plataforma alemana conocida por su exactitud en cuanto a información de traspasos y valor de jugadores, lo facilita. La función que permite obtener esta información permite solamente observar un año a la vez, por lo que utilizo un `for` *loop* ([aunque muy temidos en R, los loops son manejables](loops.jpg)) para obtener la información de los últimos años sin tener que llamar la función una y otra vez.
 
@@ -479,4 +484,4 @@ En 2022 LDU tuvo la mejor temporada en términos de ingresos por traspasos de su
 
 Lejos de ser un ejercicio exhaustivo de análisis, lo que este post intenta hacer es dar una mirada aterrizada a las cifras del equipo en los dos torneos más importantes de la región. Es desafortunado que no exista una fuente de datos centralizada que permita analizar el fútbol ecuatoriano y regional más a fondo, sin embargo, las posibilidades que ofrecen los desarrolladores open source de R, como el paquete utilizado aquí, *worldfootballR*, son una muestra de que es posible hacer análisis de datos de fútbol de forma más accesible y transparente. Espero que este trabajo sea de utilidad para quiénes se interesen en extraer y analizar datos de fútbol latinoamericano en gran escala, y, ante todo, que sea un buen augurio para la quinta estrella del trono en Ponceano.
 
-> *Liga te pido ponga🥚...*
+> *Liga te pido ponga 🥚...*
