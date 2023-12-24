@@ -3,7 +3,7 @@ title: "Data Portfolio"
 knitr:
   opts_chunk: 
     message: false
-    warning:
+    warning: false
     echo: false
 ---
 
