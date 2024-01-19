@@ -12,21 +12,23 @@ I'm interested in causal inference, political economy, financial economics as we
 
 I believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my [GitHub](https://github.com/dsanchezp18) and [RPubs](https://github.com/dsanchezp18) sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I've done with LIDE can be seen below or also at the organization's blog, [El Quantificador](https://elquantificador.org/). 
 
-## Working papers and publications
+## Publications
+
+### [Honesty by Convenience: Corruption Tolerance in Ecuador](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
+
+*Dedicated to the memory of Jorge Pazmiño (1941-2021)  `r fa('cross')`*
+
+-  Sánchez Pazmiño, D. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. In
+The Philosophy, Politics and Economics Review.
+https://pressbooks.lib.vt.edu/app/uploads/sites/47/2023/03/PPER-Volume-2-2023.pdf.
+
+- Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. 
+
+- Working paper available [here](files/research/hbc-v2.pdf). Initial version submitted to USFQ capstone project's DSpace available [here](https://repositorio.usfq.edu.ec/handle/23000/11202). As of July 2022, a [GitHub repository](https://github.com/dsanchezp18/hbc-v2) includes source code to reproduce all^[Except one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.] of the paper's prose and R code.
 
 ### [Immunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery](files/research/immunizing-the-econ.pdf)^[The publisher's [website](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103) is often down, so I include a link to the exact same version uploaded to this webpage.]
 
 - Sánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82. 
 
 - Source code posted in a [GitHub repository](https://github.com/dsanchezp18/covidvax-econrecovery-paper) and an RMarkdown notebook posted which was also posted in [RPubs](https://rpubs.com/dsanchezp998/covidvax).
-
-### [Honesty by Convenience: Corruption Tolerance in Ecuador](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
-
-*Dedicated to the memory of Jorge Pazmiño (1941-2021)  `r fa('cross')`*
-
-- Capstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty. Published at the [Philosophy, Politics and Economics Review](https://pressbooks.lib.vt.edu/pper). 
-
-- [Presented](files/research/hbc-pres.pdf) a working paper version at the USFQ School of Economics Undergraduate Conferences Fall 2021 on December 12th, 2021.
-
-- Working paper available [here](files/research/hbc-v2.pdf). Initial version submitted to USFQ capstone project's DSpace available [here](https://repositorio.usfq.edu.ec/handle/23000/11202). As of July 2022, a [GitHub repository](https://github.com/dsanchezp18/hbc-v2) includes source code to reproduce all^[Except one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.] of the paper's prose and R code. Spanish version coming in the future.
 
