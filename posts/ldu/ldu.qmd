@@ -217,9 +217,6 @@ international_results_ldu <-
     stage_reached == 7 ~ 'Cuartos de final',
     stage_reached == 9 ~ 'Semifinal',
     stage_reached == 11 ~ 'Final'))
-
-
-
 ```
 
 Existen varias referencias que describen la implementación de métodos de *football analytics*, sin embargo el problema aparece cuando se quiere implementar los métodos para el Ecuador. De forma decepcionante (aunque quizás no sorprendente), **no existe una autoridad que provea datos oficiales de la LigaPro Ecuador**. Existen algunas páginas web que proveen datos básicos, con especial atención al esfuerzo de [\@mifutbolecuador](https://twitter.com/mifutbolecuador), sin embargo, no es posible encontrar una fuente que permita descargas. Curiosamente, sucede lo mismo para los campeonatos internacionales CONMEBOL: aunque existe más información disponible, es complicado llegar a una base de datos limpia y descargable. Esto quizás se debe al potencial uso monetario de estos datos dada la existencia de la industria de las apuestas deportivas (especialmente importante en Ecuador).
@@ -233,7 +230,6 @@ Ventajosamente, existen esfuerzos internacionales que recientemente han empezado
 [^3]: En este post, cuando me refiero a un año, realmente me refiero a una *temporada*. Las temporadas comienzan el año anterior al indicado en las visualizaciones (por ejemplo, la temporada 2021 comienza en 2020 y termina en 2021).
 
 ```{r}
-
 #| label: grafico-resultados
 #| fig-width: 12
 #| fig-height: 8
@@ -269,7 +265,7 @@ international_results_ldu  %>%
         axis.text.y = element_blank(),
         legend.position = c(0.08, 0.88))
 
-
+ggsave('grafico-resultados.png', width = 7, height = 5, dpi = 300)
 
 ```
 

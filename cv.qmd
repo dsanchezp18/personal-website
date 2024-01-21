@@ -37,7 +37,7 @@ library(fontawesome)
 
 :::{.callout-tip}
 # Summary
-Experienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight with clear and effective communication.
+Experienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight through clear and effective communication.
 :::
 
 ## Education `r fa('graduation-cap')`
@@ -48,7 +48,7 @@ GPA 3.89/4.33. Awarded full funding through a merit scholarship and teaching ass
 
 -  Universidad San Francisco de Quito, Bachelor of Arts in Finance (Jan 2019 - May 2022)
 
-GPA 3.81/4.00, *magna cum laude*.
+GPA 3.81/4.00, *magna cum laude*. Second major from USFQ. 
 
 -   Bachelor of Arts in Economics, Jan 2017 - Dec. 2021 (Universidad San Francisco de Quito)
 
@@ -61,9 +61,11 @@ GPA 3.82/4.00, *magna cum laude*. Capstone Project: [*Honesty by Convenience: Co
 `r fa('calendar')` June 2023 - December 2023
 
 - Co-op student at NRCan’s Innovation Branch in the Clean Technology Economic Analysis Unit, supporting the economic, financial and statistical analysis of the clean technology sector for the implementation of business-oriented policy.
+
 - Produced data analysis, reporting and visualization pipelines with R, Python and Power Query/Mashup, following industry standards for code formatting, connecting to APIs for data access using statcanR, wbgapi, rvest, Bloomberg, PitchBook, S&P Capital IQ, among others.
-- Developed 5+ Power BI and Tableau dashboards to be deployed in the team’s website. Documented
-programs, scripts and dashboards for future use, focusing on reproducibility and best coding practices.
+
+- Developed 5+ Power BI and Tableau dashboards to be deployed in the team’s website. Documented programs, scripts and dashboards for future use, focusing on reproducibility and best coding practices.
+
 - Created and presented reports to top officials in the organization, implementing dynamic updating using R and Python pipelines with RMarkdown, Quarto and Jupyter.
 
 ### Corporate Finance Consultant, LVM Consulting 
@@ -151,12 +153,12 @@ Aided in the reporting of the clients’ financial information to numerous publi
 - Co-authorship of research papers with organization members, including a work in progress to be submitted
 to The Gerontologist.
 
-- Established the first DataCamp Donates partnership in Ecuador. DC Donates provides free data education
+- Established the first DataCamp Donates partnership in Ecuador in 2022. DC Donates provides free data education
 to disadvantaged individuals and communities through partners. 
 
-- Assisting in the implementation of projects, including US Embassy financed, New Dimensions (business intelligence education for women) and the upcoming US Embassy-financed *Young Researchers Fellowship*.
+- Assisting in the implementation of projects, including US Embassy-financed *New Dimensions* (business intelligence education for women) and the upcoming US Embassy-financed *Young Researchers Fellowship* (social science and quantitative research education). 
 
-- Reviewer for the organization’s blog-type website El Quantificador, developed in an R/Hugo environment.
+- Reviewer and mantainer for the organization’s blog-type website, El Quantificador, developed with R and Hugo
 
 ### Research Intern, Superintendencia de Compañías, Valores y Seguros Ecuador
 
@@ -206,7 +208,7 @@ quantitative concepts, reviewing written contents and working with students duri
 
 `r fa('calendar')` January 2018 - Present
 
-- Aided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, business economics, calculus, finance, among others. 
+- Aided students across several majors with tutoring sessions in microeconomics, econometrics, statistics, business economics, calculus, R, Stata, SPSS, finance, among others. 
 
 ### Teaching Assistant & Instructor, New Dimensions/LIDE
 

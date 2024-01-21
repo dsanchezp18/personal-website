@@ -25,7 +25,7 @@ about:
       href: cv.qmd
     - icon: file-person
       text: Short CV
-      href: files/cv/daniel_sanchez_cv_shorter.pdf
+      href: files/cv/Daniel_Sanchez_CV_Professional_v2.pdf
 ---
 
 ::: {#about-heading}

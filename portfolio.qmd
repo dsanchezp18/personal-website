@@ -14,41 +14,35 @@ library(fontawesome)
 library(knitr)
 ```
 
-This page holds my data work portfolio with self-contained projects that showcase several skills in data management, analytics/science and visualization. Use the headers to your right to select different projects. 
+This section of my website holds my data work with self-contained projects that showcase several skills in data management, analytics/science and visualization, mostly using R, but there are also projects which use Power BI and Tableau. Use the headers to your right to select different projects. 
 
-All projects have GitHub repositories with open-source code (with Creative Commons licenses), which are reacheable through the GitHub links. 
+Most projects have GitHub repositories with open-source code (with Creative Commons licenses), which are reacheable through the included GitHub links. Enjoy!
 
-# Sentiment analysis of musical lyrics
+# Sentiment analysis of music lyrics
 
 *Part of a personal blog post which uses several musical data sources to perfom analyses of musical data on the dutch symphonic metal band, Epica. I perform tidy text analysis with different lexicons after tokenizing all lyrics from Epica's discography, sourced from the Genius API. It involved complex data cleaning through table reshaping, record linkage and fuzzy joins.*
 
 - [Link to blog post `r fa('link')`](https://daniel-ec.netlify.app/posts/epica/epica-post).
 
-- [Link to code on GitHub `r fa('github')`](https://github.com/dsanchezp18/personal-website/blob/master/posts/epica/epica-post.qmd).
-
+- [Link to code in GitHub `r fa('github')`](https://github.com/dsanchezp18/personal-website/blob/master/posts/epica/epica-post.qmd).
 
 ```{r}
 #| label: image
-
 knitr::include_graphics('posts/epica/textanalysis1.png')
-
 ```
 
 ```{r}
 #| label: image2
-
 knitr::include_graphics('posts/epica/textanalysis2.png')
-
 ```
-
-
 # Visualizing Music Trends using the Last.fm API  
 
 *This Tableau dashboard sources scrobble data from the Last.fm API and visualizes it in simple, attractive charts. Scrobbles come from my own account on Last.fm, yet the exercise can be done with any public account which chooses to show scrobbles publicly. The data was sourced and preparared using R. * 
 
 - [Link to Tableau Dashboard `r fa('link')` ](https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link).
 
-- [Link to GitHub `r fa('github')`](https://github.com/dsanchezp18/last-fm-viz) repository for data extraction and preparation.
+- [Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/last-fm-viz) for data preparation code.
+
 
 <iframe height="500" width="100%" frameborder="no" src="https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link"> </iframe>
 
@@ -56,12 +50,36 @@ knitr::include_graphics('posts/epica/textanalysis2.png')
 
 *I give the classic Superstore dataset a twist by analyzing delivery times instead of sales in this Power BI dashboard. Be sure to turn on maps from your security options in Power BI desktop to see the full functionality of the file.*
 
+- [Link to Power BI Dashboard files (.pbix) `r fa('link')` ](https://1drv.ms/f/s!AvgWfAgB6CDJlLoOU3qGv23IWFXHGg?e=GNYNCk)^[It is not possible to openly deploy Power BI dashboards as it is on Tableau or Shiny. However, to visualize this dashboard you only need to download Power BI desktop on your computer, which is free. The only issue is that it is only available for Windows.
+
 ```{r}
 knitr::include_graphics('superstore_delivery_time.png')
 ```
-- [Link to Power BI Dashboard files (.pbix) `r fa('link')` ](https://1drv.ms/f/s!AvgWfAgB6CDJlLoOU3qGv23IWFXHGg?e=GNYNCk).
+# Clean technology companies in Canada
 
-# Analyzing public opinion from survey data
+*This is a series of work produced during my time as a Junior Data Analyst in the [Clean Technology Economic Analysis Unit](https://ised-isde.canada.ca/site/clean-growth-hub/en/clean-technology-data-strategy/cleantech-companies) team at Natural Resources Canada, which I cannot claim as mine but part of a team effort of highly skilled professionals in NRCan.*
+
+## Canadian Pureplay Clean Technology Companies Dashboard
+
+*A Power BI Dashboard that visualizes the number of Canadian pureplay clean technology companies across provinces and subindustries in the country*. 
+
+- [Link to live dashboard](https://ised-isde.canada.ca/site/clean-growth-hub/en/clean-technology-data-strategy/cleantech-companies)
+
+```{r}
+knitr::include_graphics('pureplays.png')
+```
+
+## British Columbia Clean Technology Companies Profile
+
+*A sector profile on British Columbia's clean technology sector. Developed in collaboration with Trade & Invest British Columbia*. 
+
+- [Link to full report `r fa('link')`](https://www.britishcolumbia.ca/wp-content/uploads/BC-Cleantech-Profile_Web.pdf)
+
+```{r}
+knitr::include_graphics('bc-cleantech2.png')
+```
+
+# Analyzing public opinion from survey data {#sec-public-opinion}
 
 *After a series of protests developed in Ecuador in July 2022, I analyzed public opinion variables to try to understand the public sentiment behind the protest. I implement survey design adjustments from the AmericasBarometer survey to correct for oversampling of some regions and to present survey-robust confidence intervals in visualizations.*
 
@@ -85,7 +103,7 @@ knitr::include_graphics('posts/protests-english/graf1lapop.png')
 
 *In 2022 I was able to publish a paper (in English) in an Ecuadorian peer-reviewed journal. The paper used a two-way fixed effects differences-in-differences estimator to estimate the causal effect of COVID-19 vaccination on business creation on Ecuadorian provinces. The key result was that provinces which showed apparent reluctancy to vaccinate saw about 25% less business creation than provinces that didn't.*
 
-- [Link to full paper `r fa('link')`](files/research/immunizing-the-econ.pdf)^[The publisher's [website](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103) is often down, so I include a link to the exact same version uploaded to this webpage.]
+- [Link to full paper `r fa('link')`](files/research/immunizing-the-econ.pdf)^[The publisher's [website](https://ojs.supercias.gob.ec/index.php/X-pedientes_Economicos/article/view/103) is often down, so I include a link to the exact same version of the paper, uploaded to this site.]
 
 - [Link to code on GitHub repository `r fa('github')`](https://github.com/dsanchezp18/covidvax-econrecovery-paper)
 
@@ -97,45 +115,102 @@ knitr::include_graphics('paraleltrends.png')
 
 *In early 2023, I was able to publish another peer-reviewed paper in Virginia Tech's peer-reviewed journal, The Philosophy, Politics, and Economics Review. In this paper, I use survey-weighted logistic regression to investigate the drivers of a mysterious increase in corruption tolerance in Ecuador between 2014 and 2016, finding that political identification and presidential approval drove the change.*
 
-[Link to paper `r fa('link')`](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
+- [Link to paper `r fa('link')`](https://pressbooks.lib.vt.edu/pper/chapter/article-5/)
 
-[Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/hbc-v2)
+- [Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/hbc-v2)
 
 ```{r}
 #| label: image5
 knitr::include_graphics('ctol_map.png')
 ```
+# Web development with R
 
-# Proyectos en Español
+I have been able to collaborate on a few website development efforts using R. See below for details. 
 
-Estos proyectos son artículos publicados en el blog El Quantificador por mí o junto con coautores. [El Quantificador](https://elquantificador.org/) es el blog social cuantitativo del [Laboratorio de Investigación para el Desarrollo del Ecuador](https://laboratoriolide.org/), en donde se publican artículos cortos de interés general con enfoque en responder preguntas de corte socioeconómico mediante análisis de datos y estadística. 
+## Personal website
 
-## Una perspectiva cuantitativa de las protestas en Ecuador
+This website (daniel-ec.netlify.app) is built using [Quarto](https://quarto.org/), next generation's RMarkdown, and R. I built it from scratch with the help of the great documentation available in the Quarto website and the many examples available in the open source community. The website is hosted through a free Netlify domain. It includes both a typical "website" section and a blog section, which mimics using the [blogdown](https://bookdown.org/yihui/blogdown/) format. 
 
-- [Link al artículo](https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/)
-
-- [Link al repositorio en GitHub](https://github.com/dsanchezp18/protests-article)
+- [Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/personal-website)
 
 ```{r}
-knitr::include_graphics('graf2-politica-y-protestas.png')
+#| label: personal-website
+
+knitr::include_graphics('personal-website.png')
+
 ```
 
-## Homosexualidad: ¿qué piensan los ecuatorianos? (junto a [Alonso Quijano-Ruiz](https://laboratoriolide.org/investigadores/alonso-quijano-ruiz/))
+## El Quantificador 
 
-- [Link al artículo `r fa('link')`](https://elquantificador.org/post/valores/2023-07-02-homosexualidad-qu-piensan-los-ecuatorianos/)
+El Quantificador is a blog on social issues created by the [Ecuadorian Development Research Lab](https://laboratoriolide.org/) (LIDE, for its initials in Spanish), an Ecuadorian research nonprofit. I have been able to collaborate on the development of the blog, which is built using [blogdown](https://bookdown.org/yihui/blogdown/) and a Hugo theme. 
 
-- [Link al repositorio en GitHub `r fa('github')`](https://github.com/elquantificador/homosexualidad-ecu-percepciones)
+- [Link to the website `r fa('link')`](https://elquantificador.org/)
+
+```{r}
+#| label: el-quantificador
+
+knitr::include_graphics('quanti.png')
+
+```
+
+LIDE has produced other websites using R and blogdown, where I've also collaborated, including [its main website](https://laboratoriolide.org/), and a project website for [New Dimensions](https://newdimensions.academy/).
+
+# Projects in Spanish
+
+These projects are short articles with significant data analysis and/or visualization components that I have written in Spanish. They are either published in [El Quantificador](https://elquantificador.org/), a blog on social issues created by [the Ecuadorian Research Development Lab](https://laboratoriolide.org/), an Ecuadorian research nonprofit or in my [personal blog](https://daniel-ec.netlify.app/posts_home). I have listed the links to the direct text in Spanish and to the GitHub repository where the code is hosted. I plan to work on AI-assisted translations of these articles in the future.
+
+## The throne in Ponceano: Liga de Quito's statistics in R
+
+*In late 2023, the best football club in Ecuador, Liga Deportiva Universitaria, was able to pass to the Copa Sudamericana final stage after more than a decade of no international titles. I analyzed the team's statistics in R to understand how the team has been performing in the last few years, using R to access football statistics providers like Transfermarkt or FBref.*
+
+- Original title in Spanish: *El trono en Ponceano: Liga de Quito en cifras con R*.
+
+- [Link to article `r fa('link')`](https://daniel-ec.netlify.app/posts/ldu/ldu.html)
+
+- [Link to code in GitHub`r fa('github')`](https://github.com/dsanchezp18/personal-website/blob/master/posts/ldu/ldu.qmd)
+
+```{r}
+#| label: ldu
+
+knitr::include_graphics('posts/ldu/grafico-resultados.png')
+
+```
+
+## Homosexuality: what do Ecuadorians think about it? (coauthored with [Alonso Quijano-Ruiz](https://laboratoriolide.org/investigadores/alonso-quijano-ruiz/))
+
+*Along with Alonso Quijano, we analyzed public opinion data from the World Values Survey to understand how homosexuality is viewed in Ecuador.*
+
+- Original title in Spanish: *Homosexualidad: ¿qué piensan los ecuatorianos?*. ISSN 2953-6456. 
+
+- [Link to article `r fa('link')`](https://elquantificador.org/post/valores/2023-07-02-homosexualidad-qu-piensan-los-ecuatorianos/)
+
+- [Link to GitHub repository `r fa('github')`](https://github.com/elquantificador/homosexualidad-ecu-percepciones)
 
 ```{r}
 knitr::include_graphics('grafico_lapop_politicos.png')
 ```
 
-## Tres problemas para el análisis cuantitativo de los femicidios en Ecuador (junto a [Alejandra Marchán](https://sites.google.com/view/amarchan98/home))
+## Three problems for the quantitative analysis of femicides in Ecuador (coauthored with [Alejandra Marchán](https://sites.google.com/view/amarchan98/home))
+
+- Original title in Spanish: *Tres problemas para el análisis cuantitativo de los femicidios en Ecuador*. ISSN 2953-6456. 
+
+- [Link to article `r fa('link')`](https://elquantificador.org/post/valores/2023-03-07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/)
+
+- [Link to GitHub repository `r fa('github')`](https://github.com/elquantificador/tres-problemas)
 
 ```{r}
 knitr::include_graphics('graf1-femicidios-vs-otros.png')
 ```
+## A quantitative perspective on the Ecuadorian protests
 
-- [Link al artículo `r fa('link')`](https://elquantificador.org/post/valores/2023-03-07-tres-problemas-para-el-an-lisis-cuantitativo-de-los-femicidios-en-ecuador/)
+**The original version of @sec-public-opinion, written originally in Spanish for [El Quantificador](https://elquantificador.org/) and reposted in Spanish and English in my personal blog.**
 
-- [Link al repositorio en GitHub `r fa('github')`](https://github.com/elquantificador/tres-problemas)
+- Original title in Spanish: *Una perspectiva cuantitativa sobre las protestas en Ecuador*. ISSN 2953-6456.
+
+- [Link to original article](https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/)
+
+- [Link to GitHub repository](https://github.com/dsanchezp18/protests-article)
+
+```{r}
+knitr::include_graphics('graf2-politica-y-protestas.png')
+```
