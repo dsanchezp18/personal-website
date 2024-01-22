@@ -25,7 +25,7 @@ website:
     right: 
       - text: Proudly built with Quarto through RStudio.
   navbar:
-    title: Daniel Sánchez
+    title: Daniel Sánchez Pazmiño
     right:
       - href: index.qmd
         text: Home

@@ -151,7 +151,7 @@
     "href": "portfolio.html#el-quantificador",
     "title": "Data Portfolio",
     "section": "El Quantificador",
-    "text": "El Quantificador\nEl Quantificador is a blog on social issues created by the Ecuadorian Development Research Lab (LIDE, for its initials in Spanish), an Ecuadorian research nonprofit. I have been able to collaborate on the development of the blog, which is built using blogdown and a Hugo theme.\n\nLink to the website \n\n\n\n\n\n\nLIDE has produced other websites using R and blogdown, where I’ve also collaborated, including its main website, and a project website for New Dimensions."
+    "text": "El Quantificador\nEl Quantificador is a blog on social issues created by the Ecuadorian Development Research Lab (LIDE, for its initials in Spanish), an Ecuadorian research nonprofit. I have been able to collaborate on the development of the blog, which is built using blogdown and a Hugo theme.\n\nLink to the website \n\n\n\n\n\n\nThe website deploys several RMarkdown files, with complex data analysis and visualization components, including a Shiny app The website is hosted through a free Netlify domain.\n\n\n\n\n\nLIDE has produced other websites using R and blogdown, where I’ve also collaborated, including its main website, and a project website for New Dimensions."
   },
   {
     "objectID": "portfolio.html#the-throne-in-ponceano-liga-de-quitos-statistics-in-r",
