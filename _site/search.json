@@ -46,21 +46,28 @@
     "href": "research.html",
     "title": "Research",
     "section": "",
-    "text": "I’m interested in causal inference, political economy, financial economics as well as labour and education economics. However, any research question that I find interesting is worth pursuing for me.\nI believe that research should be as reproducible as possible, so I try to always publish my source code for all my projects on my GitHub and RPubs sites. Further, along with very good academics at LIDE, I work on research and projects that can help the development of my home country, Ecuador. Some of the work that I’ve done with LIDE can be seen below or also at the organization’s blog, El Quantificador."
+    "text": "Dedicated to the memory of Jorge Pazmiño (1941-2021) \n\nSánchez Pazmiño, D. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. In The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/app/uploads/sites/47/2023/03/PPER-Volume-2-2023.pdf.\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the USFQ School of Economics.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes the source code to reproduce all1 of the paper’s prose and data analysis.\n\n\n\n\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted in RPubs."
   },
   {
-    "objectID": "research.html#publications",
-    "href": "research.html#publications",
+    "objectID": "research.html#peer-reviewed-publications",
+    "href": "research.html#peer-reviewed-publications",
     "title": "Research",
-    "section": "Publications",
-    "text": "Publications\n\nHonesty by Convenience: Corruption Tolerance in Ecuador\nDedicated to the memory of Jorge Pazmiño (1941-2021) \n\nSánchez Pazmiño, D. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. In The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/app/uploads/sites/47/2023/03/PPER-Volume-2-2023.pdf.\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the School of Economics faculty.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes source code to reproduce all1 of the paper’s prose and R code.\n\n\n\nImmunizing the Economy: A Causal Discussion on Vaccines and Economic Recovery2\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted which was also posted in RPubs."
+    "section": "",
+    "text": "Dedicated to the memory of Jorge Pazmiño (1941-2021) \n\nSánchez Pazmiño, D. (2023). Honesty by Convenience: Corruption Tolerance in Ecuador. In The Philosophy, Politics and Economics Review. https://pressbooks.lib.vt.edu/app/uploads/sites/47/2023/03/PPER-Volume-2-2023.pdf.\nCapstone project presented for the obtainment of the Bachelor of Arts in Economics degree at USFQ. Awarded best USFQ undergraduate capstone project for the Fall 2021 semester by the USFQ School of Economics.\nWorking paper available here. Initial version submitted to USFQ capstone project’s DSpace available here. As of July 2022, a GitHub repository includes the source code to reproduce all1 of the paper’s prose and data analysis.\n\n\n\n\n\nSánchez Pazmiño, D. H. (2022). Immunizing the Economy: A Causality Discussion on Vaccines and Economic Recovery. X-Pedientes Económicos, 6(14), 65–82.\nSource code posted in a GitHub repository and an RMarkdown notebook posted in RPubs."
+  },
+  {
+    "objectID": "research.html#non-peer-reviewed-publications",
+    "href": "research.html#non-peer-reviewed-publications",
+    "title": "Research",
+    "section": "Non peer-reviewed publications3",
+    "text": "Non peer-reviewed publications3\n\nQuijano, A. & Sánchez, D. (2023). Homosexuality: what do Ecuadorians think about it? (In Spanish). ISSN 2953-6456. Original title in Spanish: Homosexualidad: ¿qué piensan los ecuatorianos?\nMarchán, A. & Sánchez, D. (2023). Three problems for the quantitative analysis of femicides in Ecuador (In Spanish). ISSN 2953-6456. Original title in Spanish: Tres problemas para el análisis cuantitativo de los femicidios en Ecuador.\nSánchez, D. (2022). A quantitative perspective on the Ecuadorian protests (In Spanish). ISSN 2953-6456. Original title in Spanish: Una perspectiva cuantitativa sobre las protestas en Ecuador."
   },
   {
     "objectID": "research.html#footnotes",
     "href": "research.html#footnotes",
     "title": "Research",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎\nThe publisher’s website is often down, so I include a link to the exact same version uploaded to this webpage.↩︎"
+    "text": "Footnotes\n\n\nExcept one graph, due to data copyright reasons, but I do share some code that can make this graph more or less reproducible for people with access to the data. See the repository for details.↩︎\nThe publisher’s website is often down, so I include a link to the published paper version.↩︎\nSee media for details on some of these publications↩︎"
   },
   {
     "objectID": "posts/protests-english/protests.html",
