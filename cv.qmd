@@ -115,6 +115,11 @@ Aided in the reporting of the clients’ financial information to numerous publi
   - R (3+years): base, *tidyverse, infer, caret, ranger, tidymodels, tidytext*, etc. 
   - Python (1 year): `pandas`, `polars`,  `numpy`, `matplotlib`, `scipy`, `xgboost`, etc.
   
+- **Spreadsheets/Office software**:
+  - MS Excel (4+years), including VBA macro programming. 
+  - MS Office suite: Outlook, Word, PowerPoint, Project, Visio, etc. 
+  - Google Workspace: Sheets, Docs, Slides, Calendar, etc.
+
 - **Data Science/Econometrics**:
   - Supervised learning: logit/probit classification, decision trees, random forests, gradient boosting, regression (OLS), GLS, GAMs, GMMs, etc.
   - Unsupervised learning: PCA, clustering, k-means, etc.
@@ -142,7 +147,7 @@ Aided in the reporting of the clients’ financial information to numerous publi
   - RMarkdown
   - Knitr/Sweave
 
-- **0thers**: Git, GitHub, MS Office, Stata, Minitab, MATLAB, Unix, IBM SPSS, VBA. API access using *selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR*, `yfinance`, `wbgapi`, etc. 
+- **0thers**: Julia, Stata, Git, GitHub, EViews, Minitab, MATLAB, Unix (Shell scripting), IBM SPSS. API access using *selenium, quantmod, wbstats, Quandl, spotifyr, geniusr, lastfmR*, `yfinance`, `wbgapi`, etc. 
 
 ## Research Experience & Affiliations `r fa('book-open')`
 
