@@ -37,7 +37,7 @@ library(fontawesome)
 
 :::{.callout-tip}
 # Summary
-Experienced data analyst and applied researcher skilled in R, Python, SQL & Power BI. Focused in providing data-oriented insight through clear and effective communication.
+Experienced data analyst and applied researcher skilled in R, Python, SQL and more. Focused in providing data-oriented insight through clear and effective communication.
 :::
 
 ## Education `r fa('graduation-cap')`

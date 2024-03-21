@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -61,6 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -102,7 +103,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -111,6 +118,7 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -121,23 +129,25 @@ div.csl-indent {
 <meta property="og:title" content="Daniel - Twenty years of Epica: The Empi(R)ics">
 <meta property="og:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify APIs with R to analyse the Dutch band’s musical features, streams and lyrics.">
 <meta property="og:image" content="https://daniel-ec.netlify.app/posts/epica/wordcloud.png">
-<meta property="og:site-name" content="Daniel">
+<meta property="og:site_name" content="Daniel">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="767">
 <meta name="twitter:title" content="Daniel - Twenty years of Epica: The Empi(R)ics">
 <meta name="twitter:description" content="As a (late) tribute to Epica’s The Phantom Agony twentieth birthday, I analyse Epica’s empirics by accessing the Genius, Last.fm and Spotify APIs with R to analyse the Dutch band’s musical features, streams and lyrics.">
-<meta name="twitter:image" content="https://daniel-ec.netlify.app/posts/epica/icon.jpeg">
+<meta name="twitter:image" content="https://daniel-ec.netlify.app/posts/epica/wordcloud.png">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image-height" content="500">
+<meta name="twitter:image-width" content="767">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Daniel Sánchez Pazmiño</span>
     </a>
@@ -149,41 +159,41 @@ div.csl-indent {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html" rel="" target="">
- <span class="menu-text">Research</span></a>
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html" rel="" target="">
- <span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html" rel="" target="">
- <span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../media.html" rel="" target="">
- <span class="menu-text">Media</span></a>
+    <a class="nav-link" href="../../media.html"> 
+<span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../portfolio.html" rel="" target="">
- <span class="menu-text">Data Portfolio</span></a>
+    <a class="nav-link" href="../../portfolio.html"> 
+<span class="menu-text">Data Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_home.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../posts_home.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -253,6 +263,7 @@ div.csl-indent {
 
 
 
+
 <iframe src="wordcloud_phantom_agony.html" width="96%" height="500"></iframe>
 <p><em>A wordcloud of Epica’s most common lyrics. Made with the wordcloud2 package in R.</em></p>
 <blockquote class="blockquote">
@@ -278,8 +289,8 @@ Tip
 </div>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup the access token</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>access_token <span class="ot">&lt;-</span> <span class="fu">get_spotify_access_token</span>(<span class="at">client_id =</span> <span class="fu">Sys.getenv</span>(<span class="st">'SPOTIFY_CLIENT_ID'</span>),</span>
@@ -377,7 +388,11 @@ Tip
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/albums-tracks-spotify-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/albums-tracks-spotify-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Epica’s characteristic sound, which meddles the harmonious verses by the female lead with violent male growls became known to the world in a single, <em>Cry for the Moon</em>, released 2003 and included in their first album. <em>Cry for the Moon</em> remains as one of Epica’s most important tracks, as it set the scene for the what was to come later. Curiously, this first album is not the most instrumental of them all, ranking fourth in terms of instrumentalness according to Spotify. The most instrumental release by Epica is actually <em>Consign to Oblivion</em> (2005), often considered as the band’s <em>magnum opus</em>, followed by 2016’s <em>The Holographic Principle</em>. The data show an apparent trade-off between energy and instrumentality, an intuitive idea which is only challenged by the unique <em>Design Your Universe</em> (2009) with high instrumentality and energy. This last release contained the unforgettable <em>Unleashed</em>, probably Epica’s most mainstream track to date.</p>
@@ -390,8 +405,8 @@ Tip
 <p>Having that in mind, in this section I present an attempt at stream analysis with publicly available stream data from Last.fm. Last.fm is an online platform which tracks data from users through scrobbling, a way to “scrape” the data from music platforms and native media players and upload it to the user’s Last.fm account. A listener, whoever, needs to self-select into creating a Last.fm account and connecting their streaming websites or computer’s native media players to Last.fm. This data becomes publicly available to compute recommendations and compatibility analyses for the users. While it certainly leaves out an important chunk of the population (all of those who don’t use Last.fm i.e.&nbsp;selection bias), it’s better than nothing at all.</p>
 <p>By using the <a href="package"><em>lastfmR</em></a> from Piotr Patrzyk<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which connects to the Last.fm API, I can pull data from all users who have scrobbled Epica.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all tracks scrobbled and clean up the track names as they are *very* dirty</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># This will remove all of the "part" words from the track names, which are pretty common</span></span>
@@ -462,7 +477,11 @@ Tip
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/scrobbles-by-album-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/scrobbles-by-album-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The streams were obtained using the <em>lastfmR</em> package, which allows to obtain the number of streams of all songs which are mapped to most artists. However, two issues exist with the use of <em>lastfmR</em> for performing stream analysis. First, tracks are scrobbled from users <em>with the exact same name that they have in the user’s computer or stream platform</em>. This is not an issue for Last.fm users who are streaming from platforms like Spotify, as track names are standard. However, for users scrobbling from their own media players (e.g.&nbsp;iTunes) you may get messy track names, making it difficult to map tracks to albums. I used Damerau-Levenshtein string distance to perfom fuzzy joins, however, the possibility of 100+ entries for the same track in the Last.fm makes it possible to only observe a portion of the scrobbles, as the API limits scrobble data to 10,000 rows.</p>
@@ -474,8 +493,8 @@ Tip
 <p>Apart from Epica’s characteristic blend of symphony and traditional heavy metal, another element which makes them stand out are lyrics. Unlike much of today’s lyrics, Epica’s are not easily accessible: all deal with complex ideas which motivate reflection by the listener on prevalent world themes. Moreover, the lyrics are strongly multiligual, with a strong emphasis on the use of Latin verses.</p>
 <p>Apart from their artistic value, which music experters are better able to understand than me, rich lyrics allow for extensive and awesome <em>text analysis</em>. With the existence of the amazing <a href="https://ewenme.github.io/geniusr/"><em>geniusr</em></a> package, text analysis of musical lyrics is almost effortless<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, as it allows to seamlessly download lyrics for songs of any artist on their database. The package is well documented and has intuitive functions; for text analysis, I used the <em>tidytext</em> package, which helps clean the text into tokens (words) and then eliminates common words (the, a) to facilitate analysis.</p>
 <div class="cell" data-hash="epica-post_cache/html/text-analysis_c57a2546f8e1785cee93621043e16761">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the genius artist id for Epica using their artist search function</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>epica_id <span class="ot">&lt;-</span></span>
@@ -568,8 +587,8 @@ Tip
 </details>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>phantom_agony_wordcount <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">top_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, freq), freq)) <span class="sc">+</span></span>
@@ -588,14 +607,18 @@ Tip
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/word-count-graph-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/word-count-graph-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Epica’s lyrics usually revovle around intangible topics which motivate self-reflection, which is something strongly evident with words such as <em>life</em>, <em>die</em>, <em>agony</em>, <em>forever</em>. However, in their first album, the band strongly tackled social issues, namely, the misuse of religion for the personal benefit of leaders. Epica commonly uses series of songs across different albums which approach common topics, and in <em>The Phantom Agony</em>, the first series for the band started: <em>The Embrace That Smothers</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (i.e.&nbsp;religion being the embrace?). The world events of the time (911) likely motivated Jansen’s literal rather than figurative approach to the topic.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <p><em>The Embrace that Smothers</em> continued on for nine songs across three albums. However, this series, in my view, is best exemplified by <em>The Phantom Agony</em>, which contains the bulk of the series. With time, even though the religion theme remains highly relevant, Epica started approaching more abstract themes in a less literal way. The lyrics leaned on works by social and natural scientists, ancient cultures, among others. The seamless interface of the <em>geniusr</em> package allowed me to easily compare the first album to the rest of the discography, as seen below:</p>
 <div class="cell" data-hash="epica-post_cache/html/all-discography-graph-analysis_fe099f79d2b17a92eb2ec7701d28406f">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make it phantom agony vs. all of the other albums</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Get all album id's except TPA, first creating a vector of search terms to search for all albums</span></span>
@@ -668,8 +691,8 @@ Tip
 </details>
 </div>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_comparison <span class="sc">%&gt;%</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(word, rank, <span class="at">decreasing =</span> T), count, <span class="at">fill =</span> type)) <span class="sc">+</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">'stack'</span>) <span class="sc">+</span></span>
@@ -695,7 +718,11 @@ Tip
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/comparison-graph-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/comparison-graph-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>As expected given the retrospective nature of the band’s work, <em>life</em> remains as the top word found in lyrics across all original releases, yet other words, such as <em>truth</em>, <em>matter</em>, <em>conquer</em> which are more literal, disappear from the band’s top 15 word count. It is clear how the theme of self-reflection is present in all releases.</p>
@@ -704,8 +731,8 @@ Tip
 <p>A painful truth about metal (at least in Latin America) is that it often faces resistance from people who relate the genre to negativeness. When Marilyn Manson visited Mexico in 2003, for instance, <a href="https://www.eluniverso.com/2003/11/05/0001/259/A4B577F8FED84DB29FD4109E384B70C3.html/">Christian organizations held prayer sessions to “counter the satanist effects of the artist”</a><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Though Epica has not faced these types of accusations, for many people it would still fall under the broad spectrum of metal, which is supposed to be charged with negative energy. How true is this?</p>
 <p>It is possible to attempt an answer to this question through <em>sentiment analysis</em>. In a nutshell, one uses dictionaries or lexicons which contain thousands of words along with a connotation (could be negative, energetic, etc.) to compare with the text of choice. Below, I use the Bing lexicon to categorize <em>The Phantom Agony’s</em> lyrics into either positive or negative.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>bing_lexicon <span class="ot">&lt;-</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">get_sentiments</span>(<span class="st">'bing'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -737,13 +764,17 @@ Tip
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">'grey'</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/sentiment-bing-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/sentiment-bing-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>This initial analysis shows that the top words in the album are indeed categorised as negative, and in fact over 70% of the album’s words are so negative. It is important to understand that this type of sentiment analysis does not perform well with complicated semantic constructions, such as sarcasm or metaphors. For instance, if a song were to constantly mention <em>suffering</em>, but the song is about getting over <em>suffering</em> to reach happiness, the bing lexicon would still consider the song as negative. The stringent dichotomy of positive-negatively is structurally flawed; a word’s connotation is not independent from its context. To partially solve this, there are other lexicons, the <em>Loughran</em> being one that has more than just positive or negative dimensions. I apply this lexicon to the band’s lyrics below:</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>nrc <span class="ot">&lt;-</span> <span class="fu">get_sentiments</span>(<span class="st">'nrc'</span>) </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>epica_tokenised <span class="ot">&lt;-</span></span>
@@ -790,7 +821,11 @@ Tip
 <span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.justification =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.25</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="epica-post_files/figure-html/sentiment-nrc-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="epica-post_files/figure-html/sentiment-nrc-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Aha! A lexicon which is able to categorise sentiments in a richer manner finds that while Epica is predominantly “negative”, “positive” words are the second most common. Note that the NRC lexicon could categorise a word in two different sentiments, so this graph is counting <em>matches</em> of the words with the lexicon rather than unique word counts themselves: the words in sadness, anger and disgust are already contained in the negative sentiment, for instance.</p>
@@ -810,7 +845,7 @@ Tip
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
 <div id="ref-duman2022" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Duman, D.; Neto, P.; Mavrolampados, A.; Toiviainen, P.; Luck, G. Music We Move to: Spotify Audio Features and Reasons for Listening. <em>PLOS ONE</em> <strong>2022</strong>, <em>17</em>, e0275228, doi:<a href="https://doi.org/10.1371/journal.pone.0275228">10.1371/journal.pone.0275228</a>.</div>
 </div>
@@ -961,10 +996,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -974,8 +1026,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -987,7 +1048,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1031,6 +1215,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1056,6 +1241,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1880,7 +2091,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://rpubs.com/dsanchezp998">RPubs</a>
+    <a class="nav-link" href="https://rpubs.com/dsanchezp998">
+<p>RPubs</p>
+</a>
   </li>  
 </ul>
     </div>   
@@ -1896,6 +2109,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

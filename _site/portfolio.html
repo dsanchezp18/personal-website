@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -55,6 +61,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -63,13 +70,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Daniel - Data Portfolio">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://daniel-ec.netlify.app/posts/epica/textanalysis1.png">
-<meta property="og:site-name" content="Daniel">
-<meta property="og:image:height" content="1800">
-<meta property="og:image:width" content="2400">
+<meta property="og:description" content="Daniel Sánchez Personal Website">
+<meta property="og:site_name" content="Daniel">
 <meta name="twitter:title" content="Daniel - Data Portfolio">
-<meta name="twitter:description" content="">
+<meta name="twitter:description" content="Daniel Sánchez Personal Website">
 <meta name="twitter:image" content="https://daniel-ec.netlify.app/icon.jpeg">
 <meta name="twitter:creator" content="@daniel_ec18">
 <meta name="twitter:card" content="summary">
@@ -79,9 +83,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Daniel Sánchez Pazmiño</span>
     </a>
@@ -93,41 +97,41 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./research.html" rel="" target="">
- <span class="menu-text">Research</span></a>
+    <a class="nav-link" href="./research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./teaching.html" rel="" target="">
- <span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="./teaching.html"> 
+<span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html" rel="" target="">
- <span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="./resources.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./media.html" rel="" target="">
- <span class="menu-text">Media</span></a>
+    <a class="nav-link" href="./media.html"> 
+<span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./portfolio.html" rel="" target="" aria-current="page">
- <span class="menu-text">Data Portfolio</span></a>
+    <a class="nav-link active" href="./portfolio.html" aria-current="page"> 
+<span class="menu-text">Data Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./posts_home.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="./posts_home.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -184,7 +188,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>This section of my website holds my data work with self-contained projects that showcase several skills in data management, analytics/science and visualization, mostly using R, but there are also projects which use Power BI and Tableau. Use the headers to your right to select different projects.</p>
 <p>Most projects have GitHub repositories with open-source code (with Creative Commons licenses), which are reacheable through the included GitHub links. Enjoy!</p>
@@ -197,12 +203,20 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="posts/epica/textanalysis1.png" class="img-fluid" width="1200"></p>
+<div>
+<figure class="figure">
+<p><img src="posts/epica/textanalysis1.png" class="img-fluid figure-img" width="1200"></p>
+</figure>
+</div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="posts/epica/textanalysis2.png" class="img-fluid" width="1200"></p>
+<div>
+<figure class="figure">
+<p><img src="posts/epica/textanalysis2.png" class="img-fluid figure-img" width="1200"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -213,7 +227,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link">Link to Tableau Dashboard <svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></a>.</p></li>
 <li><p><a href="https://github.com/dsanchezp18/last-fm-viz">Link to GitHub repository <svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a> for data preparation code.</p></li>
 </ul>
-
 <iframe height="500" width="100%" frameborder="no" src="https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link">
 </iframe>
 </section>
@@ -225,7 +238,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="superstore_delivery_time.png" class="img-fluid" width="719"></p>
+<div>
+<figure class="figure">
+<p><img src="superstore_delivery_time.png" class="img-fluid figure-img" width="719"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -240,7 +257,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="pureplays.png" class="img-fluid" width="725"></p>
+<div>
+<figure class="figure">
+<p><img src="pureplays.png" class="img-fluid figure-img" width="725"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -252,7 +273,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="bc-cleantech2.png" class="img-fluid" width="626"></p>
+<div>
+<figure class="figure">
+<p><img src="bc-cleantech2.png" class="img-fluid figure-img" width="626"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -279,7 +304,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="posts/protests-english/graf1lapop.png" class="img-fluid" width="1200"></p>
+<div>
+<figure class="figure">
+<p><img src="posts/protests-english/graf1lapop.png" class="img-fluid figure-img" width="1200"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -293,7 +322,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="paraleltrends.png" class="img-fluid" width="1800"></p>
+<div>
+<figure class="figure">
+<p><img src="paraleltrends.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -306,7 +339,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="ctol_map.png" class="img-fluid" width="3150"></p>
+<div>
+<figure class="figure">
+<p><img src="ctol_map.png" class="img-fluid figure-img" width="3150"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -321,7 +358,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="personal-website.png" class="img-fluid" width="938"></p>
+<div>
+<figure class="figure">
+<p><img src="personal-website.png" class="img-fluid figure-img" width="938"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -333,13 +374,21 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="quanti.png" class="img-fluid" width="943"></p>
+<div>
+<figure class="figure">
+<p><img src="quanti.png" class="img-fluid figure-img" width="943"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>The website deploys several RMarkdown files, with complex data analysis and visualization components, including a <a href="https://elquantificador.org/post/economia/2023-08-18-ecuador-en-la-encrucijada/">Shiny app</a> The website is hosted through a free Netlify domain.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="shiny-quanti.png" class="img-fluid" width="782"></p>
+<div>
+<figure class="figure">
+<p><img src="shiny-quanti.png" class="img-fluid figure-img" width="782"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>LIDE has produced other websites using R and blogdown, where I’ve also collaborated, including <a href="https://laboratoriolide.org/">its main website</a>, and a project website for <a href="https://newdimensions.academy/">New Dimensions</a>.</p>
@@ -358,7 +407,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="posts/ldu/grafico-resultados.png" class="img-fluid" width="1050"></p>
+<div>
+<figure class="figure">
+<p><img src="posts/ldu/grafico-resultados.png" class="img-fluid figure-img" width="1050"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -372,7 +425,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="grafico_lapop_politicos.png" class="img-fluid" width="7200"></p>
+<div>
+<figure class="figure">
+<p><img src="grafico_lapop_politicos.png" class="img-fluid figure-img" width="7200"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -385,13 +442,17 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="graf1-femicidios-vs-otros.png" class="img-fluid" width="1800"></p>
+<div>
+<figure class="figure">
+<p><img src="graf1-femicidios-vs-otros.png" class="img-fluid figure-img" width="1800"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="a-quantitative-perspective-on-the-ecuadorian-protests" class="level2">
 <h2 class="anchored" data-anchor-id="a-quantitative-perspective-on-the-ecuadorian-protests">A quantitative perspective on the Ecuadorian protests</h2>
-<p><strong>The original version of <a href="#sec-public-opinion">Section&nbsp;5</a>, written originally in Spanish for <a href="https://elquantificador.org/">El Quantificador</a> and reposted in Spanish and English in my personal blog.</strong></p>
+<p><strong>The original version of <a href="#sec-public-opinion" class="quarto-xref">Section&nbsp;5</a>, written originally in Spanish for <a href="https://elquantificador.org/">El Quantificador</a> and reposted in Spanish and English in my personal blog.</strong></p>
 <ul>
 <li><p>Original title in Spanish: <em>Una perspectiva cuantitativa sobre las protestas en Ecuador</em>. ISSN 2953-6456.</p></li>
 <li><p><a href="https://elquantificador.org/post/valores/perspectiva-cuantitativa-protestas-ecuador/">Link to original article</a></p></li>
@@ -399,7 +460,11 @@ Note
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="graf2-politica-y-protestas.png" class="img-fluid" width="5625"></p>
+<div>
+<figure class="figure">
+<p><img src="graf2-politica-y-protestas.png" class="img-fluid figure-img" width="5625"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -493,10 +558,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -506,8 +588,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -519,7 +610,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -563,6 +777,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -588,6 +803,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -677,7 +918,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://rpubs.com/dsanchezp998">RPubs</a>
+    <a class="nav-link" href="https://rpubs.com/dsanchezp998">
+<p>RPubs</p>
+</a>
   </li>  
 </ul>
     </div>   
@@ -693,6 +936,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 

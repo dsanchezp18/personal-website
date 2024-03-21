@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:title" content="Daniel - El trono en Ponceano: Liga de Quito en cifras con R">
 <meta property="og:description" content="Liga Deportiva Universitaria demuestra una vez más su potencial internacional pasando a la final de la Copa Sudamericana 2023. En este post, reviso la trayectoria de LDU en campeonatos internacionales, extrayendo datos de diferentes fuentes con R. Imagen generada con inteligencia artificial.">
 <meta property="og:image" content="https://daniel-ec.netlify.app/posts/ldu/dalle.png">
-<meta property="og:site-name" content="Daniel">
+<meta property="og:site_name" content="Daniel">
 <meta property="og:image:height" content="1024">
 <meta property="og:image:width" content="1024">
 <meta name="twitter:title" content="Daniel - El trono en Ponceano: Liga de Quito en cifras con R">
@@ -117,10 +124,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Daniel Sánchez Pazmiño</span>
     </a>
@@ -132,41 +139,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../research.html" rel="" target="">
- <span class="menu-text">Research</span></a>
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../teaching.html" rel="" target="">
- <span class="menu-text">Teaching</span></a>
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html" rel="" target="">
- <span class="menu-text">Resources</span></a>
+    <a class="nav-link" href="../../resources.html"> 
+<span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../media.html" rel="" target="">
- <span class="menu-text">Media</span></a>
+    <a class="nav-link" href="../../media.html"> 
+<span class="menu-text">Media</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../portfolio.html" rel="" target="">
- <span class="menu-text">Data Portfolio</span></a>
+    <a class="nav-link" href="../../portfolio.html"> 
+<span class="menu-text">Data Portfolio</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../posts_home.html" rel="" target="">
- <span class="menu-text">Posts</span></a>
+    <a class="nav-link" href="../../posts_home.html"> 
+<span class="menu-text">Posts</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -223,9 +230,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Preliminares</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librerias</span></span>
@@ -263,8 +271,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Después de casi 14 años desde su última final en un campeonato internacional, Liga Deportiva Universitaria de Quito (LDU) selló su pase a la final de la Copa Sudamericana (el segundo campeonato más importante del fútbol de clubes en Sudamérica) derrotando al Defensa y Justicia argentino por goleada. El triunfo de Liga no viene fácil: aunque se ganó el apodo de <em>Rey de Copas</em> por los cuatro títulos internacionales ganados durante 2007-2010 (incluyendo la Copa Libertadores, el título más importante de América, nunca antes ganado por otro equipo ecuatoriano), al equipo le ha costado restaurar su gloria desde entonces.</p>
 <p>El 28 de Octubre del 2023 Liga promete desempolvar el trono en Ponceano enfrentandose en Montevideo, Uruguay ante Fortaleza, equipo recientemente ascendido a la Serie A Brasileirao. En homenaje al equipo y en la misma línea de los otros artículos de este blog, en este post reviso la trayectoria de Liga en campeonatos internacionales de fútbol, aprovechando la oportunidad para explorar las posibilidades de extracción de datos de fútbol con R.</p>
 <div class="cell" data-hash="ldu_cache/html/extraccion-datos_0be9c4c5576d213d274a2e8f31565209">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Loop para extraer informacion-copa-sudamericana</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>libertadores_matches_raw <span class="ot">&lt;-</span> <span class="fu">load_match_comp_results</span>(<span class="st">'Copa Libertadores de América'</span>)</span>
@@ -417,8 +425,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Existen varias referencias que describen la implementación de métodos de <em>football analytics</em>, sin embargo el problema aparece cuando se quiere implementar los métodos para el Ecuador. De forma decepcionante (aunque quizás no sorprendente), <strong>no existe una autoridad que provea datos oficiales de la LigaPro Ecuador</strong>. Existen algunas páginas web que proveen datos básicos, con especial atención al esfuerzo de <a href="https://twitter.com/mifutbolecuador">@mifutbolecuador</a>, sin embargo, no es posible encontrar una fuente que permita descargas. Curiosamente, sucede lo mismo para los campeonatos internacionales CONMEBOL: aunque existe más información disponible, es complicado llegar a una base de datos limpia y descargable. Esto quizás se debe al potencial uso monetario de estos datos dada la existencia de la industria de las apuestas deportivas (especialmente importante en Ecuador).</p>
 <p>Ventajosamente, existen esfuerzos internacionales que recientemente han empezado a recopilar información sobre equipos ecuatorianos. Uno es <a href="https://fbref.com/en/about/">FBref.com</a>, un sitio web que provee datos de fútbol de todo el mundo. Otro sitio web similar es <a href="https://www.transfermarkt.com/">Transfermarkt</a>. La información de ambos sitios web es de libre acceso, aunque no es posible descargar los datos directamente desde la página web. Sin embargo, su existencia que permiten una técnica común de recolección de datos: <em>web scraping</em>. El scraping puede ser un problema por varias razones, ya que requiere entender las estructuras de datos de la página web para construir un códgio de scraping robusto. Ventajosamente, R ofrece un atajo <em>excelente</em>: la librería <em>worldfootballR</em> de <a href="https://twitter.com/JaseZiv">@JaseZiv</a>, que permite hacer scraping de forma fácil automática. Arriba utilicé esta librería para acceder a datos pre-procesados de FBref para todos los partidos de Copa Libertadores<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> y Sudamericana<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> desde 2014 hasta 2023<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de resultados LDU en campeonatos internacionales</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Libertadores'</span><span class="ot">=</span> <span class="st">'#C7B143'</span>, <span class="st">'Sudamericana'</span> <span class="ot">=</span> <span class="st">'#20409A'</span>)</span>
@@ -451,18 +459,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.08</span>, <span class="fl">0.88</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="ldu_files/figure-html/grafico-resultados-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="ldu_files/figure-html/grafico-resultados-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
 </div>
-<details>
-<summary>Code</summary>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">'grafico-resultados.png'</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Naturalmente, a Liga le ha costado más terminar en etapas avanzadas de Copa Libertadores que de Copa Sudamericana. El salto a la final de la Copa Sudamericana se da de forma abrupta: en 2022 no logra pasar de la etapa de grupos, pero en 2023 arrasa y llega a la final en Montevideo para enfrentarse a Fortaleza de Brasil, un equipo relativamente nuevo en la escena internacional al haber recientemente ascendido a la primera división de Brasil.</p>
 <p>Una de las complicaciones de los datos (tanto en FBref como en Transfermarkt) es que el gráfico solamente muestra una escena parcial de la historia de LDU en campeonatos internacionales. Lo más lejos que se puede observar es el resultado de Sudamericana en 2015, en donde Liga cayó ante River Plate tras un recordado <a href="https://www.youtube.com/watch?v=kXfFJ-mEBjk">penal errado</a> por Jonathan Álvez, con Liga como anfitrión. No es posible observar los datos de la mítica Liga de los 2000, que ganó la Copa Libertadores y Sudamericana en 2008 y 2009 además de dos Recopas<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> en 2009 y 2010. Tampoco es posible observar el periodo posterior a 2010, en donde Liga de Quito no logró clasificar a ningún torneo internacional hasta 2015.</p>
 <div class="cell">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraer datos de partidos de Sudamericana para obtener Top Rivales de Liga en Sudamericana</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>sudamericana_matches_ldu <span class="ot">&lt;-</span></span>
@@ -568,14 +580,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.9</span>,<span class="fl">1.18</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="ldu_files/figure-html/datos-partidos-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="ldu_files/figure-html/datos-partidos-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Los datos preprocesados de <em>worldfootballR</em> permiten calcular el número de goles a favor y en contra para cada una de las temporadas de LDU en torneos internacionales. Naturalmente, el equipo ha mejorado su ratio de goles a medida que ha ido pasando a etapas más avanzadas del torneo y como es de esperarse, Liga es más capaz de mantener su arco en cero en la Sudamericana que en la Libertadores. El mejor desempeño de LDU en la Sudamericana se da este año, con 23 goles en 14 partidos, lo que representa un 50% de partidos ganados. Esto, sin embargo, no es el mejor record de LDU en torneos internacionales de los últimos años: en 2020, aunque el equipo solo pasó a octavos de final, logró un 62.5% de partidos ganados en Copa Libertadores. Esto es un claro ejemplo de cómo la estadística simple no debería ser malinterpretada en contextos deportivos como este.</p>
 <p>Sin embargo, hay indicadores que rara vez fallan, y uno de ellos es $ <em>la plata</em> $. ¿Cuánto invirtió Liga de Quito en los últimos años para llegar donde está el día de hoy? Esta pregunta podría parecer extremadamente complicada de responder, pero los datos de Transfermarkt, plataforma alemana conocida por su exactitud en cuanto a información de traspasos y valor de jugadores, lo facilita. La función que permite obtener esta información permite solamente observar un año a la vez, por lo que utilizo un <code>for</code> <em>loop</em> (<a href="loops.jpg">aunque muy temidos en R, los loops son manejables</a>) para obtener la información de los últimos años sin tener que llamar la función una y otra vez.</p>
 <div class="cell" data-hash="ldu_cache/html/ldu-finances_fe090d9e9cffe64c06251835cfa1e1f9">
-<details>
-<summary>Code</summary>
+<details class="code-fold">
+<summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># El campeonato ecuatoriano está distribuido en dos diferentes links de Transfermarkt, es necesario crear un foroop para cada uno: </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector de años para el loop (2019-2022)</span></span>
@@ -652,7 +668,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>,<span class="fl">1.1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="ldu_files/figure-html/ldu-finances-1.png" class="img-fluid" width="1152"></p>
+<div>
+<figure class="figure">
+<p><img src="ldu_files/figure-html/ldu-finances-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>En 2022 LDU tuvo la mejor temporada en términos de ingresos por traspasos de su historia, logrando vender jugadores por 7.1 millones de euros<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. De forma notable, el club vendió a dos jugadores por altos valores: Rodrigo Aguirre y Nilson Angulo, por 4.75 y 1.90 millones de euros. En 2022 LDU no invirtió dinero en su plantilla, sin embargo, logró traer al equipo a varios agentes libres, situación que no se refleja en el gráfico anterior, pero se puede visualizar en la página web de Transfermarkt. Uno de los jugadores más importantes que llega a LDU como agente libre es Alexander Domínguez, histórico arquero de la selección ecuatoriana y LDU, que regresa al equipo luego de varios años en el exterior. Adicionalmente, las cifras no muestran los valores de contratos temporales, como es el de Renato Ibarra, mediocampista ecuatoriano, quien llega a LDU tras una larga carrera en el fútbol internacional. De todas formas, la inversión en la plantilla de 2021 es la tercera más alta de los últimos 20 años, y los ingresos que LDU ha podido recolectar en 2022 y 2023 potencialmente le permitirán seguir invirtiendo en su plantel existente, así como en la infraestructura del club y las juveniles, que son lo que inicialmente hicieron al club lo que es hoy (y lo que ahora diferencia a Independiente del Valle, también muy exitoso equipo ecuatoriano).</p>
@@ -806,10 +826,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -819,8 +856,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -832,7 +878,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -876,6 +1045,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -901,6 +1071,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1475,7 +1671,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="https://rpubs.com/dsanchezp998">RPubs</a>
+    <a class="nav-link" href="https://rpubs.com/dsanchezp998">
+<p>RPubs</p>
+</a>
   </li>  
 </ul>
     </div>   
@@ -1491,6 +1689,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
 
 
 
