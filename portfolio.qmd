@@ -55,6 +55,23 @@ knitr::include_graphics('posts/epica/textanalysis2.png')
 ```{r}
 knitr::include_graphics('superstore_delivery_time.png')
 ```
+
+# Football statistics from Latin American regional tournaments
+
+*Part of a blog post which analyzes scraped data from FBRef and Transfermarkt from LDU Quito's performance in the Copa Sudamericana and Libertadores, the most important Latin American football tournaments. The post includes a detailed analysis of the team's performance in the tournaments, using data from the R worldfootballR package.*
+
+- [Link to blog post `r fa('link')`](https://daniel-ec.netlify.app/posts/ldu-eng/ldu-eng).
+
+- [Link to code in GitHub `r fa('github')`](https://github.com/dsanchezp18/personal-website/blob/master/posts/ldu-eng/ldu-eng.qmd).
+
+
+```{r}
+#| label: image-football
+
+knitr::include_graphics('posts/ldu-eng/grafico-results.png')
+```
+
+
 # Clean technology companies in Canada
 
 *This is a series of work produced during my time as a Junior Data Analyst in the [Clean Technology Economic Analysis Unit](https://ised-isde.canada.ca/site/clean-growth-hub/en/clean-technology-data-strategy/cleantech-companies) team at Natural Resources Canada, which I cannot claim as mine but part of a team effort of highly skilled professionals in NRCan.*
