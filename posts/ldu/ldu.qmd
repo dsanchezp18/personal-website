@@ -273,7 +273,7 @@ Naturalmente, a Liga le ha costado más terminar en etapas avanzadas de Copa Lib
 
 Una de las complicaciones de los datos (tanto en FBref como en Transfermarkt) es que el gráfico solamente muestra una escena parcial de la historia de LDU en campeonatos internacionales. Lo más lejos que se puede observar es el resultado de Sudamericana en 2015, en donde Liga cayó ante River Plate tras un recordado [penal errado](https://www.youtube.com/watch?v=kXfFJ-mEBjk) por Jonathan Álvez, con Liga como anfitrión. No es posible observar los datos de la mítica Liga de los 2000, que ganó la Copa Libertadores y Sudamericana en 2008 y 2009 además de dos Recopas[^4] en 2009 y 2010. Tampoco es posible observar el periodo posterior a 2010, en donde Liga de Quito no logró clasificar a ningún torneo internacional hasta 2015.
 
-[^4]: Minitorneo en donde el campeón Libertadores se enfrenta al de Sudamericana. Análogo a la Super Cup en Europa
+[^4]: Minitorneo en donde el campeón Libertadores se enfrenta al de Sudamericana. Análogo a la Super Cup en Europa.
 
 ```{r}
 #| label: datos-partidos
@@ -396,7 +396,7 @@ Sin embargo, hay indicadores que rara vez fallan, y uno de ellos es \$ *la plata
 #| fig-width: 12
 #| fig-height: 8
 
-# El campeonato ecuatoriano está distribuido en dos diferentes links de Transfermarkt, es necesario crear un foroop para cada uno: 
+# El campeonato ecuatoriano está distribuido en diferentes links de Transfermarkt, es necesario crear un for loop para cada uno: 
 
 # Vector de años para el loop (2019-2022)
 
@@ -413,11 +413,12 @@ for (i in years_1){
     mutate(year = i) # Agregar año para cada iteracion
 }
 
+
 # El siguiente loop requiere tanto el link como el año, definir los vectores a continuacion
 
 # Siguiente link: 2012-2018
 
-years_2 <- 2012:2018
+years_2 <- 2011:2018
 
 links <- c(
   'https://www.transfermarkt.com/serie-a-primera-etapa/startseite/wettbewerb/ECPE/plus/?saison_id=2011',
@@ -431,7 +432,6 @@ links <- c(
 )
 
 ecuador_finances2 <- list()
-
 for (i in 1:length(years_2)){
  ecuador_finances2[[years_2[i]]] <- tm_team_transfer_balances('ECU', years_2[i], league_url = links[i]) %>% 
                                     mutate(year = years_2[i]) 

@@ -1,0 +1,446 @@
+---
+title: "The throne in Ponceano: Football statistics using R"
+author: "Daniel Sánchez"
+date: "2024-03-25"
+description: "I post the english version of my latest blog post, which reviewed the historical performance of reigning Copa Sudamericana champion Liga Deportiva Universitaria de Quito."
+categories: [english, ecuador, football, data viz, R]
+website:
+  twitter-card:
+    image: dalle.png
+    creator: "@daniel_ec18"
+csl: ../../econometrics.csl
+image: dalle.png
+knitr:
+  opts_chunk: 
+    message: false
+    warning: false
+    echo: true
+    include: true
+format:
+  html:
+    code-fold: true
+    code-tools: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+---
+
+```{r}
+#| label: setup
+
+# Preliminaries
+
+# Libraries
+
+library(worldfootballR)
+library(dplyr)
+library(stringr)
+library(tidyr)
+library(ggplot2)
+library(ggthemes)
+library(showtext)
+
+# Base theme 
+
+font_add_google("Questrial", family = "Questrial")
+showtext_auto()
+
+theme_daniel<-
+  theme_hc(style = 'darkunica',
+           base_family = 'Questrial',
+           base_size = 40) +
+  theme(axis.line.y = element_line(colour = 'white'),
+        axis.line.x = element_blank(),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        plot.caption = element_text(hjust = 0, face = 'italic'),
+        plot.title.position = 'plot',
+        plot.caption.position = 'plot',
+        plot.subtitle = element_text(lineheight = 0.5, vjust = 0.5),
+        axis.ticks = element_blank(),
+        plot.title = element_text(size = 60),
+        axis.text = element_text(colour = 'gray'))
+
+```
+
+After nearly 14 years since their last final in an international championship, Liga Deportiva Universitaria de Quito (LDU) sealed their place in the final of the Copa Sudamericana (the second most important club football championship in South America) by defeating the Argentine team Defensa y Justicia with a thrashing. Liga's victory did not come easily: although they earned the nickname Rey de Copas (King of Cups) for the four international titles won during 2007-2010 (including the Copa Libertadores, the most important title in America, never before won by another Ecuadorian team), the team has struggled to restore its glory since then.
+
+On October 28, 2023, Liga promises to dust off the throne in Ponceano^[Ponceano is the neighbourhood in Quito where the LDU stadium is located.] by facing off in Montevideo, Uruguay, against Fortaleza, a team recently promoted to the Brazilian Serie A. In tribute to the team and in line with the other articles of this blog, this post reviews LDU's trajectory in international football championships, seizing the opportunity to explore the possibilities of football data extraction with R.
+
+```{r}
+#| label: extraccion-datos
+#| cache: true
+
+# Loop para extraer informacion-copa-sudamericana
+
+libertadores_matches_raw <- load_match_comp_results('Copa Libertadores de América')
+
+sudamericana_matches_raw <- load_match_comp_results('Copa Sudamericana')
+
+# Preparar datos de Copa Libertadores
+
+libertadores_matches <-
+  libertadores_matches_raw  %>% 
+  janitor::clean_names()  %>%
+  transmute(competition_name = iconv(competition_name, from = "UTF-8", to = "latin1"),
+            year = season_end_year,
+            round,
+            round_number = case_when(
+              round == 'First stage' ~ 1,
+              round %in% c('Second stage', 'Group stage') ~ 2,
+              round == 'Knockout round play-offs' ~ 3,
+              round == 'Round of 16' ~ 5,
+              round == 'Quarter-finals' ~ 7,
+              round == 'Semi-finals' ~ 9,
+              round %in% c('Final', 'Finals') ~ 11
+            ),
+            day,
+            date,
+            time,
+            home_team_country = str_sub(home, start = -2)  %>% str_to_upper(),
+            home_team_name = str_sub(home, end = -4),
+            home_goals,
+            away_team_country = str_sub(away, start = 1, end = 2)  %>% str_to_upper(),
+            away_team_name = str_sub(away, start = 4, end = -1),
+            away_goals,
+            result = case_when(
+              home_goals > away_goals ~ 'home_win',
+              home_goals < away_goals ~ 'away_win',
+              home_goals == away_goals ~ NA),
+            match_winner = case_when(
+              home_goals > away_goals ~ home_team_name,
+              home_goals < away_goals ~ away_team_name,
+              home_goals == away_goals ~ 'none-draw'),
+            leg = case_when(
+              notes  %>% str_like('%Leg 1%') ~ 'leg_1',
+              notes  %>% str_like('%Leg 2%') ~ 'leg_2',
+              TRUE ~ NA
+            ),
+            penalty_kicks = if_else(notes  %>% str_like('%penalties%'), TRUE, FALSE),
+            extra_time = if_else(notes  %>% str_like('%extra time%'), TRUE, FALSE),
+            venue,
+            attendance,
+            referee,
+            notes)
+
+# Preparar datos de Copa Sudamericana
+
+sudamericana_matches <-
+  sudamericana_matches_raw  %>% 
+  janitor::clean_names()  %>% 
+  transmute(competition_name,
+            year = season_end_year,
+            round,
+            round_number = case_when(
+              round == 'First stage' ~ 1,
+              round %in% c('Second stage', 'Group stage') ~ 2,
+              round == 'Knockout round play-offs' ~ 3,
+              round == 'Round of 16' ~ 5,
+              round == 'Quarter-finals' ~ 7,
+              round == 'Semi-finals' ~ 9,
+              round %in% c('Final', 'Finals') ~ 11
+            ),
+            day,
+            date,
+            time,
+            home_team_country = str_sub(home, start = -2)  %>% str_to_upper(),
+            home_team_name = str_sub(home, end = -4),
+            home_goals,
+            away_team_country = str_sub(away, start = 1, end = 2)  %>% str_to_upper(),
+            away_team_name = str_sub(away, start = 4, end = -1),
+            away_goals,
+            result = case_when(
+              home_goals > away_goals ~ 'home_win',
+              home_goals < away_goals ~ 'away_win',
+              home_goals == away_goals ~ NA),
+            match_winner = case_when(
+              home_goals > away_goals ~ home_team_name,
+              home_goals < away_goals ~ away_team_name,
+              home_goals == away_goals ~ 'none-draw'),
+            leg = case_when(
+              notes  %>% str_like('%Leg 1%') ~ 'leg_1',
+              notes  %>% str_like('%Leg 2%') ~ 'leg_2',
+              TRUE ~ NA
+            ),
+            penalty_kicks = if_else(notes  %>% str_like('%penalties%'), TRUE, FALSE),
+            extra_time = if_else(notes  %>% str_like('%extra time%'), TRUE, FALSE),
+            venue,
+            attendance,
+            referee,
+            notes)
+
+# Filtrar para datos de LDU en Copa Libertadores solamente
+
+libertadores_matches_ldu <-
+  libertadores_matches  %>% 
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito')
+
+# Obtener la ultima etapa alcanzada para cada año de LDU
+
+ldu_stage_reached_libertadores <-
+  libertadores_matches_ldu  %>% 
+  group_by(year)  %>% 
+  summarise(stage_reached_libertadores = max(round_number, na.rm = T))
+
+# Filtrar para datos de LDU en Copa Sudamericana solamente
+
+sudamericana_matches_ldu <-
+  sudamericana_matches  %>%
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito')
+
+# Obtener la ultima etapa alcanzada para cada año de LDU
+
+ldu_stage_reached_sudamericana <-
+  sudamericana_matches_ldu  %>% 
+  group_by(year)  %>%
+  summarise(stage_reached_sudamericana = max(round_number, na.rm = T))
+
+# Crear data frame para realizar grafico de resultados LDU en campeonatos internacionales 
+
+international_results_ldu <-
+  ldu_stage_reached_libertadores  %>%
+  complete(year = seq(2014, 2023))  %>%
+  replace_na(list(stage_reached_libertadores = 0.1))  %>%
+  mutate(tournament = 'Libertadores')  %>%
+  rename(stage_reached = stage_reached_libertadores) %>% 
+  bind_rows(
+    ldu_stage_reached_sudamericana  %>%
+      complete(year = seq(2014, 2023))  %>%
+      replace_na(list(stage_reached_sudamericana = 0.1))  %>%
+      mutate(tournament = 'Sudamericana') %>% 
+      rename(stage_reached = stage_reached_sudamericana)
+  ) %>% 
+  mutate(label = case_when(
+    .default = '',
+    stage_reached %in% c(1,2) ~ 'Grupos',
+    stage_reached == 3 ~ 'Repechaje',
+    stage_reached == 5 ~ 'Octavos de final',
+    stage_reached == 7 ~ 'Cuartos de final',
+    stage_reached == 9 ~ 'Semifinal',
+    stage_reached == 11 ~ 'Final'))
+```
+
+There are various references that describe the implementation of football analytics methods, yet the problem arises when attempting to apply these methods in Ecuador. Disappointingly (though perhaps not surprisingly), there is no authority providing official data for LigaPro Ecuador. Some websites offer basic data, with notable efforts by @mifutbolecuador, but finding a source that allows downloads is challenging. Interestingly, the same issue occurs with CONMEBOL international championships: although more information is available, accessing a clean and downloadable database is complicated. This may be due to the potential monetary use of these data given the existence of the sports betting industry (especially significant in Ecuador).
+
+Fortunately, international efforts have recently begun to compile information on Ecuadorian teams. One such source is FBref.com, a website that provides football data from around the world. Another similar website is Transfermarkt. The information from both websites is freely accessible, though it cannot be directly downloaded from the website. However, their existence enables a common data collection technique: web scraping. Scraping can be challenging for various reasons, as it requires understanding the data structures of the website to build a robust scraping code. Fortunately, R offers an excellent shortcut: the worldfootballR library by @JaseZiv, which facilitates easy and automatic scraping. In the text above, I mentioned using this library to access pre-processed data from FBref for all Copa Libertadores^[The Copa Libertadores is the most important club tournament in South America, where the top teams from each country's national club divisions qualify. It is analogous to the Champions League in Europe.] and Sudamericana^[The Copa Sudamericana is the second most important club football tournament in South America, where clubs in intermediate positions in the national divisions qualify. It is analogous to the Europa League in Europe.] matches from 2014 to 2023^[In this post, when I refer to a year, I actually mean a season. Seasons start the year before the one indicated in the visualizations (for example, the 2021 season starts in 2020 and ends in 2021).].
+
+```{r}
+#| label: grafico-resultados
+#| fig-width: 12
+#| fig-height: 8
+
+# Grafico de resultados LDU en campeonatos internacionales
+
+colors <- c('Libertadores'= '#C7B143', 'Sudamericana' = '#20409A')
+
+international_results_ldu  %>%
+  filter(year %>% between(2014, 2023)) %>% 
+  ggplot(aes(year, stage_reached, fill = tournament)) +
+  geom_col(width = 0.8, position = position_dodge(width = 0.8)) +
+  scale_fill_manual(values = colors) +
+  scale_x_continuous(breaks = seq(2014, 2023, 1)) +
+  annotate('text', x = 2015.2, y = 3.4, label = 'Round of 16', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2015.8, y = 1, label = 'Groups', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2017.2, y = 3.4, label = 'Round of 16', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2018.2, y = 3.4, label = 'Round of 16', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2018.8, y = 6, label = 'Quarter finals', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2019.8, y = 3.4, label = 'Round of 16', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2020.8, y = 1, label = 'Groups', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2021.2, y = 6, label = 'Quarter finals', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2022.2, y = 1, label = 'Groups', size = 12, color = 'white', angle = 90) +
+  annotate('text', x = 2023.2, y = 10, label = 'Final', size = 12, color = 'white', angle = 90) +
+  labs(x = '',
+       y = '',
+       title = 'Liga de Quito international tournament results',
+       subtitle = 'Copa Libertadores and Copa Sudamericana, 2015-2023',
+       fill = 'Tournament',
+       caption = 'Nota: Values without a label are presented when LDU did not qualify for the tournament.')+
+  theme_daniel+
+  theme(axis.line.y = element_blank(),
+        axis.text.y = element_blank(),
+        legend.position.inside = c(0.08, 0.88))
+
+ggsave('grafico-resultados.png', width = 7, height = 5, dpi = 300)
+
+```
+
+Naturally, Liga de Quito has struggled more to reach advanced stages in the Copa Libertadores than in the Copa Sudamericana. The leap to the Copa Sudamericana final happened abruptly: in 2022, they failed to advance past the group stage, but in 2023, they dominated and reached the final in Montevideo to face Fortaleza from Brazil, a relatively new team on the international scene having recently been promoted to Brazil's top division.
+
+One of the complications with the data (both on FBref and Transfermarkt) is that the graph only shows a partial view of Liga de Quito's history in international championships. The furthest data visible is their performance in the 2015 Sudamericana, where Liga lost to River Plate after a memorable missed penalty by Jonathan Álvez, with Liga as the host. It's not possible to see data from the legendary Liga team of the 2000s, which won the Copa Libertadores and Sudamericana in 2008 and 2009, as well as two Recopas^[A mini-tournament where the Copa Libertadores champion faces the Sudamericana champion. Analogous to the Super Cup in Europe.] in 2009 and 2010. It is also not possible to see the period after 2010, when Liga de Quito failed to qualify for any international tournaments until 2015.
+
+```{r}
+#| label: datos-partidos
+#| fig-width: 12
+#| fig-height: 8
+
+# Extraer datos de partidos de Sudamericana para obtener Top Rivales de Liga en Sudamericana
+
+sudamericana_matches_ldu <-
+  sudamericana_matches %>% 
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito') %>% 
+  transmute(year,
+            round,
+            date,
+            ldu_home_or_away = case_when(
+              home_team_name == 'LDU de Quito' ~ 'Home',
+              away_team_name== 'LDU de Quito' ~ 'Away'),
+            opponent = case_when(
+              home_team_name == 'LDU de Quito' ~ away_team_name,
+              away_team_name == 'LDU de Quito' ~ home_team_name),
+            opponent_country = case_when(
+              home_team_name == 'LDU de Quito' ~ away_team_country,
+              away_team_name == 'LDU de Quito' ~ home_team_country),
+            ldu_goals = case_when(
+              home_team_name == 'LDU de Quito' ~ home_goals,
+              away_team_name == 'LDU de Quito' ~ away_goals),
+            opponent_goals = case_when(
+              home_team_name == 'LDU de Quito' ~ away_goals,
+              away_team_name == 'LDU de Quito' ~ home_goals),
+            ldu_result = case_when(
+              ldu_goals > opponent_goals ~ 'Win',
+              ldu_goals < opponent_goals ~ 'Loss',
+              ldu_goals == opponent_goals ~ 'Draw'),
+            tournament = 'Sudamericana',
+            )
+
+# Hacer lo mismo para Libertadores
+
+libertadores_matches_ldu <-
+  libertadores_matches %>% 
+  filter(home_team_name == 'LDU de Quito' | away_team_name == 'LDU de Quito') %>% 
+  transmute(year,
+            round,
+            date,
+            ldu_home_or_away = case_when(
+              home_team_name == 'LDU de Quito' ~ 'Home',
+              away_team_name== 'LDU de Quito' ~ 'Away'),
+            opponent = case_when(
+              home_team_name == 'LDU de Quito' ~ away_team_name,
+              away_team_name == 'LDU de Quito' ~ home_team_name),
+            opponent_country = case_when(
+              home_team_name == 'LDU de Quito' ~ away_team_country,
+              away_team_name == 'LDU de Quito' ~ home_team_country),
+            ldu_goals = case_when(
+              home_team_name == 'LDU de Quito' ~ home_goals,
+              away_team_name == 'LDU de Quito' ~ away_goals),
+            opponent_goals = case_when(
+              home_team_name == 'LDU de Quito' ~ away_goals,
+              away_team_name == 'LDU de Quito' ~ home_goals),
+            ldu_result = case_when(
+              ldu_goals > opponent_goals ~ 'Win',
+              ldu_goals < opponent_goals ~ 'Loss',
+              ldu_goals == opponent_goals ~ 'Draw'),
+            tournament = 'Libertadores')
+
+# Unir dataframes y obtener totales de goles a favor y en contra para cada año y por cada torneo
+
+ldu_match_goals <-
+  bind_rows(sudamericana_matches_ldu, libertadores_matches_ldu) %>% 
+  group_by(year, tournament) %>% 
+  summarise(ldu_goals = sum(ldu_goals, na.rm = TRUE),
+            opponent_goals = sum(opponent_goals, na.rm = TRUE),
+            ldu_wins = sum(ldu_result == 'Win', na.rm = TRUE),
+            ldu_losses = sum(ldu_result == 'Loss', na.rm = TRUE),
+            ldu_draws = sum(ldu_result == 'Draw', na.rm = TRUE),
+            total_matches = n()) %>% 
+  mutate(ldu_goal_difference = ldu_goals - opponent_goals,
+         ldu_win_percentage = ldu_wins / total_matches * 100) %>% 
+  arrange(year, tournament) %>% 
+  ungroup()
+
+
+# Graficar 
+
+ldu_match_goals %>% 
+  select(year, tournament, ldu_goals, opponent_goals) %>%
+  pivot_longer(c(ldu_goals, opponent_goals),
+               names_to = 'goals_from',
+               values_to = 'goals') %>%
+  mutate(goals_from = case_when(
+    goals_from == 'ldu_goals' ~ 'Home',
+    goals_from == 'opponent_goals' ~ 'Away')) %>%
+  ggplot(aes(x = year, y = goals, fill = goals_from)) +
+  geom_col(position = 'dodge') +
+  scale_x_continuous(breaks = seq(2015, 2023, 1)) +
+  scale_fill_manual(values = c('#20409A', '#EE2E24')) +
+  facet_wrap(~tournament) +
+  labs(title = 'Home and away goals for LDU',
+       subtitle = 'International tournaments, 2015-2023',
+       x = '',
+       y = 'Goals',
+       fill = '',
+       caption = str_wrap('Note: Home and away goals are presented only for years where LDU qualified for international tournaments. Source: FBref.', 120)) +
+  theme_daniel +
+  theme(axis.line.x = element_line(color = 'white'),
+        panel.background = element_rect(colour = "white", linewidth=4, fill=NA),
+        axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1),
+        axis.ticks = element_line(colour = 'white'),
+        legend.position = c(0.9,1.18))
+
+```
+
+The preprocessed data from *worldfootballR* allows me to calculate the number of goals scored and conceded by Liga de Quito in each season of international tournaments. Naturally, the team has improved its goal ratio as it has progressed to more advanced stages of the tournament. As expected, Liga de Quito is more capable of keeping clean sheets in the Sudamericana than in the Libertadores. Their best performance in the Sudamericana occurred this year, with 23 goals in 14 matches, representing a 50% win rate. However, this is not their best record in international tournaments in recent years. In 2020, despite only reaching the round of 16, they achieved a 62.5% win rate in the Copa Libertadores. This is a clear example of how simple statistics should not be misinterpreted in sports contexts.
+
+Regarding investments, one indicator that rarely fails is money. How much has Liga de Quito invested in recent years to reach where they are today? This question might seem extremely complicated to answer, but Transfermarkt's data, a German platform known for its accuracy in transfer information and player values, makes it easier. The function that retrieves this information only allows viewing one year at a time, so I use a for loop (although loops are often feared in R, they are manageable) to obtain the information from recent years without having to call the function repeatedly.
+
+```{r}
+#| label: ldu-finances
+#| fig-width: 12
+#| fig-height: 8
+
+# Links for LDU seasons
+
+years <- 2012:2023
+
+urls <- c(
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2022",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2021",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2020",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2019",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2018",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2017",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2016",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2015",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2014",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2013",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2012",
+  "https://www.transfermarkt.us/ldu-quito/startseite/verein/9855/saison_id/2011"
+)
+
+ldu_transfer_data <- list()
+
+for (i in 1:length(urls)) {
+  ldu_transfer_data[[i]] <- tm_team_transfers(urls[i], transfer_window = 'all') %>% mutate(year = years[i])
+}
+
+ldu_transfer_data_df <- bind_rows(ldu_transfer_data)
+
+ldu_transfers_by_year <- 
+  ldu_transfer_data_df %>% 
+  group_by(year, transfer_type) %>% 
+  summarise(total = sum(transfer_fee, na.rm = TRUE)) %>%
+  mutate(total = if_else(transfer_type == "Arrivals", -total, total),
+         transfer_type = if_else(transfer_type == "Arrivals", "Expense", "Income")) 
+
+ldu_transfers_by_year %>%
+ggplot(aes(as.factor(year), total/1000000, fill = transfer_type, group = transfer_type)) + 
+  geom_col(position = 'dodge') +
+  scale_fill_manual(values = c('Income' = '#20409A', 'Expense' = '#EE2E24')) +
+  scale_y_continuous(labels = scales::comma, breaks = seq(0, 6, by = 2)) +
+  geom_hline(yintercept = 0, color = 'gray40', linewidth = 1) +
+  labs(title = 'Transfer market data for LDU Quito',
+       subtitle = '2012 - 2023 Data',
+       x = '',
+       y = 'Miles de euros',
+       fill = '',
+       caption = str_wrap('Note: Data is not presented for years without transfer data. Source: Transfermarkt.', 115)) +
+  theme_daniel +
+  theme(axis.line.x = element_line(color = 'white'),
+        panel.background = element_rect(colour = "white", linewidth=4, fill = NA),
+        axis.text.x = element_text(angle = 45, vjust = 0.5, hjust=1),
+        axis.ticks = element_line(colour = 'white'),
+        legend.position = c(0.85,1.1))
+```
+
+In 2022, before the club qualified for the Copa Sudamericana, LDU did not invest money in their squad in 2022 but brought in several free agents. One significant signing was Alexander Domínguez, a historic goalkeeper for the Ecuadorian national team and LDU. Additionally, the figures do not include temporary contract values, such as that of Renato Ibarra, the Ecuadorian midfielder. However, the investment in the 2021 squad was the third-highest in the last 20 years, and the income generated in 2022 and 2023 will potentially allow further investment in the squad, infrastructure, and youth development.
+
+Far from being a comprehensive analysis exercise, what this post aims to do is to provide a grounded look at the team's figures in the two most important regional tournaments. It's unfortunate that there isn't a centralized data source for more in-depth analysis of Ecuadorian and regional football. However, the possibilities offered by open-source developers in R, like the package used here, *worldfootballR*, show that it's possible to analyze football data in a more accessible and transparent way. I hope this work proves useful for those interested in extracting and analyzing large-scale Latin American football data and, above all, that it bodes well for the fifth star on the throne in Ponceano^[Apparently it did bode well: LDU is the reigning Sudamericana champion after beating Fortaleza 4-3 on penalties].

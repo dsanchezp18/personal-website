@@ -1,0 +1,16 @@
+base
+methods
+datasets
+utils
+grDevices
+graphics
+stats
+worldfootballR
+dplyr
+stringr
+tidyr
+ggplot2
+ggthemes
+sysfonts
+showtextdb
+showtext
