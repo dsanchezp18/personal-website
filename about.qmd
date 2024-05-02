@@ -33,6 +33,20 @@ library(fontawesome)
 
 I was born in Quito, Ecuador, where I attended Universidad San Francisco de Quito for my undergraduate degrees. I received my Bachelor of Arts in Economics in December 2021 and my Bachelor of Arts in Finance in May 2022. Currently I am attending Simon Fraser University in Burnaby, Canada for my MA in Economics (expected April 2024). I'm a member of the [Ecuadorian Development Research Lab](https://laboratoriolide.org/), a research nonprofit based in Ecuador. 
 
+## Skills
+
+- `r fa('terminal')` **Programming** : R, Python, Julia
+
+- `r fa('database')` **Databases/ETL** : SQL (PostgreSQL, MySQL, MS SQL Server), `dbt`.
+
+- `r fa('chart-line')` **Data Visualization** : Tableau, Power BI, **ggplot2**, Plotly, `matplotlib`, `seaborn`, `Plots.jl`, `Tidierplots.jl`
+
+- `r fa('file-excel')` **Spreadsheets**: MS Excel, Google Sheets, VBA macro programming, R: *openxlsx*, *googlesheets4*, *XLconnect*.
+
+- `r fa('code')` **Others**: Git/GitHub, Stata, LaTeX, Markdown, web scraping, APIs. 
+
+- `r fa('language')` English (Fluent) & Spanish (Native)
+
 <!-- As put by [Professor Daniel M. Giménez](https://twitter.com/Ego_Ipse), *R is my copilot* - I became passionate about data analysis and visualization using R during my undergraduate studies in econometrics. R was my gateway into data analytics, getting me into Python, SQL and BI tools like Tableau and Power BI.  -->
 :::
 
