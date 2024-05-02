@@ -33,7 +33,7 @@ website:
         text: About
       - research.qmd
       - teaching.qmd
-      - resources.qmd
+      # - resources.qmd
       - media.qmd
       - portfolio.qmd
       - posts_home.qmd

@@ -2,9 +2,7 @@
 title: "Home"
 ---
 
-Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University's Department of Economics. I am also Research Associate at [Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)](https://laboratoriolide.org/), an Ecuadorian research nonprofit.
-
-In this webpage, you will find [short](files/cv/daniel_sanchez_cv_shorter.pdf) and [long](cv.qmd) versions of my CV as well as some more information about myself and the projects I'm working on. I also sometimes write at the [Posts](posts_home.qmd) page.
+Hello there! Welcome to my personal website. I'm [Daniel Sánchez](about.qmd), a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you'll find my [data portfolio](portfolio.qmd) and [blog posts](posts.home.qmd).
 
 ![Photo: Vancouver Harbour Centre from Gastown.](icon.jpeg){fig-align="center" width="536"}
 

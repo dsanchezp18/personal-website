@@ -113,10 +113,6 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Teaching</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./media.html"> 
 <span class="menu-text">Media</span></a>
   </li>  
@@ -164,8 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hello there! Welcome to my personal website. My name is Daniel Sánchez Pazmiño and I currently am a Master of Arts student at Simon Fraser University’s Department of Economics. I am also Research Associate at <a href="https://laboratoriolide.org/">Laboratorio de Investigación para el Desarrollo del Ecuador (LIDE)</a>, an Ecuadorian research nonprofit.</p>
-<p>In this webpage, you will find <a href="files/cv/daniel_sanchez_cv_shorter.pdf">short</a> and <a href="./cv.html">long</a> versions of my CV as well as some more information about myself and the projects I’m working on. I also sometimes write at the <a href="./posts_home.html">Posts</a> page.</p>
+<p>Hello there! Welcome to my personal website. I’m <a href="./about.html">Daniel Sánchez</a>, a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you’ll find my <a href="./portfolio.html">data portfolio</a> and <a href="posts.home.qmd">blog posts</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="icon.jpeg" class="img-fluid figure-img" width="536"></p>
@@ -257,7 +252,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app");
+      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
