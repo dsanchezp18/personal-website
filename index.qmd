@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-Hello there! Welcome to my personal website. I'm [Daniel Sánchez](about.qmd), a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you'll find my [data portfolio](portfolio.qmd) and [blog posts](posts.home.qmd).
+Hello there! Welcome to my personal website. I'm [Daniel Sánchez](about.qmd), a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you'll find my [data portfolio](portfolio.qmd).
 
 ![Photo: Vancouver Harbour Centre from Gastown.](icon.jpeg){fig-align="center" width="536"}
 

@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Hello there! Welcome to my personal website. I’m <a href="./about.html">Daniel Sánchez</a>, a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you’ll find my <a href="./portfolio.html">data portfolio</a> and <a href="posts.home.qmd">blog posts</a>.</p>
+<p>Hello there! Welcome to my personal website. I’m <a href="./about.html">Daniel Sánchez</a>, a Master of Arts in Economics graduate from Simon Fraser University. In this webpage, you’ll find my <a href="./portfolio.html">data portfolio</a>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="icon.jpeg" class="img-fluid figure-img" width="536"></p>
@@ -252,7 +252,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app");
+      var filterRegex = new RegExp("https:\/\/daniel-ec\.netlify\.app\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
