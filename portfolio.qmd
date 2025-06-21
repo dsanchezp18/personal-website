@@ -43,9 +43,6 @@ knitr::include_graphics('posts/epica/textanalysis2.png')
 
 - [Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/last-fm-viz) for data preparation code.
 
-
-<iframe height="500" width="100%" frameborder="no" src="https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link"> </iframe>
-
 # Superstore Delivery Time Analytics
 
 *I give the classic Superstore dataset a twist by analyzing delivery times instead of sales in this Power BI dashboard. Be sure to turn on maps from your security options in Power BI desktop to see the full functionality of the file.*
