@@ -39,7 +39,7 @@ knitr::include_graphics('posts/epica/textanalysis2.png')
 
 *This Tableau dashboard sources scrobble data from the Last.fm API and visualizes it in simple, attractive charts. Scrobbles come from my own account on Last.fm, yet the exercise can be done with any public account which chooses to show scrobbles publicly. The data was sourced and preparared using R. * 
 
-- [Link to Tableau Dashboard `r fa('link')` ](https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrends?:language=en-US&:display_count=n&:origin=viz_share_link).
+- [Link to Tableau Dashboard `r fa('link')` ](https://public.tableau.com/views/VisualizingScrobblesfromLast_fm/VisualizingListeningTrendsfromLast_fm?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link).
 
 - [Link to GitHub repository `r fa('github')`](https://github.com/dsanchezp18/last-fm-viz) for data preparation code.
 
